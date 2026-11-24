@@ -2,8 +2,9 @@
 LIFE character assets: what the build scripts share. Runs inside Blender's Python (the `bpy` wheel).
 
   · mpfb()           installs/enables MPFB2 and returns its services
-  · Poser            turns a readable pose (directions and angles in the body's own frame) into bone rotations
-  · CLIPS            every animation clip, as a function of time that returns such a pose
+  · Poser            turns a readable pose (directions and angles in the body's own frame) into bone rotations,
+                     with relaxed hands by default and an analytic two-bone arm IK for contacts
+  · motion.py        every animation clip (scenes of one or two people), as functions of time that return poses
 
 The body's frame is Blender's for an MPFB human: +X is the character's LEFT, -Y is FORWARD, +Z is up.
 Angles are degrees. A limb swinging forward is a positive `fwd`; a knee or elbow bending is a positive number.
@@ -54,11 +55,37 @@ def wipe():
             if d.users == 0: coll.remove(d)
 
 
+
 # ------------------------------------------------------------------------------------------------ poses
 def rot(axis, deg): return Quaternion(Vector(axis).normalized(), math.radians(deg))
 def arc(a, b): return Vector(a).normalized().rotation_difference(Vector(b).normalized())
 
 FINGERS = ['index', 'middle', 'ring', 'pinky']
+CASCADE = {'index': 0.82, 'middle': 1.0, 'ring': 1.1, 'pinky': 1.22}       # a resting hand curls more toward the little finger
+SPLAY = {'index': 2.0, 'middle': 0.3, 'ring': -1.5, 'pinky': -3.5}         # and fans a little
+RELAXED = 0.34
+HANDS = {   # hand shapes: per-finger curl (1 = a fist), thumb curl, thumb across the palm, fan
+    'relaxed': {'curl': RELAXED, 'thumb': 0.3, 'across': 0.35, 'fan': 0.8, 'mcp': 0.8},
+    'fist': {'fingers': {'index': 1.3, 'middle': 1.35, 'ring': 1.35, 'pinky': 1.3}, 'thumb': 0.75, 'across': 1.0, 'fan': 0.0},
+    'point': {'fingers': {'index': 0.02, 'middle': 1.3, 'ring': 1.35, 'pinky': 1.3}, 'thumb': 0.7, 'across': 0.9, 'fan': 0.3},
+    'thumb_up': {'fingers': {'index': 1.3, 'middle': 1.35, 'ring': 1.35, 'pinky': 1.3}, 'thumb': -0.15, 'across': -0.2, 'fan': 0.0},
+    'palm_down_rest': {'fingers': {'index': 0.3, 'middle': 0.34, 'ring': 0.36, 'pinky': 0.4}, 'thumb': 0.15, 'across': 0.0, 'fan': 0.6, 'mcp': 1.25},
+    'pinch': {'fingers': {'index': 0.62, 'middle': 0.75, 'ring': 0.95, 'pinky': 1.05}, 'thumb': 0.55, 'across': 0.7, 'fan': 0.2},
+    'cup': {'fingers': {'index': 0.34, 'middle': 0.36, 'ring': 0.4, 'pinky': 0.45}, 'thumb': 0.2, 'across': 0.1, 'fan': 1.3, 'mcp': 1.15},
+}
+
+
+def hand_shape(h):
+    """a full hand shape (per-finger curl, thumb, across, fan, mcp) from a name, a dict, or ('mix', a, b, k)"""
+    if isinstance(h, tuple) and h and h[0] == 'mix':
+        x, y, k = hand_shape(h[1]), hand_shape(h[2]), h[3]
+        return {'fingers': {f: x['fingers'][f] + (y['fingers'][f] - x['fingers'][f]) * k for f in FINGERS},
+                **{n: x[n] + (y[n] - x[n]) * k for n in ('thumb', 'across', 'fan', 'mcp')}}
+    d = dict(HANDS['relaxed']); src = HANDS.get(h, {}) if isinstance(h, str) else h; d.update(src)
+    if h != 'relaxed' and 'mcp' not in src: d['mcp'] = 1.0
+    if not d.get('fingers'): d['fingers'] = {f: d.get('curl', RELAXED) * CASCADE[f] for f in FINGERS}
+    d.setdefault('mcp', 1.0); d.setdefault('fan', 1.0); d.setdefault('across', 0.25); d.setdefault('thumb', 0.35)
+    return d
 
 
 class Poser:
@@ -68,10 +95,32 @@ class Poser:
         self.rig = rig; self.b = rig.data.bones
         self.rest = {b.name: b.matrix_local.to_3x3() for b in self.b}
         self.dir = {b.name: (b.tail_local - b.head_local).normalized() for b in self.b}
+        self.len = {b.name: (b.tail_local - b.head_local).length for b in self.b}
         self.hip = self.b['thigh_l'].head_local.z
         self.leg = (self.b['thigh_l'].head_local - self.b['foot_l'].head_local).length
         self.ground = {n: (self.b[n].head_local.z, self.b[n].tail_local.z) for n in ('foot_l', 'foot_r', 'ball_l', 'ball_r')}
+        # arm lengths for IK: shoulder → elbow → wrist
+        self.arm = {s: (self.len['upperarm_' + s], (self.b['hand_' + s].head_local - self.b['lowerarm_' + s].head_local).length) for s in 'lr'}
         for pb in rig.pose.bones: pb.rotation_mode = 'QUATERNION'
+
+    def hand(self, D, s, sx, a):
+        if 'curl' in a and 'hand' not in a: shape = hand_shape({'curl': a['curl'], 'thumb': a.get('thumb', 0.35), 'across': 0.25, 'fan': 1.0})
+        else: shape = hand_shape(a.get('hand') or 'relaxed')
+        if 'thumb' in a: shape['thumb'] = a['thumb']
+        fingers = shape['fingers']
+        palm = (self.b['pinky_01_' + s].head_local - self.b['index_01_' + s].head_local).cross(self.dir['middle_01_' + s]).normalized() * sx
+        mcp = shape.get('mcp', 1.0)
+        for f in FINGERS:
+            c = fingers[f]
+            ax = self.dir[f + '_01_' + s].cross(palm).normalized()
+            for i, w in ((1, 55 * mcp), (2, 70), (3, 45 if c < 1 else 60)):
+                q = rot(ax, w * c)
+                if i == 1: q = rot(palm, sx * SPLAY[f] * shape.get('fan', 1.0)) @ q
+                D[f'{f}_0{i}_{s}'] = q
+        tc = shape.get('thumb', 0.35); across = shape.get('across', 0.25)
+        tax = self.dir['thumb_02_' + s].cross(palm).normalized()
+        D['thumb_01_' + s] = rot(palm, -sx * 12 * across) @ rot(tax, 10 * tc)
+        D['thumb_02_' + s] = rot(tax, 28 * tc); D['thumb_03_' + s] = rot(tax, 32 * tc)
 
     def deltas(self, p):
         """bone -> rotation (armature axes, parent taken at rest) and the pelvis offset in metres"""
@@ -80,8 +129,8 @@ class Poser:
         D['Root'] = rot(UP, p.get('turn', 0))
         D['pelvis'] = rot(UP, pel.get('yaw', 0)) @ rot(LEFT, pel.get('lean', 0)) @ rot(FWD, -pel.get('roll', 0))
         sp = p.get('spine', {})
-        for n in ('spine_01', 'spine_02', 'spine_03'):
-            D[n] = rot(UP, sp.get('yaw', 0) / 3) @ rot(LEFT, sp.get('lean', 0) / 3) @ rot(FWD, -sp.get('roll', 0) / 3)
+        for n, k in (('spine_01', .3), ('spine_02', .33), ('spine_03', .37)):
+            D[n] = rot(UP, sp.get('yaw', 0) * k) @ rot(LEFT, sp.get('lean', 0) * k) @ rot(FWD, -sp.get('roll', 0) * k)
         for n, k in (('neck_01', 'neck'), ('head', 'head')):
             h = p.get(k, {}); D[n] = rot(UP, h.get('yaw', 0)) @ rot(LEFT, h.get('pitch', 0)) @ rot(FWD, -h.get('roll', 0))
         for s, sx in (('l', 1), ('r', -1)):
@@ -95,26 +144,29 @@ class Poser:
             n = self.dir[ua].cross(FWD).normalized()                      # the elbow's hinge, in the rest pose
             want = rot(n, a.get('elbow', 12)) @ self.dir[ua]              # 0 = a straight arm
             D[fa] = rot(want, sx * a.get('fore', 0)) @ arc(self.dir[fa], want)
-            straight = arc(self.dir[ha], self.dir[fa]).slerp(Quaternion(), 0.35)
+            straight = arc(self.dir[ha], self.dir[fa]).slerp(Quaternion(), 0.12)
             D[ha] = rot(n, a.get('wrist', 0)) @ rot(self.dir[fa].cross(n), a.get('wrist_side', 0)) @ straight
-            palm = (self.b['pinky_01_' + s].head_local - self.b['index_01_' + s].head_local).cross(self.dir['middle_01_' + s]).normalized() * sx
-            curl = a.get('curl', 0.22)
-            for f in FINGERS:
-                ax = self.dir[f + '_01_' + s].cross(palm).normalized()
-                for i, w in ((1, 55), (2, 70), (3, 45)): D[f'{f}_0{i}_{s}'] = rot(ax, -w * curl * (1.15 if f in ('ring', 'pinky') else 1))
-            tax = self.dir['thumb_02_' + s].cross(palm).normalized()
-            for i, w in ((1, 8), (2, 25), (3, 30)): D[f'thumb_0{i}_{s}'] = rot(tax, -w * a.get('thumb', curl))
+            self.hand(D, s, sx, a)
             lg = p.get('leg_' + s, {})
             th, ca, fo = 'thigh_' + s, 'calf_' + s, 'foot_' + s
             tdir = rot(LEFT, -lg.get('fwd', 0)) @ (rot(FWD, -sx * lg.get('out', 0)) @ Vector((sx * 0.035, 0, -1)))
             D[th] = rot(tdir, sx * lg.get('twist', 0)) @ arc(self.dir[th], tdir)
             cw = rot(LEFT, lg.get('knee', 0)) @ self.dir[th]
             D[ca] = arc(self.dir[ca], cw)
-            D[fo] = rot(LEFT, lg.get('foot', 0)); D['ball_' + s] = rot(LEFT, lg.get('toe', 0))
+            D[fo] = rot(LEFT, lg.get('foot', 0)) @ rot(UP, sx * lg.get('foot_out', 0)); D['ball_' + s] = rot(LEFT, lg.get('toe', 0))
         off = Vector((pel.get('dx', 0), -pel.get('dy', 0), pel.get('dz', 0))) * self.hip
         return D, off
 
-    def apply(self, p, ground=True):
+    def lowest(self, knees=False):
+        pb = self.rig.pose.bones
+        low = min(min(pb[n].head.z - self.ground[n][0], pb[n].tail.z - self.ground[n][1]) for n in self.ground)
+        if knees:   # a knee on the floor: the kneecap is about 5 cm in front of/below the joint
+            kr = 0.055 * self.hip / 0.95
+            low = min(low, min(pb['calf_' + s].head.z - kr for s in 'lr'))
+        return low
+
+    def apply(self, p, ground=True, resolve=None):
+        """pose the rig. `resolve(spec)` turns an IK target spec into a point in this rig's armature space."""
         D, off = self.deltas(p)
         pb = self.rig.pose.bones
         for n, q in D.items():
@@ -122,11 +174,59 @@ class Poser:
             R = self.rest[n]
             pb[n].rotation_quaternion = (R.inverted() @ q.to_matrix() @ R).to_quaternion()
         pb['pelvis'].location = self.rest['pelvis'].inverted() @ off
-        if ground and p.get('ground', True):
-            bpy.context.view_layer.update()
-            low = min(min(pb[n].head.z - self.ground[n][0], pb[n].tail.z - self.ground[n][1]) for n in self.ground)
-            pb['pelvis'].location = self.rest['pelvis'].inverted() @ (off - Vector((0, 0, low)))
         bpy.context.view_layer.update()
+        if ground and p.get('ground', True):
+            low = self.lowest(p.get('kneel', False))
+            pb['pelvis'].location = self.rest['pelvis'].inverted() @ (off - Vector((0, 0, low)))
+            bpy.context.view_layer.update()
+        if resolve is not False: self.apply_ik(p, resolve)
+
+    def apply_ik(self, p, resolve=None):
+        for s in 'lr':
+            ik = (p.get('ik') or {}).get(s)
+            if ik and ik.get('w', 1) > 1e-3:
+                to = resolve(ik['to']) if resolve else Vector(ik['to'])
+                self.reach(s, to, ik.get('pole', (0.5, -0.4, -0.6)), ik.get('w', 1.0), ik.get('palm'))
+
+    def _turn_bone(self, name, q):
+        pb = self.rig.pose.bones[name]; M = pb.matrix.copy()
+        loc, r, sc = M.decompose()
+        pb.matrix = Matrix.LocRotScale(loc, q @ r, sc); bpy.context.view_layer.update()
+
+    def palm_normal(self, s):
+        pb = self.rig.pose.bones; sx = 1 if s == 'l' else -1
+        return ((pb['pinky_01_' + s].head - pb['index_01_' + s].head).cross(pb['middle_01_' + s].head - pb['hand_' + s].head) * sx).normalized()
+
+    def reach(self, s, W, pole, w=1.0, palm=None):
+        """two-bone arm IK: put the wrist (hand bone head) at W (armature space), elbow toward `pole` (out, fwd, up)."""
+        pb = self.rig.pose.bones; sx = 1 if s == 'l' else -1
+        ua, fa, ha = pb['upperarm_' + s], pb['lowerarm_' + s], pb['hand_' + s]
+        S = ua.head.copy(); W = Vector(W)
+        if w < 1: W = ha.head.lerp(W, max(0.0, w))
+        L1, L2 = self.arm[s]
+        d = max(abs(L1 - L2) + 1e-3, min((W - S).length, (L1 + L2) * 0.999))
+        u = (W - S).normalized()
+        P = Vector((sx * pole[0], -pole[1], pole[2]))
+        v = (P - u * P.dot(u))
+        if v.length < 1e-4: v = Vector((0, 0, -1)) - u * (-u.z)
+        v.normalize()
+        ca = max(-1, min(1, (L1 * L1 + d * d - L2 * L2) / (2 * L1 * d))); sa = math.sqrt(1 - ca * ca)
+        E = S + L1 * (ca * u + sa * v); Wd = S + u * d
+        self._turn_bone(ua.name, arc(ua.tail - ua.head, E - S))
+        # twist the upper arm about itself so the forearm's hinge plane holds the wrist
+        a = (E - S).normalized(); f = (fa.tail - fa.head).normalized(); g = (Wd - E).normalized()
+        pf = (f - a * f.dot(a)); pg = (g - a * g.dot(a))
+        if pf.length > 1e-4 and pg.length > 1e-4:
+            ang = pf.normalized().angle(pg.normalized()); sgn = 1 if pf.cross(pg).dot(a) > 0 else -1
+            self._turn_bone(ua.name, Quaternion(a, sgn * ang))
+        self._turn_bone(fa.name, arc(fa.tail - fa.head, Wd - fa.head))
+        if palm:   # roll the forearm about itself so the palm faces `palm` (out, fwd, up): pronation and supination
+            want = Vector((sx * palm[0], -palm[1], palm[2])).normalized(); ax = (fa.tail - fa.head).normalized(); cur = self.palm_normal(s)
+            a1 = cur - ax * cur.dot(ax); a2 = want - ax * want.dot(ax)
+            if a1.length > 1e-3 and a2.length > 1e-3:
+                ang = a1.normalized().angle(a2.normalized()); sgn = 1 if a1.cross(a2).dot(ax) > 0 else -1
+                ang = min(ang, math.radians(120)) * (min(1.0, w) if w > 0 else 0)
+                self._turn_bone(fa.name, Quaternion(ax, sgn * ang))
 
     def local_quats(self):
         """what a glTF animation stores: each bone's rotation in its parent's space (rest and pose together)"""
@@ -138,140 +238,43 @@ class Poser:
             out[b.name] = [round(x, 5) for x in (q.w, q.x, q.y, q.z)]
         return out
 
-    def wear(self, quats, pelvis_up=None):
+    def pelvis_hips(self):
+        """the pelvis bone's location (bone space) in units of this rig's hip height: what a clip stores, body-independent"""
+        return [round(x / self.hip, 5) for x in self.rig.pose.bones['pelvis'].location]
+
+    def wear(self, quats, pelvis_up=None, pelvis_hips=None, only=None):
         """dress this rig in rotations recorded on ANOTHER rig (what three.js does when a shared clip plays)"""
         for pbone in self.rig.pose.bones:
-            if pbone.name not in quats: continue
+            if pbone.name not in quats or (only and pbone.name not in only): continue
             b = pbone.bone
             rest_local = ((b.parent.matrix_local.inverted() @ b.matrix_local) if b.parent else b.matrix_local).to_3x3()
             pbone.rotation_quaternion = (rest_local.inverted() @ Quaternion(quats[pbone.name]).to_matrix()).to_quaternion()
-        pb = self.rig.pose.bones; pb['pelvis'].location = (0, 0, 0)
+        if only: bpy.context.view_layer.update(); return
+        pb = self.rig.pose.bones
+        if pelvis_hips is not None:
+            pb['pelvis'].location = Vector(pelvis_hips) * self.hip; bpy.context.view_layer.update(); return
+        pb['pelvis'].location = (0, 0, 0)
         bpy.context.view_layer.update()
-        low = min(min(pb[n].head.z - self.ground[n][0], pb[n].tail.z - self.ground[n][1]) for n in self.ground)
+        low = self.lowest()
         pb['pelvis'].location = self.rest['pelvis'].inverted() @ Vector((0, 0, -low if pelvis_up is None else pelvis_up))
         bpy.context.view_layer.update()
 
 
-# ------------------------------------------------------------------------------------------------ clips
-MOCAP = json.loads((ROOT / 'public/life/town/mocap.json').read_text())['clips']
-TAU = math.tau
-def s(t, period=1.0, phase=0.0): return math.sin(TAU * (t / period + phase))
-def ease(x): x = max(0.0, min(1.0, x)); return x * x * (3 - 2 * x)
-def mix(a, b, k):
-    if isinstance(a, dict): return {key: mix(a.get(key, _zero(b[key]) if key in b else 0), b.get(key, _zero(a[key]) if key in a else 0), k) for key in set(a) | set(b)}
-    if isinstance(a, (tuple, list)): return tuple(x + (y - x) * k for x, y in zip(a, b))
-    if isinstance(a, bool): return a if k < .5 else b
-    return a + (b - a) * k
-def _zero(v):
-    if isinstance(v, dict): return {}
-    if isinstance(v, (tuple, list)): return v
-    return 0
+def mirror(p):
+    """the same pose, left for right"""
+    if isinstance(p, list): return [mirror(x) for x in p]
+    out = {}
+    for k, v in p.items():
+        k2 = k[:-1] + {'l': 'r', 'r': 'l'}[k[-1]] if k.endswith(('_l', '_r')) else k
+        if k == 'turn': out[k] = -v
+        elif k == 'ik': out[k] = {{'l': 'r', 'r': 'l'}[s]: dict(spec, to=_mirror_to(spec['to'])) for s, spec in v.items()}
+        elif isinstance(v, dict) and k in ('pelvis', 'spine', 'neck', 'head'):
+            out[k2] = {kk: (-vv if kk in ('yaw', 'roll', 'dx') else vv) for kk, vv in v.items()}
+        else: out[k2] = v
+    return out
 
-def gait(clip, key, phase):
-    v = MOCAP[clip][key]; n = len(v); x = (phase % 1) * n; i = int(x); f = x - i
-    return math.degrees(v[i % n] + (v[(i + 1) % n] - v[i % n]) * f)
-
-HANG = (0.17, 0.03, -1)
-
-def stand(t=0.0, breath=1.0, per=8.0):
-    b = s(t, per / max(1, round(per / 4))) * breath; w = s(t, per) * breath
-    return {'pelvis': {'roll': 2.2 * w, 'dx': 0.012 * w, 'yaw': 1.0 * w}, 'spine': {'lean': 1.5 + 0.9 * b, 'roll': -2.0 * w, 'yaw': -1.0 * w},
-            'neck': {'pitch': 2 - 0.5 * b}, 'head': {'pitch': -1, 'yaw': 1.5 * s(t, per, .2) * breath, 'roll': 0.8 * w},
-            'arm_l': {'dir': (0.17 + .008 * b, 0.03, -1), 'elbow': 14 + 2 * b, 'shrug': 1.2 * b, 'fore': 20}, 'arm_r': {'dir': (0.17 + .008 * b, 0.03, -1), 'elbow': 14 + 2 * b, 'shrug': 1.2 * b, 'fore': 20},
-            'leg_l': {'fwd': 1.5 + 1.2 * w, 'out': 3.5 + 2.2 * w, 'knee': 4 + 3 * max(0, w), 'foot': 0}, 'leg_r': {'fwd': 1.5 - 1.2 * w, 'out': 3.5 - 2.2 * w, 'knee': 4 + 3 * max(0, -w), 'foot': 0}}
-
-def _walk(clip, t, carry=False):
-    T = MOCAP[clip]['seconds']; ph = t / T; run = clip == 'run'
-    sign = -1 if MOCAP[clip]['pelvisYaw'][0] > 0 else 1
-    p = {'pelvis': {'yaw': sign * gait(clip, 'pelvisYaw', ph), 'roll': gait(clip, 'pelvisRoll', ph)},
-         'spine': {'yaw': sign * gait(clip, 'torsoYaw', ph), 'lean': gait(clip, 'torsoLean', ph) + (2 if not run else 0), 'roll': gait(clip, 'torsoRoll', ph)},
-         'neck': {'pitch': -gait(clip, 'torsoLean', ph) * .5}, 'head': {'yaw': -sign * (gait(clip, 'pelvisYaw', ph) + gait(clip, 'torsoYaw', ph)) * .8}}
-    for sd in 'lr':
-        th, kn = gait(clip, 'thigh_' + sd, ph), max(0, gait(clip, 'knee_' + sd, ph) - (0 if run else 9))
-        p['leg_' + sd] = {'fwd': th, 'out': 2 + gait(clip, 'thighOut_' + sd, ph), 'knee': kn, 'foot': (th - kn) * .8 + (kn * .35 if th < 0 else 0)}
-        a = math.radians(gait(clip, 'arm_' + sd, ph))
-        p['arm_' + sd] = {'dir': (0.17, math.sin(a), -math.cos(a)), 'elbow': max(6, gait(clip, 'elbow_' + sd, ph)), 'fore': 25, 'curl': .45 if run else .25}
-    if run: p['pelvis']['dz'] = 0.035 * abs(s(t, T))
-    if carry:
-        for sd in 'lr': p['arm_' + sd] = {'dir': (0.22, 0.28, -1), 'elbow': 88 + 2 * s(t, T / 2), 'fore': 80, 'curl': .5, 'twist': 0}
-        p['spine']['lean'] = -3; p['spine']['yaw'] *= .4
-    return p
-
-def _talk(t, k):
-    base = stand(t, .6, {1: 2.4, 2: 4.0, 3: 3.0}[k])
-    if k == 1:   # open hands, palms up, a small beat
-        for sd, ph in (('l', 0), ('r', .08)):
-            b = 0.5 + 0.5 * s(t, 1.2, ph)
-            base['arm_' + sd] = {'dir': (0.2, 0.22 + .05 * b, -1), 'elbow': 70 + 18 * b, 'fore': -60, 'twist': -8, 'curl': .12, 'wrist': -8 * b}
-        base['head']['pitch'] = -2 + 3 * s(t, 1.2)
-    elif k == 2:  # one hand explains, the other rests
-        b = 0.5 + 0.5 * s(t, 1.0)
-        base['arm_r'] = {'dir': (0.25, 0.35 + .08 * b, -0.9), 'elbow': 95 + 14 * b, 'fore': 10 + 30 * s(t, 2.0), 'curl': .18, 'wrist': 10 * s(t, 1.0, .2)}
-        base['head']['yaw'] = 5 * s(t, 4.0); base['head']['roll'] = 3 * s(t, 2.0)
-    else:         # a shrug, then a point forward
-        u = ease(max(0, s(t, 3.0))); v = ease(max(0, -s(t, 3.0)))
-        for sd in 'lr': base['arm_' + sd] = {'dir': (0.2 + .1 * u, 0.1 + .1 * u, -1), 'elbow': 20 + 75 * u, 'fore': -70 * u + 20, 'shrug': 7 * u, 'curl': .15}
-        base['arm_r'] = mix(base['arm_r'], {'dir': (0.1, 0.9, -0.25), 'elbow': 18, 'fore': 30, 'curl': .1, 'shrug': 0}, v)
-        base['head']['roll'] = 5 * u
-    return base
-
-def _wave(t):
-    p = stand(t, .5, 2.2); w = s(t, 0.55)
-    p['arm_r'] = {'dir': (0.75, 0.12, 0.55), 'twist': -80, 'elbow': 68 + 22 * w, 'fore': 0, 'curl': .02, 'thumb': 0, 'wrist_side': 10 * w, 'shrug': 6}
-    p['spine']['roll'] = 3; p['head']['roll'] = -3; p['head']['pitch'] = -4
-    return p
-
-def _cheer(t):
-    p = stand(t, .3, 1.2); u = 0.5 + 0.5 * s(t, 0.6)
-    for sd, ph in (('l', 0), ('r', .5)):
-        p['arm_' + sd] = {'dir': (0.42, 0.15, 1.0), 'twist': -70, 'elbow': 35 + 45 * (1 - u), 'curl': .95, 'thumb': .9, 'shrug': 10}
-        p['leg_' + sd] = {'fwd': 6 * (1 - u), 'out': 5, 'knee': 14 * (1 - u), 'foot': -18 * u}
-    p['pelvis'] = {'dz': 0.0}; p['spine'] = {'lean': -6 * u}; p['head'] = {'pitch': -12 * u}
-    return p
-
-SIT = {'pelvis': {'lean': -6, 'dy': -0.02}, 'spine': {'lean': 10}, 'neck': {'pitch': -2}, 'head': {'pitch': -2},
-       'leg_l': {'fwd': 86, 'out': 7, 'knee': 88, 'foot': 0}, 'leg_r': {'fwd': 86, 'out': 7, 'knee': 88, 'foot': 0},
-       'arm_l': {'dir': (0.2, 0.2, -1), 'elbow': 66, 'fore': 75, 'curl': .3}, 'arm_r': {'dir': (0.2, 0.2, -1), 'elbow': 66, 'fore': 75, 'curl': .3}}
-CROUCH = {'pelvis': {'lean': 4}, 'spine': {'lean': 16}, 'neck': {'pitch': -8}, 'head': {'pitch': -6},
-          'leg_l': {'fwd': 100, 'out': 12, 'knee': 138, 'foot': 12}, 'leg_r': {'fwd': 38, 'out': 8, 'knee': 128, 'foot': 62, 'toe': -55},
-          'arm_l': {'dir': (0.25, 0.75, -0.55), 'elbow': 72, 'fore': 60, 'curl': .25}, 'arm_r': {'dir': (0.3, 0.8, -0.35), 'elbow': 40, 'fore': 30, 'curl': .1}}
-SHOULDER = {'spine': {'lean': 3, 'roll': -3, 'yaw': -6}, 'head': {'yaw': -22, 'pitch': 12, 'roll': -3}, 'neck': {'pitch': 4},
-            'arm_r': {'dir': (0.62, 0.42, -0.16), 'twist': 60, 'elbow': 52, 'fore': -20, 'wrist': -22, 'curl': .28, 'thumb': .1, 'shrug': 3}}
-HUG = {'spine': {'lean': 12}, 'neck': {'pitch': 6}, 'head': {'pitch': 8, 'roll': 10, 'yaw': 12},
-       'arm_l': {'dir': (0.45, 0.85, -0.12), 'twist': 40, 'elbow': 96, 'fore': 0, 'curl': .2, 'shrug': 6, 'reach': 10},
-       'arm_r': {'dir': (0.45, 0.8, -0.38), 'twist': 40, 'elbow': 104, 'fore': 0, 'curl': .2, 'shrug': 4, 'reach': 10},
-       'leg_l': {'fwd': 6, 'out': 4, 'knee': 6}, 'leg_r': {'fwd': -4, 'out': 4, 'knee': 4}}
-
-def _to(target, t, rise=0.9, breath=.5):
-    """stand → target over `rise` seconds, then the target held, breathing"""
-    k = ease(t / rise); b = s(t, 4.0) * breath
-    p = mix(stand(t, 1 - .5 * k), target, k)
-    p.setdefault('spine', {}); p['spine']['lean'] = p['spine'].get('lean', 0) + 0.8 * b * k
-    return p
-
-def _turn(t, T=1.0):
-    k = ease(t / T); step = math.sin(math.pi * min(1, t / T))
-    p = stand(t, .3); p['turn'] = 90 * k
-    p['leg_l'] = {'fwd': 10 * step * (1 if t < T / 2 else .3), 'out': 4 + 10 * step * (1 if t < T / 2 else 0), 'knee': 22 * step * (1 if t < T / 2 else .2)}
-    p['leg_r'] = {'fwd': 8 * step * (0 if t < T / 2 else 1), 'out': 4, 'knee': 20 * step * (0 if t < T / 2 else 1)}
-    p['spine']['yaw'] = 14 * step; p['head']['yaw'] = 18 * step
-    return p
-
-# id -> (seconds, loops, pose at time t, what it is)
-CLIPS = {
-    'idle': (8.0, True, lambda t: stand(t), 'standing: breathing and a slow shift of weight'),
-    'walk': (MOCAP['walk']['seconds'], True, lambda t: _walk('walk', t), 'one captured stride, in place (CMU mocap, averaged)'),
-    'run': (MOCAP['run']['seconds'], True, lambda t: _walk('run', t), 'one captured running stride, in place (CMU mocap, averaged)'),
-    'carry': (MOCAP['walk']['seconds'], True, lambda t: _walk('walk', t, True), 'the captured walk with both arms holding a box'),
-    'turn': (1.0, False, _turn, 'a quarter turn to the left on the spot (Root bone turns 90 degrees)'),
-    'talk_1': (2.4, True, lambda t: _talk(t, 1), 'talking: open hands'),
-    'talk_2': (4.0, True, lambda t: _talk(t, 2), 'talking: one hand explains'),
-    'talk_3': (3.0, True, lambda t: _talk(t, 3), 'talking: a shrug, then pointing ahead'),
-    'wave': (2.2, True, _wave, 'right arm up, waving'),
-    'cheer': (1.2, True, _cheer, 'both fists up, bouncing: a goal'),
-    'sit': (6.0, False, lambda t: _to(SIT, t, 1.1), 'stand to seated (seat at knee height), then held'),
-    'crouch_to_child': (6.0, False, lambda t: _to(CROUCH, t, 1.2), 'down on one knee to a child\'s eye level, then held'),
-    'hand_on_shoulder': (6.0, False, lambda t: _to(SHOULDER, t, 0.9), 'right hand out and down onto the shoulder of a child standing at the right side, then held'),
-    'hug': (6.0, False, lambda t: _to(HUG, t, 1.0), 'both arms round someone in front, then held'),
-}
-FPS = 30
+def _mirror_to(to):
+    if isinstance(to, tuple) and len(to) == 3 and isinstance(to[0], str):
+        who, bone, off = to; b2 = bone[:-1] + {'l': 'r', 'r': 'l'}[bone[-1]] if bone.endswith(('_l', '_r')) else bone
+        return (who, b2, (-off[0], off[1], off[2]))
+    return to

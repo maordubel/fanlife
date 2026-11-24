@@ -129,7 +129,12 @@
     ]
    },
    "targets": {
-    "mouth-laugh-lines-in": 0.3
+    "mouth-laugh-lines-in": 0.3,
+    "eyebrows-trans-backward": 0.45,
+    "forehead-nubian-decr": 0.35,
+    "l-eye-scale-incr": 0.65,
+    "r-eye-scale-incr": 0.65,
+    "mouth-angles-up": 0.6
    },
    "skin": "middleage_caucasian_male",
    "eyes": "brown",
@@ -143,7 +148,15 @@
     0.78,
     0.1,
     0.12
-   ]
+   ],
+   "hair2": "cortu_short_messy_hair",
+   "resting": {
+    "mouthSmileLeft": 0.2,
+    "mouthSmileRight": 0.2,
+    "cheekSquintLeft": 0.08,
+    "cheekSquintRight": 0.08,
+    "browInnerUp": 0.1
+   }
   },
   {
    "id": "father_heavy",
@@ -178,7 +191,8 @@
     0.22,
     0.2,
     0.2
-   ]
+   ],
+   "hair2": "afro01"
   },
   {
    "id": "mother",
@@ -209,7 +223,8 @@
     0.78,
     0.1,
     0.12
-   ]
+   ],
+   "hair2": "bob01"
   },
   {
    "id": "mother_heavy",
@@ -241,7 +256,8 @@
     0.78,
     0.1,
     0.12
-   ]
+   ],
+   "hair2": "toigo_curled_under_bob"
   },
   {
    "id": "grandfather",
@@ -272,7 +288,8 @@
     0.78,
     0.1,
     0.12
-   ]
+   ],
+   "hair2": "short01"
   },
   {
    "id": "grandmother",
@@ -304,7 +321,8 @@
     0.78,
     0.1,
     0.12
-   ]
+   ],
+   "hair2": "toigo_inverted_bob"
   }
  ],
  "expressions": {
@@ -361,6 +379,21 @@
   },
   "viseme_M": {
    "viseme_PP": 1.0
+  }
+ },
+ "resting": {
+  "adult": {
+   "mouthSmileLeft": 0.12,
+   "mouthSmileRight": 0.12,
+   "cheekSquintLeft": 0.05,
+   "cheekSquintRight": 0.05,
+   "browInnerUp": 0.06
+  },
+  "young": {
+   "mouthSmileLeft": 0.08,
+   "mouthSmileRight": 0.08,
+   "cheekSquintLeft": 0.03,
+   "cheekSquintRight": 0.03
   }
  }
 }

@@ -17,6 +17,9 @@ import numpy as np
 from mathutils import Vector
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 import lifekit as K
+import refine as R
+import motion as M
+import strips as ST
 
 WORK = Path(sys.argv[1]); ONLY = [x for x in (sys.argv[2] if len(sys.argv) > 2 else '').split(',') if x]
 RAW = WORK / 'raw'; PREV = WORK / 'preview'; RAW.mkdir(parents=True, exist_ok=True); PREV.mkdir(parents=True, exist_ok=True)
@@ -228,35 +231,7 @@ def set_keys(objs, weights):
             for kb in o.data.shape_keys.key_blocks[1:]: kb.value = weights.get(kb.name, 0.0)
 
 
-# ------------------------------------------------------------------------------------------------ studio
-def studio():
-    sc = bpy.context.scene
-    sc.render.engine = 'CYCLES'; sc.cycles.device = 'CPU'; sc.cycles.samples = int(os.environ.get('LIFE_SAMPLES', '40')); sc.cycles.use_denoising = True
-    sc.render.image_settings.file_format = 'JPEG'; sc.render.image_settings.quality = 88; sc.render.film_transparent = False
-    try: sc.view_settings.view_transform = 'Filmic'
-    except Exception:
-        try: sc.view_settings.view_transform = 'AgX'
-        except Exception: pass
-    w = bpy.data.worlds.new('studio'); sc.world = w; w.use_nodes = True
-    bg = w.node_tree.nodes['Background']; bg.inputs[0].default_value = (0.86, 0.80, 0.74, 1); bg.inputs[1].default_value = 0.34
-    def light(name, typ, loc, energy, size, col=(1, 1, 1)):
-        d = bpy.data.lights.new(name, typ); d.energy = energy; d.color = col
-        if typ == 'AREA': d.size = size
-        o = bpy.data.objects.new(name, d); sc.collection.objects.link(o); o.location = loc
-        o.rotation_euler = (Vector((0, 0, 1.2)) - Vector(loc)).to_track_quat('-Z', 'Y').to_euler(); return o
-    light('key', 'AREA', (2.6, -2.8, 2.9), 260, 2.2, (1.0, 0.93, 0.84)); light('fill', 'AREA', (-3.0, -2.2, 1.6), 60, 3.5, (0.86, 0.92, 1.0)); light('rim', 'AREA', (-1.5, 3.2, 2.6), 300, 2.0, (1.0, 0.9, 0.8))
-    me = bpy.data.meshes.new('floor'); me.from_pydata([(-30, -30, 0), (30, -30, 0), (30, 30, 0), (-30, 30, 0)], [], [(0, 1, 2, 3)])
-    fl = bpy.data.objects.new('floor', me); sc.collection.objects.link(fl)
-    m = bpy.data.materials.new('floor'); m.use_nodes = True; m.node_tree.nodes['Principled BSDF'].inputs['Base Color'].default_value = (0.78, 0.72, 0.66, 1); m.node_tree.nodes['Principled BSDF'].inputs['Roughness'].default_value = 0.9; me.materials.append(m)
-    cam = bpy.data.objects.new('cam', bpy.data.cameras.new('cam')); sc.collection.objects.link(cam); sc.camera = cam
-    return cam
-
-
-def shoot(cam, target, dist, az, lens, path, size=(768, 768), rise=0.0):
-    sc = bpy.context.scene; a = math.radians(az)
-    cam.data.lens = lens; cam.location = (target[0] + dist * math.sin(a), target[1] - dist * math.cos(a), target[2] + rise)
-    cam.rotation_euler = (Vector(target) - cam.location).to_track_quat('-Z', 'Y').to_euler()
-    sc.render.resolution_x, sc.render.resolution_y = size; sc.render.filepath = str(path); bpy.ops.render.render(write_still=True)
+studio, shoot = ST.studio, ST.shoot
 
 
 # ------------------------------------------------------------------------------------------------ one character
@@ -303,6 +278,8 @@ def build(c, keep=False):
         except Exception as e: meta['notes'].append(f'eye colour: {e}')
     wear('eyebrows', c.get('brows'), 'Eyebrows'); wear('eyelashes', 'eyelashes01', 'Eyelashes'); wear('teeth', 'teeth_base', 'Teeth'); wear('tongue', 'tongue01', 'Tongue')
     hair = wear('hair', c.get('hair'), 'Hair')
+    hair2 = wear('hair', c.get('hair2'), 'Hair') if c.get('hair2') else None
+    if hair2: hair2['life_role'] = 'hair2'
     garments = [g for g in (wear('clothes', n, 'Clothes') for n in c.get('clothes', [])) if g]
 
     S.TargetService.bake_targets(bm)
@@ -316,7 +293,7 @@ def build(c, keep=False):
     if loaded:
         try: S.FaceService.interpolate_targets(bm)
         except Exception as e: traceback.print_exc(); meta['notes'].append(f'face carry: {e}')
-    for o in [hair] + garments:
+    for o in [hair, hair2] + garments:
         if o and o.data.shape_keys:
             for kb in list(o.data.shape_keys.key_blocks)[::-1]: o.shape_key_remove(kb)
 
@@ -332,6 +309,7 @@ def build(c, keep=False):
         for m in list(o.modifiers):
             if m.type != 'ARMATURE': o.modifiers.remove(m)
         name = {'Basemesh': 'Body', 'Eyes': 'Eyes', 'Eyebrows': 'Brows', 'Eyelashes': 'Lashes', 'Teeth': 'Teeth', 'Tongue': 'Tongue', 'Hair': 'Hair'}.get(t)
+        if o.get('life_role') == 'hair2': name = 'Hair2'
         if not name: name = 'Shoes' if 'shoe' in o.name.lower() else 'Clothes'
         while name in parts: name += '2'
         parts[name] = o; o.name = name; o.data.name = c['id'] + '_' + name
@@ -351,6 +329,7 @@ def build(c, keep=False):
         try: bpy.ops.object.vertex_group_limit_total(group_select_mode='ALL', limit=4); bpy.ops.object.vertex_group_normalize_all(lock_active=False)
         except Exception as e: print('weights', o.name, e)
         for p in o.data.polygons: p.use_smooth = True
+    if 'Teeth' in parts: meta['teethTriangles'] = R.lighter_teeth(parts['Teeth'], 1000)
     shrink_images(lambda im: 256 if 'eye' in im.name.lower() and 'brow' not in im.name.lower() and 'lash' not in im.name.lower() else 512 if any(k in im.name.lower() for k in ('hair', 'afro', 'bob', 'short', 'long', 'pony', 'braid', 'brow', 'lash', 'teeth', 'tongue', 'shoe')) else 1024)
     tinted = False
     for name, o in parts.items():
@@ -358,11 +337,25 @@ def build(c, keep=False):
             try: tinted = tint_top(o, rig, c.get('tint', [0.8, 0.8, 0.8]), meta)
             except Exception as e: traceback.print_exc(); meta['notes'].append(f'tint: {e}')
     if not tinted and garments: meta['notes'].append('no tintable top found')
-    if c.get('hair_grey') and 'Hair' in parts: grey_hair(parts['Hair'], c['hair_grey'])
-    if c.get('hair_tint') and 'Hair' in parts:
-        node = base_image(parts['Hair'].material_slots[0].material)
-        if node:
-            im = node.image; px = np.empty(im.size[0] * im.size[1] * 4, dtype=np.float32); im.pixels.foreach_get(px); px = px.reshape(-1, 4); px[:, :3] *= np.array(c['hair_tint'], dtype=np.float32); im.pixels.foreach_set(px.ravel()); im.update(); im.pack()
+    regions = ['tint_top'] if tinted else []
+    for name, o in parts.items():
+        if name.startswith('Clothes') and any(m and m.name == 'tint_top' for m in o.data.materials):
+            try:
+                r = R.tint_regions(o, rig) or {}
+                if r.get('inner'): regions.append('tint_inner')
+                if r.get('trim'): regions.append('tint_trim')
+            except Exception as e: traceback.print_exc(); meta['notes'].append(f'tint regions: {e}')
+    meta['tintRegions'] = regions
+    for hn in ('Hair', 'Hair2'):
+        if hn not in parts: continue
+        if c.get('hair_grey'): grey_hair(parts[hn], c['hair_grey'])
+        if c.get('hair_tint'):
+            node = base_image(parts[hn].material_slots[0].material)
+            if node and not node.image.get('life_tinted'):
+                im = node.image; px = np.empty(im.size[0] * im.size[1] * 4, dtype=np.float32); im.pixels.foreach_get(px); px = px.reshape(-1, 4); px[:, :3] *= np.array(c['hair_tint'], dtype=np.float32); im.pixels.foreach_set(px.ravel()); im.update(); im.pack(); im['life_tinted'] = 1
+    if 'Brows' in parts:
+        try: R.thicker_brows(parts['Brows'])
+        except Exception as e: traceback.print_exc(); meta['notes'].append(f'brows: {e}')
     for o in parts.values():
         for sl in o.material_slots:
             m = sl.material
@@ -377,33 +370,94 @@ def build(c, keep=False):
         if o.name in ('Body', 'Head') and o.material_slots: o.material_slots[0].material.name = 'skin'
     if head and body.material_slots: head.material_slots[0].material = body.material_slots[0].material
 
+    rest = dict(SPEC.get('resting', {}).get('adult' if c['pheno']['age'] > 0.5 else 'young', {})); rest.update(c.get('resting', {}))
+    if rest:
+        R.bake_resting([o for o in parts.values()], rest); meta['restingBaked'] = rest
+    hc = (0.1, 0.08, 0.06)
+    node = base_image(parts['Hair'].material_slots[0].material) if 'Hair' in parts and parts['Hair'].material_slots else None
+    if node:
+        hp = np.empty(node.image.size[0] * node.image.size[1] * 4, np.float32); node.image.pixels.foreach_get(hp); hp = hp.reshape(-1, 4)
+        sel = hp[:, 3] > 0.5; hc = tuple(float(x) for x in (hp[sel, :3].mean(0) if sel.any() else hp[:, :3].mean(0)) * 0.85)
+    try:
+        acc, _ = R.accessories(rig, parts, hc, adult=c['pheno']['age'] > 0.5)
+        for k, o in acc.items():
+            nm = o.name; parts[nm] = o
+        meta['accessories'] = {k: o.name for k, o in acc.items()}
+    except Exception as e: traceback.print_exc(); meta['notes'].append(f'accessories: {e}'); meta['accessories'] = {}
+    try:
+        lod, ntri = R.build_lod(rig, {n: o for n, o in parts.items() if n in R.LOD_TARGET})
+        bpy.ops.object.select_all(action='DESELECT'); rig.select_set(True); lod.select_set(True); bpy.context.view_layer.objects.active = rig
+        bpy.ops.export_scene.gltf(filepath=str(RAW / (c['id'] + '-lod1.glb')), export_format='GLB', use_selection=True, export_apply=False, export_skins=True, export_morph=False,
+                                  export_animations=False, export_image_format='WEBP', export_image_quality=80, export_yup=True, export_extras=True, export_tangents=False,
+                                  export_vertex_color='ACTIVE', export_active_vertex_color_when_no_material=True)
+        meta['lod'] = {'triangles': ntri}; lod.hide_render = True; lod.hide_set(True)
+    except Exception as e: traceback.print_exc(); meta['notes'].append(f'lod: {e}'); lod = None
+
     P = K.Poser(rig)
     morphs = [k.name for k in parts['Head'].data.shape_keys.key_blocks[1:]] if 'Head' in parts and parts['Head'].data.shape_keys else []
     meta.update(bones=[b.name for b in rig.data.bones], morphs=morphs, hipHeight=round(P.hip, 4), height=round(max((o.matrix_world @ Vector(co)).z for o in parts.values() for co in o.bound_box), 4),
                 meshes={n: {'triangles': sum(len(p.vertices) - 2 for p in o.data.polygons), 'vertices': len(o.data.vertices), 'morphs': len(o.data.shape_keys.key_blocks) - 1 if o.data.shape_keys else 0} for n, o in parts.items()},
                 tint={'top': bool(tinted), 'default': c.get('tint')})
-    meta['triangles'] = sum(m['triangles'] for m in meta['meshes'].values())
+    meta['triangles'] = sum(m['triangles'] for n, m in meta['meshes'].items() if not n.startswith(('Acc_', 'Hair2', 'Hair_hat')))
+    meta['optional'] = [n for n in parts if n.startswith(('Acc_', 'Hair2', 'Hair_hat'))]
     bpy.ops.object.select_all(action='DESELECT'); rig.select_set(True)
-    for o in parts.values(): o.select_set(True)
+    for o in parts.values(): o.hide_set(False); o.select_set(True)
     bpy.context.view_layer.objects.active = rig
     bpy.ops.export_scene.gltf(filepath=str(RAW / (c['id'] + '.glb')), export_format='GLB', use_selection=True, export_apply=False, export_skins=True, export_morph=True,
                               export_morph_normal=False, export_animations=False, export_image_format='WEBP', export_image_quality=82, export_yup=True, export_extras=True, export_tangents=False)
     (RAW / (c['id'] + '.json')).write_text(json.dumps(meta, indent=1))
-    if c['id'] in ('father', 'boy'): bpy.data.libraries.write(str(WORK / (c['id'] + '.blend')), {rig, *parts.values()}, fake_user=True)
+    for n, o in parts.items():
+        if n.startswith(('Acc_', 'Hair2', 'Hair_hat')): o.hide_render = True
+    bpy.data.libraries.write(str(WORK / (c['id'] + '.blend')), {rig, *parts.values(), *([lod] if lod else [])}, fake_user=True)
+    meta['_lod'] = lod.name if lod else None
     return rig, parts, P, meta
 
 
-def previews(c, rig, parts, P, cam):
-    objs = list(parts.values()); H = max((o.matrix_world @ Vector(co)).z for o in objs for co in o.bound_box)
-    P.apply(K.stand(1.0)); set_keys(objs, {})
+def previews(c, rig, parts, P, cam, meta):
+    objs = [o for n, o in parts.items() if not n.startswith(('Acc_', 'Hair2', 'Hair_hat'))]
+    H = max((o.matrix_world @ Vector(co)).z for o in objs for co in o.bound_box)
+    P.apply(M.stand(1.0)); set_keys(list(parts.values()), {})
     shoot(cam, (0, 0, H * 0.52), H * 3.4 + 0.6, 0, 85, PREV / f"{c['id']}-front.jpg", (576, 768))
-    set_keys(objs, SPEC['expressions']['smile'])
     hb = P.rig.pose.bones['head']; eye = hb.head.z + (H - hb.head.z) * 0.30
-    shoot(cam, (hb.head.x, hb.head.y - 0.03, eye), 0.9 + (H - hb.head.z) * 1.6, 28, 85, PREV / f"{c['id']}-portrait.jpg", (768, 768), rise=0.03)
+    port = lambda path, az=28: shoot(cam, (hb.head.x, hb.head.y - 0.03, eye), 0.9 + (H - hb.head.z) * 1.6, az, 85, path, (768, 768), rise=0.03)
+    port(PREV / f"{c['id']}-portrait.jpg")                      # the resting face, nothing applied
+    set_keys(list(parts.values()), SPEC['expressions']['smile']); port(PREV / f"{c['id']}-smile.jpg"); set_keys(list(parts.values()), {})
     shoot(cam, (0, 0, H * 0.52), H * 3.4 + 0.6, 215, 85, PREV / f"{c['id']}-back.jpg", (576, 768))
-    P.apply(K.CLIPS['talk_2'][2](0.5)); set_keys(objs, SPEC['expressions']['laugh'])
+    P.apply(M.talk(0.5, 2)); set_keys(list(parts.values()), SPEC['expressions']['laugh'])
     shoot(cam, (0, 0, H * 0.52), H * 3.4 + 0.6, 40, 85, PREV / f"{c['id']}-talk.jpg", (576, 768))
-    set_keys(objs, {})
+    set_keys(list(parts.values()), {}); P.apply(M.stand(1.0))
+    # accessories: none / beanie + round glasses (+ beard) / flat cap + square glasses (+ moustache) / the second hair
+    acc = meta.get('accessories', {})
+    looks = [('plain', []), ('beanie', ['beanie', 'glasses_round', 'beard', 'hair_hat']), ('cap', ['cap_flat', 'glasses_square', 'moustache', 'hair_hat'])]
+    if 'Hair2' in parts: looks.append(('hair2', ['__hair2']))
+    for tag, show in looks:
+        for k, nm in acc.items(): parts[nm].hide_render = k not in show
+        if 'Hair2' in parts: parts['Hair2'].hide_render = '__hair2' not in show
+        if 'Hair' in parts: parts['Hair'].hide_render = ('__hair2' in show) or ('hair_hat' in show and 'hair_hat' in acc)
+        shoot(cam, (hb.head.x, hb.head.y - 0.03, eye + 0.02), 0.8 + (H - hb.head.z) * 1.6, 30, 85, PREV / f"acc-{c['id']}-{tag}.jpg", (384, 384), rise=0.03)
+    for k, nm in acc.items(): parts[nm].hide_render = True
+    if 'Hair2' in parts: parts['Hair2'].hide_render = True
+    if 'Hair' in parts: parts['Hair'].hide_render = False
+    # far crowd: the full character and the LOD at 10 m
+    lod = bpy.data.objects.get(meta.get('_lod') or '')
+    if lod:
+        lod.hide_set(False)
+        for tag, full in (('full', True), ('lod1', False)):
+            for o in objs: o.hide_render = not full
+            lod.hide_render = full
+            shoot(cam, (0, 0, H * 0.5), 10.0, 15, 85, PREV / f"lod-{c['id']}-{tag}.jpg", (240, 360))
+            shoot(cam, (0, 0, H * 0.5), 3.2, 15, 85, PREV / f"lod-{c['id']}-{tag}-near.jpg", (240, 360))
+        for o in objs: o.hide_render = False
+        lod.hide_render = True
+
+
+def load_blend(who, tag=None):
+    with bpy.data.libraries.load(str(WORK / (who + '.blend'))) as (src, dst): dst.objects = list(src.objects)
+    for o in dst.objects: bpy.context.scene.collection.objects.link(o)
+    rig = next(o for o in dst.objects if o.type == 'ARMATURE')
+    for o in dst.objects:
+        if o.get('accessory') or o.name.startswith(('Hair2', 'LOD1')): o.hide_render = True
+    return rig
 
 
 def main():
@@ -414,32 +468,43 @@ def main():
         try:
             rig, parts, P, meta = build(c)
             if os.environ.get('LIFE_NO_RENDER') != '1':
-                cam = studio(); previews(c, rig, parts, P, cam)
+                cam = studio(); previews(c, rig, parts, P, cam, meta)
+            meta.pop('_lod', None)
             done[c['id']] = meta; print('==== done', c['id'], meta['triangles'], 'tris', len(meta['morphs']), 'morphs', meta['notes'], flush=True)
         except Exception:
             traceback.print_exc(); print('==== FAILED', c['id'], flush=True)
-    # father and boy together: the father wears the shared clip exactly as the game would; the boy stands under his hand
-    stills = json.loads((WORK / 'clips.json').read_text())['stills'] if (WORK / 'clips.json').exists() else {}
-    if (WORK / 'father.blend').exists() and (WORK / 'boy.blend').exists() and stills and os.environ.get('LIFE_NO_RENDER') != '1':
+    clips = json.loads((WORK / 'clips.json').read_text()) if (WORK / 'clips.json').exists() else {}
+    if os.environ.get('LIFE_NO_RENDER') == '1' or not clips: (WORK / 'cast-built.json').write_text(json.dumps(done, indent=1)); return
+    # the whole cast in a row, resting faces
+    try:
+        K.wipe(); x = 0.0; ids = [c['id'] for c in SPEC['cast'] if (WORK / (c['id'] + '.blend')).exists()]
+        order = sorted(ids, key=lambda i: -next(c for c in SPEC['cast'] if c['id'] == i)['pheno']['age'])
+        for i, cid in enumerate(order):
+            r = load_blend(cid); r.location = ((i - (len(order) - 1) / 2) * 0.62, 0, 0); P_ = K.Poser(r); P_.wear(clips['stills']['idle']['q'])
+        cam = studio(); shoot(cam, (0, 0, 1.0), 9.0, 0, 50, PREV / 'cast-row.jpg', (2400, 900))
+        shoot(cam, (0, 0, 1.45), 6.5, 0, 135, PREV / 'cast-row-faces.jpg', (2400, 600))
+    except Exception: traceback.print_exc()
+    # motion: the shared clips worn by the real father and boy (a second father for two-adult scenes)
+    if (WORK / 'father.blend').exists() and (WORK / 'boy.blend').exists():
         try:
-            K.wipe(); rigs = {}
-            for who in ('father', 'boy'):
-                with bpy.data.libraries.load(str(WORK / (who + '.blend'))) as (src, dst): dst.objects = list(src.objects)
-                for o in dst.objects: bpy.context.scene.collection.objects.link(o)
-                rigs[who] = next(o for o in dst.objects if o.type == 'ARMATURE')
-            f, b = rigs['father'], rigs['boy']; Pf, Pb = K.Poser(f), K.Poser(b)
-            Pf.wear(stills['hand_on_shoulder']); Pb.wear(stills['idle'])
-            hand = f.pose.bones['middle_01_r'].head.copy(); sh = b.pose.bones['upperarm_l'].head.copy()
-            b.location = (hand.x - sh.x + 0.05, hand.y - sh.y + 0.02, 0); gap = hand.z - sh.z
-            print(f'==== pair: father hand {hand.z:.3f} m, boy shoulder {sh.z:.3f} m, gap {gap:+.3f} m', flush=True)
-            set_keys(list(f.children_recursive), SPEC['expressions']['smile']); set_keys(list(b.children_recursive), SPEC['expressions']['smile'])
-            cam = studio(); shoot(cam, (b.location.x * 0.5, 0, 0.95), 6.2, 12, 85, PREV / 'father-boy-hand-on-shoulder.jpg', (768, 768))
-            shoot(cam, (b.location.x * 0.6, 0, 1.28), 2.6, -20, 85, PREV / 'father-boy-hand-on-shoulder-close.jpg', (768, 768))
-            b.hide_render = True
-            for o in b.children_recursive: o.hide_render = True
-            set_keys(list(f.children_recursive), {})
-            for name, q in stills.items():
-                Pf.wear(q, pelvis_up=None); shoot(cam, (0, 0, 0.95), 6.4, 28, 85, PREV / f'clip-{name}.jpg', (384, 512))
+            K.wipe(); rigs = {'A': load_blend('father'), 'A2': load_blend('father'), 'C': load_blend('boy')}
+            posers = {w: K.Poser(r) for w, r in rigs.items()}
+            for r in rigs.values(): set_keys(list(r.children_recursive), SPEC['expressions']['smile'])
+            cam = studio(int(os.environ.get('LIFE_STRIP_SAMPLES', '14')))
+            for name, st in clips.get('strips', {}).items():
+                ST.render_strip(name, st, rigs, posers, cam, PREV / f'strip-{name}.jpg'); print('strip', name, flush=True)
+            for w in ('A2', 'C'):
+                for o in [rigs[w]] + list(rigs[w].children_recursive): o.hide_render = True
+            rigs['A'].location = (0, 0, 0); rigs['A'].rotation_euler = (0, 0, 0)
+            set_keys(list(rigs['A'].children_recursive), {})
+            ST.hands_closeup(rigs['A'], posers['A'], clips['stills'], clips['fingerBones'], cam, PREV / 'hand-poses.jpg')
+            for name, st in clips['stills'].items():
+                if name.startswith('hand_'): continue
+                r, Pw = (rigs['C'], posers['C']) if st.get('child') else (rigs['A'], posers['A'])
+                for w, rr in rigs.items():
+                    for o in [rr] + list(rr.children_recursive): o.hide_render = rr is not r
+                r.location = (0, 0, 0); r.rotation_euler = (0, 0, 0)
+                Pw.wear(st['q'], pelvis_hips=st['pelvis']); shoot(cam, (0, 0, 0.95), 6.4, 28, 85, PREV / f'clip-{name}.jpg', (384, 512))
         except Exception: traceback.print_exc()
     (WORK / 'cast-built.json').write_text(json.dumps(done, indent=1))
     if not done: sys.exit(1)
