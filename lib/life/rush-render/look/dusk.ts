@@ -28,7 +28,9 @@ export type DuskCtx = {
 }
 export type Dusk = {update(sim: {x: number; z: number}, t: number, dt: number, cam: THREE.Vector3): void; resize(w: number, h: number): void
   /** the procedural fronts of the main street (frames, shutters, balconies, cornices, roof kit, lit shops): what the Flow facades replace */
-  front: THREE.Object3D[]}
+  front: THREE.Object3D[]
+  /** the stand wings and floodlight towers at the end of the road (hidden when a picture of the ground takes their place) */
+  ground: THREE.Object3D}
 
 const C = (h: THREE.ColorRepresentation) => new THREE.Color(h)
 const HDR = (h: string, k: number) => C(h).multiplyScalar(k)
@@ -147,23 +149,38 @@ export function dressDusk(x: DuskCtx): Dusk {
       gl.set([bx - s * 1.7, 6.6, zz], i * 3); i++ } void k })
     glowPoints(gl, lite ? 3.6 : 4.8, HDR(DUSK.amber, 1.1)) }
 
-  /* ---- string lights and bunting across the street (club colours; never a national flag) ---- */
-  { const spans: number[] = []; for (let z = 2; z > goalZ + 26; z -= 17) spans.push(z)
-    const NB = 26, NP = 22, wy = (xx: number, H: number, sag: number) => H - sag * (1 - (xx / (walk - 0.3)) ** 2)
+  /* ---- string lights high across the street, and on every other span the club's own cloth: small pennants or a scarf
+     garland in its two colours (colour policy; never a national flag). Kept high and light so the street and the ground
+     at its end are the picture, not the bunting. ---- */
+  { const spans: number[] = []; for (let z = 2; z > goalZ + 30; z -= 19) if (!nearCross(z, 5)) spans.push(z)
+    const NB = 22, wy = (xx: number, H: number, sag: number) => H - sag * (1 - (xx / (walk - 0.3)) ** 2)
     const bulbs = new Float32Array(spans.length * NB * 3), wire: number[] = []
-    const tri = keep(new THREE.BufferGeometry()); tri.setAttribute('position', new THREE.BufferAttribute(new Float32Array([-0.34, 0, 0, 0.34, 0, 0, 0, -0.8, 0]), 3))
-    const pens = instanced(tri, keep(new THREE.MeshBasicMaterial({color: '#ffffff', side: THREE.DoubleSide})), spans.length * NP * 2)
-    const cols = x.allowed([skin.p, '#efe6da', skin.s, '#efe6da']); let bi = 0, pi = 0
-    spans.forEach((z, si) => {
-      const H = 9.4 + (si % 3) * 0.5
-      for (let k = 0; k < NB; k++) { const xx = -(walk - 0.6) + k * ((walk - 0.6) * 2 / (NB - 1)); bulbs.set([xx, wy(xx, H, 1.5) - 0.05, z], bi * 3); bi++
-        if (k) { const x0 = xx - (walk - 0.6) * 2 / (NB - 1); wire.push(x0, wy(x0, H, 1.5), z, xx, wy(xx, H, 1.5), z) } }
-      for (const [li, drop, sag] of [[0, 0.9, 1.1], [1, 2.3, 0.8]] as const) for (let k = 0; k < NP; k++) {
-        const xx = -(walk - 1) + k * ((walk - 1) * 2 / (NP - 1))
-        e.set(0, (rnd() - 0.5) * 0.4, 0); q.setFromEuler(e); pens.setMatrixAt(pi, m4.compose(p3.set(xx, wy(xx, H - drop, sag), z + li * 0.4), q, one)); pens.setColorAt(pi, C(cols[(k + li) % cols.length]!).multiplyScalar(0.62)); pi++ }
+    const tri = keep(new THREE.BufferGeometry()); tri.setAttribute('position', new THREE.BufferAttribute(new Float32Array([-0.2, 0, 0, 0.2, 0, 0, 0, -0.5, 0]), 3))
+    const NP = 14, NS = 18
+    const pens = instanced(tri, keep(new THREE.MeshBasicMaterial({color: '#ffffff', side: THREE.DoubleSide})), spans.length * NP)
+    // a scarf: short bars, alternating the club's two colours, hung on the line like a long knitted scarf
+    const bar = keep(new THREE.BoxGeometry(1, 0.15, 0.03))
+    const scarf = instanced(bar, keep(new THREE.MeshBasicMaterial({color: '#ffffff'})), spans.length * NS)
+    // never yellow (rule 8), whatever the club wears: a yellow kit's cloth is hung in its other colour and cream
+    const yellowish = (h: string) => { const c = C(h), o = {h: 0, s: 0, l: 0}; c.getHSL(o, THREE.SRGBColorSpace); return o.s > 0.2 && o.h * 360 >= 36 && o.h * 360 <= 72 }
+    const cream = x.allowed(['#efe6da'])[0]!, cols0 = x.allowed([skin.p, skin.s]).filter(c => !yellowish(c)), cols = cols0.length ? cols0 : [cream, '#8a8f99']
+    let bi = 0, pi = 0, si = 0
+    spans.forEach((z, k) => {
+      const H = 11.2 + (k % 3) * 0.4
+      for (let j = 0; j < NB; j++) { const xx = -(walk - 0.6) + j * ((walk - 0.6) * 2 / (NB - 1)); bulbs.set([xx, wy(xx, H, 1.1) - 0.05, z], bi * 3); bi++
+        if (j) { const x0 = xx - (walk - 0.6) * 2 / (NB - 1); wire.push(x0, wy(x0, H, 1.1), z, xx, wy(xx, H, 1.1), z) } }
+      if (k % 2) return
+      const H2 = H - 0.5, sag = 0.9
+      if (k % 4 === 0) for (let j = 0; j < NP; j++) {
+        const xx = -(walk - 1.2) + j * ((walk - 1.2) * 2 / (NP - 1))
+        e.set(0, (rnd() - 0.5) * 0.3, 0); q.setFromEuler(e); pens.setMatrixAt(pi, m4.compose(p3.set(xx, wy(xx, H2, sag), z + 0.2), q, one)); pens.setColorAt(pi, C(j % 2 ? cream : cols[0]!).multiplyScalar(0.55)); pi++ }
+      else for (let j = 0; j < NS; j++) {
+        const t = (j + 0.5) / NS, xx = -(walk - 1.2) + t * (walk - 1.2) * 2, w = (walk - 1.2) * 2 / NS
+        const dy = wy(xx + w / 2, H2, sag) - wy(xx - w / 2, H2, sag)
+        q.setFromEuler(e.set(0, 0, Math.atan2(dy, w))); scarf.setMatrixAt(si, m4.compose(p3.set(xx, wy(xx, H2, sag) - 0.12, z + 0.2), q, s3.set(w * 1.02, 1, 1))); scarf.setColorAt(si, C(cols[j % cols.length]!).multiplyScalar(0.6)); si++ }
     })
-    pens.count = pi
-    glowPoints(bulbs, 0.55, HDR(DUSK.cream, 2))
+    pens.count = pi; scarf.count = si
+    glowPoints(bulbs, 0.5, HDR(DUSK.cream, 2))
     const wg = keep(new THREE.BufferGeometry()); wg.setAttribute('position', new THREE.BufferAttribute(new Float32Array(wire), 3))
     add(new THREE.LineSegments(wg, keep(new THREE.LineBasicMaterial({color: '#1c1b22'})))) }
 
@@ -340,7 +357,8 @@ export function dressDusk(x: DuskCtx): Dusk {
   }
 
   /* ---- the ground: stand wings with a lit roof line, and four floodlight towers over the roofs ---- */
-  { const gz = goalZ - 8
+  const ground = new THREE.Group(); ground.name = 'dusk-ground'; group.add(ground)
+  { const gz = goalZ - 8, add = <T extends THREE.Object3D>(o: T) => { ground.add(o); return o }
     const facade = keep(canvasTex(512, 96, g => { g.fillStyle = '#1b1a26'; g.fillRect(0, 0, 512, 96); for (let i = 0; i < 520; i++) { g.fillStyle = rnd() < 0.2 ? '#ffd2a0' : '#ffb078'; g.globalAlpha = 0.25 + rnd() * 0.7; g.fillRect(rnd() * 512, 14 + rnd() * 70, 3, 2) } g.globalAlpha = 1 }))
     if (x.skyline) for (const s of [-1, 1]) {
       const m = new THREE.Mesh(box, std('#1b1a26', {roughness: 1})); m.scale.set(112, 26, 14); m.position.set(s * 84, 13, gz - 12); add(m)
@@ -349,17 +367,18 @@ export function dressDusk(x: DuskCtx): Dusk {
     const bank = keep(canvasTex(256, 128, g => { g.fillStyle = '#1d1e26'; g.fillRect(0, 0, 256, 128); for (let r = 0; r < 4; r++) for (let c = 0; c < 8; c++) { const gr = g.createRadialGradient(18 + c * 31, 20 + r * 30, 0, 18 + c * 31, 20 + r * 30, 14); gr.addColorStop(0, '#fff'); gr.addColorStop(0.5, '#fff6ea'); gr.addColorStop(1, 'rgba(255,240,220,0)'); g.fillStyle = gr; g.fillRect(c * 31 + 2, r * 30 + 4, 32, 32) } }))
     const beamTex = keep(canvasTex(16, 128, g => { const gr = g.createLinearGradient(0, 0, 0, 128); gr.addColorStop(0, 'rgba(255,240,225,.9)'); gr.addColorStop(1, 'rgba(255,240,225,0)'); g.fillStyle = gr; g.fillRect(0, 0, 16, 128) }))
     const streak = keep(canvasTex(256, 32, g => { const gr = g.createRadialGradient(128, 16, 0, 128, 16, 128); gr.addColorStop(0, 'rgba(255,250,240,1)'); gr.addColorStop(0.15, 'rgba(255,225,190,.6)'); gr.addColorStop(1, 'rgba(255,200,160,0)'); g.fillStyle = gr; g.save(); g.scale(1, 0.125); g.translate(0, 112); g.fillRect(0, 0, 256, 256); g.restore() }))
-    const towers: [number, number, number][] = [[-17, gz - 8, 92], [17, gz - 14, 100], [-50, gz - 6, 86], [50, gz - 12, 94]]
+    // pylons of a real ground's height (~50 m), so their banks stand over the roofs at the end and not over the street
+    const towers: [number, number, number][] = [[-20, gz - 10, 52], [20, gz - 16, 56], [-52, gz - 6, 48], [52, gz - 12, 54]]
     for (const [tx, tz, th] of towers) {
-      const pole = new THREE.Mesh(box, std('#2a2b34', {fog: true})); pole.scale.set(2.6, th, 1.8); pole.position.set(tx, th / 2, tz); add(pole)
-      const lamp = new THREE.Mesh(keep(new THREE.PlaneGeometry(46, 23)), keep(new THREE.MeshBasicMaterial({map: bank, color: HDR('#ffffff', 1.25), toneMapped: false, fog: false}))); lamp.position.set(tx, th + 5, tz + 1); add(lamp)
-      const flare = new THREE.Sprite(keep(new THREE.SpriteMaterial({map: streak, color: HDR('#ffffff', 0.22), transparent: true, depthWrite: false, blending: THREE.AdditiveBlending, fog: false}))); flare.scale.set(210, 26, 1); flare.position.set(tx, th + 5, tz + 2); add(flare)
-      const halo = new THREE.Sprite(keep(new THREE.SpriteMaterial({map: glowTex, color: HDR('#ffe6cc', 0.28), transparent: true, depthWrite: false, blending: THREE.AdditiveBlending, fog: false}))); halo.scale.set(110, 110, 1); halo.position.set(tx, th + 5, tz + 2); add(halo)
-      const beam = new THREE.Mesh(keep(new THREE.CylinderGeometry(3, 24, 110, 14, 1, true).translate(0, -55, 0)), keep(new THREE.MeshBasicMaterial({map: beamTex, color: HDR('#ffe9d4', 0.1), transparent: true, depthWrite: false, blending: THREE.AdditiveBlending, side: THREE.DoubleSide, fog: false}))); beam.position.set(tx, th + 3, tz + 1); beam.rotation.x = -0.5; add(beam) } }
+      const pole = new THREE.Mesh(box, std('#2a2b34', {fog: true})); pole.scale.set(1.6, th, 1.2); pole.position.set(tx, th / 2, tz); add(pole)
+      const lamp = new THREE.Mesh(keep(new THREE.PlaneGeometry(22, 11)), keep(new THREE.MeshBasicMaterial({map: bank, color: HDR('#ffffff', 1.25), toneMapped: false, fog: false}))); lamp.position.set(tx, th + 5, tz + 1); add(lamp)
+      const flare = new THREE.Sprite(keep(new THREE.SpriteMaterial({map: streak, color: HDR('#ffffff', 0.22), transparent: true, depthWrite: false, blending: THREE.AdditiveBlending, fog: false}))); flare.scale.set(120, 15, 1); flare.position.set(tx, th + 5, tz + 2); add(flare)
+      const halo = new THREE.Sprite(keep(new THREE.SpriteMaterial({map: glowTex, color: HDR('#ffe6cc', 0.28), transparent: true, depthWrite: false, blending: THREE.AdditiveBlending, fog: false}))); halo.scale.set(70, 70, 1); halo.position.set(tx, th + 5, tz + 2); add(halo)
+      const beam = new THREE.Mesh(keep(new THREE.CylinderGeometry(2, 14, 60, 14, 1, true).translate(0, -30, 0)), keep(new THREE.MeshBasicMaterial({map: beamTex, color: HDR('#ffe9d4', 0.1), transparent: true, depthWrite: false, blending: THREE.AdditiveBlending, side: THREE.DoubleSide, fog: false}))); beam.position.set(tx, th + 3, tz + 1); beam.rotation.x = -0.5; add(beam) } }
 
   const resize = (w: number, h: number) => refl.getRenderTarget().setSize(Math.max(64, Math.floor(w * mirrorScale)), Math.max(64, Math.floor(h * mirrorScale)))
   return {
-    resize, front,
+    resize, front, ground,
     update(sim, t, dt, cam) {
       dome.position.copy(cam)
       mat.uniforms.uTime!.value = t; overlays.forEach(o => { (o.material as THREE.ShaderMaterial).uniforms.uTime!.value = t })

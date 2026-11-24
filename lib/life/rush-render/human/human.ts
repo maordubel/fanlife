@@ -34,6 +34,8 @@ export type Human = {
 }
 export type Troupe = {
   make(cast: CastId, o: HumanOptions, fallback: () => THREE.Group): THREE.Group
+  /** the same person in another body (the boy grows into a teenager and a man): the figure object stays, its model is rebuilt */
+  recast(fig: THREE.Object3D, cast: CastId, o: Partial<HumanOptions>): void
   /** who is drawn as a person this frame: the nearest `max` to the eye (the player and whoever speaks first) */
   update(eye: THREE.Vector3, speaker?: THREE.Object3D | null): void
   count(): {made: number; skinned: number}
@@ -157,6 +159,22 @@ export function createTroupe(x: {max: number; lite: boolean}): Troupe {
       if (now) build(h, now)
       else loadChar(id).then(a => build(h, a), () => loadChar(STAND_IN[cast]).then(a => build(h, a), () => { standIn(h) }))
       return root
+    },
+    recast(fig, cast, patch) {
+      const h = humanOf(fig); if (!h || gone || h.dead) return
+      const o = {...h.o, ...patch}
+      if (h.cast === cast && Math.abs(o.height - h.o.height) < 0.005 && !!o.child === !!h.o.child) return
+      h.o = o; h.cast = cast
+      // the old body goes: its clips, its bones and everything hung on them (scarf, bag, catch-lights), its shadow
+      h.mixer?.stopAllAction(); if (h.model) { h.mixer?.uncacheRoot(h.model); h.model.traverse(n => { const sk = (n as THREE.SkinnedMesh).skeleton; if (sk) sk.dispose() }); h.root.remove(h.model) }
+      if (h.blob) h.root.remove(h.blob)
+      Object.assign(h, {asset: null, model: null, mixer: null, acts: new Map(), b: {}, qb: {}, qi: {}, mem: [], morph: [], mouth: [], tails: [], pack: null, scarf: [], blob: null})
+      h.s.fresh = true; h.s.gName = ''; h.s.gT = 0; h.s.kick = 0
+      const u = h.root.userData as {child: boolean; tall: number}
+      u.child = !!o.child; u.tall = o.height / 1.87
+      const id = x.lite && !CAST_LITE.includes(cast) ? STAND_IN[cast] : charNow(cast) ? cast : charNow(STAND_IN[cast]) ? STAND_IN[cast] : cast, now = charNow(id)
+      if (now) build(h, now)
+      else loadChar(id).then(a => { if (h.cast === cast && !h.model) build(h, a) }, () => undefined)
     },
     update(eye, speaker) {
       // rank the people by how near the eye they are (the player, then whoever is spoken to, then names, then the street)

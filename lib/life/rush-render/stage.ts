@@ -31,6 +31,8 @@ import {dressDusk, DUSK, type Block, type Dusk} from './look/dusk'
 import {dressCrowd} from './look/crowd'
 import {dressFlow, type FlowDress} from './look/flowStreet'
 import {castFor, createTroupe, humanPoint, isSkinned, type Troupe} from './human/human'
+import {heroBody} from './human/age'
+export {heroBody}
 import {charNow, type CastId} from './human/kit'
 import {disposeFigure, HAIR, kitTexture, makeFigure, lookAt, makeHand, PANTS, pose, seedFigure, turnTo, SKIN_TONES, TOPS, type Cloth, type FigureData, type Gesture, type Mood} from './figure'
 
@@ -47,6 +49,8 @@ export type Stage = {
   project(x: number, y: number, z: number): {x: number; y: number; visible: boolean}
   /** where a street voice's caption goes (`ambient.ts` spot id), on the glass */
   captionAt(spot: string): {x: number; y: number; visible: boolean} | null
+  /** the story's age now: the player's body follows it (a boy to twelve, a teenager to eighteen, then a man) */
+  setAge(age: number): void
   dispose(): void
 }
 
@@ -376,7 +380,7 @@ export function createStage(o: {canvas: HTMLCanvasElement; level: Level; spec: M
     addLamps(level.half, level.bounds.z1 + 4, level.goal.z + 20, 18)
     if (!dusk) addPennants(level.walk, -20, level.goal.z + 30)
     // a city with a landmark at the end of the road shows the gate and not the bowl, so the landmark reads behind it
-    skyline = dressCity({scene, keep, level, skin, clubId: spec.skin, seed: spec.seed, night, lite, banned: h => bannedColour(h, skin), glowTex, fronts: dusk ? mainFronts : undefined})
+    skyline = dressCity({scene, keep, level, skin, clubId: spec.skin, seed: spec.seed, night, lite, banned: h => bannedColour(h, skin), glowTex, fronts: dusk ? mainFronts : undefined, dusk: !!dusk})
     const banner = new THREE.Mesh(keep(new THREE.PlaneGeometry(16, 2.4)), keep(new THREE.MeshBasicMaterial({map: signTex(`${o.gateLabel} · ${skin.name.toUpperCase()}`, skin.p, skin.s, 1024, 154), toneMapped: false}))); banner.position.set(0, 9.5, level.goal.z + 26); scene.add(banner)
     addGround(level.goal.z - 51, level.goal.z - 7)
   } else if (level.place === 'road') {
@@ -459,7 +463,7 @@ export function createStage(o: {canvas: HTMLCanvasElement; level: Level; spec: M
   if (dusk && level.place === 'street') { try { duskDress = dressDusk({scene, renderer, level, skin, lite, skyline, keep, rnd, glowTex, allowed: l => allowed(l, skin), banned: h => bannedColour(h, skin), sign: (a, b, c, w, h) => signTex(a, b, c, w, h), blocks: duskBlocks, facadeMats: duskFacades}) } catch { duskDress = null } }
   // the town's own pictures (rule life-flow-art): facades, the ground's plate, the skyline band; lazy and failing soft
   let flowDress: FlowDress | null = null
-  if (duskDress && level.hood) { const dd = duskDress; try { flowDress = dressFlow({scene, renderer, level, clubId: spec.skin, skinTown: skin.town, lite, keep, rnd: seeded(spec.seed ^ 0xf10a), banned: h => bannedColour(h, skin), replaces: () => [...mainFronts, ...dd.front], wallMat: duskFacades[0] ?? null, bowl, blocks: duskBlocks}) } catch { flowDress = null } }
+  if (duskDress && level.hood) { const dd = duskDress; try { flowDress = dressFlow({scene, renderer, level, clubId: spec.skin, skinTown: skin.town, lite, keep, rnd: seeded(spec.seed ^ 0xf10a), banned: h => bannedColour(h, skin), replaces: () => [...mainFronts, ...dd.front], wallMat: duskFacades[0] ?? null, bowl, ground: dd.ground, blocks: duskBlocks}) } catch { flowDress = null } }
 
   /* ───────────── cars ───────────── */
   type CarParts = {body: THREE.InstancedMesh; cab: THREE.InstancedMesh; wheel: THREE.InstancedMesh; head: THREE.InstancedMesh; tail: THREE.InstancedMesh; bar: THREE.InstancedMesh}
@@ -674,9 +678,10 @@ export function createStage(o: {canvas: HTMLCanvasElement; level: Level; spec: M
   })
 
   // the supporter: his own figure, or his car
-  const child = spec.age < 13
+  let child = spec.age < 13
   const heroOpts = {kit: true, scarf: true, band: !child && level.verb === 'run', pack: level.verb === 'run' || level.verb === 'find', roll: level.verb === 'carry', pants: '#2f3e5e', denim: true, eyes: 1, hair: HAIR[1], skinTone: SKIN_TONES[1], child, scale: child ? 0.78 : 0.94, noBlob: level.place === 'flat'}
-  const hero = troupe ? troupe.make(child ? 'boy' : spec.age < 19 ? 'teen' : 'father', {top: skin.p, height: child ? 1.42 : 1.76, child, scarf: scarfOf, pack: true, rank: 0}, () => figOf(heroOpts)) : figOf(heroOpts)
+  const body0 = level.hood ? heroBody(spec.age) : {cast: child ? 'boy' as const : spec.age < 19 ? 'teen' as const : 'father' as const, height: child ? 1.42 : 1.76, child}
+  const hero = troupe ? troupe.make(body0.cast, {top: skin.p, height: body0.height, child, scarf: scarfOf, pack: true, rank: 0}, () => figOf(heroOpts)) : figOf(heroOpts)
   if (!heroCar) scene.add(hero)
   // the near crowd as people: whoever comes within a few steps gets a body of his own (the troupe draws the nearest it can afford)
   const extras: (THREE.Group | undefined)[] = [], crowdExtras = new Map<number, THREE.Group>()
@@ -835,7 +840,7 @@ export function createStage(o: {canvas: HTMLCanvasElement; level: Level; spec: M
   let talkFace: {x: number; y: number; z: number; fig?: THREE.Object3D} | null = null, ambNow: AmbState | null = null
   const talkPos = new THREE.Vector3(), talkLook = new THREE.Vector3(), talkWant = new THREE.Vector3(), talkAim = new THREE.Vector3()
   const talkLight = new THREE.PointLight('#ffc79a', 0, 6, 1.8); if (level.hood) scene.add(talkLight)
-  const eyeHeight = child ? 1.2 : 1.62
+  const eyeH = () => child ? 1.2 : 1.62
 
   function render(sim: Sim, view: View, dtReal: number) {
     // the conversation's own clock: a new line starts it again; the scarf going on is held a little longer than life
@@ -1181,7 +1186,7 @@ export function createStage(o: {canvas: HTMLCanvasElement; level: Level; spec: M
       const fov = (view.intro > 0 ? 48 : dusk ? 64 : 54) + Math.min(sp, 10) * 1.2; cam.fov += (fov - cam.fov) * Math.min(dt * 4, 1)
     } else {
       const hb = reduced ? 0 : Math.sin(t * (6 + sp * 1.2)) * 0.055 * Math.min(sp / 6, 1.4)
-      cam.position.set(sim.x + jx, eyeHeight + hb + jy + breath - (level.place === 'yard' && !sim.sprinting ? 0.35 : 0), sim.z)
+      cam.position.set(sim.x + jx, eyeH() + hb + jy + breath - (level.place === 'yard' && !sim.sprinting ? 0.35 : 0), sim.z)
       cam.rotation.order = 'YXZ'; cam.rotation.set(-0.04 + hb * 0.2, heading + Math.PI, 0)
       hands.children.forEach((a, i) => { if ((a as THREE.Group).isGroup) a.position.y = -0.3 + Math.sin(t * (6 + sp * 1.2) + (i ? Math.PI : 0)) * 0.03 * Math.min(sp / 4, 1.5) })
       const fov = 76 + Math.min(sp, 10) * 1.1; cam.fov += (fov - cam.fov) * Math.min(dt * 4, 1)
@@ -1203,7 +1208,9 @@ export function createStage(o: {canvas: HTMLCanvasElement; level: Level; spec: M
           const dist = Math.max(2.1, Math.min(4.0, 1.1 / (2 * Math.tan(hf / 2))))
           const free = (x: number, z: number) => {
             if (!level.crossings.some(c => Math.abs(z - c) < level.half) && Math.abs(x) > level.walk - 0.9) return false
-            for (let k = 0; k <= 8; k++) { const qx = x + (mx - x) * k / 8, qz = z + (mz - z) * k / 8; for (const b of level.blocks) if (qx > b.x0 - 0.45 && qx < b.x1 + 0.45 && qz > b.z0 - 0.45 && qz < b.z1 + 0.45) return false }
+            for (let k = 0; k <= 8; k++) { const qx = x + (mx - x) * k / 8, qz = z + (mz - z) * k / 8; for (const b of level.blocks) if (qx > b.x0 - 0.45 && qx < b.x1 + 0.45 && qz > b.z0 - 0.45 && qz < b.z1 + 0.45) return false
+              // the dusk street's lamp posts (look/dusk.ts lays them every 16 m, the right side 8 m on): never a post across the lens
+              if (dusk && Math.abs(Math.abs(qx) - (level.half + 1.2)) < 0.6) { const off = qx > 0 ? 8 : 0, r = ((level.bounds.z1 + 4 + off - qz) % 16 + 16) % 16; if (r < 0.7 || r > 15.3) return false } }
             return true }
           // two: over the boy's shoulder onto the face that speaks. close: the reverse — past the speaker's shoulder and hands onto the boy's own face
           const at = (sg: number, k: number) => shot === 'close' ? talkWant.set(talkFace!.x + ax * 0.55 * k + px * sg * 1.45 * k, talkFace!.y - 0.08, talkFace!.z + az * 0.55 * k + pz * sg * 1.45 * k) : talkWant.set(hx - ax * 1.95 * k + px * sg * 0.72, hh + 0.2, hz - az * 1.95 * k + pz * sg * 0.72)
@@ -1300,5 +1307,11 @@ export function createStage(o: {canvas: HTMLCanvasElement; level: Level; spec: M
     try { renderer.forceContextLoss() } catch { /* a lost context is a closed one */ }
   }
 
-  return {render, resize, project, captionAt, dispose}
+  const setAge = (age: number) => {
+    if (!troupe || !level.hood) return
+    const b = heroBody(age)
+    troupe.recast(hero, b.cast, {height: b.height, child: b.child})
+    child = b.child
+  }
+  return {render, resize, project, captionAt, setAge, dispose}
 }

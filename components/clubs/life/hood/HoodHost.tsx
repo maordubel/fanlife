@@ -281,7 +281,7 @@ export function HoodHost({club, seed = 1, time = 'dusk', quality, reduced = fals
   }, [ready, club.id, go, start, chapterAt, freshRun])
   useEffect(() => { if (shell.screen !== 'boot') { const t = window.setTimeout(() => setBootGone(true), 900); return () => window.clearTimeout(t) } }, [shell.screen])
   useEffect(() => () => { window.clearTimeout(timers.current.banner); window.clearTimeout(timers.current.place) }, [])
-  useEffect(() => { if (probe) { const win = window as unknown as {__hood?: unknown; __hoodShell?: unknown}; win.__hood = runRef.current; win.__hoodShell = {go, get screen() { return shellRef.current.screen }, openTalk, get story() { return playRef.current }, nextBeat} } }, [probe, go, openTalk, nextBeat])
+  useEffect(() => { if (probe) { const win = window as unknown as {__hood?: unknown; __hoodShell?: unknown}; win.__hood = runRef.current; win.__hoodShell = {go, get screen() { return shellRef.current.screen }, openTalk, get story() { return playRef.current }, get giver() { return focusOf(playRef.current)?.giver ?? null }, nextBeat} } }, [probe, go, openTalk, nextBeat])
 
   /* the picture */
   useEffect(() => {
@@ -299,6 +299,9 @@ export function HoodHost({club, seed = 1, time = 'dusk', quality, reduced = fals
     window.addEventListener('resize', onResize)
     return () => { alive = false; window.removeEventListener('resize', onResize); stageRef.current?.dispose(); stageRef.current = null }
   }, [level, spec, club.skin, qualityEff, reducedEff, people])
+  // the player's body follows the story's age: a boy, a teenager, a man (time passing is seen, not only told)
+  const age = play.state.age
+  useEffect(() => { if (ready) stageRef.current?.setAge(age) }, [ready, age])
 
   /* the loop: fixed steps for the simulation, one picture per frame */
   useEffect(() => {

@@ -28,6 +28,8 @@ export type FlowCtx = {
   wallMat: THREE.MeshStandardMaterial | null
   /** the 3D bowl at the end of the road, hidden when the plate takes its place */
   bowl?: THREE.Object3D | null
+  /** the dusk rig's own ground (stand wings, floodlight towers), hidden too: the plate has its own lights */
+  ground?: THREE.Object3D | null
   /** the street's blocks as the stage laid them (only their crossings gaps are reused) */
   blocks: Block[]
 }
@@ -38,8 +40,8 @@ export type FlowReport = {facades: string[]; stadium: string | null; skyline: st
 const WORKER = '/life/worker'
 const WORKER_TOWNS: readonly string[] = ['tlv', 'hfa', 'ptk']
 /** THE WORKER's picture of a club's ground, where it beats the Flow plate (`prefer`) or stands in until one is drawn */
-const WORKER_PLATES: Record<string, {prefer: boolean; plate: {id: string; url: string; v: [number, number]; aspect: number; W: number; y: number; mix: number}}> = {
-  'hapoel-tel-aviv': {prefer: false, plate: {id: 'worker:introReturnHome', url: `${WORKER}/tlv/introReturnHome.webp`, v: [0.3, 0.92], aspect: 16 / 9, W: 300, y: -12, mix: 0.3}},
+const WORKER_PLATES: Record<string, {prefer: boolean; plate: {id: string; url: string; v: [number, number]; aspect: number; W: number; y: number; mix: number; back?: number}}> = {
+  'hapoel-tel-aviv': {prefer: false, plate: {id: 'worker:introReturnHome', url: `${WORKER}/tlv/introReturnHome.webp`, v: [0.3, 0.92], aspect: 16 / 9, W: 420, y: -6, mix: 0.22, back: 60}},
 }
 const FAMILY_HEX = {red: '#c8102e', yellow: '#f2c500', green: '#1f8a3b', blue: '#1f4fbf'} as const
 const C = (h: THREE.ColorRepresentation) => new THREE.Color(h)
@@ -55,7 +57,8 @@ const HAZE_FRAG = `uniform sampler2D map; uniform vec3 uFog, uGrade; uniform flo
   varying vec2 vUv;
   void main(){
     vec2 uv = vec2(vUv.x * uRep, mix(uV0, uV1, vUv.y));
-    vec3 c = texture2D(map, uv).rgb * uGrade;
+    vec4 tx = texture2D(map, uv);
+    vec3 c = tx.rgb * uGrade;
     float l = dot(c, vec3(.2126,.7152,.0722));
     c = mix(c, vec3(l) * vec3(.95,.97,1.05), .18);
     c = mix(c, uFog, uMix * (0.55 + 0.45 * (1. - smoothstep(0., .9, vUv.y))));
@@ -63,7 +66,7 @@ const HAZE_FRAG = `uniform sampler2D map; uniform vec3 uFog, uGrade; uniform flo
     float a = clamp(vUv.x / e, 0., 1.) * clamp((1. - vUv.x) / e, 0., 1.);
     a *= 1. - smoothstep(1. - max(uTop, 1e-4), 1., vUv.y);
     a *= smoothstep(0., max(uBottom, 1e-4), vUv.y);
-    a = a * a * (3. - 2. * a);
+    a = a * a * (3. - 2. * a) * tx.a;
     gl_FragColor = vec4(c, a);
     #include <tonemapping_fragment>
     #include <colorspace_fragment>
@@ -85,13 +88,17 @@ export function dressFlow(x: FlowCtx): FlowDress {
   type Source = {id: string; m: THREE.MeshStandardMaterial; H: number; aspect: number; u: [number, number]; v: [number, number]; f: [number, number]; max?: number; nearGround?: boolean; avg: string}
   const facadeMat = (map: THREE.Texture, o: {emi?: THREE.Texture | null; nrm?: THREE.Texture | null; rough?: THREE.Texture | null; grade?: THREE.ColorRepresentation; key: string}) => {
     const m = keep(new THREE.MeshStandardMaterial({map, roughness: 1, metalness: 0, color: C(o.grade ?? '#ffffff'),
-      emissive: o.emi ? C(DUSK.cream) : C('#000000'), emissiveMap: o.emi ?? null, emissiveIntensity: o.emi ? 1.7 : 0,
+      emissive: o.emi ? C(DUSK.cream) : C('#000000'), emissiveMap: o.emi ?? null, emissiveIntensity: o.emi ? 2.6 : 0,
       normalMap: o.nrm ?? null, normalScale: new THREE.Vector2(0.7, 0.7), roughnessMap: o.rough ?? null}))
     // the picture sits in the street's light: damp and darker toward the pavement, a touch dimmer up the wall
     m.onBeforeCompile = sh => {
       sh.vertexShader = 'varying float vFy;\n' + sh.vertexShader.replace('#include <worldpos_vertex>', '#include <worldpos_vertex>\n vFy = (modelMatrix * vec4(transformed, 1.0)).y;')
       sh.fragmentShader = 'varying float vFy;\n' + sh.fragmentShader.replace('#include <map_fragment>', `#include <map_fragment>
-        diffuseColor.rgb *= mix(0.62, 1.0, smoothstep(0.0, 3.5, vFy)) * mix(1.0, 0.9, smoothstep(10.0, 24.0, vFy));`)
+        diffuseColor.rgb *= mix(0.7, 1.0, smoothstep(0.0, 3.5, vFy)) * mix(1.0, 0.92, smoothstep(10.0, 24.0, vFy));`)
+        // the street's own warm light on the walls (lamps, shop fronts, the sky's afterglow), the same on both sides of the
+        // road: the key light comes from one side only, and without this the far wall of every view sat in the dark
+        .replace('#include <emissivemap_fragment>', `#include <emissivemap_fragment>
+        totalEmissiveRadiance += diffuseColor.rgb * vec3(0.34, 0.25, 0.18) * mix(1.0, 0.62, smoothstep(3.0, 18.0, vFy));`)
     }
     m.customProgramCacheKey = () => 'flow-facade'
     return m
@@ -107,7 +114,7 @@ export function dressFlow(x: FlowCtx): FlowDress {
         !lite && p.files['r-512'] ? loadTex(flowUrl(p.stem, 'r-512'), false, keep, urls) : null,
       ])
       if (!map) return null
-      return {id: p.stem, m: facadeMat(map, {emi, nrm, rough, grade: '#d9d9d9', key: p.stem}), H: facadeMetres(p), aspect: 1, u: [0, 1], v: [0, 1], f: [0.62, 1], avg: p.avg ?? '#cfc8bb'}
+      return {id: p.stem, m: facadeMat(map, {emi, nrm, rough, grade: '#ececec', key: p.stem}), H: facadeMetres(p), aspect: 1, u: [0, 1], v: [0, 1], f: [0.62, 1], avg: p.avg ?? '#cfc8bb'}
     }))).filter((v): v is Source => !!v)
   }
   // THE WORKER's own Tel Aviv pictures (lib/life/worker-art, catalog 24.11.2026), for the Israeli streets: the kiosk on a
@@ -174,6 +181,7 @@ export function dressFlow(x: FlowCtx): FlowDress {
     const m4 = new THREE.Matrix4()
     fronts.forEach((fr, k) => { const L = loaded[fr.i]!; m4.makeScale(9.9, fr.H, fr.W - 0.02).setPosition(fr.s * (walk + 0.06 + 4.95), fr.H / 2, fr.zc); vol.setMatrixAt(k, m4); vol.setColorAt(k, C(L.avg).lerp(C('#d8d0c2'), 0.35).multiplyScalar(1.05)) })
     vol.receiveShadow = true; group.add(vol)
+    roofs(fronts.map(fr => ({s: fr.s, zc: fr.zc, W: fr.W, H: fr.H})))
     // a lit shop on some ground floors, in front of the picture's shutters (the stalls and awnings stay where they were)
     const shopG = keep(new THREE.PlaneGeometry(1, 1)), lit = fronts.filter(fr => !loaded[fr.i]!.max && rnd() < 0.45)
     const shops = new THREE.InstancedMesh(shopG, keep(new THREE.MeshBasicMaterial({color: '#ffffff', toneMapped: false})), Math.max(1, lit.length))
@@ -184,15 +192,58 @@ export function dressFlow(x: FlowCtx): FlowDress {
     return [...new Set(fronts.map(fr => loaded[fr.i]!.id))]
   }
 
+  /* ---- 1b · what stands on the roofs: water tanks and aerials everywhere, solar heaters on the Israeli roofs, chimneys
+     in the European towns. Dark against the dusk sky, so a roof line is a skyline and not a ruled edge. ---- */
+  const roofs = (list: {s: number; zc: number; W: number; H: number}[]) => {
+    const walk = level.walk, il = town === 'tlv' || town === 'hfa' || town === 'ptk', eu = town === 'mos' || town === 'eur'
+    const dark = (c: string) => keep(new THREE.MeshStandardMaterial({color: c, roughness: 0.75, metalness: 0.2}))
+    const geos = {
+      tank: keep(new THREE.CylinderGeometry(0.55, 0.55, 1.2, 10).translate(0, 0.6, 0)),
+      leg: keep(new THREE.BoxGeometry(0.08, 0.7, 0.08).translate(0, 0.35, 0)),
+      mast: keep(new THREE.CylinderGeometry(0.03, 0.04, 3.2, 5).translate(0, 1.6, 0)),
+      bar: keep(new THREE.BoxGeometry(1.4, 0.04, 0.04)),
+      panel: keep(new THREE.BoxGeometry(1.1, 0.06, 1.9)),
+      chim: keep(new THREE.BoxGeometry(0.7, 1.5, 0.7).translate(0, 0.75, 0)),
+      parapet: keep(new THREE.BoxGeometry(1, 0.7, 1).translate(0, 0.35, 0)),
+    }
+    type Put = {g: THREE.BufferGeometry; m: THREE.Material; at: THREE.Matrix4[]}
+    const sets: Put[] = [
+      {g: geos.tank, m: dark('#5f646d'), at: []}, {g: geos.leg, m: dark('#2c2e35'), at: []}, {g: geos.mast, m: dark('#24262c'), at: []},
+      {g: geos.bar, m: dark('#24262c'), at: []}, {g: geos.panel, m: dark('#27334a'), at: []}, {g: geos.chim, m: dark('#6b5a4e'), at: []},
+      {g: geos.parapet, m: x.wallMat ?? dark('#8a8378'), at: []},
+    ]
+    const [tank, leg, mast, bar, panel, chim, parapet] = sets as [Put, Put, Put, Put, Put, Put, Put]
+    const M = (px: number, py: number, pz: number, ry = 0, rx = 0, sx = 1, sy = 1, sz = 1) => new THREE.Matrix4().compose(new THREE.Vector3(px, py, pz), new THREE.Quaternion().setFromEuler(new THREE.Euler(rx, ry, 0)), new THREE.Vector3(sx, sy, sz))
+    for (const fr of list) {
+      const y = fr.H, inX = (d: number) => fr.s * (walk + d), zr = () => fr.zc + (rnd() - 0.5) * fr.W * 0.7
+      // a low parapet along the front, so the roof edge has a lip
+      parapet.at.push(M(inX(0.3), y, fr.zc, 0, 0, 0.45, 0.5 + rnd() * 0.3, fr.W))
+      const nT = il ? 1 + Math.floor(rnd() * 3) : rnd() < 0.5 ? 1 : 0
+      for (let k = 0; k < nT; k++) { const px = inX(2 + rnd() * 5), pz = zr(), lift = il ? 0.7 : 0
+        tank.at.push(M(px, y + lift, pz, 0, 0, 1, il ? 1 : 0.8, 1)); if (lift) for (const [dx, dz] of [[-0.4, -0.4], [0.4, -0.4], [-0.4, 0.4], [0.4, 0.4]] as const) leg.at.push(M(px + dx, y, pz + dz)) }
+      if (il) { const nS = Math.floor(rnd() * 3); for (let k = 0; k < nS; k++) { const px = inX(1.6 + rnd() * 5), pz = zr(); panel.at.push(M(px, y + 0.8, pz, 0, 0.55 * -fr.s)); tank.at.push(M(px + fr.s * 0.9, y + 0.9, pz, 0, Math.PI / 2, 0.55, 1.2, 0.55)) } }
+      if (eu) { const nC = 1 + Math.floor(rnd() * 3); for (let k = 0; k < nC; k++) chim.at.push(M(inX(1 + rnd() * 6), y, zr(), 0, 0, 1, 0.8 + rnd() * 0.8, 1)) }
+      const nA = rnd() < 0.75 ? 1 + Math.floor(rnd() * 2) : 0
+      for (let k = 0; k < nA; k++) { const px = inX(1.2 + rnd() * 6), pz = zr(), ry = rnd() * Math.PI
+        mast.at.push(M(px, y, pz)); for (const h of [2.3, 2.75, 3.1]) bar.at.push(M(px, y + h, pz, ry, 0, 1 - (h - 2.3) * 0.5)) }
+    }
+    for (const st of sets) { if (!st.at.length) continue; const im = new THREE.InstancedMesh(st.g, st.m, st.at.length); st.at.forEach((m, i) => im.setMatrixAt(i, m)); im.frustumCulled = false; group.add(im) }
+  }
+
   /* ---- 2 · the ground's plate ---- */
-  type Plate = {id: string; url: string; v: [number, number]; aspect: number; W: number; y: number; mix: number}
+  type Plate = {id: string; url: string; v: [number, number]; aspect: number; W: number; y: number; mix: number; /** how far behind the end of the road it stands */ back?: number}
   const plate = async (pl: Plate): Promise<string | null> => {
     const tex = await loadTex(pl.url, true, keep, urls); if (!tex || dead) return null
-    const W = pl.W, H = W / pl.aspect * (pl.v[1] - pl.v[0])
+    const W = pl.W, H = W / pl.aspect * (pl.v[1] - pl.v[0]), whole = pl.v[0] === 0 && pl.v[1] === 1
     const mat = keep(new THREE.ShaderMaterial({transparent: true, depthWrite: false, fog: false, vertexShader: HAZE_VERT, fragmentShader: HAZE_FRAG,
-      uniforms: {map: {value: tex}, uFog: {value: C(DUSK.fog)}, uGrade: {value: new THREE.Vector3(1.0, 0.98, 1.04)}, uMix: {value: pl.mix}, uV0: {value: pl.v[0]}, uV1: {value: pl.v[1]}, uEdge: {value: 0.16}, uTop: {value: 0.3}, uBottom: {value: 0.25}, uRep: {value: 1}}}))
+      uniforms: {map: {value: tex}, uFog: {value: C(DUSK.fog)}, uGrade: {value: new THREE.Vector3(1.1, 1.07, 1.1)}, uMix: {value: pl.mix}, uV0: {value: pl.v[0]}, uV1: {value: pl.v[1]}, uEdge: {value: 0.12}, uTop: {value: whole ? 0.08 : 0.3}, uBottom: {value: whole ? 0.1 : 0.32}, uRep: {value: 1}}}))
     const m = new THREE.Mesh(keep(new THREE.PlaneGeometry(W, H)), mat)
-    m.position.set(0, H / 2 + pl.y, level.goal.z - 115); m.renderOrder = -1; m.frustumCulled = false; group.add(m)
+    // drawn after the town's painted backdrop (renderOrder -1, further away): the ground stands in front of the city
+    m.position.set(0, H / 2 + pl.y, level.goal.z - (pl.back ?? 115)); m.renderOrder = 0; m.frustumCulled = false; group.add(m)
+    // the floodlights' glow over the ground: a soft warm dome above the stands, seen from the start of the street
+    const glow = keep(new THREE.CanvasTexture((() => { const c = document.createElement('canvas'); c.width = c.height = 128; const g = c.getContext('2d')!, r = g.createRadialGradient(64, 64, 0, 64, 64, 64); r.addColorStop(0, 'rgba(255,236,214,1)'); r.addColorStop(0.35, 'rgba(255,214,176,.45)'); r.addColorStop(1, 'rgba(255,200,160,0)'); g.fillStyle = r; g.fillRect(0, 0, 128, 128); return c })()))
+    const dome = new THREE.Mesh(keep(new THREE.PlaneGeometry(W * 1.1, H * 1.3)), keep(new THREE.MeshBasicMaterial({map: glow, color: C('#ffe2c8').multiplyScalar(0.2), transparent: true, depthWrite: false, blending: THREE.AdditiveBlending, fog: false})))
+    dome.position.set(0, H * 0.78 + pl.y, level.goal.z - (pl.back ?? 115) + 3); dome.renderOrder = 1; dome.frustumCulled = false; group.add(dome)
     return pl.id
   }
 
@@ -203,7 +254,7 @@ export function dressFlow(x: FlowCtx): FlowDress {
     const out: string[] = []
     if (mist) {
       // a low bank only: it lies along the foot of the ground's picture and never over the stands
-      const m = new THREE.Mesh(keep(new THREE.PlaneGeometry(260, 26)), keep(new THREE.MeshBasicMaterial({map: mist, color: C(DUSK.fog).multiplyScalar(1.1), transparent: true, opacity: 0.32, depthWrite: false, fog: false})))
+      const m = new THREE.Mesh(keep(new THREE.PlaneGeometry(260, 26)), keep(new THREE.MeshBasicMaterial({map: mist, color: C(DUSK.fog).multiplyScalar(1.1), transparent: true, opacity: 0.2, depthWrite: false, fog: false})))
       mist.repeat.set(1, 0.42); m.position.set(0, 7, level.goal.z - 60); m.renderOrder = 2; group.add(m); out.push('worker:overlayMist')
     }
     if (haze) {
@@ -255,14 +306,20 @@ export function dressFlow(x: FlowCtx): FlowDress {
     const st = flowPieces(man, {kind: 'stadium', club: x.clubId}).filter(fits)
     const sk = flowPieces(man, {kind: 'skyline', town, club: x.clubId}).filter(fits)
     // the ground: the club's own Flow plate (`-a`), or THE WORKER's where it is the better picture of that ground
-    const own = st.find(p => p.key === 'a') ?? st[0], ownSize = own && flowSize(own, lite ? [1024, 2048] : [2048, 1024])
+    // the owner's own photograph of the ground (`-ownerN`, scripts/brand/*-plate.py) wins over any drawn plate: it is
+    // already cropped to the stand and graded to the dusk, its sky fading to alpha, so it is shown whole at its own shape
+    const owned = st.find(p => /-owner\d+$/.test(p.stem))
+    const own = owned ?? st.find(p => p.key === 'a') ?? st[0], ownSize = own && flowSize(own, lite ? [1024, 2048] : [2048, 1024])
     const worker = WORKER_PLATES[x.clubId]
-    const pl: Plate | null = worker && (worker.prefer || !own) ? worker.plate
-      : own && ownSize ? {id: own.stem, url: flowUrl(own.stem, ownSize), v: [0.36, 1], aspect: 16 / 9, W: 290, y: -14, mix: 0.22} : null
+    const ownFile = own && ownSize ? own.files[ownSize] : null
+    const pl: Plate | null = worker && !owned && (worker.prefer || !own) ? worker.plate
+      : owned && ownSize && ownFile ? {id: owned.stem, url: flowUrl(owned.stem, ownSize), v: [0, 1], aspect: ownFile.w / ownFile.h, W: 520, y: 4, mix: 0.08, back: 45}
+      : own && ownSize ? {id: own.stem, url: flowUrl(own.stem, ownSize), v: [0.4, 1], aspect: 16 / 9, W: 420, y: -6, mix: 0.1, back: 60} : null
     const [f, s, k, a, e] = await Promise.all([fac.length ? facades(fac) : [], pl ? plate(pl) : null, sk[0] ? sky(sk[0]) : null, air(), env()])
     if (dead) return empty
     if (f.length) for (const o of x.replaces()) o.visible = false
     if (s && x.bowl) x.bowl.visible = false
+    if (s && x.ground) x.ground.visible = false
     group.visible = true
     const report: FlowReport = {facades: f, stadium: s, skyline: k, air: a, env: e, urls}
     // the QA stands read what the street is wearing (no effect on play)
