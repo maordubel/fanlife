@@ -9,7 +9,7 @@
  * Run: node --import tsx scripts/marketing/plan-m30.mts
  */
 import {writeFileSync} from 'node:fs'
-import {buildCampaign, type CampaignInput} from '../../lib/marketing/campaigns'
+import {buildCampaign, CLUB_CARDS, type CampaignInput} from '../../lib/marketing/campaigns'
 
 const FROM = '2026-11-25', TO = '2026-12-24'
 // one club owns three days: its card in the morning, its products at noon, a game in the afternoon, its film at night
@@ -17,9 +17,9 @@ const ROTATION = ['panathinaikos', 'olympiacos', 'aek-athens', 'celtic', 'zrinjs
 const addDays = (d: string, k: number) => new Date(Date.parse(`${d}T12:00:00Z`) + k * 864e5).toISOString().slice(0, 10)
 
 export const M30: CampaignInput[] = [
-  ...ROTATION.map((club, i) => ({template: 'club-days' as const, club, start: addDays(FROM, i * 3), days: 3, id: `m30-club-${club}`, name: `30 days · ${club} days`})),
+  ...ROTATION.map((club, i) => ({template: 'club-days' as const, club, start: addDays(FROM, i * 3), days: 3, id: `m30-club-${club}`, name: `Club days · ${CLUB_CARDS[club]!.name}`})),
   // Football Fairy Tales on the club's own days, in its language: Good Morning on its first morning, Good Night the next night
-  ...['panathinaikos', 'olympiacos', 'aek-athens', 'celtic', 'hapoel-tel-aviv'].map(club => ({template: 'fairy-tales' as const, club, start: addDays(FROM, ROTATION.indexOf(club) * 3), days: 2, id: `m30-tales-${club}`, name: `Fairy Tales · ${club}`})),
+  ...['panathinaikos', 'olympiacos', 'aek-athens', 'celtic', 'hapoel-tel-aviv'].map(club => ({template: 'fairy-tales' as const, club, start: addDays(FROM, ROTATION.indexOf(club) * 3), days: 2, id: `m30-tales-${club}`, name: `Fairy Tales · ${CLUB_CARDS[club]!.name}`})),
   // Black Friday (saved in the shop: −30% Fri 27 – Mon 30 Nov): the day before, every day of it, twice on the last
   {template: 'sale-beats', start: '2026-11-26', days: 5, clubs: ['panathinaikos', 'olympiacos', 'olympiacos', 'olympiacos', 'aek-athens'], id: 'm30-black-friday', name: 'Black Friday 2026',
     sale: {label: 'Black Friday', percent: 30, ends: 'Mon 30 Nov', starts: '2026-11-27'}, times: ['08:31', '21:13']},
@@ -36,8 +36,8 @@ export const M30: CampaignInput[] = [
   {template: 'fanlife-brand', start: FROM, days: 30, id: 'm30-brand', name: 'FAN LIFE · every club', times: ['16:07']},
   {template: 'life-soon', start: FROM, days: 30, id: 'm30-life-soon', name: 'LIFE · coming soon', times: ['18:13']},
   {template: 'reels', start: FROM, days: 16, id: 'm30-reels-tales', name: 'Reels · Football Fairy Tales'},
-  {template: 'club-days', club: 'fenerbahce', start: '2026-12-25', days: 3, id: 'm30-club-fenerbahce', name: '30 days · fenerbahce days'},
-  {template: 'club-days', club: 'partizan-belgrade', start: '2026-12-28', days: 3, id: 'm30-club-partizan-belgrade', name: '30 days · partizan-belgrade days'},
+  {template: 'club-days', club: 'fenerbahce', start: '2026-12-25', days: 3, id: 'm30-club-fenerbahce', name: 'Club days · Fenerbahçe'},
+  {template: 'club-days', club: 'partizan-belgrade', start: '2026-12-28', days: 3, id: 'm30-club-partizan-belgrade', name: 'Club days · Partizan Belgrade'},
   {template: 'club-opening', club: 'partizan-belgrade', start: '2026-11-25', days: 6, id: 'm30-open-partizan-belgrade', name: 'New club · Partizan Belgrade', times: ['19:32', '15:37']},
 ]
 
