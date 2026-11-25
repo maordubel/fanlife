@@ -33,6 +33,19 @@ class QuestionCard(unittest.TestCase):
         self.assertEqual(back[0]['small'], 'THE OPENING QUESTION')                 # the bookend, before the hand-over
         self.assertFalse([x for x in self.beats[3]['shots'] if x['kind'] == 'word'])
 
+    def test_owner_picture_does_not_break_editing_devices(self):
+        import sys
+        from types import ModuleType
+        from unittest.mock import patch
+        self.a.plan['shots'][0]['required_asset'] = 'owner-picture'
+        gazette = ModuleType('studio.thumbs.gazette')
+        gazette.owner_picture = lambda _: 'picture.jpg'
+        with patch.dict(sys.modules, {'studio.thumbs.gazette': gazette}):
+            self.a.question_cards(self.beats)
+            self.a.turn_cards(self.beats)
+            self.a.year_flaps(self.beats)
+        self.assertTrue(any(x['kind'] == 'word' for x in self.beats[0]['shots']))
+
     def test_no_question_no_card(self):
         self.a.plan['shots'][0] = shot(0, 0.0, 240, 'He never scored for Greece. Then came Nea Filadelfeia.')
         self.a.question_cards(self.beats)

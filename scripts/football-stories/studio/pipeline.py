@@ -205,7 +205,12 @@ def run(job_dir: Path, brief: dict, palette: Palette, progress=None, script_file
     ledger = read_json(lp)
     from .paper import beat_index
     from . import media_assets, owner_story, owner_treatment
-    owner_updated = owner_story.apply(ledger) or owner_document_changed
+    # A resumed approved script already reflects these unchanged owner documents. Reapplying
+    # normalization to a later enriched ledger can report a change and discard the approval.
+    approved_script = (job_dir / 'editorial-script.json').exists()
+    owner_updated = owner_document_changed
+    if not approved_script or owner_document_changed:
+        owner_updated = owner_story.apply(ledger) or owner_document_changed
     if owner_updated:
         ledger['summary'] = research.season_summary(ledger)
         for saved in [job_dir / name for name in ('script.json', 'editorial-script.json', 'editorial-plan.json', 'voice.json', 'script-pick.json')] + list(job_dir.glob('script-option-*.json')):
