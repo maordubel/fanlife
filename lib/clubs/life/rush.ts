@@ -6,7 +6,8 @@
  * stadium the pack records as the home ground. Nothing here parses a page or adds a fact.
  */
 import type {ClubData} from '@/lib/clubs/contract'
-import {lifeAnchors} from './pack'
+import {lifeAnchors, lifeMatches} from './pack'
+import type {ArchiveRef} from '@/lib/life/universal/types'
 import {CLUB_SPELLINGS} from '@/lib/clubs/spellings'
 import {clubWorld} from '@/lib/clubs/world'
 import {namesOf, norm, sameClub} from '@/lib/fixtures/names'
@@ -40,6 +41,25 @@ function shortRival(name: string, city: string): string | null {
   return left.length && left.join(' ').length >= 4 ? left.join(' ') : null
 }
 
+/**
+ * A curated night whose own title is not a scoreline ("minute 86") still stands on the club's recorded match of that
+ * day: when the club's approved match records hold exactly ONE match that day, the row carries that match's facts
+ * (`lifeMatches`), its recorded name as the note ("The title decider · against Maccabi Haifa") and its source beside
+ * the row's own. Nothing is added that the two records do not say; a day with no match, or two, is left as it was.
+ */
+export function withRecordedMatch(data: Pick<ClubData, 'matches' | 'goals' | 'sources'>, anchors: ArchiveRef[]): ArchiveRef[] {
+  const facts = lifeMatches(data)
+  const byId = new Map(data.sources.map(s => [s.id, s]))
+  return anchors.map(a => {
+    if (a.match || a.precision !== 'day' || !a.on || /\d+\s*[–—-]\s*\d+/.test(a.title) || !facts[a.on]) return a
+    const rows = (data.matches ?? []).filter(f => f.status === 'approved' && f.confidence >= 2 && (f.value as unknown as {on?: string}).on === a.on)
+    if (rows.length !== 1) return a
+    const row = rows[0]!, name = (row.value as unknown as {name?: unknown}).name
+    const more = row.sources.flatMap(id => { const s = byId.get(id); return s && !a.sources.some(x => x.title === s.title && x.url === s.url) ? [{title: s.title, publisher: s.publisher, url: s.url}] : [] })
+    return {...a, match: {...facts[a.on]!, note: typeof name === 'string' && name.trim() ? name.trim() : null}, sources: [...a.sources, ...more]}
+  })
+}
+
 export function rushView(data: ClubData): ClubArchiveView {
   const rival = approved(data.rivals as {status: string; confidence: number; value: Named}[] | null)[0]
   const ground = approved(data.stadiums as {status: string; confidence: number; value: Named}[] | null)
@@ -56,7 +76,7 @@ export function rushView(data: ClubData): ClubArchiveView {
       : null,
     // the pack's recorded home ground, else the ground the club's sourced world file names (two publishers, rule 100)
     ground: ground ? String(ground.name) : clubWorld(data.identity.id)?.ground?.name ?? null,
-    anchors: lifeAnchors(data),
+    anchors: withRecordedMatch(data, lifeAnchors(data)),
   }
 }
 

@@ -4,7 +4,7 @@
  * The stage builds one street for every club; this module dresses it as the club's CITY: what stands at the
  * end of the road at night (the Acropolis on its rock, the towers of Tel Aviv, Mostar's arched bridge over
  * green water), the balconies and awnings, the kiosk and the shop words in the city's own script, the
- * bunting, the trees, what is parked against the walls, and the designer's graffiti on the ground floors.
+ * club's cloth across the road (never a flag), the trees, what is parked against the walls, and the designer's graffiti on the ground floors.
  *
  * It only DRESSES: nothing here moves a wall, a kerb or a crossing, so the level the bot proves winnable is
  * the level that is played. A club's street carries its own marks and neutral city art only — the graffiti
@@ -14,6 +14,7 @@
 import * as THREE from 'three'
 import type {VoxelSkin} from '@/lib/life/universal/skin'
 import type {Level} from '@/lib/life/rush/level'
+import {signMarks} from './look/town'
 
 export type Town = NonNullable<VoxelSkin['town']>
 
@@ -29,6 +30,11 @@ export type CityCtx = {
   /** true when the club's policy forbids this colour */
   banned: (hex: string) => boolean
   glowTex: THREE.Texture
+  /** collects what the town hangs on the main street's upper floors (balconies, rails, awnings, A/C), so a facade
+   *  picture that shows its own can take their place (look/flowStreet.ts) */
+  fronts?: THREE.Object3D[]
+  /** the dusk look rig dresses this street too (its own lights and cloth across the road) */
+  dusk?: boolean
 }
 
 /** the words a shop front letters, in the city's own script — ordinary street words, never a fact */
@@ -85,7 +91,7 @@ export function dressCity(x: CityCtx): boolean {
       q.setFromAxisAngle(up, -b.side * Math.PI / 2); m4.compose(v.set(b.side * (W - 1.22), y + 0.6, b.z), q, s.set(1, 1, 1)); rails.setMatrixAt(i, m4)
       i++
     }
-    slabs.castShadow = !lite; scene.add(slabs, rails)
+    slabs.castShadow = !lite; scene.add(slabs, rails); x.fronts?.push(slabs, rails)
   }
   // striped awnings: Athens blue and white, Tel Aviv faded, Mostar the bazaar's red and cream
   const stripes: Record<Town, [string, string][]> = {
@@ -100,14 +106,14 @@ export function dressCity(x: CityCtx): boolean {
   for (const b of bays) if (rnd() < (town === 'ath' ? 0.55 : 0.35) && awnMats.length) {
     const f = pick(floors) + 1
     const a = new THREE.Mesh(awnGeo, pick(awnMats)); a.rotation.set(0, -b.side * Math.PI / 2, 0); a.rotateX(-0.9)
-    a.position.set(b.side * (W - 0.7), f * 3.2 - 0.25, b.z); scene.add(a)
+    a.position.set(b.side * (W - 0.7), f * 3.2 - 0.25, b.z); scene.add(a); x.fronts?.push(a)
   }
   if (town !== 'mos') {
     const n = bays.length
     const ac = new THREE.InstancedMesh(box, std('#d9d9d4', {roughness: 0.5}), n)
     let k = 0
     for (const b of bays) if (rnd() < (town === 'tlv' ? 0.85 : 0.45)) { m4.makeScale(0.42, 0.55, 0.85).setPosition(b.side * (W - 0.25), (1 + Math.floor(rnd() * 3)) * 3.2 + 1.6, b.z + 1.6); ac.setMatrixAt(k++, m4) }
-    ac.count = k; scene.add(ac)
+    ac.count = k; scene.add(ac); x.fronts?.push(ac)
   }
 
   /* ───────── ground floors: shop words, the kiosk, stone and rugs in Mostar ───────── */
@@ -119,10 +125,8 @@ export function dressCity(x: CityCtx): boolean {
     const word = pick(words), bg = pick(signBg)
     const t = keep(canvas(512, 120, (g, w, h) => {
       g.fillStyle = bg; g.fillRect(0, 0, w, h); g.strokeStyle = 'rgba(243,239,230,.55)'; g.lineWidth = 4; g.strokeRect(6, 6, w - 12, h - 12)
-      g.fillStyle = '#f6e7cf'; g.textAlign = 'center'; g.textBaseline = 'middle'
-      let size = 74; const f = (n: number) => `700 ${n}px 'Fira Sans Condensed','Heebo','Arial Narrow',system-ui,sans-serif`
-      g.font = f(size); while (g.measureText(word).width > w * 0.86 && size > 12) { size -= 2; g.font = f(size) }
-      g.fillText(word, w / 2, h / 2 + 3)
+      // the sign's shape and its lettering's rhythm, never a readable word (no text in the world)
+      signMarks(g, w, h, '#f6e7cf', rnd); void word
     }))
     onWall(signGeo, lit('#ffffff', night ? 1.05 : 0.85, {map: t}), b.side, 3.05, b.z, 0.08)
     onWall(glass, lit(night ? '#ffc89a' : '#9fb0bd', night ? 0.95 : 0.6), b.side, 1.3, b.z, 0.05)
@@ -131,18 +135,19 @@ export function dressCity(x: CityCtx): boolean {
   const plateTxt = STREET[town]!
   const plateTex = keep(canvas(256, 80, (g, w, h) => {
     g.fillStyle = paint(town === 'tlv' ? '#1f4d8f' : town === 'ath' ? '#1f4e9c' : '#1c4a8a', '#2b2f38'); g.fillRect(0, 0, w, h)
-    g.strokeStyle = '#f3efe6'; g.lineWidth = 5; g.strokeRect(6, 6, w - 12, h - 12); g.fillStyle = '#f3efe6'; g.textAlign = 'center'; g.textBaseline = 'middle'
-    g.font = `700 34px 'Fira Sans Condensed','Heebo',system-ui,sans-serif`; g.fillText(plateTxt, w / 2, h / 2 + 2)
+    g.strokeStyle = '#f3efe6'; g.lineWidth = 5; g.strokeRect(6, 6, w - 12, h - 12); signMarks(g, w, h, '#f3efe6', rnd); void plateTxt
   }))
   const plateGeo = keep(new THREE.PlaneGeometry(1.4, 0.44)), plateMat = lit('#ffffff', 0.9, {map: plateTex})
   for (const c of level.crossings) for (const side of [-1, 1]) onWall(plateGeo, plateMat, side, 3.6, c + 9.8, 0.05)
 
-  if (town === 'ath') kiosk(x, paint, std, lit, z0 - 26)
+  // at dusk the town builds its own periptero (look/town.ts)
+  if (town === 'ath' && !x.dusk) kiosk(x, paint, std, lit, level.hood ? level.hood.kiosk.z : z0 - 26)
   if (town === 'mos') bazaar(x, rnd, paint, std, lit, bays, onWall)
 
   /* ───────── trees: orange trees in Athens, palms in Tel Aviv — never where green is a rival's ───────── */
+  // at dusk the town plants its own (bitter orange, ficus and palms in look/town.ts)
   const leaf = '#2f5a35'
-  if (!x.banned(leaf)) {
+  if (!x.banned(leaf) && !x.dusk) {
     const spots: number[] = []
     for (let z = z0 - 13; z > z1; z -= 27) if (clear(z)) spots.push(z)
     if (town === 'tlv') palms(x, spots, std)
@@ -166,10 +171,10 @@ export function dressCity(x: CityCtx): boolean {
   const parked: {side: number; z: number; kind: 'vespa' | 'scooter' | 'bike'}[] = []
   const kinds: ('vespa' | 'scooter' | 'bike')[] = town === 'ath' ? ['vespa', 'vespa', 'bike'] : town === 'tlv' ? ['scooter', 'scooter', 'bike', 'bike'] : ['bike']
   for (const b of bays) if (rnd() < (town === 'tlv' ? 0.4 : 0.25)) parked.push({side: b.side, z: b.z + 1.2, kind: pick(kinds)})
-  rides(x, parked, paint, std)
+  if (!x.dusk) rides(x, parked, paint, std) // at dusk the town parks its own motorbikes, instanced
 
-  /* ───────── bunting across the street ───────── */
-  bunting(x, rnd, paint)
+  /* ───────── the club's cloth across the street (the dusk rig hangs its own) ───────── */
+  if (!x.dusk) bunting(x, rnd, paint)
 
   /* ───────── the city at the end of the road ───────── */
   backdrop(x, town)
@@ -198,7 +203,7 @@ function kiosk(x: CityCtx, paint: Paint, std: Std, lit: Lit, z: number) {
     for (let r = 0; r < 6; r++) for (let k = 0; k < 7; k++) { c.fillStyle = paint(cols[(r * 3 + k) % cols.length]!, '#9a9488'); c.fillRect(8 + k * 35, 10 + r * 40, 28, 32) }
   }))
   const shelf = new THREE.Mesh(keep(new THREE.PlaneGeometry(2.4, 1.9)), lit('#ffffff', night ? 1.05 : 0.85, {map: front})); shelf.rotation.y = Math.PI / 2; shelf.position.set(0.91, 1.25, 0); g.add(shelf)
-  const sign = keep(canvas(512, 110, (c, w, h) => { c.fillStyle = '#1b1e26'; c.fillRect(0, 0, w, h); c.fillStyle = '#f3efe6'; c.textAlign = 'center'; c.textBaseline = 'middle'; c.font = `700 52px 'Fira Sans Condensed',system-ui,sans-serif`; c.fillText('ΤΣΙΓΑΡΑ · ΕΦΗΜΕΡΙΔΕΣ', w / 2, h / 2 + 3) }))
+  const sign = keep(canvas(512, 110, (c, w, h) => { c.fillStyle = '#1b1e26'; c.fillRect(0, 0, w, h); signMarks(c, w, h, '#f3efe6', seeded(z)) }))
   const sg = new THREE.Mesh(keep(new THREE.PlaneGeometry(2.6, 0.55)), lit('#ffffff', night ? 1.2 : 0.9, {map: sign})); sg.rotation.y = Math.PI / 2; sg.position.set(0.95, 2.85, 0); g.add(sg)
   if (night) { const l = new THREE.PointLight('#ffd6a8', 22, 8, 1.6); l.position.set(1.8, 1.8, 0); g.add(l) }
 }
@@ -296,34 +301,41 @@ function rides(x: CityCtx, parked: {side: number; z: number; kind: 'vespa' | 'sc
   }
 }
 
-/** flags on a line across the street: Greece's and Israel's on their own streets, the club's cloth in Mostar */
+/**
+ * The club's cloth across the street, high and sparse: small pennants in its two colours and cream on a line, a string
+ * of bulbs beside them at night. Never a national flag (owner: Israeli identity stays low-key; no flags in pictures),
+ * never a rival's colour and never yellow. At dusk the look rig hangs its own lights and cloth (look/dusk.ts).
+ */
 function bunting(x: CityCtx, rnd: () => number, paint: Paint) {
-  const {scene, keep, level} = x
-  const town = x.skin.town!
-  const greek = !x.banned('#0d5eaf') && town === 'ath', israeli = !x.banned('#0038b8') && town === 'tlv'
-  const flagTex = greek
-    ? keep(canvas(90, 60, (g, w, h) => { for (let k = 0; k < 9; k++) { g.fillStyle = k % 2 ? '#f6f4ee' : '#0d5eaf'; g.fillRect(0, k * h / 9, w, h / 9 + 1) } g.fillStyle = '#0d5eaf'; g.fillRect(0, 0, w * 0.4, h * 5 / 9); g.fillStyle = '#f6f4ee'; g.fillRect(w * 0.15, 0, w * 0.1, h * 5 / 9); g.fillRect(0, h * 2 / 9, w * 0.4, h / 9) }))
-    : israeli
-      ? keep(canvas(90, 64, (g, w, h) => { g.fillStyle = '#f6f4ee'; g.fillRect(0, 0, w, h); g.fillStyle = '#0038b8'; g.fillRect(0, 7, w, 8); g.fillRect(0, h - 15, w, 8); g.strokeStyle = '#0038b8'; g.lineWidth = 3; const cx = w / 2, cy = h / 2, r = 12; for (const o of [0, Math.PI]) { g.beginPath(); for (let k = 0; k < 3; k++) { const a = o - Math.PI / 2 + k * 2 * Math.PI / 3; g[k ? 'lineTo' : 'moveTo'](cx + Math.cos(a) * r, cy + Math.sin(a) * r) } g.closePath(); g.stroke() } }))
-      : keep(canvas(64, 64, (g, w, h) => { g.fillStyle = paint(x.skin.p, '#c9c2b4'); g.beginPath(); g.moveTo(0, 0); g.lineTo(w / 2, h); g.lineTo(w, 0); g.fill(); g.fillStyle = paint(x.skin.s, '#efe9de'); g.fillRect(0, 0, w, 6) }))
-  const rect = greek || israeli
-  const geo = keep(new THREE.PlaneGeometry(rect ? 0.75 : 0.6, rect ? 0.5 : 0.75))
+  const {scene, keep, level, night} = x
+  const yellowish = (h: string) => { const o = {h: 0, s: 0, l: 0}; C(h).getHSL(o, THREE.SRGBColorSpace); return o.s > 0.2 && o.h * 360 >= 36 && o.h * 360 <= 72 }
+  const cloth = [x.skin.p, x.skin.s].map(c => paint(c, '#c9c2b4')).filter(c => !yellowish(c))
+  const cols = [...(cloth.length ? cloth : ['#c9c2b4']), '#efe9de']
+  const tex = keep(canvas(64, 64, (g, w, h) => { g.fillStyle = '#ffffff'; g.beginPath(); g.moveTo(0, 0); g.lineTo(w / 2, h); g.lineTo(w, 0); g.fill() }))
+  const geo = keep(new THREE.PlaneGeometry(0.36, 0.5))
   const lines: number[] = []
-  for (let z = level.bounds.z1 - 6; z > level.goal.z + 90; z -= 22) if (!level.crossings.some(c => Math.abs(z - c) < 4)) lines.push(z)
-  const per = 16
-  const flags = new THREE.InstancedMesh(geo, keep(new THREE.MeshStandardMaterial({map: flagTex, side: THREE.DoubleSide, roughness: 0.8, emissive: '#1a1a1a', transparent: !rect, alphaTest: rect ? 0 : 0.4})), lines.length * per)
+  for (let z = level.bounds.z1 - 6; z > level.goal.z + 90; z -= 38) if (!level.crossings.some(c => Math.abs(z - c) < 5)) lines.push(z)
+  const per = 12
+  const flags = new THREE.InstancedMesh(geo, keep(new THREE.MeshStandardMaterial({map: tex, side: THREE.DoubleSide, roughness: 0.8, transparent: true, alphaTest: 0.4})), Math.max(1, lines.length * per))
+  const bulbs = night ? new THREE.InstancedMesh(keep(new THREE.SphereGeometry(0.06, 6, 4)), keep(new THREE.MeshBasicMaterial({color: C('#ffc79a').multiplyScalar(1.6), toneMapped: false})), Math.max(1, lines.length * per * 2)) : null
   const ropePts: THREE.Vector3[] = []
   const m = new THREE.Matrix4(), q = new THREE.Quaternion(), e = new THREE.Euler(), p = new THREE.Vector3(), one = new THREE.Vector3(1, 1, 1)
-  let i = 0
+  const yAt = (t: number, y0: number) => y0 - Math.sin(t * Math.PI) * 0.7
+  let i = 0, b = 0
   for (const z of lines) {
-    const zz = z + (rnd() - 0.5) * 2, y0 = 6.4 + rnd() * 0.6
+    const zz = z + (rnd() - 0.5) * 2, y0 = 8.6 + rnd() * 0.5
     for (let k = 0; k < per; k++) {
-      const t = (k + 0.5) / per, xx = -level.walk + t * level.walk * 2, y = y0 - Math.sin(t * Math.PI) * 1.1
-      e.set(0, (rnd() - 0.5) * 0.4, 0); q.setFromEuler(e); m.compose(p.set(xx, y - 0.3, zz), q, one); flags.setMatrixAt(i++, m)
+      const t = (k + 0.5) / per, xx = -level.walk + t * level.walk * 2
+      e.set(0, (rnd() - 0.5) * 0.3, 0); q.setFromEuler(e); m.compose(p.set(xx, yAt(t, y0) - 0.26, zz), q, one); flags.setMatrixAt(i, m); flags.setColorAt(i, C(cols[k % cols.length]!)); i++
     }
-    for (let k = 0; k < per; k++) { const t = k / (per - 1), t2 = (k + 1) / (per - 1); if (k === per - 1) break; ropePts.push(new THREE.Vector3(-level.walk + t * level.walk * 2, y0 - Math.sin(t * Math.PI) * 1.1, zz), new THREE.Vector3(-level.walk + t2 * level.walk * 2, y0 - Math.sin(t2 * Math.PI) * 1.1, zz)) }
+    for (let k = 0; k < per * 2 - 1; k++) {
+      const t = k / (per * 2 - 1), t2 = (k + 1) / (per * 2 - 1)
+      ropePts.push(new THREE.Vector3(-level.walk + t * level.walk * 2, yAt(t, y0), zz), new THREE.Vector3(-level.walk + t2 * level.walk * 2, yAt(t2, y0), zz))
+      if (bulbs) { m.makeTranslation(-level.walk + t * level.walk * 2, yAt(t, y0) - 0.08, zz + 0.25); bulbs.setMatrixAt(b++, m) }
+    }
   }
-  scene.add(flags)
+  flags.count = i; scene.add(flags)
+  if (bulbs) { bulbs.count = b; scene.add(bulbs) }
   const rope = new THREE.LineSegments(keep(new THREE.BufferGeometry().setFromPoints(ropePts)), keep(new THREE.LineBasicMaterial({color: '#2a2c33'}))); scene.add(rope)
 }
 

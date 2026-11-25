@@ -18,6 +18,7 @@
 import type {KnownLook, MissionSpec, Verb} from './spec'
 import {applyQuest} from './quest'
 import {flatLevel, flatVia, isHome} from './flat'
+import type {HoodMeta} from '../hood/types'
 
 /* ───────────── seeded randomness ───────────── */
 
@@ -43,7 +44,7 @@ export type Car = {axis: 'x' | 'z'; lane: number; dir: 1 | -1; v: number; p0: nu
 /** somebody walking the same way, looping between two points */
 export type Walker = {x: number; z0: number; v: number; span: readonly [number, number]; look: Look}
 /** somebody standing: a fan at the gate, a face in the crowd */
-export type Stander = {x: number; z: number; face: number; look: Look; role: 'fan' | 'rival'}
+export type Stander = {x: number; z: number; face: number; look: Look; role: 'fan' | 'rival'; /** somebody the level draws and names himself (the hood's people): solid in the sim, never one of the crowd's instances */ hidden?: boolean}
 /** a steward (or a rival group's lookout) walking a round and looking where he walks */
 export type Patrol = {
   pts: readonly (readonly [number, number])[]; v: number; range: number; fov: number; role: 'steward' | 'lookout' | 'mum' | 'cat' | 'dad'
@@ -180,6 +181,8 @@ export type Level = {
   searches: Search[]
   creaks: Rect[]
   house: House | null
+  /** the open neighbourhood (`lib/life/hood`): a level with no clock, named places and people, and jobs people give. Absent in every mission. */
+  hood?: HoodMeta
 }
 
 export type FavourKind = 'lost-kid' | 'bag'

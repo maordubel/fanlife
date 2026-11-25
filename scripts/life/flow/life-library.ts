@@ -99,6 +99,24 @@ const FACADES: Record<LifeTown, string[]> = {
   ],
 }
 
+// ── a2 · street modules for the towns the owner asked for first (24.11.2026: "the feeling of a real city"): the ground
+// floors and pieces the street still lacked, each its own front-on picture the renderer lays over the foot of a building,
+// beside it, or as a whole building (look/flowStreet.ts reads the key: shop/cafe over a ground floor; corner and pilotis as
+// buildings; kiosk and balcony kept for their own placement). Same frame rules as a facade; the key is a word, not a number.
+const MODULE = 'Strictly front-on orthographic elevation, flat and straight like an architect\'s elevation rendered as a photograph: no perspective, no vanishing point, no side walls, no sky, no street, no pavement, no vehicles, nothing in front of it. The subject fills the square frame from edge to edge. Dusk light, warm light from inside where there is an inside. Every fascia, awning and shutter is blank. Muted natural materials only: off-white, beige, grey, stone, weathered wood, dark metal; no saturated red, green or blue surfaces.'
+const MODULES: {town: LifeTown; key: string; priority: number; subject: string}[] = [
+  {town: 'ath', key: 'shop1', priority: 1, subject: 'The ground floor of an Athenian apartment block, one small neighbourhood shop: a wide glazed front with its grey metal roller shutter pulled half down, warm light from inside on plain shelves of unlabelled goods and a counter, a marble step and a marble-clad pillar on each side, a blank fascia above.'},
+  {town: 'ath', key: 'kiosk', priority: 1, subject: 'An Athenian street kiosk seen straight from the front: a small metal booth with a deep overhanging roof, its front window crowded with racks of magazines and newspapers whose covers are blank and colourful, a wall of small cigarette packs without markings, a glass-door drinks fridge glowing beside it, papers pegged along the edges, lit from inside like a lantern.'},
+  {town: 'ath', key: 'cafe', priority: 2, subject: 'The ground floor of an old Athenian neighbourhood coffee house: tall glazed doors folded open, warm light inside on small marble tables and wooden chairs, a long counter at the back, an empty pavement edge in front, a plain canvas awning rolled out above.'},
+  {town: 'ath', key: 'corner', priority: 1, subject: 'A five-storey Athenian corner apartment block of the 1970s seen straight on its rounded, chamfered corner: continuous balconies wrapping the corner on every floor with thin metal railings and striped canvas awnings let down half way, plants in pots, a shop with a half-down shutter at the foot of the corner.'},
+  {town: 'ath', key: 'balcony', priority: 2, subject: 'A strip of three floors of an Athenian apartment block, only the balconies: continuous concrete balcony slabs with thin metal railings, retractable striped canvas awnings in faded off-white and grey-blue pulled out at different lengths, potted plants, a folded chair, laundry on a rack.'},
+  {town: 'tlv', key: 'shop1', priority: 1, subject: 'The ground floor of a Tel Aviv apartment house, a small neighbourhood grocery: a narrow glazed front with its metal roller shutter half down, warm light inside on plain shelves of unlabelled goods, crates of fruit on a low stand by the door, a blank fascia above, the plaster stained above the door.'},
+  {town: 'tlv', key: 'kiosk', priority: 1, subject: 'A Tel Aviv street kiosk built into the front of an old building, seen straight on: a hatch window under a short metal canopy, glowing fridges of drinks, racks of sweets and newspapers with blank covers, plastic crates stacked to one side, lit from inside.'},
+  {town: 'tlv', key: 'cafe', priority: 2, subject: 'The ground floor of a white Tel Aviv apartment house turned into a small café: wide glazed doors opened, warm light inside on small round tables and bentwood chairs, a counter with a coffee machine shape at the back, a plain canvas awning above.'},
+  {town: 'tlv', key: 'pilotis', priority: 1, subject: 'A three-storey white International Style apartment house of 1930s Tel Aviv raised on round concrete columns (pilotis): the open ground floor is a shaded space between the columns with a bare bulb, bicycles leaning on a column and the dark floor of the yard behind; above it long horizontal ribbon windows, balconies with rounded ends and solid parapets, slatted shutters half down, a flat roof edge.'},
+  {town: 'tlv', key: 'balcony', priority: 2, subject: 'A strip of three floors of a white Bauhaus apartment house in Tel Aviv, only the balconies: long horizontal balconies with rounded ends and solid rendered parapets, slatted plastic roller shutters at different heights behind them, an air-conditioner unit, plants in pots.'},
+]
+
 // ── b · the grounds: what each club's own ground recalls. `for` is the pack's ground name the lines were written for.
 type Ground = {for: string; plates: string[]}
 const GROUNDS: Record<string, Ground> = {
@@ -177,6 +195,7 @@ const STORIES: {key: string; chapter: string; priority: number; scene: string}[]
 
 const ATHENS_AND_TEL_AVIV: LifeTown[] = ['ath', 'tlv']
 const FOUR = ['hapoel-tel-aviv', 'olympiacos', 'panathinaikos', 'aek-athens']
+const NEXT_GROUNDS = ['zrinjski-mostar', 'celtic', 'st-pauli', 'atalanta']
 const two = (n: number) => String(n).padStart(2, '0')
 const groundName = (root: string, club: string): string | null => {
   const f = join(root, 'club-packs', club, 'world.json')
@@ -192,17 +211,19 @@ export function buildLifeLibrary(root = process.cwd()): LifeLibrary {
     const main = ATHENS_AND_TEL_AVIV.includes(town)
     pieces.push({stem: `life-facade-${town}-${two(i + 1)}-fl1`, aspect: '1:1', use: 'facade', town, priority: main ? (i < 3 ? 1 : 2) : town === 'mos' || town === 'eur' ? 2 : 4, prompt: say(building, FACADE)})
   })
+  // a2 · street modules
+  for (const m of MODULES) pieces.push({stem: `life-facade-${m.town}-${m.key}-fl1`, aspect: '1:1', use: 'facade', town: m.town, priority: m.priority, prompt: say(m.subject, MODULE)})
   // b · one ground per core club, two for the four
   const generic = new Map<LifeTown, number>()
   for (const club of STATIC_CLUB_IDS) {
     const town = CLUB_TOWN[club]
     if (!town) throw new Error(`life-library: ${club} has no town in lib/life/flowArtSpec.ts → CLUB_TOWN`)
     const g = GROUNDS[club], known = !!g && groundName(root, club) === g.for, four = FOUR.includes(club)
-    if (known) g.plates.slice(0, four ? 2 : 1).forEach((plate, i) => pieces.push({stem: `life-stadium-${club}-${'ab'[i]}-fl1`, aspect: '16:9', use: 'stadium', club, town, confidence: 'specific', priority: four ? i + 1 : club === 'zrinjski-mostar' ? 2 : 3, prompt: say(plate, STADIUM)}))
+    if (known) g.plates.slice(0, four ? 2 : 1).forEach((plate, i) => pieces.push({stem: `life-stadium-${club}-${'ab'[i]}-fl1`, aspect: '16:9', use: 'stadium', club, town, confidence: 'specific', priority: four ? i + 1 : NEXT_GROUNDS.includes(club) ? 2 : 3, prompt: say(plate, STADIUM)}))
     else for (let i = 0; i < (four ? 2 : 1); i++) {
       const n = generic.get(town) ?? 0
       generic.set(town, n + 1)
-      pieces.push({stem: `life-stadium-${club}-${'ab'[i]}-fl1`, aspect: '16:9', use: 'stadium', club, town, confidence: 'generic', priority: four ? i + 1 : 3, prompt: say(`A city football ground with tall floodlights and plain concrete stands, ${GENERIC_VIEW[n % GENERIC_VIEW.length]} among ${STREETS[town]}.`, STADIUM)})
+      pieces.push({stem: `life-stadium-${club}-${'ab'[i]}-fl1`, aspect: '16:9', use: 'stadium', club, town, confidence: 'generic', priority: four ? i + 1 : NEXT_GROUNDS.includes(club) ? 2 : 3, prompt: say(`A city football ground with tall floodlights and plain concrete stands, ${GENERIC_VIEW[n % GENERIC_VIEW.length]} among ${STREETS[town]}.`, STADIUM)})
     }
   }
   // c · skyline and district aerial, per town

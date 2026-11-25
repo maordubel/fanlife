@@ -7,7 +7,7 @@
  */
 import {describe, expect, it} from 'vitest'
 import {CORE_CLUB_IDS, loadClub} from '@/lib/clubs/resolver'
-import {lifeAnchors} from '@/lib/clubs/life/pack'
+import {lifeAnchors, lifeMatches} from '@/lib/clubs/life/pack'
 import {rushView} from '@/lib/clubs/life/rush'
 import {fitClub, playable, specFor} from '@/lib/life/rush/fit'
 import {templateById} from '@/lib/life/rush/templates'
@@ -28,8 +28,20 @@ describe('every core club, every mission', () => {
       const own = new Map(lifeAnchors(data).map(a => [a.factId, a]))
       for (const f of fits) {
         if (f.anchor) {
-          // the night is the club's own approved row, untouched
-          expect(own.get(f.anchor.factId), `${id} ${f.template}`).toEqual(f.anchor)
+          const recorded = own.get(f.anchor.factId)
+          expect(recorded, `${id} ${f.template}`).toBeDefined()
+          const {match, sources, ...anchor} = f.anchor
+          const {match: originalMatch, sources: originalSources, ...original} = recorded!
+          expect(anchor).toEqual(original)
+          expect(sources).toEqual(expect.arrayContaining(originalSources))
+          if (originalMatch) expect(match).toEqual(originalMatch)
+          else if (match) {
+            const backed = lifeMatches(data)[anchor.on!]
+            expect(backed).toBeDefined()
+            const {note: _matchName, ...details} = match
+            const {note: _recordedNote, ...recordedDetails} = backed!
+            expect(details).toEqual(recordedDetails)
+          }
           const t = templateById(f.template)!
           const spec = specFor(t, f, view, {seed: 1, skin: id, age: t.ages[0], mandatory: false, time: 'day'})
           const printed = f.anchor.precision === 'day' ? f.anchor.on! : String(f.anchor.year)

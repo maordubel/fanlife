@@ -47,6 +47,7 @@ jobs:
 
   doctor:
     runs-on: ubuntu-latest
+    # The full test matrix, isolated LIFE simulator and browser sweeps can exceed an hour.
     timeout-minutes: 90
     env:
       NODE_OPTIONS: --max-old-space-size=6144

@@ -354,7 +354,9 @@ export function stepSim(level: Level, s: Sim, input0: Input, dt = STEP): Sim {
   if (level.verb === 'carry' && !s.holding && s.dropped && Math.hypot(s.dropped.x - s.x, s.dropped.z - s.z) < 1.3) { s.holding = true; s.carried += s.dropped.n; s.dropped = null; s.events.push({k: 'grab'}) }
 
   // things on the ground: walk over them
+  // (the open neighbourhood: nothing lying about is his until a job asks for it — a step has to be open)
   if (level.place !== 'road') level.pickups.forEach((p, i) => {
+    if (level.hood && !level.steps[s.step]) return
     if (s.got[i] || p.inside !== undefined || Math.hypot(p.x - s.x, p.z - s.z) > 1.1) return
     if (p.kind === 'roll' && level.verb === 'carry') { s.carried++; s.holding = true }
     take(s, i, p.kind, p.step === null)
@@ -605,7 +607,7 @@ export function botInput(level: Level, s: Sim): Input {
 }
 
 /** head for a point, walking round anybody standing in the way */
-function steer(s: Sim, x: number, z: number, sprint: boolean, level?: Level): Input {
+export function steer(s: Pick<Sim, 'x' | 'z' | 't'>, x: number, z: number, sprint: boolean, level?: Level): Input {
   let dx = x - s.x, dz = z - s.z
   const d = Math.hypot(dx, dz) || 1
   dx /= d; dz /= d

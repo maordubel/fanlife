@@ -120,7 +120,7 @@ export type MissionSpec = {
   /** the club's skin id — RUSH paints the street, the shirts and the crowd from it */
   skin: string
   age: number
-  time: 'day' | 'night'
+  time: 'day' | 'night' | 'dusk'
   /** derived from the archive row's month when the day is known; otherwise the chapter's own */
   weather: 'clear' | 'rain' | 'cold' | 'heat'
   clock: number

@@ -69,7 +69,9 @@ export function sideOf(ref: ArchiveRef, ownNames: readonly string[]): 'home' | '
 
 /** Every kind the row's own words support. Order is stable; a row may be several kinds at once. */
 export function kindsOf(ref: ArchiveRef, view: Pick<ClubArchiveView, 'rival' | 'ownNames'>): AnchorKind[] {
-  const text = `${ref.title} ${ref.hint}`
+  // a row that stands on a recorded match also reads that match's recorded name ("The title decider")
+  const note = ref.match?.note ?? ''
+  const text = `${ref.title} ${ref.hint} ${note}`
   const out: AnchorKind[] = []
   const isMatch = !!ref.match || SCORELINE.test(ref.title) || SIDES_B.test(ref.title)
   if (isMatch) out.push('match')
@@ -78,7 +80,7 @@ export function kindsOf(ref: ArchiveRef, view: Pick<ClubArchiveView, 'rival' | '
   if (isMatch && namesRival(ref, view.rival)) out.push('derby')
   if (FINAL.test(text) && !NOT_FINAL.test(text)) out.push('final')
   if (EUROPE.test(text)) out.push('europe')
-  if ((TITLE.test(ref.title) || TITLE_HINT.test(ref.hint)) && !EUROPE.test(ref.title)) out.push('title')
+  if ((TITLE.test(ref.title) || TITLE_HINT.test(ref.hint) || TITLE.test(note)) && !EUROPE.test(ref.title)) out.push('title')
   if (RELEGATION.test(text)) out.push('relegation')
   if (PROMOTION.test(text)) out.push('promotion')
   if (GROUND.test(text)) out.push('ground')

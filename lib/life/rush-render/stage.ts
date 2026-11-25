@@ -19,19 +19,38 @@ import type {VoxelSkin} from '@/lib/life/universal/skin'
 import {carAt, walkerAt, type Level, type Look, type PickupKind} from '@/lib/life/rush/level'
 import {patrolLook, stepTarget, type Sim} from '@/lib/life/rush/sim'
 import type {MissionSpec} from '@/lib/life/rush/spec'
+import {bannedColour} from './colour'
 import {dressCity} from './city'
+import {dressHood, type HoodDress, type TalkDir} from './hood'
+import {dressLife, type LifeDress} from './life'
+import type {AmbState} from '@/lib/life/hood/ambient'
 import {dressFlat} from './flat'
 import {dressSurface, loadSurface, type SurfaceName} from './surfaces'
 import {loadProps, propCopy} from './props'
-import {disposeFigure, HAIR, kitTexture, makeFigure, lookAt, makeHand, PANTS, pose, SKIN_TONES, TOPS, type Cloth, type FigureData} from './figure'
+import {dressDusk, DUSK, type Block, type Dusk} from './look/dusk'
+import {dressCrowd} from './look/crowd'
+import {dressFlow, type FlowDress} from './look/flowStreet'
+import {castFor, createTroupe, humanPoint, isSkinned, type Troupe} from './human/human'
+import {heroBody} from './human/age'
+export {heroBody}
+import {charNow, type CastId} from './human/kit'
+import {disposeFigure, HAIR, kitTexture, makeFigure, lookAt, makeHand, PANTS, pose, seedFigure, turnTo, SKIN_TONES, TOPS, type Cloth, type FigureData, type Gesture, type Mood} from './figure'
 
 export type Quality = 'high' | 'lite'
-export type View = {cam: 'chase' | 'eyes'; ending: boolean; endT: number; outcome: 'good' | 'ok' | 'slip' | null; intro: number; /** the briefing: the place seen from a slow crane before the run */ brief?: boolean}
+export type View = {cam: 'chase' | 'eyes'; ending: boolean; endT: number; outcome: 'good' | 'ok' | 'slip' | null; intro: number; /** the briefing: the place seen from a slow crane before the run */ brief?: boolean; /** the hood: how the job stands (the marker over whoever gives or takes it) */ hood?: {job: 'idle' | 'active' | 'done';
+  /** a conversation the player started: who speaks, the line's feeling (`talk.ts` → `feelOf`), and whether the words are still being typed */
+  talk?: {who: string; key: string; mood?: Mood; gesture?: Gesture | null; you?: Mood; shot?: 'two' | 'close'; beat?: 'scarf' | null; speak: number} | null
+  /** the scarf is round his neck (the job is done and he wears it) */ scarf?: boolean
+  /** the street's small lives, stepped by the host (it knows the player's presses) */ amb?: AmbState | null}}
 export type Stage = {
   render(sim: Sim, view: View, dt: number): void
   resize(w: number, h: number): void
   /** a world point on the glass, for the speech bubbles (DOM, never canvas text) */
   project(x: number, y: number, z: number): {x: number; y: number; visible: boolean}
+  /** where a street voice's caption goes (`ambient.ts` spot id), on the glass */
+  captionAt(spot: string): {x: number; y: number; visible: boolean} | null
+  /** the story's age now: the player's body follows it (a boy to twelve, a teenager to eighteen, then a man) */
+  setAge(age: number): void
   dispose(): void
 }
 
@@ -40,25 +59,7 @@ const std = (color: THREE.ColorRepresentation, o: THREE.MeshStandardMaterialPara
 
 /* ───────────── colour policy ───────────── */
 
-function hsv(hex: string) {
-  const n = parseInt(hex.slice(1), 16), r = (n >> 16 & 255) / 255, g = (n >> 8 & 255) / 255, b = (n & 255) / 255
-  const mx = Math.max(r, g, b), mn = Math.min(r, g, b), d = mx - mn
-  let h = 0
-  if (d) h = mx === r ? ((g - b) / d) % 6 : mx === g ? (b - r) / d + 2 : (r - g) / d + 4
-  return {h: (h * 60 + 360) % 360, s: mx ? d / mx : 0, v: mx}
-}
-function family(hex: string): string | null {
-  const x = hsv(hex)
-  if (x.s < 0.2) return null
-  return x.h <= 18 || x.h >= 342 ? 'red' : x.h >= 38 && x.h <= 70 ? 'yellow' : x.h >= 90 && x.h <= 170 ? 'green' : x.h >= 190 && x.h <= 260 ? 'blue' : null
-}
-/** a colour this club's picture never shows: a rival's family, or a hue the club's own policy forbids */
-export function bannedColour(hex: string, skin: Pick<VoxelSkin, 'rivals' | 'policy'>): boolean {
-  const f = family(hex)
-  if (f && skin.rivals?.includes(f)) return true
-  const c = hsv(hex)
-  return skin.policy.some(r => c.s >= r.minSaturation && c.v >= r.minValue && (r.hue[0] <= r.hue[1] ? c.h >= r.hue[0] && c.h <= r.hue[1] : c.h >= r.hue[0] || c.h <= r.hue[1]))
-}
+export {bannedColour}
 const allowed = (list: readonly string[], skin: VoxelSkin, fallback = '#7a7f89') => { const ok = list.filter(c => !bannedColour(c, skin)); return ok.length ? ok : [fallback] }
 
 /* ───────────── canvas textures ───────────── */
@@ -76,15 +77,17 @@ function seeded(seed: number) { let s = (seed >>> 0) % 2147483647 || 1984; retur
 /** the missions played at another club's ground: no sign of ours goes up there (rule 135) */
 const AWAY_GROUNDS: readonly string[] = ['away-pen', 'europe-night']
 
-export function createStage(o: {canvas: HTMLCanvasElement; level: Level; spec: MissionSpec; skin: VoxelSkin; quality: Quality; reduced: boolean; gateLabel: string}): Stage {
+export function createStage(o: {canvas: HTMLCanvasElement; level: Level; spec: MissionSpec; skin: VoxelSkin; quality: Quality; reduced: boolean; gateLabel: string; /** the hood's people: skinned humans when the kit is loaded (the default), or the code-built figures */ people?: 'human' | 'classic'}): Stage {
   const {canvas, level, spec, skin, quality, reduced} = o
   const lite = quality === 'lite'
   const renderer = new THREE.WebGLRenderer({canvas, antialias: !lite, powerPreference: 'high-performance'})
   renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, lite ? 1.25 : 2))
   renderer.toneMapping = THREE.ACESFilmicToneMapping
   // a home mission keeps its own hour (a grounded boy goes out at night whatever the day's clock says)
-  const night = level.house ? level.house.night : spec.time === 'night'
-  renderer.toneMappingExposure = night ? 1.0 : 0.92
+  // the hood at dusk: lit like night (lamps, windows) under a graded sky and haze (look/dusk.ts)
+  const dusk = !!level.hood && spec.time === 'dusk'
+  const night = dusk || (level.house ? level.house.night : spec.time === 'night')
+  renderer.toneMappingExposure = dusk ? DUSK.exposure : night ? 1.0 : 0.92
   renderer.outputColorSpace = THREE.SRGBColorSpace
   renderer.shadowMap.enabled = !lite
   renderer.shadowMap.type = THREE.PCFSoftShadowMap
@@ -120,21 +123,21 @@ export function createStage(o: {canvas: HTMLCanvasElement; level: Level; spec: M
   /* sky, light, weather */
   // a deeper sky and a warm haze band at the horizon: the air has depth (GTA's afternoons are smog-gold, its nights ink)
   const skyTop = night ? '#02040a' : '#2f63a6', skyMid = night ? '#0f1730' : '#9fbbd4', glowC = night ? '#3a1f2e' : '#f0cfa0'
-  scene.fog = new THREE.FogExp2(night ? '#0a0d19' : '#b5c3cc', level.place === 'road' ? 0.0035 : level.place === 'flat' ? 0.004 : 0.0075)
+  scene.fog = new THREE.FogExp2(dusk ? DUSK.fog : night ? '#0a0d19' : '#b5c3cc', dusk ? DUSK.fogDensity : level.place === 'road' ? 0.0035 : level.place === 'flat' ? 0.004 : 0.0075)
   const skyMat = keep(new THREE.ShaderMaterial({side: THREE.BackSide, depthWrite: false, fog: false,
     uniforms: {uTop: {value: C(skyTop)}, uMid: {value: C(skyMid)}, uGlow: {value: C(glowC)}},
     vertexShader: 'varying vec3 vP; void main(){ vP = normalize(position); gl_Position = projectionMatrix*modelViewMatrix*vec4(position,1.); }',
     fragmentShader: 'uniform vec3 uTop,uMid,uGlow; varying vec3 vP; void main(){ float h=vP.y; vec3 c=mix(uMid,uTop,smoothstep(0.,.55,h)); c=mix(c,uGlow,smoothstep(.25,0.,abs(h-.02))*smoothstep(.2,-.9,vP.z)); gl_FragColor=vec4(c,1.); }'}))
-  const sky = new THREE.Mesh(keep(new THREE.SphereGeometry(1400, 32, 16)), skyMat); scene.add(sky)
-  if (night) {
+  const sky = new THREE.Mesh(keep(new THREE.SphereGeometry(1400, 32, 16)), skyMat); sky.visible = !dusk; scene.add(sky)
+  if (night && !dusk) {
     const st = new Float32Array(900 * 3)
     for (let i = 0; i < 900; i++) { const a = rnd() * Math.PI * 2, e = 0.08 + rnd() * 1.3, r = 1300; st[i * 3] = Math.cos(a) * Math.cos(e) * r; st[i * 3 + 1] = Math.sin(e) * r; st[i * 3 + 2] = Math.sin(a) * Math.cos(e) * r }
     const g = keep(new THREE.BufferGeometry()); g.setAttribute('position', new THREE.BufferAttribute(st, 3))
     scene.add(new THREE.Points(g, keep(new THREE.PointsMaterial({color: '#cfd8ff', size: 1.6, sizeAttenuation: false, fog: false, transparent: true, opacity: 0.8}))))
   }
   // less fill, more key: shadows that go somewhere, a sun with a colour, a sky that is blue from above and warm from the ground
-  scene.add(new THREE.HemisphereLight(night ? '#5a6ea8' : '#cfe0f5', night ? '#14100f' : '#5a4a3a', night ? 0.34 : 0.62))
-  const key = new THREE.DirectionalLight(night ? '#dce8ff' : '#ffdcb0', night ? 0.8 : 2.9)
+  scene.add(dusk ? new THREE.HemisphereLight('#86a2d8', '#4a3a3e', 0.62) : new THREE.HemisphereLight(night ? '#5a6ea8' : '#cfe0f5', night ? '#14100f' : '#5a4a3a', night ? 0.34 : 0.62))
+  const key = new THREE.DirectionalLight(dusk ? '#ffbe94' : night ? '#dce8ff' : '#ffdcb0', dusk ? 1.6 : night ? 0.8 : 2.9)
   key.castShadow = !lite; key.shadow.mapSize.set(2048, 2048)
   Object.assign(key.shadow.camera, {left: -18, right: 18, top: 18, bottom: -18, near: 1, far: 140})
   key.shadow.bias = -0.0004; key.shadow.normalBias = 0.025; key.shadow.radius = 3
@@ -151,7 +154,7 @@ export function createStage(o: {canvas: HTMLCanvasElement; level: Level; spec: M
   }
 
   /* ground + the shared street pieces */
-  const wet = spec.weather === 'rain'
+  const wet = spec.weather === 'rain' || dusk
   // the ground's materials, by surface: the loom tiles replace the canvas ones when they arrive (surfaces.ts)
   const grounds: Record<SurfaceName, THREE.MeshStandardMaterial[]> = {asphalt: [], slabs: [], concrete: [], boards: [], tiles: [], carpet: []}
   const ground = (name: SurfaceName, m: THREE.MeshStandardMaterial) => { grounds[name].push(m); return m }
@@ -190,7 +193,7 @@ export function createStage(o: {canvas: HTMLCanvasElement; level: Level; spec: M
     for (let k = 0; k < drains.count; k++) { m4.makeScale(0.5, 0.012, 0.3).setPosition((k % 2 ? 1 : -1) * (half - 0.35), 0.006, zStart - 7 - k * 14); drains.setMatrixAt(k, m4) }
     scene.add(drains)
     // the rain leaves the road in mirrors: puddles along the kerb and in the camber
-    if (wet) {
+    if (wet && !dusk) {
       const np = Math.floor(span / 7)
       const puddles = new THREE.InstancedMesh(keep(new THREE.CircleGeometry(1, 24).rotateX(-Math.PI / 2)), keep(new THREE.MeshStandardMaterial({color: '#1a1d24', roughness: 0.04, metalness: 0.9, transparent: true, opacity: 0.85})), np)
       for (let k = 0; k < np; k++) { q.setFromAxisAngle(up, rnd() * 3); m4.compose(tmp.set((rnd() - 0.5) * half * 1.6, 0.012, zStart - rnd() * span), q, tmp2.set(0.6 + rnd() * 1.6, 1, 0.4 + rnd() * 0.8)); puddles.setMatrixAt(k, m4) }
@@ -198,6 +201,7 @@ export function createStage(o: {canvas: HTMLCanvasElement; level: Level; spec: M
     }
   }
 
+  const duskBlocks: Block[] = [], duskFacades: THREE.MeshStandardMaterial[] = [], mainFronts: THREE.Object3D[] = []
   const addBuildings = (walk: number, from: number, to: number, gaps: number[]) => {
     const blocks: {x: number; z: number; w: number; h: number; c: string}[] = [], wins: {x: number; y: number; z: number; lit: boolean; warm: boolean; side: number}[] = []
     for (const side of [-1, 1]) {
@@ -211,9 +215,11 @@ export function createStage(o: {canvas: HTMLCanvasElement; level: Level; spec: M
         z -= w + (rnd() < 0.2 ? 2 : 0.2)
       }
     }
+    if (dusk) duskBlocks.push(...blocks)
     const facade = noiseTex('#ffffff', 22, [1, 1])
     const b = new THREE.InstancedMesh(box, keep(new THREE.MeshStandardMaterial({map: facade, roughness: 0.95})), blocks.length)
     blocks.forEach((x, i) => { m4.makeScale(10, x.h, x.w).setPosition(x.x, x.h / 2, x.z); b.setMatrixAt(i, m4); b.setColorAt(i, C(x.c)) }); b.receiveShadow = true; scene.add(b)
+    if (dusk) duskFacades.push(b.material as THREE.MeshStandardMaterial)
     const plinth = new THREE.InstancedMesh(box, keep(std('#ffffff')), blocks.length)
     blocks.forEach((x, i) => { m4.makeScale(10.3, 3, x.w).setPosition(x.x, 1.5, x.z); plinth.setMatrixAt(i, m4); plinth.setColorAt(i, C(x.c).multiplyScalar(0.55)) }); scene.add(plinth)
     const winGeo = keep(new THREE.PlaneGeometry(1.2, 1.6))
@@ -223,6 +229,7 @@ export function createStage(o: {canvas: HTMLCanvasElement; level: Level; spec: M
     let nw = 0, nc = 0, nd = 0
     for (const w of wins) { q.setFromAxisAngle(up, -w.side * Math.PI / 2); m4.compose(tmp.set(w.x, w.y, w.z), q, one); if (!w.lit) dark.setMatrixAt(nd++, m4); else if (w.warm) warm.setMatrixAt(nw++, m4); else cool.setMatrixAt(nc++, m4) }
     warm.count = nw; cool.count = nc; dark.count = nd; scene.add(warm, cool, dark)
+    if (dusk) mainFronts.push(b, plinth, warm, cool, dark)
     // shop fronts with the club's own words over them
     const words = [skin.strings.kiosk, skin.strings.cafe, skin.strings.snack, skin.strings.shop, skin.strings.news, skin.strings.ticket].filter((x): x is string => !!x)
     for (const side of [-1, 1]) for (let z = from - 8; z > to + 10; z -= 22 + rnd() * 10) {
@@ -235,7 +242,7 @@ export function createStage(o: {canvas: HTMLCanvasElement; level: Level; spec: M
       const shop = new THREE.Mesh(keep(new THREE.PlaneGeometry(3.8, 2.2)), keep(new THREE.MeshBasicMaterial({color: C('#ffcf9e').multiplyScalar(night ? 1.1 : 0.7), toneMapped: false}))); shop.rotation.y = -side * Math.PI / 2; shop.position.set(side * (walk - 0.04), 1.3, z); scene.add(shop)
     }
     // trees, never where green is a rival's
-    if (!bannedColour('#2f4a33', skin)) {
+    if (!dusk && !bannedColour('#2f4a33', skin)) {
       const trunks: [number, number][] = [], crowns: [number, number, number, number][] = []
       for (const side of [-1, 1]) for (let z = from - 4; z > to + 10; z -= 27) { if (gaps.some(c => Math.abs(z - c) < 9)) continue; trunks.push([side * (level.half + 2.6), z]); for (let k = 0; k < 4; k++) crowns.push([side * (level.half + 2.6) + (rnd() - 0.5) * 1.4, 4.2 + rnd() * 1.6, z + (rnd() - 0.5) * 1.4, 0.9 + rnd() * 0.6]) }
       const tm = new THREE.InstancedMesh(keep(new THREE.CylinderGeometry(0.12, 0.18, 4, 8)), keep(std('#3d2c22')), trunks.length)
@@ -247,6 +254,7 @@ export function createStage(o: {canvas: HTMLCanvasElement; level: Level; spec: M
 
   const addLamps = (half: number, from: number, to: number, every: number) => {
     for (let z = from; z > to; z -= every) lampZ.push(z)
+    if (dusk) { for (let k = 0; k < (lite ? 3 : 5); k++) { const pl = new THREE.PointLight('#ffa862', 40, 20, 1.6); scene.add(pl); lampLights.push(pl) } return }
     const poles = new THREE.InstancedMesh(keep(new THREE.CylinderGeometry(0.07, 0.1, 6.5, 8)), keep(std('#22252c')), lampZ.length * 2)
     const heads = new THREE.InstancedMesh(keep(new THREE.CapsuleGeometry(0.14, 0.9, 4, 8).rotateZ(Math.PI / 2)), keep(new THREE.MeshBasicMaterial({color: C('#ffd9b8').multiplyScalar(night ? 3.2 : 1), toneMapped: false})), lampZ.length * 2)
     const pools = new THREE.InstancedMesh(keep(new THREE.PlaneGeometry(1, 1)), keep(new THREE.MeshBasicMaterial({map: glowTex, color: C('#ff9c5c').multiplyScalar(night ? 0.85 : 0), transparent: true, depthWrite: false, blending: THREE.AdditiveBlending})), lampZ.length * 2)
@@ -273,6 +281,7 @@ export function createStage(o: {canvas: HTMLCanvasElement; level: Level; spec: M
 
   /** the ground at the end of the road: a lit bowl, floodlights, the gate in the club's word for it */
   const towers: THREE.Sprite[] = []
+  let bowl: THREE.Object3D | null = null
   const addGround = (z: number, wallZ: number) => {
     const stad = new THREE.Group(); stad.position.set(0, 0, z)
     // a city with its landmark painted at the end of the road keeps only the gate: the bowl and its floodlights
@@ -280,8 +289,10 @@ export function createStage(o: {canvas: HTMLCanvasElement; level: Level; spec: M
     if (!skyline) scene.add(stad)
     const shell = new THREE.Mesh(keep(new THREE.CylinderGeometry(78, 84, 26, 48, 1, true)), keep(std('#2b2f3a', {side: THREE.DoubleSide}))); shell.position.y = 13; stad.add(shell)
     const ring = new THREE.Mesh(keep(new THREE.TorusGeometry(80, 1.2, 6, 64)), keep(new THREE.MeshBasicMaterial({color: C(skin.p).multiplyScalar(1.6), toneMapped: false}))); ring.rotation.x = Math.PI / 2; ring.position.y = 26.5; stad.add(ring)
+    // the bowl alone (shell and ring), so a ground's picture can take its place (look/flowStreet.ts)
+    bowl = new THREE.Group(); stad.add(bowl); bowl.add(shell, ring)
     const glow = new THREE.Mesh(keep(new THREE.PlaneGeometry(420, 200)), keep(new THREE.MeshBasicMaterial({map: glowTex, color: C(night ? '#cfe0ff' : '#ffffff').multiplyScalar((night ? 0.9 : 0.25) * (skyline ? 0.3 : 1)), transparent: true, depthWrite: false, blending: THREE.AdditiveBlending, fog: false}))); glow.position.set(0, 50, -40); stad.add(glow)
-    for (const [x, zz] of [[-70, 40], [70, 40], [-70, -40], [70, -40]] as const) {
+    for (const [x, zz] of (dusk ? [] : [[-70, 40], [70, 40], [-70, -40], [70, -40]]) as readonly (readonly [number, number])[]) {
       const tw = new THREE.Mesh(box, keep(new THREE.MeshStandardMaterial({color: '#30343e', fog: false}))); tw.scale.set(2.2, 82, 2.2); tw.position.set(x, 41, zz); stad.add(tw)
       const lamp = new THREE.Mesh(box, keep(new THREE.MeshBasicMaterial({color: C('#eaf2ff').multiplyScalar(night ? 7 : 1.5), toneMapped: false, fog: false}))); lamp.scale.set(12, 6, 1.2); lamp.position.set(x, 84, zz); lamp.lookAt(0, 0, 0); stad.add(lamp)
       if (night) { const halo = new THREE.Sprite(keep(new THREE.SpriteMaterial({map: glowTex, color: C('#dfe9ff').multiplyScalar(1.4), transparent: true, depthWrite: false, blending: THREE.AdditiveBlending, fog: false}))); halo.scale.set(70, 70, 1); halo.position.set(x, 84, zz); stad.add(halo); towers.push(halo) }
@@ -367,9 +378,9 @@ export function createStage(o: {canvas: HTMLCanvasElement; level: Level; spec: M
     addBuildings(level.walk, level.bounds.z1 + 16, level.goal.z + 40, level.crossings)
     if (level.side) addSideStreets()
     addLamps(level.half, level.bounds.z1 + 4, level.goal.z + 20, 18)
-    addPennants(level.walk, -20, level.goal.z + 30)
+    if (!dusk) addPennants(level.walk, -20, level.goal.z + 30)
     // a city with a landmark at the end of the road shows the gate and not the bowl, so the landmark reads behind it
-    skyline = dressCity({scene, keep, level, skin, clubId: spec.skin, seed: spec.seed, night, lite, banned: h => bannedColour(h, skin), glowTex})
+    skyline = dressCity({scene, keep, level, skin, clubId: spec.skin, seed: spec.seed, night, lite, banned: h => bannedColour(h, skin), glowTex, fronts: dusk ? mainFronts : undefined, dusk: !!dusk})
     const banner = new THREE.Mesh(keep(new THREE.PlaneGeometry(16, 2.4)), keep(new THREE.MeshBasicMaterial({map: signTex(`${o.gateLabel} · ${skin.name.toUpperCase()}`, skin.p, skin.s, 1024, 154), toneMapped: false}))); banner.position.set(0, 9.5, level.goal.z + 26); scene.add(banner)
     addGround(level.goal.z - 51, level.goal.z - 7)
   } else if (level.place === 'road') {
@@ -448,6 +459,12 @@ export function createStage(o: {canvas: HTMLCanvasElement; level: Level; spec: M
     if (!school) addGround(level.bounds.z0 - 100, level.bounds.z0 - 12)
   }
 
+  let duskDress: Dusk | null = null
+  if (dusk && level.place === 'street') { try { duskDress = dressDusk({scene, renderer, level, skin, lite, skyline, keep, rnd, glowTex, allowed: l => allowed(l, skin), banned: h => bannedColour(h, skin), sign: (a, b, c, w, h) => signTex(a, b, c, w, h), blocks: duskBlocks, facadeMats: duskFacades, clubId: spec.skin}) } catch { duskDress = null } }
+  // the town's own pictures (rule life-flow-art): facades, the ground's plate, the skyline band; lazy and failing soft
+  let flowDress: FlowDress | null = null
+  if (duskDress && level.hood) { const dd = duskDress; try { flowDress = dressFlow({scene, renderer, level, clubId: spec.skin, skinTown: skin.town, lite, keep, rnd: seeded(spec.seed ^ 0xf10a), banned: h => bannedColour(h, skin), replaces: () => [...mainFronts, ...dd.front], wallMat: duskFacades[0] ?? null, bowl, ground: dd.ground, blocks: duskBlocks, onFronts: l => dd.onFronts(l)}) } catch { flowDress = null } }
+
   /* ───────────── cars ───────────── */
   type CarParts = {body: THREE.InstancedMesh; cab: THREE.InstancedMesh; wheel: THREE.InstancedMesh; head: THREE.InstancedMesh; tail: THREE.InstancedMesh; bar: THREE.InstancedMesh}
   let cars: CarParts | null = null
@@ -491,16 +508,20 @@ export function createStage(o: {canvas: HTMLCanvasElement; level: Level; spec: M
 
   /* ───────────── people ───────────── */
   const figOf = (opts: Parameters<typeof makeFigure>[2]) => makeFigure(cloth, kitMap, opts)
+  // the hood's people are skinned humans (human/): the nearest few drawn as people, everybody else the cheap figure in the same colours
+  const troupe: Troupe | null = level.hood && o.people !== 'classic' && charNow('boy') && charNow('father') ? createTroupe({max: lite ? 8 : 16, lite}) : null
+  const scarfOf = {p: skin.p, s: bannedColour(skin.s, skin) ? '#f3efe6' : skin.s}
+  const nobody = () => new THREE.Group()
   // the crowd: one posed template, each part instanced
   const tmpl = figOf({template: true, scarf: true})
   tmpl.updateMatrixWorld(true)
   const kidK = level.kids ? 0.78 : 1
-  const tParts = (tmpl.userData as FigureData).meshes.filter(m => !['glint', 'iris', 'eyeW', 'brow', 'blob'].includes(m.userData.role as string))
-  const recolour = new Set(['skin', 'hair', 'pants', 'top', 'beard'])
-  type Person = {x: number; z: number; face: number; look: Look; mode: 'walk' | 'stand' | 'steward' | 'rival' | 'target'; idx: number; react: number; turn: number; bubbleAt: number}
+  const tParts = (tmpl.userData as FigureData).meshes.filter(m => !['glint', 'blob'].includes(m.userData.role as string))
+  const recolour = new Set(['skin', 'hair', 'pants', 'top', 'beard', 'brow'])
+  type Person = {x: number; z: number; face: number; look: Look; mode: 'walk' | 'stand' | 'steward' | 'rival' | 'target'; idx: number; react: number; turn: number; bubbleAt: number; hy?: number}
   const people: Person[] = []
   level.walkers.forEach((w, i) => people.push({x: w.x, z: w.z0, face: Math.PI, look: w.look, mode: 'walk', idx: i, react: 0, turn: Math.PI, bubbleAt: -9}))
-  level.standers.forEach((s, i) => people.push({x: s.x, z: s.z, face: s.face, look: s.look, mode: s.role === 'rival' ? 'rival' : 'stand', idx: i, react: 0, turn: s.face, bubbleAt: -9}))
+  level.standers.forEach((s, i) => { if (s.hidden) return; people.push({x: s.x, z: s.z, face: s.face, look: s.look, mode: s.role === 'rival' ? 'rival' : 'stand', idx: i, react: 0, turn: s.face, bubbleAt: -9}) })
   const tgt = level.targets[0]
   if (tgt?.kind === 'person' && tgt.look) people.push({x: tgt.x, z: tgt.z, face: Math.PI, look: tgt.look, mode: 'target', idx: 0, react: 0, turn: Math.PI, bubbleAt: -9})
   const N = Math.max(1, people.length)
@@ -517,11 +538,12 @@ export function createStage(o: {canvas: HTMLCanvasElement; level: Level; spec: M
   people.forEach((p, i) => tParts.forEach((m, k) => {
     const r = m.userData.role as string
     const rival = p.mode === 'rival'
-    const col = r === 'skin' ? (p.look.hex?.skin ?? SKIN_TONES[p.look.tone % SKIN_TONES.length]) : r === 'hair' || r === 'beard' ? hairOf(p.look) : r === 'pants' ? (p.look.hex?.pants ?? PANTS[p.look.pants % PANTS.length]) : r === 'top' ? (rival ? '#1d1f24' : p.look.hex?.top ?? tops[p.look.top % tops.length]) : null
+    const col = r === 'skin' ? (p.look.hex?.skin ?? SKIN_TONES[p.look.tone % SKIN_TONES.length]) : r === 'hair' || r === 'beard' || r === 'brow' ? hairOf(p.look) : r === 'pants' ? (p.look.hex?.pants ?? PANTS[p.look.pants % PANTS.length]) : r === 'top' ? (rival ? '#1d1f24' : p.look.hex?.top ?? tops[p.look.top % tops.length]) : null
     if (col) crowd[k]!.setColorAt(i, C(col))
   }))
   crowd.forEach(im => { if (im.instanceColor) im.instanceColor.needsUpdate = true })
   const zero = new THREE.Matrix4().makeScale(0, 0, 0)
+  const duskCrowd = dusk ? dressCrowd({scene, level, skin, lite, rnd, keep, allowed: l => allowed(l, skin), figOf, humans: !!troupe}) : null
 
 
   /* ───────────── the quest: who waits for you, what lies on the ground, where to go next ───────────── */
@@ -530,13 +552,23 @@ export function createStage(o: {canvas: HTMLCanvasElement; level: Level; spec: M
   // women with their hair down, denim, glasses, a jacket at night, eyes of their own colour
   const lookFig = (L: Look, o: Parameters<typeof makeFigure>[2] = {}) => {
     const h = L.tone * 7 + L.hair * 3 + L.top * 5 + L.pants * 11
-    const female = !L.beard && !L.hex && h % 3 === 0
+    const female = o.female ?? (!L.beard && !L.hex && h % 3 === 0)
+    const classic = () => classicFig(L, o, h, female)
+    if (!troupe) return classic()
+    const cast = (o.cast as CastId | undefined) ?? castFor({child: o.child, female, grey: L.grey, heavy: h % 5 === 2, pick: h})
+    return troupe.make(cast, {top: L.kit ? skin.p : o.top ?? L.hex?.top ?? tops[L.top % tops.length]!, skin: o.skinTone ?? L.hex?.skin ?? SKIN_TONES[L.tone % SKIN_TONES.length], hair: L.grey ? undefined : L.hex?.hair ?? (o.rank === 1 ? undefined : HAIR[L.hair % HAIR.length]),
+      pants: L.hex?.pants ?? PANTS[L.pants % PANTS.length], height: (o.scale ?? L.size * 0.94 * kidK) * 1.87, child: o.child, scarf: (o.scarf ?? L.scarf) ? scarfOf : null, pack: o.pack, noBlob: o.noBlob, rank: o.rank ?? 2, wear: {cap: (L.cap || !!o.cap) && !female, beard: L.beard && !female, glasses: h % 6 === 0}}, o.rank === 3 ? nobody : classic)
+  }
+  const classicFig = (L: Look, o: Parameters<typeof makeFigure>[2], h: number, female: boolean) => {
     return figOf({kit: L.kit, scarf: L.scarf, cap: L.cap && !female, mustache: L.beard, hair: hairOf(L), skinTone: L.hex?.skin ?? SKIN_TONES[L.tone % SKIN_TONES.length], top: L.hex?.top ?? tops[L.top % tops.length], pants: L.hex?.pants ?? PANTS[L.pants % PANTS.length], longSleeves: !L.kit, scale: L.size * 0.94 * kidK,
       female, hairStyle: female ? (h % 2 ? 'long' : 'bun') : h % 5 === 0 ? 'curly' : h % 7 === 0 ? 'bald' : 'short', glasses: h % 6 === 0, denim: L.pants % 2 === 0, eyes: L.hair % 5, jacket: !L.kit && night ? (L.top % 2 ? '#2a2f3a' : '#3b3630') : undefined, ...o})
   }
   const tint = C(skin.p).lerp(C('#ffffff'), 0.3)
   const flat = level.place === 'flat' ? dressFlat({scene, keep, level, skin, night, lite, banned: h => bannedColour(h, skin), ground, glowTex,
     person: f => figOf({kit: false, longSleeves: true, hairStyle: f.hairStyle ?? (f.curly ? 'curly' : 'short'), top: f.top, pants: f.pants, hair: f.hair, mustache: !!f.beard, skinTone: f.skinTone ?? SKIN_TONES[1], scale: (f.scale ?? 1) * 0.94, female: f.female, skirt: f.skirt, glasses: f.glasses, denim: f.denim, jacket: f.jacket, eyes: f.eyes, noBlob: true})}) : null
+  let lifeDress: LifeDress | null = null
+  if (level.hood) { try { lifeDress = dressLife({scene, keep, level, lite, night, primary: skin.p, secondary: skin.s, glowTex, lookFig: (L, o) => lookFig(L, o), rlook}) } catch { lifeDress = null } }
+  const hoodDress: HoodDress | null = level.hood ? dressHood({scene, keep, level, skin, night, lite, banned: h => bannedColour(h, skin), tint, person: (L, id) => lookFig(L, {rank: 1, cast: id === 'dad' ? 'father' : id === 'kiosk' ? 'father_heavy' : id === 'neighbour' ? 'grandfather' : id === 'mate' ? 'teen' : undefined, scale: id === 'mate' ? 0.81 : undefined}), sign: (a, b, c, w, h) => signTex(a, b, c, w, h)}) : null
   type Npc = {fig: THREE.Group; step: number; extra: THREE.Group[]; x: number; z: number}
   const npcs: Npc[] = []
   level.steps.forEach((st, i) => {
@@ -646,9 +678,14 @@ export function createStage(o: {canvas: HTMLCanvasElement; level: Level; spec: M
   })
 
   // the supporter: his own figure, or his car
-  const child = spec.age < 13
-  const hero = figOf({kit: true, scarf: true, band: !child && level.verb === 'run', pack: level.verb === 'run' || level.verb === 'find', roll: level.verb === 'carry', pants: '#2f3e5e', denim: true, eyes: 1, hair: HAIR[1], skinTone: SKIN_TONES[1], child, scale: child ? 0.78 : 0.94, noBlob: level.place === 'flat'})
+  let child = spec.age < 13
+  const heroOpts = {kit: true, scarf: true, band: !child && level.verb === 'run', pack: level.verb === 'run' || level.verb === 'find', roll: level.verb === 'carry', pants: '#2f3e5e', denim: true, eyes: 1, hair: HAIR[1], skinTone: SKIN_TONES[1], child, scale: child ? 0.78 : 0.94, noBlob: level.place === 'flat'}
+  const body0 = level.hood ? heroBody(spec.age) : {cast: child ? 'boy' as const : spec.age < 19 ? 'teen' as const : 'father' as const, height: child ? 1.42 : 1.76, child}
+  const hero = troupe ? troupe.make(body0.cast, {top: skin.p, height: body0.height, child, scarf: scarfOf, pack: 'pack' in body0 ? body0.pack : true, rank: 0}, () => figOf(heroOpts)) : figOf(heroOpts)
   if (!heroCar) scene.add(hero)
+  // the near crowd as people: whoever comes within a few steps gets a body of his own (the troupe draws the nearest it can afford)
+  const extras: (THREE.Group | undefined)[] = [], crowdExtras = new Map<number, THREE.Group>()
+  const rimLight = new THREE.PointLight('#cfe0ff', 0, 5, 1.6); if (level.hood) scene.add(rimLight)
   // the banner he takes on the ultras route: rolled cloth in neutral grey and white, never the other club's colours
   const loot = new THREE.Mesh(keep(new THREE.CylinderGeometry(0.14, 0.14, 1.2, 14).rotateZ(Math.PI / 2)), keep(std('#c9c5bd', {roughness: 0.85})))
   loot.visible = false; scene.add(loot)
@@ -757,23 +794,32 @@ export function createStage(o: {canvas: HTMLCanvasElement; level: Level; spec: M
   // highlights (split tone), a touch more saturation, a vignette, grain — the GTA look, not a filter on top of it.
   const composer = new EffectComposer(renderer, new THREE.WebGLRenderTarget(1, 1, {type: THREE.HalfFloatType, samples: lite ? 0 : 4}))
   composer.addPass(new RenderPass(scene, cam))
-  if (!lite) composer.addPass(new UnrealBloomPass(new THREE.Vector2(256, 256), night ? 0.55 : 0.22, 0.6, night ? 0.9 : 1.1))
+  const bloomBase = dusk ? 0.32 : night ? 0.55 : 0.22
+  const bloom = lite ? null : new UnrealBloomPass(new THREE.Vector2(256, 256), bloomBase, dusk ? 0.5 : 0.6, dusk ? 1.05 : night ? 0.9 : 1.1)
+  if (bloom) composer.addPass(bloom)
   const grade = new ShaderPass({
-    uniforms: {tDiffuse: {value: null}, uTime: {value: 0}, uSpeed: {value: 0}, uHeart: {value: 0}, uFlash: {value: 0}, uTint: {value: C(skin.p)}, uAspect: {value: 1}, uNight: {value: night ? 1 : 0}, uClose: {value: 0}},
+    uniforms: {tDiffuse: {value: null}, uTime: {value: 0}, uSpeed: {value: 0}, uHeart: {value: 0}, uFlash: {value: 0}, uTint: {value: C(skin.p)}, uAspect: {value: 1}, uNight: {value: dusk ? 0.55 : night ? 1 : 0}, uClose: {value: 0}, uWarm: {value: 0}, uFocus: {value: 0}},
     vertexShader: 'varying vec2 vUv; void main(){ vUv=uv; gl_Position=projectionMatrix*modelViewMatrix*vec4(position,1.); }',
-    fragmentShader: `uniform sampler2D tDiffuse; uniform float uTime,uSpeed,uFlash,uAspect,uHeart,uNight,uClose; uniform vec3 uTint; varying vec2 vUv;
+    fragmentShader: `uniform sampler2D tDiffuse; uniform float uTime,uSpeed,uFlash,uAspect,uHeart,uNight,uClose,uWarm,uFocus; uniform vec3 uTint; varying vec2 vUv;
       float h(float n){ return fract(sin(n)*43758.5453); }
       void main(){ vec2 p=vUv-.5; p.x*=uAspect; float r=length(p); vec2 dir=normalize(vUv-.5+1e-5);
         // a lens: a hair of colour fringing at the edge always, more at speed
         float ca=(.0004+.0016*uSpeed)*r*r*2.4;
         vec3 c=vec3(texture2D(tDiffuse,vUv+dir*ca).r,texture2D(tDiffuse,vUv).g,texture2D(tDiffuse,vUv-dir*ca).b);
         c=max(c,0.);
+        // a conversation: what is round the two of them goes soft and a little dark, the way a long lens leaves it
+        if(uFocus>.01){ float f=smoothstep(.14,.6,r)*uFocus; vec2 o=vec2(.0035,.0035*uAspect)*(1.+r*2.2);
+          vec3 b=texture2D(tDiffuse,vUv+vec2(o.x,0.)).rgb+texture2D(tDiffuse,vUv-vec2(o.x,0.)).rgb+texture2D(tDiffuse,vUv+vec2(0.,o.y)).rgb+texture2D(tDiffuse,vUv-vec2(0.,o.y)).rgb
+            +texture2D(tDiffuse,vUv+o*1.6).rgb+texture2D(tDiffuse,vUv-o*1.6).rgb+texture2D(tDiffuse,vUv+vec2(o.x,-o.y)*1.6).rgb+texture2D(tDiffuse,vUv-vec2(o.x,-o.y)*1.6).rgb;
+          c=mix(c,max(b,0.)/8.,f); c*=1.-f*.3; }
         // split tone: the shadows go cool, the lights go warm (at night the shadows go ink-blue and the lights stay sodium)
         float l=dot(c,vec3(.2126,.7152,.0722));
         vec3 sh=mix(vec3(.86,.94,1.14),vec3(.78,.86,1.22),uNight), hi=mix(vec3(1.08,1.0,.9),vec3(1.1,.98,.84),uNight);
         c*=mix(sh,hi,smoothstep(.03,.7,l));
+        // warmth: the lights go to amber and bloom a little into what is beside them
+        c*=mix(vec3(1.),vec3(1.12,1.0,.84),uWarm*.7); c+=vec3(1.,.7,.4)*pow(max(l-.22,0.),1.4)*.3*uWarm;
         // saturation up, then a filmic S round middle grey: blacks that are black, whites that keep their colour
-        l=dot(c,vec3(.2126,.7152,.0722)); c=mix(vec3(l),c,1.14);
+        l=dot(c,vec3(.2126,.7152,.0722)); c=max(mix(vec3(l),c,1.02),0.); // a saturated light pushed past zero would be NaN under pow: a black hole
         c=pow(c/.18,vec3(1.1))*.18;
         // speed: streaks at the rim; tired: a heartbeat that darkens the edge in the club's colour
         float a=atan(p.y,p.x); float n=h(floor(a*70.)+floor(uTime*14.)); c+=smoothstep(.93,1.,n)*smoothstep(.42,1.05,r)*uSpeed*.22*vec3(.9,.95,1.);
@@ -790,9 +836,23 @@ export function createStage(o: {canvas: HTMLCanvasElement; level: Level; spec: M
   /* ───────────── the frame ───────────── */
   const camPos = new THREE.Vector3(level.start.x, 2, level.start.z + 4), camLook = new THREE.Vector3(level.start.x, 1.4, level.start.z - 6)
   let t = 0, shake = 0, speedFx = 0, flash = 0, heart = 0, lastHits = 0, lastCaught = 0
-  const eyeHeight = child ? 1.2 : 1.62
+  let talkKey = '', talkT = 0, talkK = 0, shotKey = '', warm = 0, beatK = 0, talkFov = 40
+  let talkFace: {x: number; y: number; z: number; fig?: THREE.Object3D} | null = null, ambNow: AmbState | null = null
+  const rayCaster = new THREE.Raycaster(), rayFrom = new THREE.Vector3(), rayDir = new THREE.Vector3()
+  let occluders: THREE.Object3D[] | null = null
+  const talkPos = new THREE.Vector3(), talkLook = new THREE.Vector3(), talkWant = new THREE.Vector3(), talkAim = new THREE.Vector3()
+  const talkLight = new THREE.PointLight('#ffc79a', 0, 6, 1.8); if (level.hood) scene.add(talkLight)
+  const eyeH = () => child ? 1.2 : 1.62
 
-  function render(sim: Sim, view: View, dt: number) {
+  function render(sim: Sim, view: View, dtReal: number) {
+    // the conversation's own clock: a new line starts it again; the scarf going on is held a little longer than life
+    const vt = view.hood?.talk ?? null
+    if ((vt?.key ?? '') !== talkKey) { talkKey = vt?.key ?? ''; talkT = 0; shotKey = '' }
+    const beat = vt?.beat === 'scarf'
+    const slow = beat && !reduced && talkT > 0.9 && talkT < 3.1 ? 0.5 : 1
+    const dt = dtReal * slow
+    if (vt) talkT += dt
+    const talkDir: TalkDir | null = vt ? {who: vt.who, mood: vt.mood, gesture: vt.gesture, you: vt.you, shot: vt.shot, beat: vt.beat, speak: vt.speak, tt: talkT} : null
     t += dt
     const heading = sim.heading
     // people
@@ -804,13 +864,35 @@ export function createStage(o: {canvas: HTMLCanvasElement; level: Level; spec: M
       if (d2 > 900 && p.mode !== 'target') { crowd.forEach(im => im.setMatrixAt(i, zero)); continue }
       if (d2 < 9 && !p.react && Math.random() < 0.5 && !sim.ended) p.react = 1.6
       p.react = Math.max(0, p.react - dt)
-      const faceHero = p.mode === 'stand' || p.mode === 'rival' || p.react > 0
+      const hoodMode = !!level.hood
+      const faceHero = hoodMode ? p.mode === 'rival' : p.mode === 'stand' || p.mode === 'rival' || p.react > 0
       const yaw = faceHero && p.mode !== 'target' ? Math.atan2(sim.x - p.x, sim.z - p.z) : p.mode === 'walk' ? Math.PI : p.face
       p.turn += (yaw - p.turn) * Math.min(dt * 4, 1)
-      J.phase = i * 1.7 + t * (p.mode === 'walk' ? 1 : 0)
-      const standing = p.mode !== 'walk'
-      pose(tmpl, {speed: standing ? 0 : level.walkers[p.idx]!.v, scarfUp: p.mode === 'stand' ? Math.sin(t * 2 + i) > -0.2 && level.place !== 'yard' : p.react > 0.6 && p.mode !== 'rival', joy: p.mode === 'rival' ? 0 : standing || p.react > 0 ? 1 : 0.2, talk: p.react > 0, effort: p.mode === 'rival' ? 0.7 : 0}, t, 0)
-      tmpl.position.set(p.x, p.mode === 'stand' ? Math.abs(Math.sin(t * 3 + i)) * 0.05 : 0, p.z); tmpl.rotation.y = p.turn
+      const standing = p.mode !== 'walk', v = standing ? 0 : level.walkers[p.idx]!.v, psc = p.look.size * kidK
+      // a stride covers the ground he covers: the phase is the distance walked over the stride's length (no sliding feet)
+      J.phase = i * 1.7 + (standing ? 0 : (v * sim.t) / (psc * Math.max(0.9, Math.min(3.3, 0.85 + 0.42 * v / psc))) * Math.PI * 2)
+      seedFigure(tmpl, i * 2.39)
+      // he notices the boy going by: the head and the eyes follow him, and the face is glad
+      const rel = Math.atan2(sim.x - p.x, sim.z - p.z) - p.turn, relY = Math.atan2(Math.sin(rel), Math.cos(rel))
+      p.hy = (p.hy ?? 0) + ((hoodMode && d2 < 56 && Math.abs(relY) < 1.75 ? Math.max(-1.05, Math.min(1.05, relY)) : 0) - (p.hy ?? 0)) * Math.min(1, dt * 5)
+      if (troupe) {
+        let xf = extras[i]
+        if (d2 < 110 && !xf) { xf = extras[i] = lookFig(p.look, {rank: 3}); scene.add(xf) }
+        if (xf) {
+          xf.visible = d2 < 120
+          if (xf.visible) {
+            xf.position.set(p.x, 0, p.z); xf.rotation.y = p.turn
+            const chat2 = p.mode === 'stand' && Math.sin(t * 0.55 + i * 1.3) > 0.45
+            pose(xf, {speed: v, mood: p.mode === 'rival' ? 'neutral' : Math.abs(p.hy) > 0.15 ? 'smile' : chat2 ? 'laugh' : 'warm', lookY: p.hy, gaze: Math.abs(p.hy) > 0.1, speak: chat2 ? 1 : 0, gesture: chat2 ? (i % 3 === 0 ? 'open' : i % 3 === 1 ? 'laugh' : null) : p.react > 0.8 && i % 3 === 0 ? 'lift' : null}, t, dt)
+            if (isSkinned(xf)) { crowd.forEach(im => im.setMatrixAt(i, zero)); continue }
+          }
+        }
+      }
+      const sing = p.mode === 'stand' && (hoodMode ? i % 5 === 0 && p.z < level.goal.z + 60 && Math.sin(t * 0.4 + i) > 0.2 : Math.sin(t * 2 + i) > -0.2 && level.place !== 'yard')
+      const chat = hoodMode && p.mode === 'stand' && !sing && Math.sin(t * 0.55 + i * 1.3) > 0.45
+      pose(tmpl, {speed: v, scarfUp: sing || (!hoodMode && p.react > 0.6 && p.mode !== 'rival'), joy: p.mode === 'rival' ? 0 : standing || p.react > 0 ? 1 : 0.2, talk: !hoodMode && p.react > 0, speak: chat ? 1 : undefined, effort: p.mode === 'rival' ? 0.7 : 0,
+        gesture: chat ? (i % 3 === 0 ? 'open' : i % 3 === 1 ? 'laugh' : null) : hoodMode && p.react > 0.8 && i % 3 === 0 ? 'lift' : null, mood: hoodMode && p.mode !== 'rival' ? (Math.abs(p.hy) > 0.15 ? 'smile' : chat ? 'laugh' : 'warm') : undefined, lookY: p.hy, gaze: Math.abs(p.hy) > 0.1}, t, 0)
+      tmpl.position.set(p.x, !hoodMode && p.mode === 'stand' ? Math.abs(Math.sin(t * 3 + i)) * 0.05 : 0, p.z); tmpl.rotation.y = p.turn
       const sc = p.look.size * kidK; tmpl.scale.set(sc, sc, sc)
       tmpl.updateMatrixWorld(true)
       tParts.forEach((m, k) => {
@@ -932,6 +1014,18 @@ export function createStage(o: {canvas: HTMLCanvasElement; level: Level; spec: M
       })
     }
 
+    ambNow = lifeDress ? lifeDress.update(sim, view.hood?.amb ?? null, t, dt) : null
+    talkFace = hoodDress ? hoodDress.update(sim, view, t, dt, talkDir, ambNow, child, hero) : null
+    duskDress?.update(sim, t, dt, cam.position)
+    flowDress?.update(cam.position)
+    if (troupe) crowdExtras.forEach(f => { f.visible = false })
+    duskCrowd?.update(sim, t, dt, troupe ? (i, px, pz, yaw, v, sc, col) => {
+      let f = crowdExtras.get(i)
+      if (!f) { if (crowdExtras.size > 40) return false; f = troupe.make(castFor({female: i % 3 === 0, grey: i % 7 === 3, heavy: i % 4 === 1, pick: i}), {top: '#' + col.getHexString(), skin: SKIN_TONES[(i * 5 + 1) % SKIN_TONES.length], hair: i % 7 === 3 ? undefined : HAIR[i % HAIR.length], pants: PANTS[i % PANTS.length], height: sc * 1.74, scarf: i % 4 !== 2 ? scarfOf : null, rank: 3}, nobody); scene.add(f); crowdExtras.set(i, f) }
+      f.visible = true; f.position.set(px, 0, pz); f.rotation.y = yaw
+      pose(f, {speed: v, mood: i % 3 ? 'warm' : 'smile', joy: 0.6, speak: v === 0 && Math.sin(t * 0.5 + i) > 0.6 ? 1 : 0, gesture: v === 0 && Math.sin(t * 0.5 + i) > 0.6 ? 'open' : null, lookY: Math.sin(t * 0.3 + i) * 0.3}, t, dt)
+      return isSkinned(f)
+    } : undefined)
     flat?.update(sim, t, dt, view.ending, view.outcome, {x: camPos.x, z: camPos.z, close: closeK})
     // stewards and the ground they can see
     if (level.place !== 'flat') level.patrols.forEach((p, i) => {
@@ -947,10 +1041,34 @@ export function createStage(o: {canvas: HTMLCanvasElement; level: Level; spec: M
     const sp = sim.speed
     const tired = sim.stamina < 0.25
     if (!heroCar) {
-      hero.position.set(sim.x, 0, sim.z); hero.rotation.y = heading
+      hero.position.set(sim.x, 0, sim.z)
+      // he turns the way he goes at a body's pace (the head gets there first, `pose`); in a conversation he turns to whoever he is talking to
+      if (!level.hood || view.ending || view.brief) hero.rotation.y = heading
+      else if (talkDir && talkFace) turnTo(hero, Math.atan2(talkFace.x - sim.x, talkFace.z - sim.z), dt, 7, 6)
+      else turnTo(hero, heading, dt, 18, 14)
       const carrying = (level.verb === 'carry' && sim.holding) || (level.home !== null && sim.back)
       if (view.ending) { hero.rotation.y += (0 - hero.rotation.y) * 0.1; pose(hero, view.outcome === 'slip' ? {speed: 0, knees: true, panting: true, effort: 0.6} : {speed: 0, celebrate: true, joy: 1}, t, dt) }
       else if (view.intro > 0 || view.brief) pose(hero, {speed: 0, joy: 0.4, ticket: level.verb === 'run' && level.place !== 'flat'}, t, dt)
+      else if (level.hood) {
+        const hs = (hero.userData as FigureData).scarf
+        const scarfOn = !!view.hood?.scarf && !(beat && talkT < 1.7)
+        hs?.forEach(o => { o.visible = scarfOn })
+        if (talkDir) {
+          const tt = talkT, you: Mood = beat ? (tt < 1.7 ? 'surprised' : tt < 4.3 ? 'smile' : tt < 7 ? 'laugh' : 'proud') : talkDir.you ?? 'warm'
+          const up = talkFace ? Math.atan2(talkFace.y - (child ? 1.12 : 1.55), Math.max(0.4, Math.hypot(talkFace.x - sim.x, talkFace.z - sim.z))) : 0
+          pose(hero, {speed: 0, mood: you, gaze: true, lookDown: -Math.min(0.5, up) + (beat && tt > 1.2 && tt < 2.6 ? 0.25 : 0), joy: 0.6, gesture: beat && tt > 7.4 ? 'thumb' : null}, t, dt)
+        } else {
+          // he looks at whoever calls to him and at the people he knows as he passes them
+          let gx = 0, gz = 0, gd = 99
+          for (const q of level.hood.people) { const d = Math.hypot(q.x - sim.x, q.z - sim.z); if (d < 7 && d < gd) { gd = d; gx = q.x; gz = q.z } }
+          const cap = ambNow?.captions[ambNow.captions.length - 1], ca = cap ? lifeDress?.anchor(cap.spot) : null
+          if (ca && Math.hypot(ca.x - sim.x, ca.z - sim.z) < 14) { gd = 1; gx = ca.x; gz = ca.z }
+          let gy = 0
+          if (gd < 99) { const r0 = Math.atan2(gx - sim.x, gz - sim.z) - hero.rotation.y, r1 = Math.atan2(Math.sin(r0), Math.cos(r0)); if (Math.abs(r1) < 2) gy = Math.max(-1, Math.min(1, r1)) }
+          const kicked = !!ambNow && ambNow.t - ambNow.kickAt < 0.5
+          pose(hero, {speed: sim.stagger > 0 ? 1 : sp, effort: sim.sprinting ? 0.7 : tired ? 0.7 : 0, panting: tired, stumble: sim.stagger > 0.5, lean: sim.sprinting ? 0.1 : 0, lookY: gy, gaze: gy !== 0, lookDown: gy !== 0 && child && gd < 7 ? -0.18 : 0, mood: gy !== 0 ? 'smile' : 'warm', gesture: kicked ? 'kick' : null}, t, dt)
+        }
+      }
       else pose(hero, {speed: sim.stagger > 0 ? 1 : sp, effort: sim.sprinting ? 0.9 : tired ? 0.7 : Math.min(sp / 9, 0.5), panting: tired, stumble: sim.stagger > 0.5, lean: sim.sprinting ? 0.1 : 0, carry: carrying, crouch: level.place === 'yard' && !sim.sprinting ? 0.55 : 0}, t, dt)
       const hd = hero.userData as FigureData
       // going through a place: he faces it, bends to it, and his hands go through it (a drawer is pulled, a coat patted)
@@ -986,6 +1104,7 @@ export function createStage(o: {canvas: HTMLCanvasElement; level: Level; spec: M
     // lights follow him
     key.position.set(sim.x - 12, 30, sim.z - 40); key.target.position.set(sim.x, 0, sim.z)
     if (!night) key.position.set(sim.x + 20, 40, sim.z + 10)
+    if (dusk) key.position.set(sim.x - 10, 16, sim.z + 24)
     rim.position.set(sim.x + 1.4, 2.2, sim.z - 1.2); fill.position.set(sim.x - 1.2, 1.8, sim.z + 1.6)
     if (lampLights.length) { const near = lampZ.filter(z => z < sim.z + 30).slice(0, lampLights.length / 2 + 1); lampLights.forEach((l, k) => { const z = near[Math.floor(k / 2)] ?? -9999; l.position.set((k % 2 ? 1 : -1) * (level.half - 0.2), 6, z) }) }
     towers.forEach((h, i) => h.scale.setScalar(70 + Math.sin(t * 0.7 + i) * 3))
@@ -1054,23 +1173,103 @@ export function createStage(o: {canvas: HTMLCanvasElement; level: Level; spec: M
       camLook.lerp(tmp3.set(sim.x * 0.8, 1.2, sim.z - 14), Math.min(dt * 6, 1)); cam.lookAt(camLook)
       const fov = 58 + Math.min(sim.speed, 30) * 0.5; cam.fov += (fov - cam.fov) * Math.min(dt * 3, 1)
     } else if (view.cam === 'chase') {
-      const back = 3.1 + sp * 0.1, high = (child ? 1.55 : 1.85) + sp * 0.02, side = 0.75
+      const back = dusk ? 6.4 + sp * 0.1 : 3.1 + sp * 0.1, high = dusk ? 3.5 : (child ? 1.55 : 1.85) + sp * 0.02, side = dusk ? 0.9 : 0.75
       const fx = Math.sin(heading), fz = Math.cos(heading)
       // over the right shoulder, behind the way he faces
       // his right hand is (−fz, fx)
       const drop = Math.max(0, view.intro) / 2.4
       const target = tmp.set(sim.x - fx * (back + drop * 6) - fz * side + jx, high + jy + breath + drop * drop * 10, sim.z - fz * (back + drop * 6) + fx * side)
-      camPos.lerp(target, Math.min(dt * 5, 1)); cam.position.copy(camPos)
-      camLook.lerp(new THREE.Vector3(sim.x + fx * 7 - fz * side * 0.4, 1.45, sim.z + fz * 7 + fx * side * 0.4), Math.min(dt * 6, 1)); cam.lookAt(camLook)
-      const fov = (view.intro > 0 ? 48 : 54) + Math.min(sp, 10) * 1.2; cam.fov += (fov - cam.fov) * Math.min(dt * 4, 1)
+      camPos.lerp(target, Math.min(dt * (dusk ? 3.5 : 5), 1))
+      // the lens never goes into a facade: on the main street it stays inside the pavements (a crossing lets it out)
+      if (dusk && !level.crossings.some(c => Math.abs(camPos.z - c) < 8)) camPos.x = THREE.MathUtils.clamp(camPos.x, -(level.walk - 0.8), level.walk - 0.8)
+      cam.position.copy(camPos)
+      const ahead = dusk ? 24 : 7
+      camLook.lerp(new THREE.Vector3(sim.x + fx * ahead - fz * side * 0.4, dusk ? 1.6 : 1.45, sim.z + fz * ahead + fx * side * 0.4), Math.min(dt * 6, 1)); cam.lookAt(camLook)
+      const fov = (view.intro > 0 ? 48 : dusk ? 64 : 54) + Math.min(sp, 10) * 1.2; cam.fov += (fov - cam.fov) * Math.min(dt * 4, 1)
     } else {
       const hb = reduced ? 0 : Math.sin(t * (6 + sp * 1.2)) * 0.055 * Math.min(sp / 6, 1.4)
-      cam.position.set(sim.x + jx, eyeHeight + hb + jy + breath - (level.place === 'yard' && !sim.sprinting ? 0.35 : 0), sim.z)
+      cam.position.set(sim.x + jx, eyeH() + hb + jy + breath - (level.place === 'yard' && !sim.sprinting ? 0.35 : 0), sim.z)
       cam.rotation.order = 'YXZ'; cam.rotation.set(-0.04 + hb * 0.2, heading + Math.PI, 0)
       hands.children.forEach((a, i) => { if ((a as THREE.Group).isGroup) a.position.y = -0.3 + Math.sin(t * (6 + sp * 1.2) + (i ? Math.PI : 0)) * 0.03 * Math.min(sp / 4, 1.5) })
       const fov = 76 + Math.min(sp, 10) * 1.1; cam.fov += (fov - cam.fov) * Math.min(dt * 4, 1)
     }
+    if (level.hood) {
+      // whatever solid stands between a lens and the two people (a post, a tree, a stall, a wall the plan does not know):
+      // a ray from the lens to the middle of the pair, against the scene's opaque things, not the people themselves
+      const blocked = (ax: number, ay: number, az: number, bx: number, by: number, bz: number) => {
+        rayFrom.set(ax, ay, az); rayDir.set(bx - ax, by - ay, bz - az); const len = rayDir.length(); if (len < 0.3) return false
+        rayCaster.set(rayFrom, rayDir.divideScalar(len)); rayCaster.far = len - 0.5
+        if (!occluders) { const list: THREE.Object3D[] = []; occluders = list; scene.traverse(o => { const m = o as THREE.Mesh; if (!m.isMesh || (m as THREE.SkinnedMesh).isSkinnedMesh || !m.visible) return
+          const mt = m.material as THREE.Material; if (Array.isArray(mt) || mt.transparent || !mt.depthWrite || m.userData.role || m.geometry.attributes.aMask || m.geometry.attributes.aTint) return
+          for (let p: THREE.Object3D | null = m; p; p = p.parent) if ((p.userData as {human?: unknown}).human || p === hero) return
+          list.push(m) }) }
+        return rayCaster.intersectObjects(occluders, false).length > 0
+      }
+      // A conversation is held, not watched from the kerb: over the boy's shoulder onto the face that speaks; for a line that
+      // matters, round to the side so both of them are in the picture. The lens takes the side that has room (never a facade,
+      // never the kiosk), eases in and out, and with reduced motion it cuts.
+      const on = talkDir && talkFace && view.cam === 'chase' ? 1 : 0
+      talkK = reduced ? on : talkK + (on - talkK) * Math.min(1, dtReal * (on ? 2.4 : 2.0))
+      if (on && talkFace) {
+        const shot = talkDir!.shot ?? 'two', key = talkKey + shot
+        const hx = sim.x, hz = sim.z, d0 = Math.hypot(talkFace.x - hx, talkFace.z - hz) || 1, ax = (talkFace.x - hx) / d0, az = (talkFace.z - hz) / d0, px = az, pz = -ax
+        const hh = child ? 1.16 : 1.58, mx = (hx + talkFace.x) / 2, mz = (hz + talkFace.z) / 2
+        if (key !== shotKey) {
+          shotKey = key; occluders = null
+          talkFov = shot === 'close' ? 40 : 44
+          const hf = 2 * Math.atan(Math.tan(THREE.MathUtils.degToRad(talkFov) / 2) * cam.aspect)
+          const dist = Math.max(2.1, Math.min(4.0, 1.1 / (2 * Math.tan(hf / 2))))
+          const free = (x: number, z: number) => {
+            if (!level.crossings.some(c => Math.abs(z - c) < level.half) && Math.abs(x) > level.walk - 0.9) return false
+            // nothing across the speaker's face, the boy's head or the middle of the pair
+            const cy = hh + 0.25
+            if (blocked(x, cy, z, mx, (hh + talkFace!.y) / 2, mz) || blocked(x, cy, z, talkFace!.x, talkFace!.y, talkFace!.z) || blocked(x, cy, z, hx, hh, hz)) return false
+            // and nothing solid right at the lens's sides (a stall or a box filling half the frame)
+            for (const [ox, oz] of [[0.45, 0], [-0.45, 0], [0, 0.45], [0, -0.45]] as const) if (blocked(x + ox, cy, z + oz, talkFace!.x, talkFace!.y, talkFace!.z)) return false
+            for (let k = 0; k <= 8; k++) { const qx = x + (mx - x) * k / 8, qz = z + (mz - z) * k / 8; for (const b of level.blocks) if (qx > b.x0 - 0.45 && qx < b.x1 + 0.45 && qz > b.z0 - 0.45 && qz < b.z1 + 0.45) return false
+              // the dusk street's lamp posts (look/dusk.ts lays them every 16 m, the right side 8 m on): never a post across the lens
+              if (dusk && Math.abs(Math.abs(qx) - (level.half + 1.2)) < 0.6) { const off = qx > 0 ? 8 : 0, r = ((level.bounds.z1 + 4 + off - qz) % 16 + 16) % 16; if (r < 0.7 || r > 15.3) return false } }
+            return true }
+          // two: over the boy's shoulder onto the face that speaks. close: the reverse — past the speaker's shoulder and hands onto the boy's own face
+          const at = (sg: number, k: number) => shot === 'close' ? talkWant.set(talkFace!.x + ax * 0.55 * k + px * sg * 1.45 * k, talkFace!.y - 0.08, talkFace!.z + az * 0.55 * k + pz * sg * 1.45 * k) : talkWant.set(hx - ax * 1.95 * k + px * sg * 0.72, hh + 0.2, hz - az * 1.95 * k + pz * sg * 0.72)
+          // the side with room: the street's side first
+          const pref = Math.abs(mx + px) < Math.abs(mx - px) ? 1 : -1
+          let hit = false
+          pick: for (const k of [1, 0.8, 0.62]) for (const sg of [pref, -pref]) { at(sg, k); if (free(talkWant.x, talkWant.z)) { hit = true; break pick } }
+          let sideOn = false
+          if (!hit) {
+            // no room behind either of them (he stands between the speaker and a wall): from the side, the street's side first
+            sideOn = true
+            for (const sg of [pref, -pref]) { talkWant.set(mx + px * sg * Math.max(2.6, dist * 0.8), hh + 0.4, mz + pz * sg * Math.max(2.6, dist * 0.8)); if (free(talkWant.x, talkWant.z)) { hit = true; break } }
+            // still nothing: round the pair at three distances, the first clear lens wins
+            if (!hit) ring: for (const r of [3.2, 2.4, 4.4]) for (let k = 0; k < 12; k++) { const an = k * Math.PI / 6; talkWant.set(mx + Math.cos(an) * r, hh + 0.4, mz + Math.sin(an) * r); if (free(talkWant.x, talkWant.z)) { hit = true; break ring } }
+            if (!hit) talkWant.set(mx - Math.sign(mx || 1) * 3.2, hh + 0.4, mz + 0.9)
+          }
+          if (sideOn) { talkAim.set(mx, (hh + talkFace.y) / 2, mz); talkFov = 54 }
+          else if (shot === 'close') talkAim.set(hx + ax * 0.22, hh - 0.1, hz + az * 0.22); else talkAim.set(hx + (talkFace.x - hx) * 0.82, talkFace.y * 0.72 + hh * 0.28, hz + (talkFace.z - hz) * 0.82)
+          talkPos.copy(talkWant); talkLook.copy(talkAim)
+        }
+        talkLight.position.set(mx + (talkPos.x - mx) * 0.45, troupe ? talkFace.y + 0.35 : 2.3, mz + (talkPos.z - mz) * 0.45)
+      }
+      if (talkK > 0.002) {
+        const e = talkK * talkK * (3 - 2 * talkK)
+        cam.position.lerpVectors(camPos, talkPos, e); cam.lookAt(tmp.copy(camLook).lerp(talkLook, e)); cam.fov += (talkFov - cam.fov) * e
+      }
+      talkLight.intensity = talkK * (night ? (troupe ? 11 : 7) : 2)
+      // faces in a conversation: a soft warm key from the lens's side and a cool rim from behind, so skin is never flat or grey
+      if (troupe && talkFace) { const bx = talkFace.x - cam.position.x, bz = talkFace.z - cam.position.z, bl = Math.hypot(bx, bz) || 1; rimLight.position.set(talkFace.x + bx / bl * 1.1, talkFace.y + 0.55, talkFace.z + bz / bl * 1.1) }
+      rimLight.intensity = troupe ? talkK * (night ? 9 : 3) : 0
+      // standing still, the picture breathes with whoever is holding the camera
+      if (!reduced && !view.brief) { const still = 1 - Math.min(1, sp / 1.5); cam.position.x += (Math.sin(t * 0.71) * 0.016 + Math.sin(t * 1.93) * 0.006) * still; cam.position.y += Math.sin(t * 0.87 + 1) * 0.012 * still; cam.rotateZ(Math.sin(t * 0.53) * 0.0028 * still) }
+      // warmth: home is the warmest place on the street, a conversation warms the picture, and the scarf going on warms it most
+      const hd = level.hood.door, homeK = Math.max(0, 1 - Math.hypot(sim.x - hd.x, sim.z - hd.z) / 26)
+      beatK += ((beat && talkT > 0.8 && talkT < 5 ? 1 : 0) - beatK) * Math.min(1, dtReal * 1.6)
+      warm += (Math.max(homeK * 0.32, talkK * 0.4, beatK) - warm) * Math.min(1, dtReal * 3)
+      grade.uniforms.uWarm!.value = warm; grade.uniforms.uFocus!.value = Math.max(talkK * 0.75, beatK)
+      if (bloom) bloom.strength = bloomBase + beatK * 0.4 + talkK * 0.08
+    }
     cam.updateProjectionMatrix()
+    troupe?.update(cam.position, talkDir ? talkFace?.fig ?? null : null)
     speedFx += (((sim.sprinting || (heroCar && sim.speed > 20)) ? 1 : sp > 4 ? 0.35 : 0) * (reduced ? 0 : 1) - speedFx) * Math.min(dt * 4, 1)
     heart += ((tired && !view.ending ? 1 : 0) - heart) * Math.min(dt * 3, 1)
     flash = Math.max(0, flash - dt * 2.4)
@@ -1081,6 +1280,7 @@ export function createStage(o: {canvas: HTMLCanvasElement; level: Level; spec: M
   function resize(w: number, h: number) {
     renderer.setSize(w, h, false)
     composer.setSize(w, h)
+    duskDress?.resize(w, h)
     cam.aspect = w / Math.max(1, h); cam.updateProjectionMatrix()
     grade.uniforms.uAspect!.value = w / Math.max(1, h)
   }
@@ -1114,15 +1314,24 @@ export function createStage(o: {canvas: HTMLCanvasElement; level: Level; spec: M
     })
   })
 
+  function captionAt(spot: string) { const a = lifeDress?.anchor(spot); return a ? project(a.x, a.y, a.z) : null }
   function dispose() {
     gone = true
     scene.traverse(o2 => { const m = o2 as THREE.Mesh; if (m.isMesh) { m.geometry?.dispose?.() } })
+    flowDress?.dispose()
     disposables.forEach(d => { try { d.dispose() } catch { /* already gone */ } })
     crowd.forEach(im => im.dispose())
+    troupe?.dispose()
     composer.dispose()
     renderer.dispose()
     try { renderer.forceContextLoss() } catch { /* a lost context is a closed one */ }
   }
 
-  return {render, resize, project, dispose}
+  const setAge = (age: number) => {
+    if (!troupe || !level.hood) return
+    const b = heroBody(age)
+    troupe.recast(hero, b.cast, {height: b.height, child: b.child, pack: b.pack})
+    child = b.child
+  }
+  return {render, resize, project, captionAt, setAge, dispose}
 }

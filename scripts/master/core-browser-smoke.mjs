@@ -75,7 +75,10 @@ async function identityCheck(page,slug,selector,path) {
  // rule 91: the page is the magazine's paper; a club wears its colour on badges and bands, never the ground
  assert.equal(computed.background,`rgb(${rgb(MAG_PAPER).join(', ')})`)
  await page.evaluate(()=>document.fonts.ready)
+ // Shirts preserve the archive's original colours. Check the surrounding club surface separately.
+ const style=await page.addStyleTag({content:'[data-shirt], [data-cloth-view], .kit-plate { visibility:hidden !important }'})
  const bytes=await surface.screenshot({path})
+ await style.evaluate(el=>el.remove())
  const png=PNG.sync.read(bytes)
  let forbidden=0
  for(let i=0;i<png.data.length;i+=4){const color='#'+[0,1,2].map(k=>png.data[i+k].toString(16).padStart(2,'0')).join('');if(forbiddenColor(theme,color))forbidden++}
