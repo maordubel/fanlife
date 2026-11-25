@@ -1,6 +1,52 @@
 {
- "sources": [],
- "matches": [],
+ "sources": [
+  {
+   "id": "s365-4823319",
+   "title": "365Scores: BSK Banja Luka 1-2 Zrinjski, 2026-11-21",
+   "url": "https://webws.365scores.com/web/game/?gameId=4823319",
+   "publisher": "365Scores",
+   "access": "available",
+   "checkedAt": "2026-11-25"
+  }
+ ],
+ "matches": [
+  {
+   "id": "a-m-2026-11-21-bsk-banja-luka-zrinjski",
+   "value": {
+    "name": "BSK Banja Luka 1-2 Zrinjski",
+    "on": "2026-11-21",
+    "competition": "Premier League",
+    "score": "1-2",
+    "venue": null,
+    "lineup": [
+     "Karlo Abramović",
+     "Hrvoje Barisic",
+     "Nemanja Bilbija",
+     "Stefan Cvetkovic",
+     "Viktor Grbić",
+     "Antonio Ilic",
+     "Antonio Ivancic",
+     "Goran Karačić",
+     "Dan Lagumdzija",
+     "Petar Mamic",
+     "Igor Savic"
+    ],
+    "bench": [],
+    "scorers": []
+   },
+   "sources": [
+    "s365-4823319"
+   ],
+   "researchedAt": "2026-11-25",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "One publisher only — LiveScore has no full eleven for this match.",
+   "confidence": 2,
+   "status": "review",
+   "approvedAt": null,
+   "approvedBy": null
+  }
+ ],
  "players": [],
  "kits": [],
  "rivals": []

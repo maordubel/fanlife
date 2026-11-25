@@ -1,14 +1,14 @@
 {
- "day": "2026-11-22",
+ "day": "2026-11-25",
  "clubId": "zrinjski-mostar",
- "runUrl": "https://github.com/maordubel/fanlife/actions/runs/45018147326",
+ "runUrl": "https://github.com/maordubel/fanlife/actions/runs/45624070805",
  "added": {
-  "matches": 138,
-  "players": 31,
-  "seasons": 2,
+  "matches": 0,
+  "players": 29,
+  "seasons": 1,
   "kits": 2,
-  "lineups": 93,
-  "scorers": 92
+  "lineups": 0,
+  "scorers": 0
  },
  "heldDays": [],
  "steps": [
@@ -30,17 +30,17 @@
   {
    "step": "Historical results, elevens and scorers",
    "state": "ok",
-   "info": "Continued from the historical results checkpoint, up to 90 fixtures"
+   "info": "Continued from the historical results checkpoint, up to 30 fixtures"
   },
   {
    "step": "Historical players",
    "state": "ok",
-   "info": "31 documented senior club stints"
+   "info": "10 documented senior club stints"
   },
   {
    "step": "Season archives, scoresheets and shirt metadata",
    "state": "ok",
-   "info": "2 checked seasons and 41 dated results"
+   "info": "1 checked seasons and 0 dated results"
   },
   {
    "step": "Kit archive",
@@ -48,12 +48,12 @@
    "info": "www.footballkitarchive.com: robots.txt disallows this path"
   },
   {
-   "step": "Open league season datasets",
+   "step": "Prices for newly eligible cards",
    "state": "ok",
-   "info": "No league in this source is mapped to this club"
+   "info": "Existing prices preserved"
   }
  ],
- "dataVersion": "6a7bf2f04232cca0",
+ "dataVersion": "b9f875f3b908d46f",
  "uncertainties": [
   {
    "record": "zrinjski-mostar:daily-match-aa54f939c4710ab86223967d",
@@ -101,11 +101,6 @@
    "message": "Different opponents, home/away order or score on the same day."
   },
   {
-   "record": "zrinjski-mostar:daily-match-bc5fe1e124f9df42fc7bc683",
-   "code": "DAILY_MATCH_CONFLICT",
-   "message": "Different opponents, home/away order or score on the same day."
-  },
-  {
    "record": "zrinjski-mostar:daily-match-35c06935f8fa9820fcec5cbe",
    "code": "DAILY_MATCH_CONFLICT",
    "message": "Different opponents, home/away order or score on the same day."
@@ -116,27 +111,7 @@
    "message": "Different opponents, home/away order or score on the same day."
   },
   {
-   "record": "zrinjski-mostar:daily-match-1415cfa69454607138bae0cb",
-   "code": "DAILY_MATCH_CONFLICT",
-   "message": "Different opponents, home/away order or score on the same day."
-  },
-  {
-   "record": "zrinjski-mostar:daily-match-0f5b8d9ab32da14019222e6f",
-   "code": "DAILY_MATCH_CONFLICT",
-   "message": "Different opponents, home/away order or score on the same day."
-  },
-  {
    "record": "zrinjski-mostar:daily-match-6f77cee509668750ce298e3b",
-   "code": "DAILY_MATCH_CONFLICT",
-   "message": "Different opponents, home/away order or score on the same day."
-  },
-  {
-   "record": "zrinjski-mostar:daily-match-3cac224748b24cf647610b73",
-   "code": "DAILY_MATCH_CONFLICT",
-   "message": "Different opponents, home/away order or score on the same day."
-  },
-  {
-   "record": "zrinjski-mostar:daily-match-985f0ee184cdff5bfb8e4d56",
    "code": "DAILY_MATCH_CONFLICT",
    "message": "Different opponents, home/away order or score on the same day."
   },
@@ -147,11 +122,6 @@
   },
   {
    "record": "zrinjski-mostar:daily-match-6c1e7be37946f27b8122f207",
-   "code": "DAILY_MATCH_CONFLICT",
-   "message": "Different opponents, home/away order or score on the same day."
-  },
-  {
-   "record": "zrinjski-mostar:daily-match-6a1a3d21fb25bd272100b178",
    "code": "DAILY_MATCH_CONFLICT",
    "message": "Different opponents, home/away order or score on the same day."
   },
@@ -167,21 +137,6 @@
   },
   {
    "record": "zrinjski-mostar:daily-match-f20c25bbed5652657d39f453",
-   "code": "DAILY_MATCH_CONFLICT",
-   "message": "Different opponents, home/away order or score on the same day."
-  },
-  {
-   "record": "zrinjski-mostar:daily-match-b3a1e88574fb316087a77dee",
-   "code": "DAILY_MATCH_CONFLICT",
-   "message": "Different opponents, home/away order or score on the same day."
-  },
-  {
-   "record": "zrinjski-mostar:daily-match-8100fe291e69be1ced52a8ca",
-   "code": "DAILY_MATCH_CONFLICT",
-   "message": "Different opponents, home/away order or score on the same day."
-  },
-  {
-   "record": "zrinjski-mostar:daily-match-13778f107a3f2c8af49eb4e9",
    "code": "DAILY_MATCH_CONFLICT",
    "message": "Different opponents, home/away order or score on the same day."
   },
@@ -202,9 +157,9 @@
   }
  ],
  "featureInputs": {
-  "players": 255,
+  "players": 264,
   "matches": 987,
-  "seasons": 56,
+  "seasons": 57,
   "kits": 87
  }
 }

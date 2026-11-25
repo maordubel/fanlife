@@ -1042,6 +1042,94 @@
    "publisher": "English Wikipedia",
    "checkedAt": "2026-11-22",
    "access": "available"
+  },
+  {
+   "id": "daily-src-23dde6a01f6e52de0d4bb09e",
+   "url": "https://en.wikipedia.org/w/index.php?oldid=1385373254",
+   "title": "Benjamin Čolić",
+   "publisher": "English Wikipedia",
+   "checkedAt": "2026-11-25",
+   "access": "available"
+  },
+  {
+   "id": "daily-src-452da8d8408731725bb76c5c",
+   "url": "https://en.wikipedia.org/w/index.php?oldid=1384933474",
+   "title": "Sebastián Corda",
+   "publisher": "English Wikipedia",
+   "checkedAt": "2026-11-25",
+   "access": "available"
+  },
+  {
+   "id": "daily-src-fde6a45edc24b155a00b2956",
+   "url": "https://en.wikipedia.org/w/index.php?oldid=1385024561",
+   "title": "Denis Ćorić",
+   "publisher": "English Wikipedia",
+   "checkedAt": "2026-11-25",
+   "access": "available"
+  },
+  {
+   "id": "daily-src-20e18ca514da6ffbedf3176f",
+   "url": "https://en.wikipedia.org/w/index.php?oldid=1385045468",
+   "title": "Josip Ćorluka",
+   "publisher": "English Wikipedia",
+   "checkedAt": "2026-11-25",
+   "access": "available"
+  },
+  {
+   "id": "daily-src-f3dd2e16584cf1a41b56df57",
+   "url": "https://en.wikipedia.org/w/index.php?oldid=1383340830",
+   "title": "Ricardo da Costa (footballer)",
+   "publisher": "English Wikipedia",
+   "checkedAt": "2026-11-25",
+   "access": "available"
+  },
+  {
+   "id": "daily-src-db54cf63855db6ee6d941b86",
+   "url": "https://en.wikipedia.org/w/index.php?oldid=1382952800",
+   "title": "Ivan Crnov",
+   "publisher": "English Wikipedia",
+   "checkedAt": "2026-11-25",
+   "access": "available"
+  },
+  {
+   "id": "daily-src-bf53d122c1023e66ba1b1352",
+   "url": "https://en.wikipedia.org/w/index.php?oldid=1385193714",
+   "title": "Danijel Ćulum",
+   "publisher": "English Wikipedia",
+   "checkedAt": "2026-11-25",
+   "access": "available"
+  },
+  {
+   "id": "daily-src-6c72600dfb44ae5b574bf3cb",
+   "url": "https://en.wikipedia.org/w/index.php?oldid=1383139707",
+   "title": "Ivan Čurjurić",
+   "publisher": "English Wikipedia",
+   "checkedAt": "2026-11-25",
+   "access": "available"
+  },
+  {
+   "id": "daily-src-38b0d7ea8d5db6533e974a87",
+   "url": "https://en.wikipedia.org/w/index.php?oldid=1385453201",
+   "title": "Vitalie Damașcan",
+   "publisher": "English Wikipedia",
+   "checkedAt": "2026-11-25",
+   "access": "available"
+  },
+  {
+   "id": "daily-src-089a94a7b7f3a685bc8e22c9",
+   "url": "https://en.wikipedia.org/w/index.php?oldid=1385050448",
+   "title": "Lamine Diarra",
+   "publisher": "English Wikipedia",
+   "checkedAt": "2026-11-25",
+   "access": "available"
+  },
+  {
+   "id": "daily-src-da5009ee4f902c956567e61b",
+   "url": "https://en.wikipedia.org/w/index.php?oldid=1282001496",
+   "title": "2014–15 HŠK Zrinjski Mostar season",
+   "publisher": "English Wikipedia",
+   "checkedAt": "2026-11-25",
+   "access": "available"
   }
  ],
  "archive": [
@@ -10491,6 +10579,753 @@
    "researchedAt": "2026-11-22",
    "approvedAt": "2026-11-22",
    "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-player-774f6271b9015f5a31630d29",
+   "value": {
+    "name": "Benjamin Čolić",
+    "aliases": [],
+    "positions": [
+     "DF"
+    ],
+    "fromYear": 2016,
+    "toYear": 2017,
+    "career": {
+     "apps": 11,
+     "goals": 0,
+     "basis": "English Wikipedia club stint table"
+    },
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-23dde6a01f6e52de0d4bb09e"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-11-25",
+   "approvedAt": "2026-11-25",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-player-d18c146e3c33452b6435d425",
+   "value": {
+    "name": "Sebastián Corda",
+    "aliases": [],
+    "positions": [
+     "DF"
+    ],
+    "fromYear": 2024,
+    "toYear": 2025,
+    "career": {
+     "apps": 11,
+     "goals": 0,
+     "basis": "English Wikipedia club stint table"
+    },
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-452da8d8408731725bb76c5c"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-11-25",
+   "approvedAt": "2026-11-25",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-player-dd0aa146bf263b5522dceae4",
+   "value": {
+    "name": "Denis Ćorić",
+    "aliases": [],
+    "positions": [
+     "FW"
+    ],
+    "fromYear": 2005,
+    "toYear": 2006,
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-fde6a45edc24b155a00b2956"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-11-25",
+   "approvedAt": "2026-11-25",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-player-38a864974b09c8c01abda536",
+   "value": {
+    "name": "Josip Ćorluka",
+    "aliases": [],
+    "positions": [
+     "DF"
+    ],
+    "fromYear": 2020,
+    "toYear": 2025,
+    "career": {
+     "apps": 132,
+     "goals": 5,
+     "basis": "English Wikipedia club stint table"
+    },
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-20e18ca514da6ffbedf3176f"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-11-25",
+   "approvedAt": "2026-11-25",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-player-b841106dc8b283c57d461cdf",
+   "value": {
+    "name": "Ricardo da Costa",
+    "aliases": [
+     "Ricardo da Costa (footballer)"
+    ],
+    "positions": [
+     "MF"
+    ],
+    "fromYear": 2003,
+    "toYear": 2005,
+    "career": {
+     "apps": 28,
+     "goals": 5,
+     "basis": "English Wikipedia club stint table"
+    },
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-f3dd2e16584cf1a41b56df57"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-11-25",
+   "approvedAt": "2026-11-25",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-player-217c7937fd44dc54d6f5ba9e",
+   "value": {
+    "name": "Ivan Crnov",
+    "aliases": [],
+    "positions": [
+     "MF"
+    ],
+    "fromYear": 2013,
+    "toYear": 2015,
+    "career": {
+     "apps": 64,
+     "goals": 19,
+     "basis": "English Wikipedia club stint table"
+    },
+    "archiveOnly": false,
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-db54cf63855db6ee6d941b86",
+    "daily-src-da5009ee4f902c956567e61b"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-11-25",
+   "approvedAt": "2026-11-25",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-player-d0eb9edca2823fdfa33e14cc",
+   "value": {
+    "name": "Danijel Ćulum",
+    "aliases": [],
+    "positions": [
+     "MF"
+    ],
+    "fromYear": 2007,
+    "toYear": 2009,
+    "career": {
+     "apps": 1,
+     "goals": 0,
+     "basis": "English Wikipedia club stint table"
+    },
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-bf53d122c1023e66ba1b1352"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-11-25",
+   "approvedAt": "2026-11-25",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-player-793442725ca0b333f20a9543",
+   "value": {
+    "name": "Ivan Čurjurić",
+    "aliases": [],
+    "positions": [
+     "MF"
+    ],
+    "fromYear": 2019,
+    "toYear": 2020,
+    "career": {
+     "apps": 33,
+     "goals": 4,
+     "basis": "English Wikipedia club stint table"
+    },
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-6c72600dfb44ae5b574bf3cb"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-11-25",
+   "approvedAt": "2026-11-25",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-player-92c2de7fbd41383262375604",
+   "value": {
+    "name": "Vitalie Damașcan",
+    "aliases": [],
+    "positions": [
+     "FW"
+    ],
+    "fromYear": 2025,
+    "toYear": 2026,
+    "career": {
+     "apps": 6,
+     "goals": 1,
+     "basis": "English Wikipedia club stint table"
+    },
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-38b0d7ea8d5db6533e974a87"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-11-25",
+   "approvedAt": "2026-11-25",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-player-c6285fe8ecf10936117b6788",
+   "value": {
+    "name": "Lamine Diarra",
+    "aliases": [],
+    "positions": [
+     "FW"
+    ],
+    "fromYear": 2005,
+    "toYear": 2007,
+    "career": {
+     "apps": 27,
+     "goals": 12,
+     "basis": "English Wikipedia club stint table"
+    },
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-089a94a7b7f3a685bc8e22c9"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-11-25",
+   "approvedAt": "2026-11-25",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-player-3f721b3be051b012f898b44a",
+   "value": {
+    "name": "Aleksandar Radulović",
+    "aliases": [
+     "Aleksandar Radulović (footballer)"
+    ],
+    "positions": [
+     "MF"
+    ],
+    "fromYear": 2014,
+    "toYear": 2015,
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-da5009ee4f902c956567e61b"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-11-25",
+   "approvedAt": "2026-11-25",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-player-52274def902c02084c493898",
+   "value": {
+    "name": "Daniel Graovac",
+    "aliases": [],
+    "positions": [
+     "DF"
+    ],
+    "fromYear": 2014,
+    "toYear": 2015,
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-da5009ee4f902c956567e61b"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-11-25",
+   "approvedAt": "2026-11-25",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-player-9c45caeda5cce2d8d7fec0a7",
+   "value": {
+    "name": "Anto Radeljić",
+    "aliases": [],
+    "positions": [
+     "DF"
+    ],
+    "fromYear": 2014,
+    "toYear": 2015,
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-da5009ee4f902c956567e61b"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-11-25",
+   "approvedAt": "2026-11-25",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-player-8a9024da7012077d6d5dceba",
+   "value": {
+    "name": "Milan Muminović",
+    "aliases": [],
+    "positions": [
+     "MF"
+    ],
+    "fromYear": 2014,
+    "toYear": 2015,
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-da5009ee4f902c956567e61b"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-11-25",
+   "approvedAt": "2026-11-25",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-player-920db3719b298d369bba9982",
+   "value": {
+    "name": "Krešimir Kordić",
+    "aliases": [],
+    "positions": [
+     "FW"
+    ],
+    "fromYear": 2014,
+    "toYear": 2015,
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-da5009ee4f902c956567e61b"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-11-25",
+   "approvedAt": "2026-11-25",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-player-c98903fe3f8b33fa789308c3",
+   "value": {
+    "name": "Mile Pehar",
+    "aliases": [],
+    "positions": [
+     "MF"
+    ],
+    "fromYear": 2014,
+    "toYear": 2015,
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-da5009ee4f902c956567e61b"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-11-25",
+   "approvedAt": "2026-11-25",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-player-e122b3d8dfa71e8fd7df622e",
+   "value": {
+    "name": "Vučina Šćepanović",
+    "aliases": [],
+    "positions": [
+     "MF"
+    ],
+    "fromYear": 2014,
+    "toYear": 2015,
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-da5009ee4f902c956567e61b"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-11-25",
+   "approvedAt": "2026-11-25",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-player-3dab1d9ba8b534301c22da59",
+   "value": {
+    "name": "Josip Jozić",
+    "aliases": [],
+    "positions": [
+     "MF"
+    ],
+    "fromYear": 2014,
+    "toYear": 2015,
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-da5009ee4f902c956567e61b"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-11-25",
+   "approvedAt": "2026-11-25",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-player-ffb40e05c9f7b488c65dc6fe",
+   "value": {
+    "name": "Zvonimir Blaić",
+    "aliases": [],
+    "positions": [
+     "DF"
+    ],
+    "fromYear": 2014,
+    "toYear": 2015,
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-da5009ee4f902c956567e61b"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-11-25",
+   "approvedAt": "2026-11-25",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-player-b3d53029e9b7958237aec016",
+   "value": {
+    "name": "Pero Stojkić",
+    "aliases": [],
+    "positions": [
+     "DF"
+    ],
+    "fromYear": 2014,
+    "toYear": 2015,
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-da5009ee4f902c956567e61b"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-11-25",
+   "approvedAt": "2026-11-25",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-player-f81e4d73e80f6423254dc5b2",
+   "value": {
+    "name": "Ognjen Todorović",
+    "aliases": [],
+    "positions": [
+     "MF"
+    ],
+    "fromYear": 2014,
+    "toYear": 2015,
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-da5009ee4f902c956567e61b"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-11-25",
+   "approvedAt": "2026-11-25",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-player-f0b31fc8420673ba4f6ceebe",
+   "value": {
+    "name": "Ivo Zlatić",
+    "aliases": [],
+    "positions": [
+     "DF"
+    ],
+    "fromYear": 2014,
+    "toYear": 2015,
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-da5009ee4f902c956567e61b"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-11-25",
+   "approvedAt": "2026-11-25",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-player-84d9b2b80cc97cddb2504ee4",
+   "value": {
+    "name": "Marin Galić",
+    "aliases": [],
+    "positions": [
+     "MF"
+    ],
+    "fromYear": 2014,
+    "toYear": 2015,
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-da5009ee4f902c956567e61b"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-11-25",
+   "approvedAt": "2026-11-25",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-player-960709068435e14e09a1de66",
+   "value": {
+    "name": "Danijel Stojanović",
+    "aliases": [],
+    "positions": [
+     "MF"
+    ],
+    "fromYear": 2014,
+    "toYear": 2015,
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-da5009ee4f902c956567e61b"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-11-25",
+   "approvedAt": "2026-11-25",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-player-b769df04387a17fc84d5ea34",
+   "value": {
+    "name": "Dženan Durak",
+    "aliases": [],
+    "positions": [
+     "MF"
+    ],
+    "fromYear": 2014,
+    "toYear": 2015,
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-da5009ee4f902c956567e61b"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-11-25",
+   "approvedAt": "2026-11-25",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-player-d5334d500f6990a677d17292",
+   "value": {
+    "name": "Stevo Nikolić",
+    "aliases": [],
+    "positions": [
+     "FW"
+    ],
+    "fromYear": 2014,
+    "toYear": 2015,
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-da5009ee4f902c956567e61b"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-11-25",
+   "approvedAt": "2026-11-25",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-player-a42db66649b5fc34bdebbfb2",
+   "value": {
+    "name": "Oliver Petrak",
+    "aliases": [],
+    "positions": [
+     "MF"
+    ],
+    "fromYear": 2014,
+    "toYear": 2015,
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-da5009ee4f902c956567e61b"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-11-25",
+   "approvedAt": "2026-11-25",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-player-08de07b1974822dd6234e041",
+   "value": {
+    "name": "Matija Katanec",
+    "aliases": [],
+    "positions": [
+     "DF"
+    ],
+    "fromYear": 2014,
+    "toYear": 2015,
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-da5009ee4f902c956567e61b"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-11-25",
+   "approvedAt": "2026-11-25",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-player-9826c04b1888a908b17202bc",
+   "value": {
+    "name": "Velibor Đurić",
+    "aliases": [],
+    "positions": [
+     "MF"
+    ],
+    "fromYear": 2014,
+    "toYear": 2015,
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-da5009ee4f902c956567e61b"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-11-25",
+   "approvedAt": "2026-11-25",
+   "approvedBy": "automated:daily-research-single-source"
   }
  ],
  "seasons": [
@@ -10532,6 +11367,26 @@
    "conflictFree": true,
    "researchedAt": "2026-11-22",
    "approvedAt": "2026-11-22",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-season-d173134916387fdbe6951185",
+   "value": {
+    "name": "2014/15 season",
+    "season": "2014/15",
+    "league": "Premier League of BiH",
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-da5009ee4f902c956567e61b"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-11-25",
+   "approvedAt": "2026-11-25",
    "approvedBy": "automated:daily-research-single-source"
   }
  ],
@@ -10592,6 +11447,64 @@
    "conflictFree": true,
    "researchedAt": "2026-11-22",
    "approvedAt": "2026-11-22",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-kit-4f0f18ebebf26f4f48677eed",
+   "value": {
+    "name": "Zrinjski Mostar 2014/15 home kit",
+    "season": "2014/15",
+    "type": "HOME",
+    "referenceUrl": "https://en.wikipedia.org/w/index.php?oldid=1282001496",
+    "wikiKit": {
+     "pattern": "__redrightsash",
+     "body": "ffffff",
+     "left": "ffffff",
+     "right": "ffffff",
+     "shorts": "ffffff",
+     "socks": "ff0000"
+    },
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-da5009ee4f902c956567e61b"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-11-25",
+   "approvedAt": "2026-11-25",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-kit-4945edb00d79a100a0dd76f3",
+   "value": {
+    "name": "Zrinjski Mostar 2014/15 away kit",
+    "season": "2014/15",
+    "type": "AWAY",
+    "referenceUrl": "https://en.wikipedia.org/w/index.php?oldid=1282001496",
+    "wikiKit": {
+     "pattern": "_whiterightsash",
+     "body": "ff0000",
+     "left": "ff0000",
+     "right": "ff0000",
+     "shorts": "ff0000",
+     "socks": "ff0000"
+    },
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-da5009ee4f902c956567e61b"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-11-25",
+   "approvedAt": "2026-11-25",
    "approvedBy": "automated:daily-research-single-source"
   }
  ]
