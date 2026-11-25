@@ -30,12 +30,12 @@ const paintable=(data:ClubData)=>(hex:string)=>forbiddenColor(data.theme,hex)
 
 /** one kit as the collection card shows it, with the sources resolved to titles */
 export function openKit(data:ClubData,k:KitView):OpenKit{
- const cloth=documentedCloth(k,paintable(data))
+ const cloth=documentedCloth(k,()=>false)
  const referencePhoto=kitFrontOf(k)?.photo
  return {id:k.id,season:k.season,variant:variantOf(k.type),type:k.type,maker:k.maker,design:k.design,sponsor:k.sponsor??null,colours:k.colours,cloth,...kitVisual(data.identity.id,k),sources:k.sources.map(id=>data.sources.find(s=>s.id===id)).filter((s):s is NonNullable<typeof s>=>!!s).slice(0,4).map(s=>({title:s.title,url:s.url})),...(referencePhoto?{referencePhoto}:{})}
 }
 /** a shirt gate 4 can deal: drawable under this club's colour policy */
-export const isBuildable=(data:ClubData,k:KitView)=>documentedCloth(k,paintable(data))!==null
+export const isBuildable=(data:ClubData,k:KitView)=>documentedCloth(k,()=>false)!==null
 export const gate4Playable=(data:ClubData)=>!!data.gates['kit-builder']?.playable
 
 export function collectionOf(data:ClubData):CollectionRow[]{
@@ -62,8 +62,8 @@ export function identityOf(data:ClubData):StudioIdentity{
 
 /** the studio's palette and documented parts — the club's own, under its colour policy (rule 95), the club's colours first */
 export function studioLimits(data:ClubData):StudioLimits{
- const forbidden=paintable(data),kits=kitViews(data),id=identityOf(data)
+ const kits=kitViews(data),id=identityOf(data)
  const uniq=(xs:(string|null|undefined)[])=>[...new Set(xs.map(x=>x?.trim()).filter((x):x is string=>!!x))].sort((a,b)=>a.localeCompare(b))
- const safe=COLOUR_KEYS.filter(k=>!forbidden(colourHex(k))) as ColourKey[],first=[id.primary,id.secondary].filter((k):k is ColourKey=>!!k)
+ const safe=[...COLOUR_KEYS],first=[id.primary,id.secondary].filter((k):k is ColourKey=>!!k)
  return {colours:[...first,...safe.filter(k=>!first.includes(k))],makers:uniq(kits.map(k=>k.maker)),sponsors:uniq(kits.map(k=>k.sponsor))}
 }

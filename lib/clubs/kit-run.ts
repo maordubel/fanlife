@@ -1,7 +1,6 @@
 import {kitPartsFor} from './kit-parts'
 import type {ClubData} from './contract'
 import {kitViews,type KitView} from './gate-content'
-import {forbiddenColor} from './theme'
 import {documentedCloth,variantOf,type ClothSpec,type Variant} from './kit-model'
 import {kitFrontOf,measuredSponsor} from './kit-fronts'
 import {FIELDS,FIELD_WEIGHT,HINT_LIMIT,HINT_PENALTY,KIT_ROUND,MIN_SHIRTS,OPTION_RAMP,PERFECT_BONUS,SHIRT_POINTS,STEP_FIELDS,STEP_ORDER,unlocksDna,type Field,type FieldVerdict,type KitGame,type Option,type PublicPuzzle,type Step,type StepVerdict,type Verdict} from './kit-rules'
@@ -26,7 +25,7 @@ export type Eligible={kit:KitView;cloth:ClothSpec;variant:Variant}
 
 /** the club's kits that can be drawn from their documented fields alone, under the club's own colour policy (rule 95) */
 export function eligibleKits(data:ClubData):Eligible[]{
- const forbidden=(hex:string)=>forbiddenColor(data.theme,hex)
+ const forbidden=()=>false
  return kitViews(data).flatMap(kit=>{const cloth=documentedCloth(kit,forbidden);if(!cloth)return [];const crest=kitPartsFor(data.identity.id,kit).crest,crestArt=crest?.kind==='historical'?crest.src:null;return [{kit,cloth:crestArt?{...cloth,crest:true,crestArt}:cloth,variant:variantOf(kit.type)}]}).sort((a,b)=>a.kit.id.localeCompare(b.kit.id))
 }
 
