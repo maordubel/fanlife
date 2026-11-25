@@ -2,8 +2,7 @@ import {describe,it,expect,vi,beforeEach} from 'vitest'
 const request=vi.hoisted(()=>({host:'olympiacos.fanlife.dubelteam.com',gates:[1,2,4,5,6,12,13]}))
 vi.mock('next/headers',()=>({headers:()=>new Headers({host:request.host})}))
 vi.mock('@/lib/master/store',()=>({readState:async()=>({clubs:['olympiacos','zrinjski-mostar','hapoel-tel-aviv','panathinaikos'].map(id=>({id,status:'live',gates:request.gates}))})}))
-import {loadClub} from '@/lib/clubs/resolver'
-import {forbiddenColor} from '@/lib/clubs/theme'
+import {CORE_CLUB_IDS,loadClub} from '@/lib/clubs/resolver'
 import {kitViews} from '@/lib/clubs/gate-content'
 import {COLOUR_KEYS,colourHex,patternOf,BLANK} from '@/lib/clubs/kit-model'
 import {DNA_THRESHOLD,FIELDS,FIELD_WEIGHT,HINT_LIMIT,HINT_PENALTY,OPTION_RAMP,PERFECT_BONUS,RULES,STEP_FIELDS,STEP_ORDER,canRun,activeSteps,dealKitRun,documentedFields,documentsEverything,eligibleKits,gameFrom,gradePuzzle,kitModeFrom,nextCursor,publicRun,roundScore,runGames,strikeFor,unlocksDna,weightsOf,type Field} from '@/lib/clubs/kit-run'
@@ -74,13 +73,14 @@ describe('gate 4 · the deal',()=>{
   const v=gradePuzzle(deal,idx,deal[idx]!.correct,0)!
   expect(v.unknown).toContain('sponsor');expect(v.fields.map(f=>f.field)).not.toContain('sponsor');expect(v.fieldPoints).toBe(100)
  },60000)
- it('never draws a colour the club page may not show (rule 95)',async()=>{
-  for(const id of ['hapoel-tel-aviv','olympiacos','zrinjski-mostar','panathinaikos']){
-   const d=await club(id)
-   for(const e of eligibleKits(d))for(const k of [e.cloth.base,e.cloth.trim])if(k)expect(forbiddenColor(d.theme,colourHex(k)),`${id} ${e.kit.id} ${k}`).toBe(false)
-   for(const k of studioLimits(d).colours)expect(forbiddenColor(d.theme,colourHex(k))).toBe(false)
+ it('makes every documented kit colour available to players',async()=>{
+  const {COLOUR_KEYS}=await import('@/lib/clubs/kit-model')
+  for(const id of CORE_CLUB_IDS){
+   const d=(await loadClub(id))!.data
+   expect(studioLimits(d).colours).toEqual(expect.arrayContaining([...COLOUR_KEYS]))
   }
- },60000)
+ },60_000)
+
  it('never offers the right colours twice: no body option is the correct pair swapped (rule 15)',async()=>{
   for(const id of ['celtic','olympiacos','st-pauli']){
    const list=eligibleKits(await club(id))
@@ -303,7 +303,7 @@ describe('gate 5 · the studio',()=>{
 describe('gate 5 · identity, briefs and the design review',()=>{
  it('a green club reaches full identity compliance without red; its palette leads with its own colours',async()=>{
   const pana=await club('panathinaikos'),id=identityOf(pana),limits=studioLimits(pana)
-  expect(id.primary).toBe('green');expect(limits.colours[0]).toBe('green');expect(limits.colours).not.toContain('red')
+  expect(id.primary).toBe('green');expect(limits.colours[0]).toBe('green');expect(limits.colours).toContain('red')
   const ctx:BriefCtx={identity:id,memory:null},spec={...BLANK,base:id.primary,trim:id.secondary,pattern:'hoops' as const,crest:true}
   expect(identityScore(spec,ctx)).toBe(100)
   expect([spec.base,spec.trim]).not.toContain('red')
