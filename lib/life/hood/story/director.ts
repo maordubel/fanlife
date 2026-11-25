@@ -1,0 +1,167 @@
+/**
+ * LIFE · the hood — the STORY DIRECTOR. Pure and deterministic: the same state and the same choices, the same life.
+ *
+ * What it guarantees (tests/life-story-director.test.ts walks seeded random lives for every core club):
+ *   · `nextMissions` is NEVER empty — a chapter when one is ready, the small jobs around it, and the week's standing
+ *     work when the next chapter waits for matchday or the written life has ended;
+ *   · every mission keeps at least one approach open whatever the state, and main missions keep two;
+ *   · whatever is chosen, the mission CONVERGES: it ends, its aftermath lands, the next one is offered;
+ *   · the week walks to matchday (day 6) and starts again; a chapter moves the life on to its own age.
+ * It never reads a club: the club arrives later, as a cast, a skin and (through `night.ts`) an archive night.
+ */
+import {LIFE_MISSIONS, LIFE_SPINE, routeOf, standingFor} from './stages'
+import {MATCHDAY, STAGES, type Approach, type Cond, type Effect, type Mission, type Offer, type StageId, type StoryEvent, type StoryState} from './types'
+
+/** the whole written life, six to forty-eight (`stages.ts`): chapters, small jobs and the standing work of every stage */
+export const MISSIONS: readonly Mission[] = LIFE_MISSIONS
+/** the written life, slot after slot (a slot of two is a fork). Later stages join here as they are written. */
+export const SPINE: readonly (readonly string[])[] = LIFE_SPINE
+const BY_ID = new Map(MISSIONS.map(m => [m.id, m]))
+
+export const missionById = (id: string): Mission | null => BY_ID.get(id) ?? null
+export const doneFlag = (id: string) => `story:done:${id}`
+
+export function newLife(): StoryState {
+  return {v: 1, age: 6, week: 1, day: MATCHDAY, money: 0, rep: 0, flags: {}, bonds: {}, keeps: [], done: [], times: {}, open: null, route: 'family'}
+}
+
+export function holds(state: StoryState, c: Cond | undefined): boolean {
+  if (!c) return true
+  return (c.has ?? []).every(f => !!state.flags[f]) && (c.not ?? []).every(f => !state.flags[f]) && state.money >= (c.money ?? 0)
+}
+
+/** how many slots of the spine are behind him */
+export function chapter(state: StoryState): number {
+  let i = 0
+  while (i < SPINE.length && SPINE[i]!.some(id => state.done.includes(id))) i++
+  return i
+}
+
+/** the written life is finished: every slot of the spine is behind him (free roam and the standing work go on) */
+export const isFinished = (state: StoryState): boolean => chapter(state) >= SPINE.length
+
+export const stageOf = (age: number): StageId => (STAGES.find(s => age >= s.ages[0] && age <= s.ages[1]) ?? STAGES[STAGES.length - 1]!).id
+
+const openApproaches = (state: StoryState, m: Mission): Approach[] => m.approaches.filter(a => holds(state, a.needs))
+const offer = (state: StoryState, m: Mission, why: Offer['why']): Offer => ({mission: m, approaches: openApproaches(state, m), why})
+
+/** the chapter(s) the spine points at now, whether or not today is their day */
+export function ahead(state: StoryState): Mission[] {
+  const slot = SPINE[chapter(state)]
+  return slot ? slot.map(id => BY_ID.get(id)!) : []
+}
+
+/** days until the chapter ahead can be played (0: today) */
+export function waits(state: StoryState): number {
+  const next = ahead(state)
+  if (!next.length || next.some(m => m.day === 'any')) return 0
+  return (MATCHDAY - state.day + 7) % 7
+}
+
+/**
+ * What is in front of him now. Never empty:
+ *   a mission he already accepted → only that one;
+ *   a chapter ready today → it (both sides of a fork), with the side jobs that are open;
+ *   the chapter waits for matchday, or the written life is over → side jobs and the standing work of the week.
+ */
+export function nextMissions(state: StoryState): Offer[] {
+  if (state.open) { const m = BY_ID.get(state.open.id); if (m) return [offer(state, m, 'open')] }
+  const main = waits(state) === 0 ? ahead(state).map(m => offer(state, m, 'main')) : []
+  const sides = MISSIONS.filter(m => m.kind === 'side' && !state.done.includes(m.id) && m.age <= state.age && holds(state, m.needs)).map(m => offer(state, m, 'side'))
+  // the week's work of the stage he is living (a boy's papers round, a young man's shift)
+  // (the one done least often first, so the week is never the same chore twice in a row)
+  const standing = main.length ? [] : rotate(standingFor(state.age), state).map(m => offer(state, m, 'standing'))
+  return [...main, ...sides, ...standing].filter(o => o.approaches.length > 0)
+}
+
+/** he said yes to a person and picked a way: the mission is open, nothing else is offered until it ends */
+export function accept(state: StoryState, missionId: string, approachId: string): StoryState {
+  if (state.open) throw new Error(`STORY_OPEN: ${state.open.id} is not finished`)
+  const o = nextMissions(state).find(x => x.mission.id === missionId)
+  if (!o) throw new Error(`STORY_NOT_OFFERED: ${missionId}`)
+  if (!o.approaches.some(a => a.id === approachId)) throw new Error(`STORY_APPROACH: ${missionId}.${approachId}`)
+  return {...state, open: {id: missionId, approach: approachId}}
+}
+
+/** he changed his mind before the end: the mission closes with nothing changed and is offered again */
+export const walkAway = (state: StoryState): StoryState => ({...state, open: null})
+
+/** the week's work, the one done least often first (a stable order between equals) */
+export const rotate = (list: readonly Mission[], state: Pick<StoryState, 'times'>): Mission[] =>
+  list.map((m, i) => ({m, i})).sort((a, b) => (state.times[a.m.id] ?? 0) - (state.times[b.m.id] ?? 0) || a.i - b.i).map(x => x.m)
+
+/** what an outcome changes, landed on the state (the feel layer lands a challenge's slip or clean finish through it) */
+export function applyEffects(state: StoryState, effects: readonly Effect[]): {state: StoryState; events: StoryEvent[]} {
+  const events: StoryEvent[] = []
+  return {state: apply(state, effects, events), events}
+}
+
+function apply(state: StoryState, effects: readonly Effect[], events: StoryEvent[]): StoryState {
+  const s = {...state, flags: {...state.flags}, bonds: {...state.bonds}, keeps: [...state.keeps]}
+  for (const e of effects) {
+    if ('flag' in e) s.flags[e.flag] = e.v ?? true
+    else if ('bond' in e) s.bonds[e.bond] = (s.bonds[e.bond] ?? 0) + e.n
+    else if ('money' in e) s.money = Math.max(0, s.money + e.money)
+    else if ('rep' in e) s.rep = s.rep + e.rep
+    else if (!s.keeps.includes(e.keep)) { s.keeps.push(e.keep); events.push({k: 'kept', id: e.keep}) }
+  }
+  return s
+}
+
+/**
+ * The day moves on. The build-up to matchday is FELT, not served (feel pass, 24.11.2026): when the next chapter waits for
+ * matchday, a day of the week's work jumps to its eve, and the eve to the day itself, so at most two small jobs stand
+ * between two matchday chapters and the week still reads Monday → the eve → matchday.
+ */
+const tomorrow = (s: StoryState, events: StoryEvent[]): StoryState => {
+  if (s.day < MATCHDAY) {
+    const w = waits(s)
+    if (w > 1) { events.push({k: 'midweek', from: s.day, to: MATCHDAY - 1}); return {...s, day: MATCHDAY - 1} }
+    return {...s, day: s.day + 1}
+  }
+  events.push({k: 'week', week: s.week + 1})
+  return {...s, day: 0, week: s.week + 1}
+}
+
+/** the day ends with no job done (the front door): the week still walks to matchday */
+export function endDay(state: StoryState): {state: StoryState; events: StoryEvent[]} {
+  if (state.open) throw new Error(`STORY_OPEN: ${state.open.id} is not finished`)
+  const events: StoryEvent[] = []
+  return {state: tomorrow(state, events), events}
+}
+
+/**
+ * The open mission ends. `choice` answers its complication (a main mission always has one; an unknown or missing
+ * answer takes the first, so nothing can strand him). Approach, complication and aftermath land in that order.
+ */
+export function resolve(state: StoryState, choice?: string): {state: StoryState; events: StoryEvent[]} {
+  if (!state.open) throw new Error('STORY_NOTHING_OPEN')
+  const m = BY_ID.get(state.open.id)!
+  const how = m.approaches.find(a => a.id === state.open!.approach) ?? m.approaches[0]!
+  const events: StoryEvent[] = []
+  const picked = m.complication ? m.complication.choices.find(c => c.id === choice) ?? m.complication.choices[0]! : null
+  let s = apply({...state, open: null}, how.effects, events)
+  if (picked) s = apply(s, picked.effects, events)
+  s = apply(s, m.aftermath, events)
+  s.flags[`story:how:${m.id}`] = how.id
+  if (picked) s.flags[`story:met:${m.id}`] = picked.id
+  // the route he leans into follows the last fork's lean (a lean, not a lock)
+  s = {...s, route: routeOf(s)}
+  if (m.kind === 'standing') s = {...s, times: {...s.times, [m.id]: (s.times[m.id] ?? 0) + 1}}
+  else { s = {...s, done: [...s.done, m.id]}; s.flags[doneFlag(m.id)] = true }
+  events.push({k: 'aftermath', mission: m.id, key: `story.m.${m.id}.aftermath`})
+  if (m.kind === 'main') {
+    if (m.template) events.push({k: 'watch', mission: m.id, template: m.template})
+    const next = ahead(s)[0]
+    if (next && next.age > s.age) { events.push({k: 'bridge', from: s.age, to: next.age}); s = {...s, age: next.age} }
+    if (!next || stageOf(next.age) !== m.stage) events.push({k: 'stage-end', stage: m.stage})
+  }
+  return {state: tomorrow(s, events), events}
+}
+
+/** the steps of the open mission as he must do them: the approach's own, then the one every approach ends on */
+export function stepsOf(m: Mission, approachId: string) {
+  const how = m.approaches.find(a => a.id === approachId)
+  if (!how) throw new Error(`STORY_APPROACH: ${m.id}.${approachId}`)
+  return [...how.steps, m.converge]
+}

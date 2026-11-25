@@ -1,0 +1,113 @@
+/*
+ * LIFE · the watch card — LIFE's own identity (dark navy, cream type, thin rules, one accent), not the magazine look.
+ * Phone first: one column, the slate above the screen, Continue pinned to the thumb. From 900px it is a second
+ * design: the slate is a tall left column and the screen takes the right. Logical properties only; every target is
+ * 44px or more; no motion under prefers-reduced-motion. The accent is cream unless the host passes the club's own
+ * (after the colour policy) as --wc-accent.
+ */
+.wcRoot {
+  --wc-navy: var(--lg-navy, var(--life-scene-navy));
+  --wc-navy-2: var(--lg-navy-2, var(--life-scene-navy-raised));
+  --wc-navy-3: var(--lg-navy-3, var(--life-scene-navy-bright));
+  --wc-cream: var(--lg-cream, var(--life-scene-cream));
+  --wc-dim: color-mix(in srgb, var(--wc-cream) 66%, transparent);
+  --wc-line: color-mix(in srgb, var(--wc-cream) 18%, transparent);
+  --wc-accent: var(--wc-cream);
+  --wc-head: var(--lg-head, var(--mag-condensed, Impact, 'Arial Narrow', sans-serif));
+  --wc-body: var(--lg-body, var(--mag-body, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif));
+  display: grid; grid-template-rows: auto 1fr auto; gap: 0;
+  inline-size: 100%; max-inline-size: 1040px; min-block-size: min(100dvh, 720px); margin-inline: auto;
+  background: var(--wc-navy); color: var(--wc-cream); font-family: var(--wc-body);
+  border: 1px solid var(--wc-line); border-radius: 18px; overflow: hidden;
+  -webkit-tap-highlight-color: transparent;
+}
+.wcRoot p, .wcRoot h2, .wcRoot ul { margin: 0; padding: 0; }
+.wcRoot :where(button) { font: inherit; color: inherit; cursor: pointer; } /* zero weight for the element: a button's own class (the cream Continue in navy ink) wins */
+.wcRoot :focus-visible { outline: 3px solid var(--wc-cream); outline-offset: 2px; }
+
+/* ───── the archive slate: a clapper's top edge, then the facts the row holds ───── */
+.wcSlate {
+  position: relative; padding-block: 22px 18px; padding-inline: 20px;
+  border-block-end: 1px solid var(--wc-line);
+  background: linear-gradient(to bottom, var(--wc-navy-2), var(--wc-navy));
+}
+.wcSlate::before {
+  content: ''; position: absolute; inset-block-start: 0; inset-inline: 0; block-size: 8px;
+  background: repeating-linear-gradient(115deg, var(--wc-accent) 0 18px, transparent 18px 36px); opacity: .9;
+}
+.wcKicker { font-size: .72rem; letter-spacing: .16em; text-transform: uppercase; color: var(--wc-dim); }
+.wcDate { margin-block-start: 10px; font-family: var(--wc-head); font-size: clamp(1.5rem, 7vw, 2.2rem); line-height: 1; letter-spacing: .02em; text-transform: uppercase; color: var(--wc-accent); }
+.wcComp { margin-block-start: 6px; font-size: .9rem; color: var(--wc-dim); }
+.wcResult { margin-block-start: 12px; font-family: var(--wc-head); font-weight: 400; font-size: clamp(1.35rem, 6.2vw, 2rem); line-height: 1.08; overflow-wrap: anywhere; }
+.wcTitle { margin-block-start: 8px; font-size: .92rem; line-height: 1.4; color: var(--wc-dim); overflow-wrap: anywhere; }
+.wcSource { margin-block-start: 12px; padding-block-start: 10px; border-block-start: 1px dashed var(--wc-line); font-size: .74rem; color: var(--wc-dim); }
+
+/* ───── the screen ───── */
+.wcStage { display: grid; align-content: start; gap: 16px; padding-block: 18px; padding-inline: 16px; min-inline-size: 0; }
+.wcScreen { position: relative; inline-size: 100%; aspect-ratio: 16 / 9; border-radius: 12px; overflow: hidden; background: var(--wc-navy-3); border: 1px solid var(--wc-line); }
+.wcFrame { position: absolute; inset: 0; inline-size: 100%; block-size: 100%; border: 0; display: block; }
+.wcPoster {
+  position: absolute; inset: 0; inline-size: 100%; block-size: 100%; border: 0; padding: 14px;
+  display: grid; place-items: center; align-content: center; gap: 8px; text-align: center;
+  background: radial-gradient(120% 90% at 50% 110%, color-mix(in srgb, var(--wc-accent) 26%, transparent), transparent 60%), var(--wc-navy-3);
+}
+.wcPosterLines { position: absolute; inset: 0; pointer-events: none; opacity: .5;
+  background: repeating-linear-gradient(to bottom, transparent 0 3px, color-mix(in srgb, var(--wc-navy) 55%, transparent) 3px 4px); }
+.wcMark { inline-size: 64px; block-size: 64px; flex: none; position: relative; }
+.wcMark circle { fill: color-mix(in srgb, var(--wc-navy) 70%, transparent); stroke: var(--wc-accent); stroke-width: 2; }
+.wcMark path { fill: var(--wc-cream); }
+.wcPosterLabel { position: relative; font-family: var(--wc-head); font-size: 1.15rem; letter-spacing: .06em; text-transform: uppercase; }
+.wcPosterTitle { position: relative; max-inline-size: 34ch; font-size: .84rem; line-height: 1.35; color: var(--wc-dim); display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
+.wcPoster:hover .wcMark circle, .wcPoster:focus-visible .wcMark circle { fill: var(--wc-navy); }
+.wcNone { padding-block: 28px; padding-inline: 8px; text-align: center; color: var(--wc-dim); border: 1px dashed var(--wc-line); border-radius: 12px; }
+
+.wcUnder { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 12px; }
+.wcLink, .wcGhost {
+  display: inline-flex; align-items: center; justify-content: center; min-block-size: 44px; padding-inline: 16px;
+  border: 1px solid var(--wc-line); border-radius: 999px; background: transparent; color: var(--wc-cream);
+  font-size: .9rem; text-decoration: none;
+}
+.wcLink { border-color: var(--wc-accent); }
+.wcHint { flex-basis: 100%; font-size: .76rem; line-height: 1.4; color: var(--wc-dim); }
+
+.wcMore, .wcOurs { display: grid; gap: 8px; padding-block-start: 14px; border-block-start: 1px solid var(--wc-line); }
+.wcList { list-style: none; display: grid; gap: 6px; }
+.wcRow {
+  display: flex; align-items: center; gap: 12px; inline-size: 100%; min-block-size: 52px; padding-block: 6px; padding-inline: 10px 14px;
+  text-align: start; border: 1px solid var(--wc-line); border-radius: 12px; background: var(--wc-navy-2); font-size: .92rem; line-height: 1.3;
+}
+.wcRow .wcMark { inline-size: 32px; block-size: 32px; }
+.wcRow[aria-pressed='true'] { border-color: var(--wc-accent); }
+.wcOurs .wcRow { background: color-mix(in srgb, var(--wc-accent) 12%, var(--wc-navy-2)); }
+.wcBy { font-size: .74rem; letter-spacing: .08em; text-transform: uppercase; color: var(--wc-dim); }
+
+/* ───── the way on ───── */
+.wcFoot { position: sticky; inset-block-end: 0; padding-block: 12px calc(12px + env(safe-area-inset-bottom, 0px)); padding-inline: 16px; background: linear-gradient(to top, var(--wc-navy) 70%, transparent); }
+.wcContinue {
+  inline-size: 100%; min-block-size: 54px; border: 0; border-radius: 14px;
+  background: var(--wc-cream); color: var(--wc-navy); font-family: var(--wc-head); font-size: 1.2rem; letter-spacing: .08em; text-transform: uppercase;
+}
+.wcContinue:active { transform: translateY(1px); }
+
+/* small phones: tighter slate, the same targets */
+@media (max-width: 359px) {
+  .wcSlate { padding-inline: 14px; }
+  .wcStage { padding-inline: 12px; }
+  .wcMark { inline-size: 52px; block-size: 52px; }
+}
+
+/* ───── desktop: a second design — the slate is a column, the screen has the room ───── */
+@media (min-width: 900px) {
+  .wcRoot { grid-template-columns: minmax(260px, 320px) 1fr; grid-template-rows: 1fr auto; min-block-size: 0; }
+  .wcSlate { grid-row: 1 / span 2; padding-block: 40px 28px; padding-inline: 28px; border-block-end: 0; border-inline-end: 1px solid var(--wc-line); background: linear-gradient(to right, var(--wc-navy-2), var(--wc-navy)); }
+  .wcSlate::before { inset-inline: 0 auto; inset-block: 0; inline-size: 8px; block-size: auto; background: repeating-linear-gradient(25deg, var(--wc-accent) 0 18px, transparent 18px 36px); }
+  .wcDate { font-size: 2.4rem; }
+  .wcResult { font-size: 1.8rem; }
+  .wcStage { padding-block: 28px 12px; padding-inline: 28px; }
+  .wcFoot { position: static; display: flex; justify-content: flex-end; padding-block: 12px 24px; padding-inline: 28px; background: none; }
+  .wcContinue { inline-size: auto; min-inline-size: 220px; padding-inline: 32px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .wcContinue:active { transform: none; }
+}
