@@ -352,6 +352,16 @@
 ],
 "id": "beat:job-6aa2c3d5-8cba-413e-bd43-fcaab486e702/soldier-away-9262a19de041017d"
 },
+"077b7d198c2603ba": {
+"caption": "A circular black and white club logo containing a stylized monogram inside a round frame.",
+"people": 0,
+"faces": false,
+"place": "abstract",
+"mood": "calm",
+"text": "FCL",
+"avoid": "live match action",
+"id": "beat:job-0c14b1f5-d59b-4302-859d-22da7fc306b1/fc-lugano-3de207efea57db44"
+},
 "07b6dc582864baac": {
 "caption": "A player lifts a trophy in the center of a crowded stadium filled with cheering fans.",
 "people": 50,
@@ -4854,6 +4864,18 @@
 ],
 "id": "lib:obj-season-ticket-book-fl2-kr"
 },
+"5c39789b8175b6df": {
+"caption": "A paper-cut style illustration shows a football player in a white jersey watching the ball fly into the top corner of the net.",
+"people": 1,
+"faces": false,
+"action": "ball hitting the goal net",
+"place": "stadium",
+"era": "2020s",
+"mood": "tension",
+"text": "8",
+"avoid": "live photography",
+"id": "beat:job-0c14b1f5-d59b-4302-859d-22da7fc306b1/ec68dd51-dd635c6fc715c1f1"
+},
 "5c5237d4836a525a": {
 "caption": "An abstract arrangement of beige and black framed blocks resembles scattered layouts.",
 "people": 0,
@@ -7815,6 +7837,18 @@
 ],
 "id": "lib:ppl-player-celebrate-fl2-kr"
 },
+"99c381c9f9fcf906": {
+"caption": "A football player seen from behind in a white kit watches the ball hit the top net of the goal.",
+"people": 1,
+"faces": false,
+"action": "scoring a goal",
+"place": "stadium",
+"era": "2020s",
+"mood": "tension",
+"text": "8",
+"avoid": "vector illustration",
+"id": "beat:job-0c14b1f5-d59b-4302-859d-22da7fc306b1/image-png-13713aef-2b49efbf1543826d"
+},
 "9a7ae58f39d2e623": {
 "caption": "The club logo of SV Zulte Waregem displays a rainbow arc, planetary rings, and a football.",
 "people": 0,
@@ -9139,6 +9173,16 @@
 "mood": "tension",
 "avoid": "celebration or joyful moments, active sporting action",
 "id": "beat:commons-job-79bbd741-811c-49a5-9ddb-d5de2abd88e9/158753285"
+},
+"b31e911efc193940": {
+"caption": "A circular maroon club crest topped with a yellow star and inscribed with Servette FC Geneve 1890.",
+"people": 0,
+"faces": false,
+"place": "abstract",
+"mood": "calm",
+"text": "SERVETTE FC GENEVE 1890 S",
+"avoid": "action shot",
+"id": "beat:job-0c14b1f5-d59b-4302-859d-22da7fc306b1/servette-fc-beb172182877c7f1"
 },
 "b32d3705d8201c22": {
 "caption": "An elevated papercraft model view of packed stadium stands under floodlights with a match underway on the pitch.",
@@ -12102,6 +12146,16 @@
 "live stadium atmosphere"
 ],
 "id": "beat:job-79973818-6a71-4152-8b75-ece090c35465/t7-slide-04-ee655fce9101be29"
+},
+"eb796dbf08254c05": {
+"caption": "A blue minimalist emblem of interlocking letters L and S on a light background.",
+"people": 0,
+"faces": false,
+"place": "abstract",
+"mood": "calm",
+"text": "LS",
+"avoid": "stadium crowd",
+"id": "beat:job-0c14b1f5-d59b-4302-859d-22da7fc306b1/fc-lausanne-sport-d2a26687ae191ccb"
 },
 "eba981d8eb062135": {
 "caption": "A promotional poster layout with bold text reading Fan Life: One Club. More Ways To Play.",
