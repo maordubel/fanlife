@@ -503,9 +503,75 @@
    "publisher": "LiveScore",
    "access": "available",
    "checkedAt": "2026-11-12"
+  },
+  {
+   "id": "s365-4776058",
+   "title": "365Scores: Olympiacos 6-2 Iraklis, 2026-11-22",
+   "url": "https://webws.365scores.com/web/game/?gameId=4776058",
+   "publisher": "365Scores",
+   "access": "available",
+   "checkedAt": "2026-11-26"
+  },
+  {
+   "id": "ls-lu-1836621",
+   "title": "LiveScore: Olympiacos 6-2 Iraklis, 2026-11-22 (line-ups)",
+   "url": "https://prod-cdn-public-api.livescore.com/v1/api/app/lineups/soccer/1836621",
+   "publisher": "LiveScore",
+   "access": "available",
+   "checkedAt": "2026-11-26"
   }
  ],
  "matches": [
+  {
+   "id": "a-m-2026-11-22-olympiacos-iraklis",
+   "value": {
+    "name": "Olympiacos 6-2 Iraklis",
+    "on": "2026-11-22",
+    "competition": "Super League",
+    "score": "6-2",
+    "venue": null,
+    "lineup": [
+     "Stefan Ortega",
+     "Nayair Tiknizyan",
+     "Lorenzo Pirola",
+     "Panagiotis Retsos",
+     "Manolis Saliakas",
+     "Remo Freuler",
+     "Lorenzo Scipioni",
+     "Konstantinos Fortounis",
+     "Jota Silva",
+     "Leon Bailey",
+     "Marius Mouandilmadji"
+    ],
+    "bench": [
+     "Bruno Onyemaechi",
+     "Gustavo Sá",
+     "Gelson Martins",
+     "Joel Roca",
+     "Armando Gonzalez",
+     "Balsa Popovic",
+     "David Carmo",
+     "Zinedin Smajlović",
+     "Marcus Pedersen",
+     "Christos Filis",
+     "Clayton",
+     "Roman Yaremchuk"
+    ],
+    "scorers": []
+   },
+   "sources": [
+    "s365-4776058",
+    "ls-lu-1836621"
+   ],
+   "researchedAt": "2026-11-26",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Two publishers (365Scores, LiveScore) agree on date, clubs, score and the starting eleven (≥10 of 11 surnames).",
+   "confidence": 3,
+   "status": "approved",
+   "approvedAt": "2026-11-26",
+   "approvedBy": "automated:cross-source-review-league-lineups-olympiacos"
+  },
   {
    "id": "a-m-2026-11-08-olympiacos-paok",
    "value": {

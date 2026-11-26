@@ -39903,11 +39903,11 @@
   },
   "olympiacos": {
    "quotaMode": "full",
-   "size": 672,
+   "size": 674,
    "quota": {
     "1": 239,
-    "2": 235,
-    "3": 134,
+    "2": 236,
+    "3": 135,
     "4": 54,
     "5": 10
    },
@@ -45287,6 +45287,22 @@
      "assignment": "new-member",
      "rationale": "joined the archive after the list was frozen",
      "reviewedAt": "2026-10-10"
+    },
+    "olympiacos:daily-player-57529f748b63f4ffbee1f82f": {
+     "priceM": 3,
+     "priceTier": "LEADING",
+     "locked": false,
+     "assignment": "new-member",
+     "rationale": "Daily research added a documented first-team player.",
+     "reviewedAt": "2026-11-26"
+    },
+    "olympiacos:daily-player-d6bbd1255401c68dd1297915": {
+     "priceM": 2,
+     "priceTier": "REGULAR",
+     "locked": false,
+     "assignment": "new-member",
+     "rationale": "Daily research added a documented first-team player.",
+     "reviewedAt": "2026-11-26"
     }
    }
   },
