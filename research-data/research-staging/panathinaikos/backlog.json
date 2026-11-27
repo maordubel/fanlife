@@ -8,6 +8,14 @@
   "owner": null
  },
  {
+  "id": "continue-pao-official-history-html",
+  "priority": "P3",
+  "task": "Panathinaikos FC html: 0 page(s) read; the scheduled task continues from the checkpoint.",
+  "taskHe": "Panathinaikos FC html: נקראו 0 עמודים; המשימה המתוזמנת ממשיכה מנקודת השמירה.",
+  "status": "queued",
+  "owner": null
+ },
+ {
   "id": "limit-pao-official-history-0",
   "priority": "P3",
   "task": "Season result URLs are read from the site's own season options, never generated from a season-YYYY-YYYY guess.",

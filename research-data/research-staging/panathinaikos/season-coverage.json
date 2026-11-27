@@ -33,11 +33,11 @@
   "listings": [
    {
     "collection": "html",
-    "state": "listed",
+    "state": "partial_budget",
     "pagesRead": 0,
     "observedTotalDocuments": 11,
     "observedTotalPages": null,
-    "queue": 0,
+    "queue": 6,
     "lastError": null
    }
   ],
