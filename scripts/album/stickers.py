@@ -486,12 +486,15 @@ def main():
     ledger['note'] = 'THE ALBUM sticker photographs: every image is a Wikimedia Commons file under a free licence, from the person\u2019s Wikidata item (P18) or his Commons category, club-era first; credits are shown on the back of each sticker. Written by scripts/album/stickers.py.'
     logo = Image.open(ROOT / 'public/brand/fanlife/logo-512.png').convert('RGBA').resize((160, 160), Image.LANCZOS)
     b = io.BytesIO(); logo.save(b, 'PNG'); logo_b64 = base64.b64encode(b.getvalue()).decode()
-    css = font_css()
+    import cards as CD
+    css = CD.retro_css()
     session = (new_session('u2net_human_seg'), new_session('isnet-general-use'))
+    card_session = (new_session('u2net'), new_session('silueta'))
     done = 0
     with sync_playwright() as pw:
         br = pw.chromium.launch()
         pg = br.new_page(viewport={'width': 240, 'height': 330}, device_scale_factor=2)
+        pg2 = br.new_page()   # the shirt renders for CD.dressed
         stints_all = json.loads((ROOT / 'content/generated/people-stints.json').read_text())['stints']
         alias_of = {f"{x['club']}:{x['eid']}": [n for n in (x.get('aliases') or []) if n and n != x['name']] for x in stints_all}
         for club, rows in edition['wings'].items():
@@ -505,6 +508,8 @@ def main():
                 prev = ledger['stickers'].get(sid)
                 if a.ids and sid not in a.ids.split(','):
                     continue
+                if prev and prev.get('portrait') == 'card' and prev.get('person_id') == st['person_id']:
+                    continue  # a face from the owner's cards (scripts/album/cards.py) is never replaced here
                 if prev and not a.redo and not a.ids and prev.get('person_id') == st['person_id'] and prev.get('status') == 'photo':
                     continue
                 qid = stint_qid.get(f'{club}:{st["record_id"]}') or (find_qid(st['name'], club_q[club], st.get('from')) if club in club_q else None)
@@ -513,7 +518,12 @@ def main():
                 pick = choose_photo(qid, st['name'], clubs[club]['name'], st.get('from'), st.get('to'), names=list(dict.fromkeys(names)), club_words=[clubs[club]['name']] + SRC.club_names(club), blocked=set(block.get(sid, [])))
                 if pick:
                     meta, raw, frame = pick
-                    got = cutout(raw, session, frame)
+                    got = CD.dressed(Image.open(io.BytesIO(raw)), st['kit'], pg2, card_session) if st.get('kit') else None
+                    if got:
+                        frame = 'club'   # his face on his club's own shirt: never the archive duotone
+                        got = (CD.sticker_halo(got[0], max(7, round(got[1][2] / 18) * 2 + 1)), got[1])
+                    else:
+                        got = cutout(raw, session, frame)
                     if got:
                         cut, f = got
                         bb = io.BytesIO(); cut.save(bb, 'PNG'); photo = base64.b64encode(bb.getvalue()).decode(); photo_wh = (*cut.size, *f)
@@ -529,16 +539,26 @@ def main():
                 worn = DRESSED_DIR / club / f'{st["slot"]}.webp'
                 fig, kit_over, painted = None, False, False
                 if not src and face.exists():
-                    got = cutout((worn if worn.exists() else face).read_bytes(), session, 'club', paint_it=False)
+                    # the painted portrait (faces.py): its head and neck set into his club's real shirt like every card face
+                    got = CD.dressed(Image.open(face).convert('RGB'), st['kit'], pg2, card_session) if st.get('kit') else None
                     if got:
                         cut, f = got
+                        cut = CD.sticker_halo(cut, max(7, round(f[2] / 18) * 2 + 1))
+                    else:
+                        got = cutout((worn if worn.exists() else face).read_bytes(), session, 'club', paint_it=False)
+                        if got:
+                            cut, f = got
+                            cut = CD.sticker_halo(cut, max(7, round(f[2] / 18) * 2 + 1))
+                    if got:
                         bb = io.BytesIO(); cut.save(bb, 'PNG'); photo = base64.b64encode(bb.getvalue()).decode(); photo_wh = (*cut.size, *f)
                         painted = True
-                        kit_over = not worn.exists()  # an undressed painting still gets the shirt laid over
-                        frame = 'club'  # a painted portrait is never an archive photograph
+                        frame = 'club'
                 if not src and not painted:
                     fig = painted_figure(pg, st, traits)
-                svg = sticker_svg(st, clubs[club], photo, photo_wh, frame, logo_b64, traits=traits, figure_b64=fig, kit_over=kit_over)
+                if photo:   # THE RETRO STICKER (owner, 28.11.2026: every sticker of the album in the new frame)
+                    svg = CD.retro_svg(st, clubs[club], photo, photo_wh, logo_b64)
+                else:
+                    svg = CD.retro_svg(st, clubs[club], fig, None, logo_b64)
                 pg.set_content(f'<html><style>{css} body{{margin:0;background:transparent}} svg{{display:block}}</style><body>{svg}</body></html>')
                 pg.wait_for_timeout(150)
                 png = pg.locator('body > svg').screenshot(omit_background=True)

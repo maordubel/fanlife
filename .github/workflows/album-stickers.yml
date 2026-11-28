@@ -11,6 +11,8 @@ on:
       ids: {description: 'Only these stickers, comma-separated club:slot (empty = all)', default: ''}
   schedule:
     - cron: '17 4 * * 1'
+  push:
+    branches: [claude/album-retro]   # the retro frame on every sticker (28.11.2026): presses the whole album again
 permissions:
   contents: write
   pull-requests: write
@@ -26,7 +28,8 @@ jobs:
       - run: pip install rembg onnxruntime pillow playwright "opencv-contrib-python-headless<5" numpy && curl -sSL -o "$RUNNER_TEMP/lbf.yaml" https://raw.githubusercontent.com/kurnianggoro/GSOC2017/master/data/lbfmodel.yaml && python -m playwright install --with-deps chromium
       - name: Press
         env: {ALBUM_LBF: '${{ runner.temp }}/lbf.yaml', ALBUM_IDS: '${{ inputs.ids }}'}
-        run: python scripts/album/stickers.py ${{ inputs.club && format('--club {0}', inputs.club) || '' }} ${{ inputs.redo == 'true' && '--redo' || '' }} ${ALBUM_IDS:+--ids "$ALBUM_IDS"}
+        # the shirt for every man (scripts/album/card-kits.ts) is read by cards.py when a face is dressed
+        run: python scripts/album/stickers.py ${{ inputs.club && format('--club {0}', inputs.club) || '' }} ${{ (inputs.redo == 'true' || github.event_name == 'push') && '--redo' || '' }} ${ALBUM_IDS:+--ids "$ALBUM_IDS"}
       - uses: peter-evans/create-pull-request@v6
         with:
           branch: album/stickers-auto

@@ -361,9 +361,15 @@ def sticker_halo(im, weight):
 
 
 def retro_svg(st, club, photo_b64, wh, logo_b64):
+    """`wh` = (pw, ph, fx, fy, fw, fh): the picture's size and his face box; None for a drawn figure (a square picture
+    centred on the field, its head where every face sits)"""
     c, on = club['primary'], club['on']
     dark, light = shade(c, .72), shade(c, 1.16)
+    r_, g_, b_ = (int(c[i:i + 2], 16) for i in (1, 3, 5))
+    ink_c = c if (.299 * r_ + .587 * g_ + .114 * b_) / 255 < .62 else shade(c, .45)   # a light club colour is never type on ivory
     x, y, w, h = PANEL
+    if wh is None:
+        wh = (100, 100, 38, 22, 24, 30)   # stickers.painted_figure: the drawn head sits here in its square
     pw, ph, fx, fy, fw, fh = wh
     sc = (R_FACE * h) / fh
     cx, cy = x + w / 2, y + R_EYE * h
@@ -411,13 +417,13 @@ def retro_svg(st, club, photo_b64, wh, logo_b64):
 </g>
 <rect x="{x}" y="{y}" width="{w}" height="{h}" rx="7" fill="none" stroke="{INK}" stroke-width="2"/>
 <g transform="translate({x} {y})"><path d="M0 7 Q0 0 7 0 L30 0 L30 {h*.52:.0f} L0 {h*.52+18:.0f} Z" fill="{IVORY}" stroke="{INK}" stroke-width="1.6"/>
- <text transform="translate(21 {h*.52-6:.0f}) rotate(-90)" font-family="Anton" font-size="15" letter-spacing="1" fill="{INK}">{code}<tspan fill="{c}" dx="4">{years}</tspan></text></g>
+ <text transform="translate(21 {h*.52-6:.0f}) rotate(-90)" font-family="Anton" font-size="15" letter-spacing="1" fill="{INK}">{code}<tspan fill="{ink_c}" dx="4">{years}</tspan></text></g>
 {burst}
 <g transform="translate({RW/2} {by+24}) rotate(-4)">
  <rect x="-104" y="-22" width="208" height="54" fill="{INK}" transform="translate(3 3)"/>
  <rect x="-104" y="-22" width="208" height="54" fill="{IVORY}" stroke="{INK}" stroke-width="2"/>
  <path d="M-104 -22 L-116 -6 L-104 10 Z M104 -22 L116 -6 L104 10 Z" fill="{dark}" stroke="{INK}" stroke-width="1.6"/>
- <text y="-6" text-anchor="middle" font-family="Shrikhand" font-size="{ffs:.1f}" fill="{c}" {fsq}>{S.esc(first)}</text>
+ <text y="-6" text-anchor="middle" font-family="Shrikhand" font-size="{ffs:.1f}" fill="{ink_c}" {fsq}>{S.esc(first)}</text>
  <text y="{2+fs*.78:.1f}" text-anchor="middle" font-family="Anton" font-size="{fs:.1f}" letter-spacing=".6" fill="{INK}" {sq}>{S.esc(last)}</text>
 </g>
 <g transform="translate(16 {RH-34})"><rect width="54" height="22" rx="3" fill="{INK}"/><circle cx="0" cy="11" r="4" fill="{IVORY}"/><circle cx="54" cy="11" r="4" fill="{IVORY}"/>
