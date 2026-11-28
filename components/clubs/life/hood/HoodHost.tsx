@@ -37,6 +37,7 @@ import {heartOf, recapOf} from '@/lib/life/hood/story/feel/voice'
 import {clockAfter, clockForMission, clockLabel, dayPart, FIRST_CLOCK, wrapDay} from '@/lib/life/hood/daylight'
 import {soundScene} from '@/lib/life/hood/soundScene'
 import {resumeLine} from '@/lib/life/hood/resume'
+import {echoFor, momentOf} from '@/lib/life/hood/story/moments'
 import {cardFound, cardsHeld, kitOfYear, yearOf, type CardThing} from '@/lib/life/hood/things'
 import {LifeSound} from '../sound'
 import css from './hood.module.css'
@@ -588,8 +589,10 @@ export function HoodHost({club, mark = null, seed = 1, time = 'dusk', clockAt, q
   const cardOf = (b: Beat): StoryCardView | null => {
     if (b.k === 'chapter') {
       const n = chapterOf(play.state) + 1, yrs = b.from === null ? 0 : b.to - b.from
+      // what somebody remembers of him from a chapter ago (moments.ts)
+      const echo = echoFor(play.state, b.next)
       const when = b.from === null ? w('story.begin') : yrs === 1 ? w('story.later.1') : w('story.later.n', {k: w(`story.num.${Math.min(6, yrs)}`)})
-      return {kind: 'chapter', kicker: `${w(`story.stage.${b.stage}`)} · ${w('story.chapter', {n: String(n)})}`, title: b.next ? w(`story.m.${b.next}.title`) : w(`story.stage.${b.stage}`), lines: [`${when} ${w('story.age', {n: String(b.to)})}.`, ...(b.from === null || stageOfAge(b.from) !== b.stage ? [w(`story.theme.${b.stage}`)] : [])], chips: [], archive: null, plate: plateFor(b.next, n), film: b.from === null ? null : workerBridge(n, club.town), go: w('story.card.continue')}
+      return {kind: 'chapter', kicker: `${w(`story.stage.${b.stage}`)} · ${w('story.chapter', {n: String(n)})}`, title: b.next ? w(`story.m.${b.next}.title`) : w(`story.stage.${b.stage}`), lines: [`${when} ${w('story.age', {n: String(b.to)})}.`, ...(b.from === null || stageOfAge(b.from) !== b.stage ? [w(`story.theme.${b.stage}`)] : []), ...(echo ? [w(`story.moment.${echo.mission}.${echo.id}.later`)] : [])], chips: [], archive: null, plate: plateFor(b.next, n), film: b.from === null ? null : workerBridge(n, club.town), go: w('story.card.continue')}
     }
     if (b.k === 'stage-end') return {kind: 'stage-end', kicker: w(`story.stage.${b.stage}`), title: w(`story.stage-end.${b.stage}`), lines: [w(b.stage === 'adult' ? 'story.stage-end.last' : 'story.stage-end.line')], chips: [], archive: null, plate: plateFor('the-box', 0), go: w('story.card.go')}
     if (b.k === 'paper') {
@@ -618,7 +621,7 @@ export function HoodHost({club, mark = null, seed = 1, time = 'dusk', clockAt, q
     const sl8 = b.night ? slateOf(b.night) : null
     const archive = b.night && sl8 ? {kicker: w(b.approach === 'radio' || b.approach === 'next-door' ? 'story.archive.radio' : 'story.archive.paper'), date: sl8.date ? slateDate(sl8.date) : null, result: sl8.result, title: sl8.title, titleLocale: sl8.titleLocale, source: sl8.publisher ? w('story.archive.source', {publisher: sl8.publisher}) : null} : null
     const art = d.kept.map(k => (k === 'shirt' ? shirt?.src : null) ?? workerProp(`keep:${k}`)).find(Boolean) ?? workerDoc(b.mission, club.town)
-    return {kind: 'aftermath', kicker: w('story.aftermath'), title: w(`story.m.${b.mission}.title`), lines: [w(`story.m.${b.mission}.aftermath`), ...(chips.length ? [] : [w('story.delta.none')])], chips, archive, plate: plateFor(b.mission, 1), art, paper: archive ? WORKER_PAPER : null, go: w('story.card.continue')}
+    return {kind: 'aftermath', kicker: w('story.aftermath'), title: w(`story.m.${b.mission}.title`), lines: [w(`story.m.${b.mission}.aftermath`), ...(momentOf(play.state, b.mission) ? [w(`story.moment.${b.mission}.${momentOf(play.state, b.mission)}.after`)] : []), ...(chips.length ? [] : [w('story.delta.none')])], chips, archive, plate: plateFor(b.mission, 1), art, paper: archive ? WORKER_PAPER : null, go: w('story.card.continue')}
   }
   const watchAns = beat?.k === 'watch' ? watchForNight(club.id, beat.night) : null
   const giverMarks: MapGiver[] = (() => { const g = giversOf(play), ppl = level.hood!.people; return [...(g.main ? [{id: g.main, kind: 'main' as const}] : []), ...g.side.map(id => ({id, kind: 'side' as const}))].flatMap(x => { const p = ppl.find(q => q.id === x.id); return p ? [{id: x.id, x: p.x, z: p.z, kind: x.kind, label: `${names[x.id] ?? ''} · ${w(x.kind === 'main' ? 'story.map.next' : 'story.map.side')}`, letter: x.kind === 'main' ? '!' : '·'}] : [] }) })()

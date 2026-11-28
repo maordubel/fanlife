@@ -20,6 +20,7 @@ import type {TalkChoice, TalkNode, TalkScript} from '../talk'
 import type {HoodJob, PersonId} from '../types'
 import {accept as acceptMission, ahead, endDay, isFinished, missionById, MISSIONS, newLife, nextMissions, resolve, stageOf, walkAway, waits} from './director'
 import {toHoodJob, walkableNear, type StoryJobPlan} from './job'
+import {MOMENTS, momentFlag} from './moments'
 import {layFinds} from './challenge/run'
 import type {Mission, Offer, StoryEvent, StoryState} from './types'
 
@@ -157,6 +158,8 @@ export function applyEffect(run: HoodRun, sl: StoryLevel, play: StoryPlay, effec
     keepOff(run, sl, next)
     return {play: next, act: {k: 'accepted', mission: m, approach: b}}
   }
+  // the moment: remembered, never scored (moments.ts). Only a moment the story knows, and only once.
+  if (what === 'moment' && a && b) { const m = MOMENTS.find(x => x.mission === a); if (!m || !(m.ids as readonly string[]).includes(b) || play.state.flags[momentFlag(a)] !== undefined) return {play, act: null}; return {play: {...play, state: {...play.state, flags: {...play.state.flags, [momentFlag(a)]: b}}}, act: null} }
   if (what === 'answer' && a && play.plan) return {play: {...play, choice: a, asked: true}, act: {k: 'answered', choice: a}}
   if (what === 'end-day' && !play.plan) {
     const out = endDay(play.state), next = {...play, state: out.state}
