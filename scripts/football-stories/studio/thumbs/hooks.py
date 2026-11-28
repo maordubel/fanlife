@@ -104,8 +104,8 @@ def stake(why: str, f: dict, st: dict, by: dict, also: list[str] | None = None) 
         return 'THE NIGHT IT ENDED', extra
     if why == 'drought-ended':
         return 'AT LAST', extra
-    if why == 'europe':
-        if opp and len(opp.split()) <= 2:
+    if why in ('europe', 'giant'):   # giant: a European power met (studio/director.py → POWERS)
+        if opp and len(opp.split()) <= 3:
             return (f'{opp} BEATEN' if o == 'win' else f'{opp} HELD' if o == 'draw' else 'A EUROPEAN NIGHT'), extra
         return 'A EUROPEAN NIGHT', extra
     if why == 'first':

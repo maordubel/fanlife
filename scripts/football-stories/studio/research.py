@@ -404,6 +404,54 @@ def _goal_claims(goals: list[dict], matches: list[dict], sources_by_id: dict, se
     return found
 
 
+_SHORT: dict | None = None
+
+
+def _full_name(name: str | None) -> str | None:
+    """An opponent's full English name where the source printed a short form ("L. Red Imps" → "Lincoln Red Imps"):
+    content/manual/names-en/club-short-forms.json, reviewed by hand; a name not listed is kept as printed."""
+    global _SHORT
+    if _SHORT is None:
+        f = MANUAL / 'names-en' / 'club-short-forms.json'
+        _SHORT = read_json(f).get('names', {}) if f.exists() else {}
+    return _SHORT.get(name, name) if name else name
+
+
+STAGE_IN = re.compile(r'^(.*?)\s*\(([^()]+)\)\s*$')
+DIVISION = re.compile(r'^(.+?)\s*/\s*(\d{1,2})$')
+
+
+def split_stage(comp: str | None) -> tuple[str | None, str | None, int | None]:
+    """'League Cup (Final)' → ('League Cup', 'Final', None); 'Scottish League (Premiership / 36)' → ('Scottish
+    Premiership', None, 36). A source that writes the stage or the matchday into the competition's name is read as
+    one, so the film says "the League Cup final" — never "League Cup (Final)" — and the story knows it is a final."""
+    m = STAGE_IN.match(str(comp or ''))
+    if not m:
+        return comp, None, None
+    outer, inner = m.group(1).strip(), m.group(2).strip()
+    d = DIVISION.match(inner)
+    if d:
+        div = d.group(1).strip()
+        country = outer.split()[0] if outer.lower().endswith('league') and len(outer.split()) > 1 else ''
+        return (f'{country} {div}'.strip() if country and not div.lower().startswith(country.lower()) else div), None, int(d.group(2))
+    return outer, inner, None
+
+
+def _infer_finals(claims: list[dict]) -> None:
+    """A cup match with no stage, played after the club's semi-final of the same cup and the last of that cup in the
+    season, is its final (the Scottish Cup final of 2017 reached the archive as plain "Scottish Cup")."""
+    ms = [c['fact'] for c in claims if c.get('fact', {}).get('kind') == 'match']
+    for comp in {f['competition'] for f in ms if f.get('competition')}:
+        rows = sorted((f for f in ms if f['competition'] == comp), key=lambda f: f['date'])
+        semi = [f for f in rows if re.search(r'semi', str(f.get('stage') or ''), re.I)]
+        if not semi or rows[-1] in semi or rows[-1].get('stage'):
+            continue
+        last = rows[-1]
+        if last['date'] > semi[-1]['date'] and (dt.date.fromisoformat(last['date'][:10]) - dt.date.fromisoformat(semi[-1]['date'][:10])).days <= 80:
+            last['stage'] = 'Final'
+            last['stage_note'] = 'inferred: the last match of the cup, after the semi-final'
+
+
 def compiled_ledger(club_id: str, season: str) -> dict:
     """FAN LIFE club packs (content/compiled/<club>.json): every APPROVED, sourced match of the season."""
     path = COMPILED / f'{club_id}.json'
@@ -450,6 +498,7 @@ def compiled_ledger(club_id: str, season: str) -> dict:
             held.append({'match_id': m.get('id'), 'date': date, 'reasons': reasons})
             continue
         home, away = sides
+        home, away = (home if home == name else _full_name(home)), (away if away == name else _full_name(away))
         note = _name_note(v.get('name'))
         pens = PENS_NOTE.match(note)
         aet = bool(pens) or note.lower() in ('after extra time', 'aet', 'a.e.t.')
@@ -457,11 +506,14 @@ def compiled_ledger(club_id: str, season: str) -> dict:
         ours_home = home == name
         cg, og = (sh, sa) if ours_home else (sa, sh)
         comp, stage = _uefa_comp(_english(v.get('competition'), comps_en), season)
+        comp, stage_in, matchday = split_stage(comp)
+        stage = stage or stage_in
         named = [x for x in v.get('scorers') or [] if isinstance(x, dict) and x.get('name') and _latin(x['name'])]
         complete = len(named) == cg
         attendance = v.get('attendance')
         claims.append({'id': m['id'], 'type': 'match', 'fact': {
             'kind': 'match', 'date': date, 'competition': comp, 'stage': v.get('stage') or stage, 'club': name,
+            **({'matchday': matchday} if matchday else {}),
             'opponent': away if ours_home else home, 'side': 'home' if ours_home else 'away', 'home': home, 'away': away,
             'score_home': sh, 'score_away': sa, 'club_goals': cg, 'opponent_goals': og,
             'outcome': 'win' if cg > og else 'draw' if cg == og else 'loss', 'venue': {'name': v['venue']} if v.get('venue') else None,
@@ -475,6 +527,7 @@ def compiled_ledger(club_id: str, season: str) -> dict:
     claims = _same_match(claims)
     if not claims:
         raise StageError('SEASON_NOT_IN_ARCHIVE', f'{name} {season}: no approved, sourced match records')
+    _infer_finals(claims)
     claims += _goal_claims(data.get('goals') or [], claims, srcs, season)
     return {'version': 1, 'club_id': club_id, 'club_name': name, 'country': ident.get('country'), 'season': season,
             'built_at': dt.datetime.now(dt.timezone.utc).isoformat(timespec='seconds'),

@@ -1,0 +1,49 @@
+name: Football Stories · script lab
+# Writes a film's scripts exactly as the worker would (research → season book → deep research → the three directors)
+# and keeps them as an artifact, with the ledger and the story judge's verdict — nothing is rendered or published.
+# Owner, 28.11.2026: "we are not improving results": every writer change is judged on what the production writer writes.
+# Start: Actions → this workflow → Run, or `gh workflow run stories-script-lab.yml -f club=celtic -f season=2016/17`.
+on:
+  workflow_dispatch:
+    inputs:
+      club: {description: 'Club id (e.g. celtic)', required: true}
+      season: {description: 'Season (e.g. 2016/17)', required: true}
+      minutes: {description: 'Film length', required: false, default: '8'}
+      topic: {description: 'Optional topic', required: false, default: ''}
+permissions:
+  contents: read
+concurrency:
+  group: stories-script-lab-${{ inputs.club }}-${{ inputs.season }}
+  cancel-in-progress: true
+jobs:
+  write:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: {node-version: 22, cache: npm}
+      - name: Club archives
+        run: |
+          npm ci --no-audit --no-fund
+          npm run clubs:precompile
+      - uses: actions/setup-python@v5
+        with: {python-version: '3.12'}
+      - name: Write the scripts
+        working-directory: scripts/football-stories
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          GEMINI_API_KEY_KIDS: ${{ secrets.GEMINI_API_KEY_KIDS }}
+          STORIES_WRITER: ${{ vars.STORIES_WRITER }}
+          STORIES_GEMINI_MODEL: ${{ vars.STORIES_GEMINI_MODEL }}
+          CLUB: ${{ inputs.club }}
+          SEASON: ${{ inputs.season }}
+          MINUTES: ${{ inputs.minutes }}
+          TOPIC: ${{ inputs.topic }}
+        run: python -m studio.lab.script_lab --club "$CLUB" --season "$SEASON" --minutes "$MINUTES" --topic "$TOPIC" --out "$RUNNER_TEMP/lab"
+      - if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: script-lab
+          path: ${{ runner.temp }}/lab
+          retention-days: 14
