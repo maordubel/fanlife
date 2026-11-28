@@ -13,7 +13,7 @@ on:
 permissions:
   contents: read
 concurrency:
-  group: stories-script-lab-${{ inputs.club }}-${{ inputs.season }}
+  group: stories-script-lab-${{ github.ref_name }}-${{ inputs.club }}-${{ inputs.season }}
   cancel-in-progress: true
 jobs:
   write:
