@@ -50,7 +50,10 @@ def sentences(text: str) -> list[str]:
 
 def _beats(script: dict) -> list[str]:
     from .script import all_beats
-    return [str(b.get('narration') or '') for *_, b in all_beats(script)]
+    try:
+        return [str(b.get('narration') or '') for *_, b in all_beats(script)]
+    except (KeyError, TypeError, AttributeError):
+        return []
 
 
 def _names(ledger: dict) -> set[str]:

@@ -125,33 +125,42 @@ class MiniDrama(unittest.TestCase):
         no_joy['chapters'][1]['beats'][4:] = [beat('The shoot-out ended four–two.', 'table', ['final']), beat('The players walked off.', 'illustration')]
         self.assertTrue(any('pure joy' in e for e in script.mini_drama(no_joy)))
 
-    def test_one_rewrite_and_only_a_better_script_is_taken(self):
-        flat = {'chapters': [{'title': 'A', 'beats': [beat('The club played.')] * 5}]}
+    def test_one_rewrite_against_the_story_judge_and_only_a_better_script_is_taken(self):
+        """Owner, 28.11.2026: the rewrite used to ask for the mini-drama's keywords and got formula lines; it now sends
+        back the story judge's findings (studio/story_judge.py) and keeps the rewrite only if the judge scores it higher."""
+        flat = {'chapters': [{'title': 'A', 'beats': [beat('One night that supporters still describe with their hands. Football keeps its best timing for the end. And then?')] * 5}]}
+        good = {'chapters': [{'title': 'A', 'beats': [beat('Hampden Park, 27 May 2017: Celtic 1–1 with Aberdeen and ninety minutes gone.'),
+                                                       beat('Tom Rogic ran at the Aberdeen defence in the 92nd minute and scored. Two–one.')]}]}
         calls = []
         keep = writer.call_model
         log = []
+        writer._LEDGER[0] = {'club_name': 'Celtic', 'claims': []}
         with tempfile.TemporaryDirectory() as d:
             try:
-                writer.call_model = lambda system, user, **kw: (calls.append(user), (json.dumps(GOOD), {'provider': 't', 'model': 'm', 'seconds': 0}))[1]
+                writer.call_model = lambda system, user, **kw: (calls.append(user), (json.dumps(good), {'provider': 't', 'model': 'm', 'seconds': 0}))[1]
                 out = writer.drama_pass(json.loads(json.dumps(flat)), lambda sc: [], 'BRIEF', '{}', Path(d), log.append)
-                self.assertEqual((len(calls), out['drama_check']['rewritten'], out['drama_check']['errors']), (1, True, []))
-                self.assertIn('[mini-drama]', calls[0])
-                # a rewrite that breaks a check, or is no closer to the shape, is refused: the first script stays
-                bad = writer.drama_pass(json.loads(json.dumps(flat)), lambda sc: ['a claim is wrong'] if sc.get('drama') else [], 'BRIEF2', '{}', Path(d), log.append)
-                self.assertFalse(bad['drama_check']['rewritten'])
-                self.assertTrue(bad['drama_check']['errors'])
+                self.assertEqual((len(calls), out['story_check']['rewritten']), (1, True))
+                self.assertIn('STORY JUDGE', calls[0])
+                self.assertGreater(out['story_check']['score'], out['story_check']['before'])
+                # a rewrite that breaks a check is refused: the first script stays
+                bad = writer.drama_pass(json.loads(json.dumps(flat)), lambda sc: ['a claim is wrong'] if 'Rogic' in json.dumps(sc) else [], 'BRIEF2', '{}', Path(d), log.append)
+                self.assertFalse(bad['story_check']['rewritten'])
                 writer.call_model = lambda *a, **k: (_ for _ in ()).throw(RuntimeError('busy'))
                 still = writer.drama_pass(json.loads(json.dumps(flat)), lambda sc: [], 'BRIEF3', '{}', Path(d), log.append)
-                self.assertFalse(still['drama_check']['rewritten'])                       # a busy tier never fails the film
+                self.assertFalse(still['story_check']['rewritten'])                       # a busy tier never fails the film
                 n = len(calls)
-                good = writer.drama_pass(json.loads(json.dumps(GOOD)), lambda sc: [], 'BRIEF4', '{}', Path(d), log.append)
-                self.assertEqual((len(calls), good['drama_check']), (n, {'errors': [], 'rewritten': False}))   # nothing to fix: nobody is asked
+                fine = writer.drama_pass(json.loads(json.dumps(good)), lambda sc: [], 'BRIEF4', '{}', Path(d), log.append)
+                self.assertEqual((len(calls), fine['story_check']['verdict']), (n, 'pass'))   # nothing to fix: nobody is asked
             finally:
                 writer.call_model = keep
 
-    def test_the_writer_is_told_the_shape(self):
-        for word in ('WANT', 'OBSTACLE', 'CLOCK', 'TURN', 'PAYOFF', 'CLIFF EDGE', 'first fifteen seconds', '"drama": 1'):
+    def test_the_writer_is_told_the_story_not_a_formula(self):
+        """28.11.2026: the five-part keyword shape (want, obstacle, clock, turn, a closing question) produced formula lines;
+        the brief now asks for a chapter that changes something, the voice and the season book."""
+        for word in ('EVERY CHAPTER CHANGES SOMETHING', 'THE VOICE', 'SEASON BOOK', 'first fifteen seconds', '"drama": 1'):
             self.assertIn(word, writer.SYSTEM)
+        for formula in ('a WANT (what the club', 'CLIFF EDGE: a question', 'END EVERY CHAPTER ON A HOOK: a question'):
+            self.assertNotIn(formula, writer.SYSTEM)
         self.assertIn('"drama": 1', script.SCHEMA_TEXT)
 
 

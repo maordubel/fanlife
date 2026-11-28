@@ -260,15 +260,19 @@ def pick_script(options: list[dict], ledger: dict, check, lead: str | None = Non
     for i, s in enumerate(options):
         errs = check(s)
         sv = s.get('_salvage') if isinstance(s.get('_salvage'), dict) else None
-        rows.append({'n': i + 1, 'director': s.get('_director'), 'score': spoken_score(s), 'valid': not errs,
+        from . import story_judge
+        story = (s.get('story_check') or {}).get('score')
+        story = story if isinstance(story, (int, float)) else story_judge.judge(s, ledger)['score']
+        rows.append({'n': i + 1, 'director': s.get('_director'), 'score': spoken_score(s), 'story': story, 'valid': not errs,
                      'hook': str(s.get('hook') or '')[:300], **({'error': str(errs[0])[:160]} if errs else {}),
                      **({'salvaged': True, 'lost': float(sv.get('lost') or 0)} if sv else {})})
     ok = [r for r in rows if r['valid']] or rows
     # a script that passed as written comes before one repaired in code (studio/salvage.py), and among the repaired the
     # one that lost the least of its narration; the opening's score decides only between equals
-    best = min(ok, key=lambda r: (bool(r.get('salvaged')), r.get('lost', 0.0), -r['score'], r['director'] != lead, r['n']))
-    reason = (f'{best["director"] or "script " + str(best["n"])}\'s opening scored {best["score"]}/100'
-              + (f' against {", ".join(str(r["score"]) for r in rows if r is not best)}' if len(rows) > 1 else ' (the only script written)')
+    # the story judge first (owner, 28.11.2026): the script that tells the story best, its opening only between equals
+    best = min(ok, key=lambda r: (bool(r.get('salvaged')), r.get('lost', 0.0), -(r['story'] // 10), -r['score'], r['director'] != lead, r['n']))
+    reason = (f'{best["director"] or "script " + str(best["n"])}\'s story scored {best["story"]}/100, its opening {best["score"]}/100'
+              + (f' (others: {", ".join(f"{r[chr(115)+chr(116)+chr(111)+chr(114)+chr(121)]}/{r[chr(115)+chr(99)+chr(111)+chr(114)+chr(101)]}" for r in rows if r is not best)})' if len(rows) > 1 else ' (the only script written)')
               + (f'; it was salvaged (lost {round(100 * best["lost"])}% of its narration) and no script passed as written' if best.get('salvaged')
                  else '; a script that passed as written goes before a salvaged one' if any(r.get('salvaged') and r['valid'] for r in rows) else ''))
     log(f'Script: {reason}')
