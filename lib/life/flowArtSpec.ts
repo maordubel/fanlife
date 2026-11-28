@@ -24,7 +24,8 @@ export const CLUB_TOWN:Readonly<Record<string,LifeTown>>={
 /** The key people of a life (owner, 28.11.2026: "compose the key characters perfectly with Flow: clothing, style, face, body").
  *  One invented face each, per part of the world, so the people of an Athens street and of a Glasgow street look like
  *  people of those streets. Nobody here is a real person, and nobody wears a club's colour. */
-export const LIFE_CAST=['boy','teen','man','father','mother','mate','kiosk','neighbour','grandfather'] as const
+/** the last three are the street's own types (owner, 28.11.2026: "somebody more of a hooligan, somebody more of a swot"): the hard lad of the terrace, the boy with the album, the one who makes everybody laugh */
+export const LIFE_CAST=['boy','teen','man','father','mother','mate','kiosk','neighbour','grandfather','ultra','swot','joker'] as const
 export type LifeCast=typeof LIFE_CAST[number]
 export const LIFE_PEOPLE=['med','north','maghreb'] as const
 export type LifePeople=typeof LIFE_PEOPLE[number]

@@ -54,6 +54,9 @@ const CAST_WHO: Record<LifeCast, string> = {
   kiosk: 'A kiosk keeper of about sixty: a grey moustache, reading glasses pushed up on the forehead, a pencil behind one ear, a plain brown knitted waistcoat over a pale shirt with the sleeves rolled.',
   neighbour: 'A woman of about seventy: white hair pinned up, a deeply lined face that has smiled a great deal, a dark plain housecoat with a grey cardigan over the shoulders.',
   grandfather: 'A man of about seventy-five: a dark flat cap, white stubble, pale watering eyes, a heavy dark wool jacket over a buttoned shirt, a plain cream-white wool scarf.',
+  ultra: 'A hard lad of the terrace, about twenty-two: shaved head, a scar through one eyebrow, a jaw set against the world and eyes that are kinder than he wants them to be, a plain dark bomber jacket zipped to the chin with the collar up, a plain cream-white wool scarf pulled high round the neck.',
+  swot: 'A thin serious boy of about ten: neat side-parted hair, round wire glasses mended at the hinge with tape, ink on his fingers, a hand-knitted plain grey V-neck jumper over a buttoned pale shirt, a thick album of football stickers held tight against his chest.',
+  joker: 'A round-faced lad of about seventeen who makes everybody laugh: curly unruly hair, a gap-toothed grin caught mid-joke, one eyebrow up, a plain faded denim jacket with the sleeves pushed to the elbows over a white T-shirt.',
 }
 const sayCast = (people: LifePeople, who: LifeCast) => `${CAST_WHO[who]} ${PEOPLE[people]} ${CAST} ${CAST_STYLE} ${NEGATIVES}`
 

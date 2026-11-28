@@ -10,7 +10,7 @@
 import * as THREE from 'three'
 import * as SkeletonUtils from 'three/examples/jsm/utils/SkeletonUtils.js'
 import type {Gesture, Pose} from '../figure'
-import {CAST_LITE, charNow, loadChar, STAND_IN, type CastId, type CharAsset, type Layer} from './kit'
+import {CAST_LITE, charNow, loadChar, loadLook, STAND_IN, type CastId, type CharAsset, type Layer, type LookRow} from './kit'
 import {reachTwoBone} from './ik'
 import {MOOD_ROWS, speak, U, UNITS} from './face'
 
@@ -38,6 +38,8 @@ export type Troupe = {
   make(cast: CastId, o: HumanOptions, fallback: () => THREE.Group): THREE.Group
   /** the same person in another body (the boy grows into a teenager and a man): the figure object stays, its model is rebuilt */
   recast(fig: THREE.Object3D, cast: CastId, o: Partial<HumanOptions>): void
+  /** dress somebody in a LOOK (its face, hair and the clothes of its decade) when its file arrives; `null` gives him back the plain body */
+  wear(fig: THREE.Object3D, look: LookRow | null): void
   /** who is drawn as a person this frame: the nearest `max` to the eye (the player and whoever speaks first) */
   update(eye: THREE.Vector3, speaker?: THREE.Object3D | null): void
   count(): {made: number; skinned: number}
@@ -86,9 +88,11 @@ export function createTroupe(x: {max: number; lite: boolean}): Troupe {
   const scarfMat = (c: string) => { let m = scarfMats.get(c); if (!m) { const soft = new THREE.Color(c).lerp(WHITE, 0.12); m = keep(new THREE.MeshStandardMaterial({color: soft, roughness: 0.95, emissive: soft.clone(), emissiveIntensity: 0.4})); scarfMats.set(c, m) } return m }
 
   // the street's people in one body are told apart: a second hairstyle, a cap or a beanie, glasses, a moustache or a beard
-  const seen = new Map<CastId, number>()
+  const seen = new Map<string, number>()
   function wearOf(h: Human, a: CharAsset): Set<string> {
     const o = h.o, adult = !o.child && a.id !== 'teen', out = new Set<string>()
+    // a look is dressed already: its moustache, its cap, its apron, its glasses
+    if (a.look) { for (const w of a.look.wear) out.add(w); return out }
     if ((o.rank ?? 2) <= 1) {
       if (o.wear?.cap) out.add('Acc_cap_flat')
       if (o.wear?.glasses) out.add('Acc_glasses_round')
@@ -123,7 +127,9 @@ export function createTroupe(x: {max: number; lite: boolean}): Troupe {
       if ((n as THREE.Bone).isBone) h.b[n.name] = n
       const m = n as THREE.Mesh; if (!m.isMesh) return
       const src = m.material as THREE.MeshStandardMaterial, nm = src.name
-      if (nm === 'tint_top') m.material = mat(`${a.id}|top|${o.top}`, src, c => { c.color.set(o.top).lerp(WHITE, 0.12); c.emissive.copy(c.color); c.emissiveIntensity = 0.4 })
+      // a look wears its own clothes in its own colours: only a plain body takes the club's top and a borrowed skin and hair
+      if (a.look) { /* as dressed */ }
+      else if (nm === 'tint_top') m.material = mat(`${a.id}|top|${o.top}`, src, c => { c.color.set(o.top).lerp(WHITE, 0.12); c.emissive.copy(c.color); c.emissiveIntensity = 0.4 })
       // the collar and cuffs in the scarf's second colour (the club's), or a deeper shade of the top
       else if (nm === 'tint_trim') { const tc = o.scarf ? o.scarf.s : '#' + new THREE.Color(o.top).multiplyScalar(0.62).getHexString(); m.material = mat(`${a.id}|trim|${tc}`, src, c => { c.color.set(tc).lerp(WHITE, 0.1); c.emissive.copy(c.color); c.emissiveIntensity = 0.3 }) }
       else if (nm === 'skin' && tone) m.material = mat(`${a.id}|skin|${o.skin}`, src, c => { c.color.copy(tone); c.emissive.set('#ff9a70').multiply(tone) })
@@ -174,6 +180,15 @@ export function createTroupe(x: {max: number; lite: boolean}): Troupe {
     return h.classic
   }
 
+  // who was given a look (kept across a recast: the boy grows, his look is chosen again by the stage)
+  const looks = new Map<Human, LookRow>()
+  /** the old body goes: its clips, its bones and everything hung on them (scarf, bag, catch-lights), its shadow */
+  function strip(h: Human): void {
+    h.mixer?.stopAllAction(); if (h.model) { h.mixer?.uncacheRoot(h.model); h.model.traverse(n => { const sk = (n as THREE.SkinnedMesh).skeleton; if (sk) sk.dispose() }); h.root.remove(h.model) }
+    if (h.blob) h.root.remove(h.blob)
+    Object.assign(h, {asset: null, model: null, mixer: null, acts: new Map(), b: {}, qb: {}, qi: {}, mem: [], morph: [], mouth: [], tails: [], pack: null, scarf: [], blob: null})
+    h.s.fresh = true; h.s.gName = ''; h.s.gT = 0; h.s.kick = 0
+  }
   return {
     make(cast, o, fallback) {
       const root = new THREE.Group()
@@ -194,16 +209,22 @@ export function createTroupe(x: {max: number; lite: boolean}): Troupe {
       const o = {...h.o, ...patch}
       if (h.cast === cast && Math.abs(o.height - h.o.height) < 0.005 && !!o.child === !!h.o.child && !!o.pack === !!h.o.pack) return
       h.o = o; h.cast = cast
-      // the old body goes: its clips, its bones and everything hung on them (scarf, bag, catch-lights), its shadow
-      h.mixer?.stopAllAction(); if (h.model) { h.mixer?.uncacheRoot(h.model); h.model.traverse(n => { const sk = (n as THREE.SkinnedMesh).skeleton; if (sk) sk.dispose() }); h.root.remove(h.model) }
-      if (h.blob) h.root.remove(h.blob)
-      Object.assign(h, {asset: null, model: null, mixer: null, acts: new Map(), b: {}, qb: {}, qi: {}, mem: [], morph: [], mouth: [], tails: [], pack: null, scarf: [], blob: null})
-      h.s.fresh = true; h.s.gName = ''; h.s.gT = 0; h.s.kick = 0
+      strip(h)
       const u = h.root.userData as {child: boolean; tall: number}
       u.child = !!o.child; u.tall = o.height / 1.87
       const id = x.lite && !CAST_LITE.includes(cast) ? STAND_IN[cast] : charNow(cast) ? cast : charNow(STAND_IN[cast]) ? STAND_IN[cast] : cast, now = charNow(id)
       if (now) build(h, now)
       else loadChar(id).then(a => { if (h.cast === cast && !h.model) build(h, a) }, () => undefined)
+      // a body that changed (the boy grew) is dressed again in whatever look he was given
+      const lk = looks.get(h); if (lk) loadLook(lk).then(a => { if (!gone && !h.dead && looks.get(h) === lk && h.cast === cast) { strip(h); build(h, a) } }, () => undefined)
+    },
+    wear(fig, look) {
+      const h = humanOf(fig); if (!h || gone || h.dead) return
+      if (!look) { if (looks.delete(h)) { const now = charNow(h.cast) ?? charNow(STAND_IN[h.cast]); if (now) { strip(h); build(h, now) } } return }
+      if (looks.get(h)?.asset === look.asset) return
+      looks.set(h, look)
+      // never waited for: he stands in his plain body until the look is here, then changes between two frames
+      loadLook(look).then(a => { if (!gone && !h.dead && looks.get(h) === look) { strip(h); build(h, a) } }, () => { looks.delete(h) })
     },
     update(eye, speaker) {
       // rank the people by how near the eye they are (the player, then whoever is spoken to, then names, then the street)

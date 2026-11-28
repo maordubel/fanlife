@@ -30,6 +30,9 @@ import {loadProps, propCopy} from './props'
 import {dressDusk, DUSK, type Block, type Dusk} from './look/dusk'
 import {createDaylight, type Daylight} from './look/daylight'
 import {createDetail, type Detail} from './look/detail'
+import {lookIndex, type LookRow} from './human/kit'
+import {lookFor, ROLE_OF} from '@/lib/life/hood/looks'
+import {decadeOf as decadeOfYear} from './era'
 import {dressCrowd} from './look/crowd'
 import {dressFlow, type FlowDress} from './look/flowStreet'
 import {castFor, createTroupe, humanPoint, isSkinned, type Troupe} from './human/human'
@@ -590,7 +593,8 @@ export function createStage(o: {canvas: HTMLCanvasElement; level: Level; spec: M
     person: f => figOf({kit: false, longSleeves: true, hairStyle: f.hairStyle ?? (f.curly ? 'curly' : 'short'), top: f.top, pants: f.pants, hair: f.hair, mustache: !!f.beard, skinTone: f.skinTone ?? SKIN_TONES[1], scale: (f.scale ?? 1) * 0.94, female: f.female, skirt: f.skirt, glasses: f.glasses, denim: f.denim, jacket: f.jacket, eyes: f.eyes, noBlob: true})}) : null
   let lifeDress: LifeDress | null = null
   if (level.hood) { try { lifeDress = dressLife({scene, keep, level, lite, night, primary: skin.p, secondary: skin.s, glowTex, lookFig: (L, o) => lookFig(L, o), rlook}) } catch { lifeDress = null } }
-  const hoodDress: HoodDress | null = level.hood ? dressHood({scene, keep, level, skin, night, lite, banned: h => bannedColour(h, skin), tint, person: (L, id) => lookFig(L, {rank: 1, cast: id === 'dad' ? 'father' : id === 'kiosk' ? 'father_heavy' : id === 'neighbour' ? 'grandfather' : id === 'mate' ? 'teen' : undefined, scale: id === 'mate' ? 0.81 : undefined}), sign: (a, b, c, w, h) => signTex(a, b, c, w, h)}) : null
+  const named = new Map<string, THREE.Group>()
+  const hoodDress: HoodDress | null = level.hood ? dressHood({scene, keep, level, skin, night, lite, banned: h => bannedColour(h, skin), tint, person: (L, id) => { const f = lookFig(L, {rank: 1, cast: id === 'dad' ? 'father' : id === 'kiosk' ? 'father_heavy' : id === 'neighbour' ? 'grandfather' : id === 'mate' ? 'teen' : undefined, scale: id === 'mate' ? 0.81 : undefined}); if (id) named.set(id, f); return f }, sign: (a, b, c, w, h) => signTex(a, b, c, w, h)}) : null
   type Npc = {fig: THREE.Group; step: number; extra: THREE.Group[]; x: number; z: number}
   const npcs: Npc[] = []
   level.steps.forEach((st, i) => {
@@ -1386,11 +1390,21 @@ export function createStage(o: {canvas: HTMLCanvasElement; level: Level; spec: M
     try { renderer.forceContextLoss() } catch { /* a lost context is a closed one */ }
   }
 
+  // The key people in the clothes of their decade (owner, 28.11.2026). The looks are dressed bodies of about 1.4 MB each,
+  // so nobody waits for them: the street opens on the plain bodies and each person changes when his look arrives. A phone
+  // dresses the two faces the story is about (the boy and his father); a full machine dresses the whole street corner.
+  let lookRows: LookRow[] = [], heroAge = spec.age
+  const decadeNow = () => (level.hood && typeof level.hood.year === 'number' ? decadeOfYear(level.hood.year + (heroAge - 11)) : null)
+  const dressHero = () => { if (troupe && level.hood && lookRows.length) troupe.wear(hero, heroAge < 19 ? lookFor(lookRows, {role: 'hero', club: spec.skin, decade: decadeNow(), age: heroAge}) : null) }
+  const dressPeople = () => { if (!troupe || !level.hood || !lookRows.length) return; for (const [id, f] of named) { const role = ROLE_OF[id]; if (!role || (lite && id !== 'dad')) continue; const row = lookFor(lookRows, {role, club: spec.skin, decade: decadeNow()}); if (row) troupe.wear(f, row) } }
+  if (troupe && level.hood) void lookIndex().then(ix => { if (gone) return; lookRows = ix; dressHero(); dressPeople() })
   const setAge = (age: number) => {
     if (!troupe || !level.hood) return
     const b = heroBody(age)
     troupe.recast(hero, b.cast, {height: b.height, child: b.child, pack: b.pack})
     child = b.child
+    // the years pass for everybody: the boy's own look by his age, the street's people in the next decade's clothes
+    const was = decadeNow(); heroAge = age; dressHero(); if (decadeNow() !== was) dressPeople()
   }
   const setClock = (minutes: number) => { clock = minutes }
   const stats = (): StageStats => ({calls: lastCalls, triangles: lastTris, ms: Math.round(govMs * 10) / 10, fps: Math.round(1000 / Math.max(1, govMs)), scale: SCALES[gov]!, mirror: mirrorN, textures: renderer.info.memory.textures, geometries: renderer.info.memory.geometries})
