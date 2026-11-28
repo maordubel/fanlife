@@ -10,6 +10,6 @@ import css from './hood.module.css'
 
 const Host = dynamic(() => import('./HoodHost').then(m => m.HoodHost), {ssr: false, loading: () => <div className={css.lgDoor} role="status" aria-live="polite"><img src="/brand/life/life-logo-light-600.webp" alt="LIFE" width={240} height={157} decoding="async" /><span aria-hidden="true" /></div>})
 
-export function HoodDoor(props: Pick<HoodHostProps, 'club' | 'quality'>) {
+export function HoodDoor(props: Pick<HoodHostProps, 'club' | 'quality' | 'mark'>) {
   return <Host {...props} reduced={false} />
 }

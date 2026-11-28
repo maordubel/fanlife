@@ -22,6 +22,7 @@ const EN = {
   'hood.item.battery': 'battery', 'hood.item.batteries': 'batteries', 'hood.item.scarf': 'scarf',
   'hood.ev.job': 'Job: Before kick-off', 'hood.ev.done': 'Job done: Before kick-off', 'hood.ev.battery': 'Battery', 'hood.ev.hit': 'Sorry — sorry!',
   // the game shell
+  'hood.brand.game': 'A FAN LIFE game', 'hood.true': 'Based on a true story', 'hood.true.line': 'These things happened, to supporters we know. Retold as a game. The matches are as the archive records them.', 'hood.slate.day.night': 'Night', 'hood.slate.day.dawn': 'First light', 'hood.slate.day.morning': 'Morning', 'hood.slate.day.midday': 'Midday', 'hood.slate.day.afternoon': 'Afternoon', 'hood.slate.day.sunset': 'Sunset', 'hood.slate.day.dusk': 'Dusk', 'hood.slate.day.evening': 'Evening', 'hood.card.found': 'A sticker for the album', 'hood.card.years': '{from}–{to}', 'hood.bag.cards': 'Stickers found · {n} of {all}', 'hood.bag.cards.none': 'Stickers lie about the street. Each one is a man who wore the shirt in your years.', 'hood.bag.album': 'Open THE ALBUM', 'hood.bag.shirt': 'Home shirt · {season}',
   'hood.brand': 'LIFE by FANLIFE', 'hood.tagline': 'The city is your terrace.', 'hood.kicker.game': 'A football supporter game',
   'hood.boot': 'Opening the street', 'hood.boot.err': 'The street could not open on this device.',
   'hood.title.continue': 'Continue', 'hood.title.new': 'New life', 'hood.title.settings': 'Settings', 'hood.title.club': 'Back to the club', 'hood.title.saved': 'Saved life: {name}',

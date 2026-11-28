@@ -7,6 +7,8 @@ import {HoodDoor} from '@/components/clubs/life/hood/HoodDoor'
 import {rushView} from '@/lib/clubs/life/rush'
 import {LIFE_TIMELINE} from '@/lib/clubs/life/packs'
 import {storyNights} from '@/lib/life/hood/story/night'
+import {lifeThings} from '@/lib/clubs/life/things'
+import {markFor} from '@/lib/brand/logos'
 import {clubLife} from '@/lib/clubs/life/pack'
 import {rushDoor} from '@/lib/clubs/life/rush'
 import {door, isOwner} from '@/lib/features-server'
@@ -53,7 +55,7 @@ export default async function Page({params, searchParams}: {params: {slug: strin
     return (
       <ClubSurface theme={club.data.theme} clubId={id} locale="en" tabbar={false}>
         <main id="main">
-          <HoodDoor club={{id, skin: pack.skin, cast: pack.cast, nights: storyNights(rushView(club.data), born), town: club.data.identity.city, born, country: club.data.identity.country}} quality={searchParams.quality === 'high' ? 'high' : searchParams.quality === 'lite' ? 'lite' : undefined} />
+          <HoodDoor mark={markFor(headers().get('host'), 192)} club={{id, things: lifeThings(club.data), skin: pack.skin, cast: pack.cast, nights: storyNights(rushView(club.data), born), town: club.data.identity.city, born, country: club.data.identity.country}} quality={searchParams.quality === 'high' ? 'high' : searchParams.quality === 'lite' ? 'lite' : undefined} />
         </main>
       </ClubSurface>
     )

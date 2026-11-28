@@ -527,3 +527,59 @@
 .lgDoor img { inline-size: min(56vw, 240px); block-size: auto; animation: lgFade .6s both; }
 .lgDoor span { inline-size: 120px; block-size: 3px; border-radius: 3px; background: linear-gradient(90deg, transparent, color-mix(in srgb, var(--life-scene-skin) 80%, transparent), transparent); background-size: 200% 100%; animation: lgDoorRun 1.1s linear infinite; }
 @keyframes lgDoorRun { from { background-position: 200% 0; } to { background-position: -200% 0; } }
+
+/* ───── the club's own things (28.11.2026): the crest beside its name, the edition's mark beside "A FAN LIFE game",
+   the season's shirt in the bag, THE ALBUM's stickers found in the street ───── */
+.lgBrandMark[data-mark='true'] img { block-size: 26px; inline-size: 26px; border-radius: 50%; }
+.lgClub[data-crest='true']::before { display: none; }
+.lgClub[data-crest='true'] img { inline-size: 34px; block-size: 34px; object-fit: contain; filter: drop-shadow(0 2px 6px color-mix(in srgb, var(--life-scene-black) 60%, transparent)); }
+.lgInfoNote { font-family: var(--lg-head); letter-spacing: .1em; text-transform: uppercase; font-size: .75rem; color: var(--lg-accent); }
+.lgDetailArt[src$='.svg'] { max-block-size: 150px; filter: drop-shadow(0 10px 18px color-mix(in srgb, var(--life-scene-black) 55%, transparent)); }
+.lgCards { display: grid; gap: 10px; padding: 14px 16px; border-radius: 16px; border: 1px solid var(--lg-line); background: var(--lg-glass-solid); }
+.lgCardsHead { display: flex; align-items: center; justify-content: space-between; gap: 10px; }
+.lgCardsHead b { font-family: var(--lg-head); letter-spacing: .1em; text-transform: uppercase; font-size: .8125rem; font-weight: 400; }
+.lgCardsLink { display: inline-flex; align-items: center; gap: 6px; padding-inline: 12px; border-radius: 999px; border: 1px solid var(--lg-line); color: var(--lg-cream); text-decoration: none; font-family: var(--lg-head); letter-spacing: .08em; text-transform: uppercase; font-size: .75rem; }
+.lgCardsLink:hover { border-color: var(--lg-accent); }
+.lgCardsNone { font-size: .875rem; line-height: 1.4; color: var(--lg-cream-dim); }
+.lgCardsRow { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fill, minmax(78px, 1fr)); gap: 8px; }
+.lgCard { display: grid; gap: 3px; justify-items: center; text-align: center; }
+.lgCard img, .lgCard > span { inline-size: 100%; aspect-ratio: 3 / 4; object-fit: cover; border-radius: 8px; border: 2px solid var(--lg-cream); background: var(--lg-navy-3); box-shadow: 0 6px 14px -8px color-mix(in srgb, var(--life-scene-black) 80%, transparent); }
+.lgCard img[data-kit='true'] { object-fit: contain; padding: 6px; }
+.lgCard b { font-size: .6875rem; line-height: 1.15; font-weight: 600; }
+.lgCard small { font-family: var(--lg-head); letter-spacing: .08em; font-size: .625rem; color: var(--lg-cream-dim); }
+/* a sticker found: the card turns up out of the street and settles beside its name */
+.lgFound { position: absolute; inset-block-start: calc(128px + var(--lg-safe-t)); inset-inline: 0; margin-inline: auto; inline-size: max-content; max-inline-size: calc(100% - 28px); display: flex; align-items: center; gap: 12px; padding-block: 10px; padding-inline: 10px 16px; border-radius: 18px; border: 1px solid var(--lg-line); background: var(--lg-glass-solid); -webkit-backdrop-filter: blur(14px); backdrop-filter: blur(14px); animation: lgFoundIn .5s var(--lg-ease) both, lgFoundOut .5s var(--lg-ease) 3.6s both; pointer-events: none; }
+.lgFoundCard { flex: none; inline-size: 58px; aspect-ratio: 3 / 4; border-radius: 7px; border: 2px solid var(--lg-cream); overflow: hidden; background: var(--lg-navy-3); transform: rotate(-5deg); animation: lgFoundFlip .7s var(--lg-ease) both; box-shadow: 0 10px 20px -10px color-mix(in srgb, var(--life-scene-black) 90%, transparent); }
+.lgFoundCard img { inline-size: 100%; block-size: 100%; object-fit: cover; display: block; }
+.lgFoundCard img[data-kit='true'] { object-fit: contain; padding: 5px; }
+.lgFoundText { display: grid; gap: 2px; min-inline-size: 0; }
+.lgFoundText small { font-family: var(--lg-head); letter-spacing: .14em; text-transform: uppercase; font-size: .6875rem; color: var(--lg-accent); }
+.lgFoundText b { font-size: 1.0625rem; line-height: 1.15; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.lgFoundText i { font-style: normal; font-size: .75rem; color: var(--lg-cream-dim); }
+@keyframes lgFoundIn { from { opacity: 0; transform: translateY(-14px) scale(.96); } to { opacity: 1; transform: none; } }
+@keyframes lgFoundOut { to { opacity: 0; transform: translateY(-10px); } }
+@keyframes lgFoundFlip { from { transform: rotateY(90deg) rotate(-5deg); } to { transform: rotateY(0) rotate(-5deg); } }
+@media (min-width: 900px) { .lgFound { inset-block-start: 96px; } .lgFoundCard { inline-size: 72px; } .lgFoundText b { font-size: 1.25rem; } .lgCardsRow { grid-template-columns: repeat(auto-fill, minmax(92px, 1fr)); } }
+
+/* ───── based on a true story (28.11.2026): the game is told the way a documentary is. A stamp on the title, a slate
+   (where, when) each time the street is given back, and a film's frame round a conversation. ───── */
+.lgTrue { align-self: flex-start; display: inline-flex; align-items: center; gap: 8px; margin-block: 2px 12px; padding: 5px 10px; border: 1.5px solid color-mix(in srgb, var(--lg-cream) 70%, transparent); border-radius: 4px; font-family: var(--lg-head); letter-spacing: .2em; text-transform: uppercase; font-size: .6875rem; color: var(--lg-cream); transform: rotate(-1.2deg); }
+.lgTrue::before { content: ''; inline-size: 7px; block-size: 7px; border-radius: 50%; background: var(--lg-brand); }
+.lgBars { position: absolute; inset: 0; pointer-events: none; z-index: 2; }
+.lgBars i { position: absolute; inset-inline: 0; block-size: 7vh; background: var(--life-scene-black); transition: transform .55s var(--lg-ease); }
+.lgBars i:first-child { inset-block-start: 0; transform: translateY(-101%); }
+.lgBars i:last-child { inset-block-end: 0; transform: translateY(101%); }
+.lgBars[data-on='true'] i { transform: none; }
+.lgSlate { position: absolute; inset-block-end: calc(206px + var(--lg-safe-b)); inset-inline-start: 16px; margin: 0; display: grid; gap: 3px; padding-inline-start: 12px; border-inline-start: 3px solid var(--lg-accent); pointer-events: none; text-shadow: 0 2px 12px color-mix(in srgb, var(--life-scene-black) 80%, transparent); animation: lgSlateIn .6s var(--lg-ease) both, lgSlateOut .7s var(--lg-ease) 4.4s both; }
+.lgSlate b { font-family: var(--lg-head); font-weight: 400; font-size: 1.5rem; line-height: 1; letter-spacing: .04em; text-transform: uppercase; }
+.lgSlate span { font-size: .875rem; letter-spacing: .12em; text-transform: uppercase; color: var(--lg-cream); }
+.lgSlate i { font-style: normal; font-family: var(--lg-head); font-size: .625rem; letter-spacing: .22em; text-transform: uppercase; color: var(--lg-cream-dim); }
+@keyframes lgSlateIn { from { opacity: 0; transform: translateX(-14px); } to { opacity: 1; transform: none; } }
+@keyframes lgSlateOut { to { opacity: 0; } }
+@media (min-width: 900px) { .lgSlate { inset-block-end: 96px; inset-inline-start: 40px; } .lgSlate b { font-size: 2.25rem; } .lgSlate span { font-size: 1rem; } .lgBars i { block-size: 9vh; } .lgTrue { font-size: .75rem; } }
+/* the street's voices: a soft bubble with a tail toward whoever spoke, the words in the reading face */
+.lgCap { border-radius: 16px; border-end-start-radius: 16px; padding: 7px 13px; background: color-mix(in srgb, var(--lg-cream) 94%, transparent); color: var(--lg-navy); font-weight: 600; box-shadow: 0 8px 22px -8px color-mix(in srgb, var(--life-scene-black) 70%, transparent); backdrop-filter: none; -webkit-backdrop-filter: none; }
+.lgCap::after { content: ''; position: absolute; inset-block-start: calc(100% - 1px); inset-inline-start: 50%; margin-inline-start: -7px; border: 7px solid transparent; border-block-start-color: color-mix(in srgb, var(--lg-cream) 94%, transparent); border-block-end: 0; }
+/* the words of a conversation sit like a film's subtitles on a quiet plate */
+.lgTalkBox { box-shadow: 0 18px 40px -18px color-mix(in srgb, var(--life-scene-black) 85%, transparent); }
+.lgTalkText { text-wrap: pretty; }

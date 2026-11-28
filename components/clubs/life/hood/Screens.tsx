@@ -18,17 +18,23 @@ export function Boot({w, out}: {w: (k: string) => string; out: boolean}) {
   return <div className={css.lgBoot} style={out ? {opacity: 0, pointerEvents: 'none'} : undefined} role="status" aria-label={w('hood.boot')}><Wordmark /><p>{w('hood.boot')}</p></div>
 }
 
-export function Title({w, club, clubHref, hasSave, saveName, onContinue, onNew, onSettings}: {w: W; club: string; clubHref: string; hasSave: boolean; saveName: string; onContinue: () => void; onNew: () => void; onSettings: () => void}) {
+/** whose game this is: the edition's own mark beside the words (FAN LIFE's roundel; rule two-logos) */
+export function Brand({w, mark}: {w: W; mark?: string | null}) {
+  return <span className={css.lgBrandMark} data-mark={!!mark}>{mark && <img src={mark} alt="" width={26} height={26} decoding="async" />}{w(mark ? 'hood.brand.game' : 'hood.brand')}</span>
+}
+
+export function Title({w, mark, crest, club, clubHref, hasSave, saveName, onContinue, onNew, onSettings}: {w: W; mark?: string | null; crest?: string | null; club: string; clubHref: string; hasSave: boolean; saveName: string; onContinue: () => void; onNew: () => void; onSettings: () => void}) {
   const first = useRef<HTMLButtonElement | null>(null)
   useEffect(() => { first.current?.focus({preventScroll: true }) }, [])
   let i = 0
   return (
     <section className={css.lgScreen + ' ' + css.lgTitle} aria-label={w('hood.brand')} data-life="hood-title">
-      <div className={css.lgTitleTop}><span className={css.lgBrandMark}>{w('hood.brand')}</span></div>
+      <div className={css.lgTitleTop}><Brand w={w} mark={mark} /></div>
       <Wordmark className={css.lgWordmark + ' ' + css.lgIn} />
       <p className={css.lgKicker + ' ' + css.lgIn} style={{'--i': 1} as React.CSSProperties}>{w('hood.kicker.game')}</p>
       <h1 className={css.lgTagline + ' ' + css.lgIn} style={{'--i': 2} as React.CSSProperties}>{w('hood.tagline')}</h1>
-      <p className={css.lgClub + ' ' + css.lgIn} style={{'--i': 3} as React.CSSProperties}>{club}</p>
+      <p className={css.lgTrue + ' ' + css.lgIn} style={{'--i': 3} as React.CSSProperties}>{w('hood.true')}</p>
+      <p className={css.lgClub + ' ' + css.lgIn} data-crest={!!crest} style={{'--i': 3} as React.CSSProperties}>{crest && <img src={crest} alt="" width={34} height={34} decoding="async" />}{club}</p>
       <div className={css.lgMenu}>
         {hasSave && <button ref={first} type="button" className={css.lgBtn + ' ' + css.lgIn} data-primary="true" style={{'--i': 4 + i++} as React.CSSProperties} onClick={onContinue}>{w('hood.title.continue')}<Icon n="chevron" /></button>}
         <button ref={hasSave ? undefined : first} type="button" className={css.lgBtn + ' ' + css.lgIn} data-primary={!hasSave} style={{'--i': 4 + i++} as React.CSSProperties} onClick={onNew}>{w('hood.title.new')}<Icon n="chevron" /></button>
@@ -87,13 +93,13 @@ export function Cinematic({lines, w, reduced, onBeat, onDone, ms = 3800}: {lines
   )
 }
 
-export function Pause({w, club, name, onResume, onMap, onBag, onSettings, onHelp, onQuit}: {w: W; club: string; name: string; onResume: () => void; onMap: () => void; onBag: () => void; onSettings: () => void; onHelp: () => void; onQuit: () => void}) {
+export function Pause({w, mark, crest, club, name, onResume, onMap, onBag, onSettings, onHelp, onQuit}: {w: W; mark?: string | null; crest?: string | null; club: string; name: string; onResume: () => void; onMap: () => void; onBag: () => void; onSettings: () => void; onHelp: () => void; onQuit: () => void}) {
   const first = useRef<HTMLButtonElement | null>(null)
   useEffect(() => { first.current?.focus({preventScroll: true}) }, [])
   const items: [string, () => void, 'chevron' | 'map' | 'bag' | 'back', boolean?][] = [[w('hood.pause.resume'), onResume, 'chevron', true], [w('hood.pause.map'), onMap, 'map'], [w('hood.pause.bag'), onBag, 'bag'], [w('hood.pause.settings'), onSettings, 'chevron'], [w('hood.pause.help'), onHelp, 'chevron'], [w('hood.pause.quit'), onQuit, 'back']]
   return (
     <section className={css.lgScreen + ' ' + css.lgPause} data-solid="true" aria-label={w('hood.pause.title')} data-life="hood-pause">
-      <div className={css.lgPauseHead}><p className={css.lgKicker}>{w('hood.brand')}</p><h1 className={css.lgH1}>{w('hood.pause.title')}</h1><p className={css.lgClub} style={{margin: 0}}>{[club, name].filter(Boolean).join(' · ')}</p></div>
+      <div className={css.lgPauseHead}><Brand w={w} mark={mark} /><h1 className={css.lgH1}>{w('hood.pause.title')}</h1><p className={css.lgClub} data-crest={!!crest} style={{margin: 0}}>{crest && <img src={crest} alt="" width={34} height={34} decoding="async" />}{[club, name].filter(Boolean).join(' · ')}</p></div>
       <div className={css.lgPauseList}>
         {items.map(([label, fn, icon, primary], i) => <button key={label} ref={i === 0 ? first : undefined} type="button" className={css.lgBtn} data-primary={!!primary} style={{'--i': i} as React.CSSProperties} onClick={fn}>{label}<Icon n={icon} /></button>)}
       </div>

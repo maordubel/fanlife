@@ -9,6 +9,7 @@ Adding a rule: write `docs/rules/<next number>.md` and add one line here under i
 
 - [life-one-engine-hood](life-one-engine-hood.md) · LIFE is one engine: RUSH becomes the open neighbourhood; the player performs every action; a job starts from a person (23.11.2026)
 - [life-day-and-weight](life-day-and-weight.md) · The club's LIFE address is the new game; one clock set by the story, the hours in daylight.ts; instances are packed, only what is seen is drawn, the governor measures (28.11.2026)
+- [life-true-story-package](life-true-story-package.md) · "Based on a true story" said only as it is true; the documentary slate; a conversation is a scene; two marks in their places; the season's shirt and THE ALBUM's stickers chosen by the year; the street is heard (28.11.2026)
 - [life-story-watch](life-story-watch.md) · LIFE always has a mission in front of you (approaches, complication, convergence, aftermath); a film is a recorded link or nothing; the studio is asked, not triggered (23.11.2026)
 - [life-worker-art](life-worker-art.md) · THE WORKER's art in LIFE: Tel Aviv art and films for Tel Aviv, universal art for every city, Hapoel's own stays in Hapoel's pack (24.11.2026)
 - [39](039.md) · THE WORKER LIFE is a GAME RUNTIME, not a fourteenth gate

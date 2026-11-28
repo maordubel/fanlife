@@ -10,7 +10,7 @@ import {ROUTES, type StoryState} from './story/types'
 
 /** the story's own part of a save: the director's state, and where the open mission stands in the street */
 export type StorySave = {state: StoryState; /** the open mission's approach, as `mission/approach` */ plan: string | null; /** the complication's answer, once given */ choice: string | null}
-export type HoodSave = {v: 1; name: string; job: JobState; step: number; got: boolean[]; x: number; z: number; t: number; waypoint: PlaceId | null; wear: boolean; /** absent in a save from before the story: such a save starts the story at its beginning */ story?: StorySave; /** the street's clock, minutes of the day (absent in a save from before the day turned: it opens on the matchday afternoon) */ clock?: number}
+export type HoodSave = {v: 1; name: string; job: JobState; step: number; got: boolean[]; x: number; z: number; t: number; waypoint: PlaceId | null; wear: boolean; /** absent in a save from before the story: such a save starts the story at its beginning */ story?: StorySave; /** the street's clock, minutes of the day (absent in a save from before the day turned: it opens on the matchday afternoon) */ clock?: number; /** THE ALBUM's stickers found in the street, by id, in the order found */ cards?: string[]}
 export type HoodSettings = {sound: boolean; invert: boolean; quality: 'lite' | 'high' | null; reduced: boolean}
 export type Store = Pick<Storage, 'getItem' | 'setItem' | 'removeItem'>
 
@@ -59,6 +59,7 @@ export function parseSave(raw: string | null): HoodSave | null {
       waypoint: typeof o.waypoint === 'string' && PLACES.includes(o.waypoint) ? o.waypoint as PlaceId : null, wear: o.wear !== false,
       ...(o.story !== undefined ? (() => { const st = parseStory(o.story); return st ? {story: st} : {} })() : {}),
       ...(typeof o.clock === 'number' && Number.isFinite(o.clock) ? {clock: ((o.clock % 1440) + 1440) % 1440} : {}),
+      ...(Array.isArray(o.cards) ? {cards: [...new Set(o.cards.filter((x): x is string => typeof x === 'string' && /^[a-z0-9-]{2,60}:\d{1,3}$/.test(x)))].slice(0, 200)} : {}),
     }
   } catch { return null }
 }
@@ -80,9 +81,9 @@ export function readSettings(store: Store | null): HoodSettings {
 }
 export function writeSettings(store: Store | null, s: HoodSettings): void { try { store?.setItem(settingsKey, JSON.stringify(s)) } catch { /* not saved */ } }
 
-export function snapshot(run: HoodRun, name: string, waypoint: PlaceId | null, wear: boolean, story?: StorySave, clock?: number): HoodSave {
+export function snapshot(run: HoodRun, name: string, waypoint: PlaceId | null, wear: boolean, story?: StorySave, clock?: number, cards?: readonly string[]): HoodSave {
   const {sim} = run
-  return {v: 1, name, job: run.job, step: sim.step, got: [...sim.got], x: sim.x, z: sim.z, t: sim.t, waypoint, wear, ...(story ? {story} : {}), ...(typeof clock === 'number' ? {clock: Math.round(clock * 10) / 10} : {})}
+  return {v: 1, name, job: run.job, step: sim.step, got: [...sim.got], x: sim.x, z: sim.z, t: sim.t, waypoint, wear, ...(story ? {story} : {}), ...(typeof clock === 'number' ? {clock: Math.round(clock * 10) / 10} : {}), ...(cards?.length ? {cards: [...cards]} : {})}
 }
 
 /** put a saved life back into a fresh run; a save that no longer fits the level restores only what fits */

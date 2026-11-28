@@ -8,6 +8,8 @@ import { LIFE_TIMELINE } from '@/lib/clubs/life/packs'
 import { storyNights } from '@/lib/life/hood/story/night'
 import { loadClub } from '@/lib/clubs/resolver'
 import { qaAllowed } from '@/lib/qa'
+import { lifeThings } from '@/lib/clubs/life/things'
+import { FANLIFE_LOGO } from '@/lib/brand/logos'
 import { isOwner } from '@/lib/features-server'
 
 import { WorldQa } from './WorldQa'
@@ -32,7 +34,7 @@ export default async function LifeWorldQaPage({ searchParams }: { searchParams: 
   const nights = storyNights(rushView(club.data), typeof birth === 'number' ? birth : null)
   return (
     <ClubSurface theme={club.data.theme} clubId={club.data.identity.id} locale="en" tabbar={false}>
-      <WorldQa club={{ id: club.data.identity.id, skin: pack.skin, cast: pack.cast, nights, town: club.data.identity.city, born: typeof birth === 'number' ? birth : null, country: club.data.identity.country }} chapterAt={searchParams.chapter} seed={Number(searchParams.seed ?? 1) || 1} time={searchParams.time === 'night' ? 'night' : searchParams.time === 'day' ? 'day' : 'dusk'} clockAt={clockOf(searchParams.clock)} quality={searchParams.quality === 'high' ? 'high' : searchParams.quality === 'lite' ? 'lite' : undefined} start={searchParams.start === 'play' ? 'play' : 'title'} people={searchParams.people === 'classic' ? 'classic' : 'human'} />
+      <WorldQa mark={FANLIFE_LOGO[192]} club={{ id: club.data.identity.id, things: lifeThings(club.data), skin: pack.skin, cast: pack.cast, nights, town: club.data.identity.city, born: typeof birth === 'number' ? birth : null, country: club.data.identity.country }} chapterAt={searchParams.chapter} seed={Number(searchParams.seed ?? 1) || 1} time={searchParams.time === 'night' ? 'night' : searchParams.time === 'day' ? 'day' : 'dusk'} clockAt={clockOf(searchParams.clock)} quality={searchParams.quality === 'high' ? 'high' : searchParams.quality === 'lite' ? 'lite' : undefined} start={searchParams.start === 'play' ? 'play' : 'title'} people={searchParams.people === 'classic' ? 'classic' : 'human'} />
     </ClubSurface>
   )
 }

@@ -135,7 +135,8 @@ describe('the story in the street', {timeout: 120_000}, () => {
     }
     // nothing of a plan lies about until its mission is accepted
     syncOffers(run, sl, newPlay())
-    expect(run.sim.got.every(Boolean)).toBe(true)
+    // (the street's own stickers are no plan's: they lie about in free roam, `sl.free`)
+    expect(run.sim.got.every((g, i) => g || sl.free.includes(i))).toBe(true)
     for (const who of ['dad', 'mate', 'kiosk', 'neighbour'] as const) {
       const s = storyTalk(newPlay(), who)
       for (const n of Object.values(s.nodes)) for (const k of [n.line, ...(n.choices ?? []).map(c => c.key)]) expect(k in STORY_WORDS, k).toBe(true)
@@ -161,7 +162,8 @@ describe('the story in the street', {timeout: 120_000}, () => {
     // the giver lets him leave it; it is offered again, untouched
     play = applyEffect(run, sl, play, 'story:drop').play
     expect(play.plan).toBeNull(); expect(run.job).toBe('idle'); expect(nextMissions(play.state)[0]!.mission.id).toBe('first-noise')
-    expect(run.sim.got.every(Boolean)).toBe(true)
+    // (the street's own stickers are no plan's: they lie about in free roam, `sl.free`)
+    expect(run.sim.got.every((g, i) => g || sl.free.includes(i))).toBe(true)
   })
 
   it('saves round-trip mid-mission: the director state, the plan, the complication answer and the street', async () => {

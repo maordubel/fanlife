@@ -19,14 +19,14 @@ import {acceptJob, offerJobs, type HoodRun} from '../run'
 import type {TalkChoice, TalkNode, TalkScript} from '../talk'
 import type {HoodJob, PersonId} from '../types'
 import {accept as acceptMission, ahead, endDay, isFinished, missionById, MISSIONS, newLife, nextMissions, resolve, stageOf, walkAway, waits} from './director'
-import {toHoodJob, type StoryJobPlan} from './job'
+import {toHoodJob, walkableNear, type StoryJobPlan} from './job'
 import {layFinds} from './challenge/run'
 import type {Mission, Offer, StoryEvent, StoryState} from './types'
 
 export const planKey = (mission: string, approach: string): string => `${mission}/${approach}`
 
 /** the hood's level with every story plan in it, and where each plan's steps and things are */
-export type StoryLevel = {level: Level; plans: Readonly<Record<string, StoryJobPlan>>; picks: Readonly<Record<string, readonly number[]>>}
+export type StoryLevel = {level: Level; plans: Readonly<Record<string, StoryJobPlan>>; picks: Readonly<Record<string, readonly number[]>>; /** stickers lying about the street whatever the mission: THE ALBUM's own, found in free roam (things.ts) */ free: readonly number[]}
 
 /** the story as it stands in this run: the director's state, the open plan, and the complication's answer once given */
 export type StoryPlay = {state: StoryState; plan: string | null; choice: string | null; /** the complication was put to him since the last step */ asked: boolean}
@@ -45,13 +45,19 @@ export function storyLevel(base: Level): StoryLevel {
     level.steps.push(...plan.steps); level.pickups.push(...plan.pickups)
     plans[planKey(m.id, a.id)] = plan; picks[planKey(m.id, a.id)] = plan.pickups.map((_, i) => at + i)
   }
+  // stickers on the pavements, a few along the whole street: nobody sends him for them, he comes across them
+  const free: number[] = [], gateZ = -(base.length - 14)
+  ;[0.12, 0.27, 0.41, 0.58, 0.72, 0.9].forEach((f, k) => {
+    const q = walkableNear(level, (k % 2 ? 1 : -1) * (base.half + 2.2 + (k % 3) * 0.7), Math.round(gateZ * f) + 3)
+    free.push(level.pickups.length); level.pickups.push({x: q.x, z: q.z, kind: 'sticker', step: null})
+  })
   // knots of people singing on the main street, between the crossings (RUSH's own rings): on a matchday walk, stand in
   // one a moment and the song carries him — the walk to the ground has something in it (feel pass)
   const gate = -(base.length - 14)
   for (const f of [0.3, 0.55, 0.8]) { const z = Math.round(gate * f); if (base.crossings.every(c => Math.abs(c - z) > 11)) level.rings = [...level.rings, {x: 0, z, r: 3.6}] }
   // the FIND ways hide their first thing in one of a few places (`challenge/run.ts`)
   layFinds(level, plans, picks, base.seed)
-  const sl: StoryLevel = {level, plans, picks}
+  const sl: StoryLevel = {level, plans, picks, free}
   // a new life's offers are in the level from the start: the picture always has somebody to mark
   level.hood!.jobs.push(...nextMissions(newLife()).map(o => offerJob(sl, o)))
   return sl
@@ -59,7 +65,7 @@ export function storyLevel(base: Level): StoryLevel {
 
 /** keep off the street everything that is not the open plan's (a thing is his only when a job asks for it) */
 export function keepOff(run: HoodRun, sl: StoryLevel, play: StoryPlay): void {
-  const mine = new Set(play.plan ? sl.picks[play.plan] ?? [] : [])
+  const mine = new Set([...(play.plan ? sl.picks[play.plan] ?? [] : []), ...sl.free])
   run.sim.got.forEach((_, i) => { if (!mine.has(i)) run.sim.got[i] = true })
 }
 
