@@ -1,0 +1,38 @@
+{
+ "schemaVersion": 1,
+ "id": "2026-11-28T12-22-26-821Z-74ae3c",
+ "clubId": "aek-athens",
+ "startedAt": "2026-11-28T12:22:26.822Z",
+ "finishedAt": "2026-11-28T12:22:30.881Z",
+ "providers": [
+  "aekpedia",
+  "aek-official-history"
+ ],
+ "state": "blocked",
+ "counts": {
+  "requests": 2,
+  "documentsRead": 0,
+  "newDocuments": 0,
+  "changedDocuments": 0,
+  "unchangedDocuments": 0,
+  "recordsExtracted": 0,
+  "blockedEndpoints": 2,
+  "budgetLeft": 20
+ },
+ "diagnostics": [
+  {
+   "code": "SOURCE_BLOCKED",
+   "providerId": "aekpedia",
+   "url": "https://www.aekpedia.com/wp-json/wp/v2/posts?per_page=25&page=19&orderby=id&order=asc&_fields=id%2Clink%2Cslug%2Ctitle%2Ccontent%2Cdate_gmt%2Cmodified_gmt%2Ctype%2Cparent%2Ccategories",
+   "message": "HTTP 403 — a refusal is an answer. Who refused (the source, or this server's network) is recorded as unknown until checked from another network."
+  },
+  {
+   "code": "SOURCE_BLOCKED",
+   "providerId": "aekpedia",
+   "url": "https://www.aekpedia.com/wp-json/wp/v2/pages?per_page=25&page=1&orderby=id&order=asc&_fields=id%2Clink%2Cslug%2Ctitle%2Ccontent%2Cdate_gmt%2Cmodified_gmt%2Ctype%2Cparent%2Ccategories",
+   "message": "HTTP 403 — a refusal is an answer. Who refused (the source, or this server's network) is recorded as unknown until checked from another network."
+  }
+ ],
+ "completeArchiveClaim": false,
+ "approvedForProduction": 0
+}

@@ -3530,6 +3530,110 @@
    "publisher": "English Wikipedia",
    "checkedAt": "2026-11-22",
    "access": "available"
+  },
+  {
+   "id": "daily-src-c82c3c03c6c3fd396afbb67d",
+   "url": "https://www.uefa.com/uefachampionsleague/match/2049633--",
+   "title": "UEFA: Como 1-0 AEK Athens, 2026-11-24",
+   "publisher": "UEFA",
+   "checkedAt": "2026-11-28",
+   "access": "available"
+  },
+  {
+   "id": "daily-src-03fc31a9efb22647b9348d2c",
+   "url": "https://en.wikipedia.org/w/index.php?oldid=1387910262",
+   "title": "Rodolfo Arruabarrena",
+   "publisher": "English Wikipedia",
+   "checkedAt": "2026-11-28",
+   "access": "available"
+  },
+  {
+   "id": "daily-src-16d1ff7fa0888ea1d4cafa42",
+   "url": "https://en.wikipedia.org/w/index.php?oldid=1382664960",
+   "title": "Christos Arvanitis",
+   "publisher": "English Wikipedia",
+   "checkedAt": "2026-11-28",
+   "access": "available"
+  },
+  {
+   "id": "daily-src-6a6d9e0415ecdd66a1abb474",
+   "url": "https://en.wikipedia.org/w/index.php?oldid=1383711427",
+   "title": "Youlielmos Arvanitis",
+   "publisher": "English Wikipedia",
+   "checkedAt": "2026-11-28",
+   "access": "available"
+  },
+  {
+   "id": "daily-src-58361df8274293230322be35",
+   "url": "https://en.wikipedia.org/w/index.php?oldid=1382494758",
+   "title": "Themos Asderis",
+   "publisher": "English Wikipedia",
+   "checkedAt": "2026-11-28",
+   "access": "available"
+  },
+  {
+   "id": "daily-src-b8a111c5db524c1e04084160",
+   "url": "https://en.wikipedia.org/w/index.php?oldid=1385033254",
+   "title": "Georgios Athanasiadis (footballer, born 1993)",
+   "publisher": "English Wikipedia",
+   "checkedAt": "2026-11-28",
+   "access": "available"
+  },
+  {
+   "id": "daily-src-22737bc2a8fcf7885e8a63dd",
+   "url": "https://en.wikipedia.org/w/index.php?oldid=1382849971",
+   "title": "Ilias Atmatsidis",
+   "publisher": "English Wikipedia",
+   "checkedAt": "2026-11-28",
+   "access": "available"
+  },
+  {
+   "id": "daily-src-a594f72b550cf183e98893cf",
+   "url": "https://en.wikipedia.org/w/index.php?oldid=1385030438",
+   "title": "Federico Azcárate",
+   "publisher": "English Wikipedia",
+   "checkedAt": "2026-11-28",
+   "access": "available"
+  },
+  {
+   "id": "daily-src-0a2dbf4e21be901e969f9690",
+   "url": "https://en.wikipedia.org/w/index.php?oldid=1384613837",
+   "title": "Paris Babis",
+   "publisher": "English Wikipedia",
+   "checkedAt": "2026-11-28",
+   "access": "available"
+  },
+  {
+   "id": "daily-src-df4c48c7d5dda8f0ab755f92",
+   "url": "https://en.wikipedia.org/w/index.php?oldid=1382508416",
+   "title": "Boban Babunski",
+   "publisher": "English Wikipedia",
+   "checkedAt": "2026-11-28",
+   "access": "available"
+  },
+  {
+   "id": "daily-src-8e78c1330b82f32f5c776907",
+   "url": "https://en.wikipedia.org/w/index.php?oldid=1388307727",
+   "title": "2015–16 AEK Athens F.C. season",
+   "publisher": "English Wikipedia",
+   "checkedAt": "2026-11-28",
+   "access": "available"
+  },
+  {
+   "id": "daily-src-ebda84ff13c94ccd88aa5d15",
+   "url": "https://en.wikipedia.org/w/index.php?oldid=1388300954",
+   "title": "2014–15 AEK Athens F.C. season",
+   "publisher": "English Wikipedia",
+   "checkedAt": "2026-11-28",
+   "access": "available"
+  },
+  {
+   "id": "daily-src-41c4bd95957e8c4b599bdd5b",
+   "url": "https://en.wikipedia.org/w/index.php?oldid=1388295560",
+   "title": "2013–14 AEK Athens F.C. season",
+   "publisher": "English Wikipedia",
+   "checkedAt": "2026-11-28",
+   "access": "available"
   }
  ],
  "archive": [
@@ -10103,6 +10207,27 @@
    "conflictFree": true,
    "researchedAt": "2026-11-22",
    "approvedAt": "2026-11-22",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-match-356dbe1dfcd960ffed2d4cc2-moment",
+   "value": {
+    "name": "Como 1–0 AEK Athens",
+    "on": "2026-11-24",
+    "precision": "day",
+    "hint": "UEFA Champions League",
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-c82c3c03c6c3fd396afbb67d"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-11-28",
+   "approvedAt": "2026-11-28",
    "approvedBy": "automated:daily-research-single-source"
   }
  ],
@@ -23759,6 +23884,45 @@
    "researchedAt": "2026-11-22",
    "approvedAt": "2026-11-22",
    "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-match-356dbe1dfcd960ffed2d4cc2",
+   "value": {
+    "name": "Como 1–0 AEK Athens",
+    "on": "2026-11-24",
+    "home": "Como",
+    "away": "AEK Athens",
+    "score": "1-0",
+    "homeGoals": 1,
+    "awayGoals": 0,
+    "us": "away",
+    "competition": "UEFA Champions League",
+    "lineup": [
+     "Thomas Strakosha",
+     "Harold Moukoudi",
+     "Stavros Pilios",
+     "Dereck Kutesa",
+     "Mijat Gaćinović",
+     "Luka Jović",
+     "Lazaros Rota",
+     "Lovro Majer",
+     "Răzvan Marin",
+     "Milán Vitális",
+     "Filipe Relvas"
+    ],
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-c82c3c03c6c3fd396afbb67d"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-11-28",
+   "approvedAt": "2026-11-28",
+   "approvedBy": "automated:daily-research-single-source"
   }
  ],
  "players": [
@@ -24716,6 +24880,268 @@
    "conflictFree": true,
    "researchedAt": "2026-11-22",
    "approvedAt": "2026-11-22",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-player-f64e9759fd0fa843a695fd42",
+   "value": {
+    "name": "Rodolfo Arruabarrena",
+    "aliases": [],
+    "positions": [
+     "DF"
+    ],
+    "fromYear": 2007,
+    "toYear": 2008,
+    "career": {
+     "apps": 16,
+     "goals": 0,
+     "basis": "English Wikipedia club stint table"
+    },
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-03fc31a9efb22647b9348d2c"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-11-28",
+   "approvedAt": "2026-11-28",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-player-2498e0ae14688802ff1cd0b4",
+   "value": {
+    "name": "Christos Arvanitis",
+    "aliases": [],
+    "positions": [
+     "GK"
+    ],
+    "fromYear": 1982,
+    "toYear": 1985,
+    "career": {
+     "apps": 76,
+     "goals": 0,
+     "basis": "English Wikipedia club stint table"
+    },
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-16d1ff7fa0888ea1d4cafa42"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-11-28",
+   "approvedAt": "2026-11-28",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-player-ce3e977486079256f1be9d33",
+   "value": {
+    "name": "Youlielmos Arvanitis",
+    "aliases": [],
+    "positions": [],
+    "fromYear": 1946,
+    "toYear": 1954,
+    "career": {
+     "apps": 11,
+     "goals": 0,
+     "basis": "English Wikipedia club stint table"
+    },
+    "archiveOnly": true,
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-6a6d9e0415ecdd66a1abb474"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-11-28",
+   "approvedAt": "2026-11-28",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-player-bcb79d7c0432042c625f13be",
+   "value": {
+    "name": "Themos Asderis",
+    "aliases": [],
+    "positions": [
+     "DF"
+    ],
+    "fromYear": 1924,
+    "toYear": 1930,
+    "career": {
+     "apps": 0,
+     "goals": 0,
+     "basis": "English Wikipedia club stint table"
+    },
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-58361df8274293230322be35"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-11-28",
+   "approvedAt": "2026-11-28",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-player-75b4872a6ce436171292ba7c",
+   "value": {
+    "name": "Georgios Athanasiadis",
+    "aliases": [
+     "Georgios Athanasiadis (footballer, born 1993)"
+    ],
+    "positions": [
+     "GK"
+    ],
+    "fromYear": 2019,
+    "toYear": 2024,
+    "career": {
+     "apps": 62,
+     "goals": 0,
+     "basis": "English Wikipedia club stint table"
+    },
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-b8a111c5db524c1e04084160"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-11-28",
+   "approvedAt": "2026-11-28",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-player-540a00c4361baa8dbd1b0a7e",
+   "value": {
+    "name": "Ilias Atmatsidis",
+    "aliases": [],
+    "positions": [
+     "GK"
+    ],
+    "fromYear": 1992,
+    "toYear": 2003,
+    "career": {
+     "apps": 251,
+     "goals": 1,
+     "basis": "English Wikipedia club stint table"
+    },
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-22737bc2a8fcf7885e8a63dd"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-11-28",
+   "approvedAt": "2026-11-28",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-player-69e428afa8d42c2cb7f69e5f",
+   "value": {
+    "name": "Federico Azcárate",
+    "aliases": [],
+    "positions": [
+     "DF"
+    ],
+    "fromYear": 2007,
+    "toYear": 2008,
+    "career": {
+     "apps": 3,
+     "goals": 0,
+     "basis": "English Wikipedia club stint table"
+    },
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-a594f72b550cf183e98893cf"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-11-28",
+   "approvedAt": "2026-11-28",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-player-b8583678b02595bdf4d1e6be",
+   "value": {
+    "name": "Paris Babis",
+    "aliases": [],
+    "positions": [
+     "MF"
+    ],
+    "fromYear": 2017,
+    "toYear": 2022,
+    "career": {
+     "apps": 0,
+     "goals": 0,
+     "basis": "English Wikipedia club stint table"
+    },
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-0a2dbf4e21be901e969f9690"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-11-28",
+   "approvedAt": "2026-11-28",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-player-47a91b3fab99933f805ad1dc",
+   "value": {
+    "name": "Boban Babunski",
+    "aliases": [],
+    "positions": [
+     "DF"
+    ],
+    "fromYear": 1998,
+    "toYear": 1999,
+    "career": {
+     "apps": 8,
+     "goals": 0,
+     "basis": "English Wikipedia club stint table"
+    },
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-df4c48c7d5dda8f0ab755f92"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-11-28",
+   "approvedAt": "2026-11-28",
    "approvedBy": "automated:daily-research-single-source"
   }
  ],
@@ -25733,10 +26159,12 @@
     "name": "2013/14 season",
     "season": "2013/14",
     "sport": "football",
-    "sensitive": false
+    "sensitive": false,
+    "league": "Football League 2"
    },
    "sources": [
-    "daily-src-4c9666659e96d3b623e58249"
+    "daily-src-4c9666659e96d3b623e58249",
+    "daily-src-41c4bd95957e8c4b599bdd5b"
    ],
    "status": "approved",
    "confidence": 2,
@@ -25771,10 +26199,12 @@
     "name": "2014/15 season",
     "season": "2014/15",
     "sport": "football",
-    "sensitive": false
+    "sensitive": false,
+    "league": "{{nowrap|Football League}}"
    },
    "sources": [
-    "daily-src-53493263b369f53dc6388345"
+    "daily-src-53493263b369f53dc6388345",
+    "daily-src-ebda84ff13c94ccd88aa5d15"
    ],
    "status": "approved",
    "confidence": 2,
@@ -25790,10 +26220,12 @@
     "name": "2015/16 season",
     "season": "2015/16",
     "sport": "football",
-    "sensitive": false
+    "sensitive": false,
+    "league": "Super League"
    },
    "sources": [
-    "daily-src-3846827113e3ba55ad0d1c40"
+    "daily-src-3846827113e3ba55ad0d1c40",
+    "daily-src-8e78c1330b82f32f5c776907"
    ],
    "status": "approved",
    "confidence": 2,
@@ -26989,6 +27421,209 @@
    "conflictFree": true,
    "researchedAt": "2026-11-22",
    "approvedAt": "2026-11-22",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-kit-b62d69d8260e10a1e8d49daf",
+   "value": {
+    "name": "AEK Athens 2015/16 home kit",
+    "season": "2015/16",
+    "type": "HOME",
+    "referenceUrl": "https://en.wikipedia.org/w/index.php?oldid=1388307727",
+    "wikiKit": {
+     "pattern": "_aek1516",
+     "body": "ffde00",
+     "left": "ffde00",
+     "right": "ffde00",
+     "shorts": "000000",
+     "socks": "000000"
+    },
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-8e78c1330b82f32f5c776907"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-11-28",
+   "approvedAt": "2026-11-28",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-kit-54d573973f1526c8cf55de59",
+   "value": {
+    "name": "AEK Athens 2015/16 away kit",
+    "season": "2015/16",
+    "type": "AWAY",
+    "referenceUrl": "https://en.wikipedia.org/w/index.php?oldid=1388307727",
+    "wikiKit": {
+     "pattern": "_aek1516B",
+     "body": "ffffff",
+     "left": "ffffff",
+     "right": "ffffff",
+     "shorts": "ffffff",
+     "socks": "ffffff"
+    },
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-8e78c1330b82f32f5c776907"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-11-28",
+   "approvedAt": "2026-11-28",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-kit-ae978faf1e12a3fe806e524c",
+   "value": {
+    "name": "AEK Athens 2015/16 third kit",
+    "season": "2015/16",
+    "type": "THIRD",
+    "referenceUrl": "https://en.wikipedia.org/w/index.php?oldid=1388307727",
+    "wikiKit": {
+     "pattern": "_aek1516C",
+     "body": "7b0920",
+     "left": "7b0920",
+     "right": "7b0920",
+     "shorts": "ffffff",
+     "socks": "ffffff"
+    },
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-8e78c1330b82f32f5c776907"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-11-28",
+   "approvedAt": "2026-11-28",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-kit-4f0f18ebebf26f4f48677eed",
+   "value": {
+    "name": "AEK Athens 2014/15 home kit",
+    "season": "2014/15",
+    "type": "HOME",
+    "referenceUrl": "https://en.wikipedia.org/w/index.php?oldid=1388300954",
+    "wikiKit": {
+     "pattern": "_bvb_1213ch",
+     "body": "ffff00",
+     "left": "ffff00",
+     "right": "ffff00",
+     "shorts": "ffff00",
+     "socks": "000000"
+    },
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-ebda84ff13c94ccd88aa5d15"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-11-28",
+   "approvedAt": "2026-11-28",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-kit-4945edb00d79a100a0dd76f3",
+   "value": {
+    "name": "AEK Athens 2014/15 away kit",
+    "season": "2014/15",
+    "type": "AWAY",
+    "referenceUrl": "https://en.wikipedia.org/w/index.php?oldid=1388300954",
+    "wikiKit": {
+     "pattern": "_aek1314a",
+     "body": "000000",
+     "left": "000000",
+     "right": "000000",
+     "shorts": "ffde00",
+     "socks": "ffde00"
+    },
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-ebda84ff13c94ccd88aa5d15"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-11-28",
+   "approvedAt": "2026-11-28",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-kit-e31b29482e1e11ed392e10d0",
+   "value": {
+    "name": "AEK Athens 2013/14 home kit",
+    "season": "2013/14",
+    "type": "HOME",
+    "referenceUrl": "https://en.wikipedia.org/w/index.php?oldid=1388295560",
+    "wikiKit": {
+     "pattern": "_aek1314h",
+     "body": "ffde00",
+     "left": "ffde00",
+     "right": "ffde00",
+     "shorts": "000000",
+     "socks": "000000"
+    },
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-41c4bd95957e8c4b599bdd5b"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-11-28",
+   "approvedAt": "2026-11-28",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-kit-c51460c8e5b5b796ef4a98fd",
+   "value": {
+    "name": "AEK Athens 2013/14 away kit",
+    "season": "2013/14",
+    "type": "AWAY",
+    "referenceUrl": "https://en.wikipedia.org/w/index.php?oldid=1388295560",
+    "wikiKit": {
+     "pattern": "_aek1314a",
+     "body": "ffde00",
+     "left": "000000",
+     "right": "000000",
+     "shorts": "ffde00",
+     "socks": "ffde00"
+    },
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-41c4bd95957e8c4b599bdd5b"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-11-28",
+   "approvedAt": "2026-11-28",
    "approvedBy": "automated:daily-research-single-source"
   }
  ]

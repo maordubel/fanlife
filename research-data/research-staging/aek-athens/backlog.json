@@ -1,9 +1,17 @@
 [
  {
-  "id": "continue-aekpedia-posts",
-  "priority": "P3",
-  "task": "AEKpedia posts: 18 page(s) read of 31; the scheduled task continues from the checkpoint.",
-  "taskHe": "AEKpedia posts: נקראו 18 עמודים; המשימה המתוזמנת ממשיכה מנקודת השמירה.",
+  "id": "blocked-aekpedia-/wp-json/wp/v2/posts",
+  "priority": "P2",
+  "task": "AEKpedia: /wp-json/wp/v2/posts answered 403 (HTTP 403 — a refusal is an answer). Recorded as a gap — not bypassed.",
+  "taskHe": "AEKpedia: /wp-json/wp/v2/posts חסום (403). נרשם כפער — לא עוקפים.",
+  "status": "queued",
+  "owner": null
+ },
+ {
+  "id": "blocked-aekpedia-/wp-json/wp/v2/pages",
+  "priority": "P2",
+  "task": "AEKpedia: /wp-json/wp/v2/pages answered 403 (HTTP 403 — a refusal is an answer). Recorded as a gap — not bypassed.",
+  "taskHe": "AEKpedia: /wp-json/wp/v2/pages חסום (403). נרשם כפער — לא עוקפים.",
   "status": "queued",
   "owner": null
  },

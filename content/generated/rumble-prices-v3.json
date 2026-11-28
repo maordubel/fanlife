@@ -14752,9 +14752,9 @@
   },
   "aek-athens": {
    "quotaMode": "full",
-   "size": 1186,
+   "size": 1187,
    "quota": {
-    "1": 429,
+    "1": 430,
     "2": 415,
     "3": 237,
     "4": 95,
@@ -24248,6 +24248,14 @@
      "assignment": "new-member",
      "rationale": "Daily research added a documented first-team player.",
      "reviewedAt": "2026-11-22"
+    },
+    "aek-athens:daily-player-75b4872a6ce436171292ba7c": {
+     "priceM": 1,
+     "priceTier": "REST",
+     "locked": false,
+     "assignment": "new-member",
+     "rationale": "Daily research added a documented first-team player.",
+     "reviewedAt": "2026-11-28"
     }
    }
   },
