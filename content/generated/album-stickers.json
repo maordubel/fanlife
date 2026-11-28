@@ -1501,11 +1501,15 @@
    "person_id": "pl_90f19259eb",
    "name": "Thomas Mavros",
    "code": "AEK–21",
-   "status": "silhouette",
-   "portrait": "painted",
-   "frame": null,
+   "status": "photo",
+   "portrait": "card",
+   "frame": "club",
    "qid": "Q741072",
-   "source": null,
+   "source": {
+    "file": "Thomas Mavros Section: HLL No. 112 / UEFA Euro Italy 1980 (Panini)",
+    "via": "card",
+    "image": "cards/822e87380960b2d92414423b.jpg"
+   },
    "traits": {
     "skin": "#F3D9C4",
     "hair": "#6B4630",
@@ -1875,11 +1879,15 @@
    "person_id": "pl_c41722329f",
    "name": "Ilias Atmatsidis",
    "code": "AEK–26",
-   "status": "silhouette",
-   "portrait": "painted",
-   "frame": null,
+   "status": "photo",
+   "portrait": "card",
+   "frame": "club",
    "qid": "Q2626749",
-   "source": null,
+   "source": {
+    "file": "Ilias Atmatsidis Section: Goalkeepers No. 1 / European Football Stars 1998 (Panini)",
+    "via": "card",
+    "image": "cards/0d3fca642bcead5684f056d4.jpg"
+   },
    "traits": {
     "skin": "#D7A57E",
     "hair": "#3B2A20",
@@ -1895,11 +1903,15 @@
    "person_id": "pl_f7544dce6a",
    "name": "Demis Nikolaidis",
    "code": "AEK–27",
-   "status": "silhouette",
-   "portrait": null,
-   "frame": null,
+   "status": "photo",
+   "portrait": "card",
+   "frame": "club",
    "qid": "Q462908",
-   "source": null,
+   "source": {
+    "file": "Demis Nikolaidis Section: Forwards No. 108 / European Football Stars 1998 (Panini)",
+    "via": "card",
+    "image": "cards/bec56e68e691ab29415b62ea.jpg"
+   },
    "traits": {
     "skin": "#D7A57E",
     "hair": "#3B2A20",
@@ -1915,11 +1927,15 @@
    "person_id": "pl_7f58983734",
    "name": "Vasilis Lakis",
    "code": "AEK–28",
-   "status": "silhouette",
-   "portrait": "painted",
-   "frame": null,
+   "status": "photo",
+   "portrait": "card",
+   "frame": "club",
    "qid": "Q426905",
-   "source": null,
+   "source": {
+    "file": "Lakis Vasilis Section: Kavala F.C. No. 185 / Superleague Ελλάδα 2009-2010 (Panini)",
+    "via": "card",
+    "image": "cards/82f72e354e69af15e31a5955.jpg"
+   },
    "traits": {
     "skin": "#D7A57E",
     "hair": "#3B2A20",
@@ -1936,17 +1952,13 @@
    "name": "Nikos Liberopoulos",
    "code": "AEK–29",
    "status": "photo",
-   "portrait": null,
-   "frame": "archive",
+   "portrait": "card",
+   "frame": "club",
    "qid": "Q312515",
    "source": {
-    "file": "Liberopoulos.JPG",
-    "page": "https://commons.wikimedia.org/wiki/File:Liberopoulos.JPG",
-    "author": "Adzio92",
-    "license": "CC BY-SA 3.0",
-    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
-    "date": "2013-03-31 15:07:29",
-    "via": "commons"
+    "file": "Nikos Liberopoulos Section: AEK FC No. 41 / Superleague Ελλάδα 2010-2011 (Panini)",
+    "via": "card",
+    "image": "cards/ee87a009dab01295b349f309.jpg"
    },
    "traits": null,
    "file": "/album/stickers/aek-athens/29.webp"
@@ -1976,17 +1988,13 @@
    "name": "Ignacio Scocco",
    "code": "AEK–31",
    "status": "photo",
-   "portrait": null,
-   "frame": "archive",
+   "portrait": "card",
+   "frame": "club",
    "qid": "Q1709911",
    "source": {
-    "file": "Emelec 0 River 1 (Ignacio Scocco).jpg",
-    "page": "https://commons.wikimedia.org/wiki/File:Emelec_0_River_1_(Ignacio_Scocco).jpg",
-    "author": "https://www.flickr.com/photos/agenciaandes_ec/with/40859860034/",
-    "license": "CC BY-SA 2.0",
-    "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
-    "date": "2018-04-19 21:22:43",
-    "via": "commons"
+    "file": "Ignacio Scocco Section: River Plate No. 61 / FIFA 365 2018 (Panini)",
+    "via": "card",
+    "image": "cards/7f3a227e96cd3ca58bc93b90.jpg"
    },
    "traits": null,
    "file": "/album/stickers/aek-athens/31.webp"
@@ -2016,17 +2024,13 @@
    "name": "Anastasios Bakasetas",
    "code": "AEK–33",
    "status": "photo",
-   "portrait": null,
+   "portrait": "card",
    "frame": "club",
    "qid": "Q2845537",
    "source": {
-    "file": "DK-AEK (4) (croppe.jpg",
-    "page": "https://commons.wikimedia.org/wiki/File:DK-AEK_(4)_(croppe.jpg",
-    "author": "Олег Батрак",
-    "license": "CC BY-SA 3.0",
-    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
-    "date": "2018-02-24",
-    "via": "commons"
+    "file": "Tasos Bakasetas Section: AEK Athens FC No. G16 / FIFA 365 2019. Blue backs (Panini)",
+    "via": "card",
+    "image": "cards/5155f0e04d47c72777702f73.jpg"
    },
    "traits": null,
    "file": "/album/stickers/aek-athens/33.webp"
@@ -2036,17 +2040,13 @@
    "name": "Andre Simoes",
    "code": "AEK–34",
    "status": "photo",
-   "portrait": null,
+   "portrait": "card",
    "frame": "club",
    "qid": "Q4760066",
    "source": {
-    "file": "CSKA-AEK (5).jpg",
-    "page": "https://commons.wikimedia.org/wiki/File:CSKA-AEK_(5).jpg",
-    "author": "Дмитрий Голубович",
-    "license": "CC BY-SA 3.0",
-    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
-    "date": "2017-08-04 09:11:42",
-    "via": "commons"
+    "file": "André Simões Section: AEK Athens No. 63 / Superleague Ελλάδα 2015-2016 (Panini)",
+    "via": "card",
+    "image": "cards/ebbf072203b7b72054720ecc.jpg"
    },
    "traits": null,
    "file": "/album/stickers/aek-athens/34.webp"
@@ -2076,17 +2076,13 @@
    "name": "Mijat Gacinovic",
    "code": "AEK–36",
    "status": "photo",
-   "portrait": null,
-   "frame": "archive",
+   "portrait": "card",
+   "frame": "club",
    "qid": "Q14432450",
    "source": {
-    "file": "MijatGacinovic.jpg",
-    "page": "https://commons.wikimedia.org/wiki/File:MijatGacinovic.jpg",
-    "author": "Silesia711",
-    "license": "CC BY-SA 4.0",
-    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
-    "date": "2019-10-06 19:14:34",
-    "via": "commons"
+    "file": "Mijat Gaćinović Section: Serbia No. 416 / FIFA World Cup Russia 2018. 670 stickers version (Panini)",
+    "via": "card",
+    "image": "cards/8ea8ed2f428e6608388e3a4f.jpg"
    },
    "traits": null,
    "file": "/album/stickers/aek-athens/36.webp"
@@ -2824,17 +2820,13 @@
    "name": "Hossam Hassan",
    "code": "AHL–10",
    "status": "photo",
-   "portrait": null,
-   "frame": "archive",
+   "portrait": "card",
+   "frame": "club",
    "qid": "Q448937",
    "source": {
-    "file": "Hossam Hassan.png",
-    "page": "https://commons.wikimedia.org/wiki/File:Hossam_Hassan.png",
-    "author": "Al AHLY TV",
-    "license": "CC BY 3.0",
-    "licenseUrl": "https://creativecommons.org/licenses/by/3.0",
-    "date": "2018-08-07",
-    "via": "commons"
+    "file": "Hossam Hassan Section: El Ahly No. 34 / Football Egypt 1988-1989 (Panini)",
+    "via": "card",
+    "image": "cards/258a6db60009a0392b9e0f36.jpg"
    },
    "traits": null,
    "file": "/album/stickers/al-ahly/10.webp"
@@ -2883,11 +2875,15 @@
    "person_id": "pl_3dbde887d3",
    "name": "Ibrahim Hassan",
    "code": "AHL–13",
-   "status": "silhouette",
-   "portrait": "painted",
-   "frame": null,
+   "status": "photo",
+   "portrait": "card",
+   "frame": "club",
    "qid": "Q1290965",
-   "source": null,
+   "source": {
+    "file": "Ibrahim Hassan Section: Egypt No. 59 / African Cup of Nations 1996 (Panini)",
+    "via": "card",
+    "image": "cards/761468b8e24dc1b7775f27f1.jpg"
+   },
    "traits": {
     "skin": "#D7A57E",
     "hair": "#3B2A20",
@@ -3004,17 +3000,13 @@
    "name": "Essam El-Hadary",
    "code": "AHL–19",
    "status": "photo",
-   "portrait": null,
-   "frame": "archive",
+   "portrait": "card",
+   "frame": "club",
    "qid": "Q523640",
    "source": {
-    "file": "Essam El-Hadary.jpg",
-    "page": "https://commons.wikimedia.org/wiki/File:Essam_El-Hadary.jpg",
-    "author": "Анна Нэсси",
-    "license": "CC BY-SA 3.0",
-    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
-    "date": "2018-06-25 19:29:59",
-    "via": "commons"
+    "file": "Essam El Hadary Section: Egypt No. 74 / FIFA World Cup Russia 2018. Gold edition (Panini)",
+    "via": "card",
+    "image": "cards/cbddf8f414356ae5551e804c.jpg"
    },
    "traits": null,
    "file": "/album/stickers/al-ahly/19.webp"
@@ -3083,11 +3075,15 @@
    "person_id": "pl_9620b826ab",
    "name": "Sebastião Gilberto",
    "code": "AHL–23",
-   "status": "silhouette",
-   "portrait": "painted",
-   "frame": null,
+   "status": "photo",
+   "portrait": "card",
+   "frame": "club",
    "qid": "Q721279",
-   "source": null,
+   "source": {
+    "file": "Sebastiao Gilberto Section: Lierse No. 195 / FOOT Belgium 2011-2012 (Panini)",
+    "via": "card",
+    "image": "cards/8464ba55b87c1293cd9b6883.jpg"
+   },
    "traits": {
     "skin": "#D7A57E",
     "hair": "#3B2A20",
@@ -3123,11 +3119,15 @@
    "person_id": "pl_6cfcb73b0b",
    "name": "Wael Gomaa",
    "code": "AHL–25",
-   "status": "silhouette",
-   "portrait": "painted",
-   "frame": null,
+   "status": "photo",
+   "portrait": "card",
+   "frame": "club",
    "qid": "Q937134",
-   "source": null,
+   "source": {
+    "file": "Wael Gomaa Section: Egypt No. 163 / Africa Cup 2008 (Panini)",
+    "via": "card",
+    "image": "cards/d56e78b5cde5ff6e4f6f3a57.jpg"
+   },
    "traits": {
     "skin": "#D7A57E",
     "hair": "#C9A86A",
@@ -3417,11 +3417,15 @@
    "person_id": "pl_b4c12151ef",
    "name": "Mohamed Shawky",
    "code": "AHL–26",
-   "status": "silhouette",
-   "portrait": "painted",
-   "frame": null,
+   "status": "photo",
+   "portrait": "card",
+   "frame": "club",
    "qid": "Q460008",
-   "source": null,
+   "source": {
+    "file": "Mohamed Shawky Section: Egypt No. 153 / Africa Cup 2010 (Panini)",
+    "via": "card",
+    "image": "cards/ef5e58b40ea20dc2630b38a8.jpg"
+   },
    "traits": {
     "skin": "#BF8862",
     "hair": "#3B2A20",
@@ -3712,17 +3716,13 @@
    "name": "Mohamed Barakat",
    "code": "AHL–27",
    "status": "photo",
-   "portrait": null,
-   "frame": "archive",
+   "portrait": "card",
+   "frame": "club",
    "qid": "Q2105833",
    "source": {
-    "file": "Barakat2020.jpg",
-    "page": "https://commons.wikimedia.org/wiki/File:Barakat2020.jpg",
-    "author": "Al Ahly TV",
-    "license": "CC BY 3.0",
-    "licenseUrl": "https://creativecommons.org/licenses/by/3.0",
-    "date": "2020-09-21",
-    "via": "commons"
+    "file": "Mohamed Barakat Section: Egypt No. 150 / Africa Cup 2010 (Panini)",
+    "via": "card",
+    "image": "cards/5ed065ea82d3572136089125.jpg"
    },
    "traits": null,
    "file": "/album/stickers/al-ahly/27.webp"
@@ -3732,17 +3732,13 @@
    "name": "Mohamed Aboutrika",
    "code": "AHL–28",
    "status": "photo",
-   "portrait": null,
+   "portrait": "card",
    "frame": "club",
    "qid": "Q1799274",
    "source": {
-    "file": "Aboutrika2011.jpg",
-    "page": "https://commons.wikimedia.org/wiki/File:Aboutrika2011.jpg",
-    "author": "mustapha_ennaimi",
-    "license": "CC BY 2.0",
-    "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
-    "date": "2011-09-11",
-    "via": "commons"
+    "file": "Mohamed Aboutrika Section: Egypt No. 149 / Africa Cup 2010 (Panini)",
+    "via": "card",
+    "image": "cards/ae7582fc3ffeda5029efd39f.jpg"
    },
    "traits": null,
    "file": "/album/stickers/al-ahly/28.webp"
@@ -3771,11 +3767,15 @@
    "person_id": "pl_f8b93ab202",
    "name": "Walid Soliman",
    "code": "AHL–30",
-   "status": "silhouette",
-   "portrait": "painted",
-   "frame": null,
+   "status": "photo",
+   "portrait": "card",
+   "frame": "club",
    "qid": "Q3565358",
-   "source": null,
+   "source": {
+    "file": "Walid Soliman Section: Al Ahly SC No. 365 / FIFA 365 2019. Grey backs (Panini)",
+    "via": "card",
+    "image": "cards/2b626a0a6f0ea4da726cd82c.jpg"
+   },
    "traits": {
     "skin": "#D7A57E",
     "hair": "#3B2A20",
@@ -3792,17 +3792,13 @@
    "name": "Ayman Ashraf",
    "code": "AHL–31",
    "status": "photo",
-   "portrait": null,
-   "frame": "archive",
+   "portrait": "card",
+   "frame": "club",
    "qid": "Q2874906",
    "source": {
-    "file": "Ayman Ashraf, Al AHLY TV - May 7, 2021.jpg",
-    "page": "https://commons.wikimedia.org/wiki/File:Ayman_Ashraf,_Al_AHLY_TV_-_May_7,_2021.jpg",
-    "author": "Al AHLY TV",
-    "license": "CC BY 3.0",
-    "licenseUrl": "https://creativecommons.org/licenses/by/3.0",
-    "date": "2021-05-07",
-    "via": "commons"
+    "file": "Ayman Ashraf Section: Al Ahly SC No. 334 / FIFA 365 2019. Blue backs (Panini)",
+    "via": "card",
+    "image": "cards/12114e6b3a6caf1af3504319.jpg"
    },
    "traits": null,
    "file": "/album/stickers/al-ahly/31.webp"
@@ -3811,11 +3807,15 @@
    "person_id": "pl_92321623ac",
    "name": "Amr Gamal",
    "code": "AHL–32",
-   "status": "silhouette",
-   "portrait": "painted",
-   "frame": null,
+   "status": "photo",
+   "portrait": "card",
+   "frame": "club",
    "qid": "Q16526511",
-   "source": null,
+   "source": {
+    "file": "Amr Gamal Section: Al Ahly SC No. 625 / FIFA 365 2017. South America (Panini)",
+    "via": "card",
+    "image": "cards/a0afc5ad1949dc6bda050509.jpg"
+   },
    "traits": {
     "skin": "#D7A57E",
     "hair": "#3B2A20",
@@ -3832,17 +3832,13 @@
    "name": "Ahmed Fathy",
    "code": "AHL–33",
    "status": "photo",
-   "portrait": null,
-   "frame": "archive",
+   "portrait": "card",
+   "frame": "club",
    "qid": "Q1954855",
    "source": {
-    "file": "Ahmed Fathy in FIFA world cup.jpg",
-    "page": "https://commons.wikimedia.org/wiki/File:Ahmed_Fathy_in_FIFA_world_cup.jpg",
-    "author": "Анна Нэсси",
-    "license": "CC BY-SA 3.0",
-    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
-    "date": "2018-06-27 20:26:10",
-    "via": "commons"
+    "file": "Ahmed Fathy Section: Al Ahly SC No. 438 / FIFA 365 2017 (Panini)",
+    "via": "card",
+    "image": "cards/00ebe6a8acce559c248ccbf0.jpg"
    },
    "traits": null,
    "file": "/album/stickers/al-ahly/33.webp"
@@ -3851,11 +3847,15 @@
    "person_id": "pl_a9c9e7a42e",
    "name": "Moamen Zakaria",
    "code": "AHL–34",
-   "status": "silhouette",
-   "portrait": null,
-   "frame": null,
+   "status": "photo",
+   "portrait": "card",
+   "frame": "club",
    "qid": "Q16232530",
-   "source": null,
+   "source": {
+    "file": "Moamen Zakaria Section: Al Ahly SC No. 462 / FIFA 365 2017. East Europe (Panini)",
+    "via": "card",
+    "image": "cards/79f1c4403ef96a1f6c64c835.jpg"
+   },
    "traits": {
     "skin": "#D7A57E",
     "hair": "#3B2A20",
@@ -3872,17 +3872,13 @@
    "name": "Marwan Mohsen",
    "code": "AHL–35",
    "status": "photo",
-   "portrait": null,
-   "frame": "archive",
+   "portrait": "card",
+   "frame": "club",
    "qid": "Q729896",
    "source": {
-    "file": "Marwan Mohsen.jpg",
-    "page": "https://commons.wikimedia.org/wiki/File:Marwan_Mohsen.jpg",
-    "author": "Кирилл Венедиктов",
-    "license": "CC BY-SA 3.0",
-    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
-    "date": "2018-06-19 17:31:04",
-    "via": "commons"
+    "file": "Marwan Mohsen Section: Al Ahly SC No. 342 / FIFA 365 2019. Blue backs (Panini)",
+    "via": "card",
+    "image": "cards/3e61a1c100607a34ae00b1eb.jpg"
    },
    "traits": null,
    "file": "/album/stickers/al-ahly/35.webp"
@@ -3892,17 +3888,13 @@
    "name": "Junior Ajayi",
    "code": "AHL–36",
    "status": "photo",
-   "portrait": null,
-   "frame": "archive",
+   "portrait": "card",
+   "frame": "club",
    "qid": "Q21685216",
    "source": {
-    "file": "Ajayi JR 28.jpg",
-    "page": "https://commons.wikimedia.org/wiki/File:Ajayi_JR_28.jpg",
-    "author": "Telecom Egypt",
-    "license": "CC BY 3.0",
-    "licenseUrl": "https://creativecommons.org/licenses/by/3.0",
-    "date": "2021-04-21",
-    "via": "commons"
+    "file": "Junior Ajayi Section: Al Ahly SC No. 363 / FIFA 365 2019. Grey backs (Panini)",
+    "via": "card",
+    "image": "cards/75c11d2556c260973de953be.jpg"
    },
    "traits": null,
    "file": "/album/stickers/al-ahly/36.webp"
@@ -6595,11 +6587,15 @@
    "person_id": "pl_6ed005ffba",
    "name": "Billy McNeill",
    "code": "CEL–17",
-   "status": "silhouette",
-   "portrait": "painted",
-   "frame": null,
+   "status": "photo",
+   "portrait": "card",
+   "frame": "club",
    "qid": "Q526300",
-   "source": null,
+   "source": {
+    "file": "Billy McNeill Section: Celtic No. 368 / UK Football 1990-1991 (Panini)",
+    "via": "card",
+    "image": "cards/e3e42436d29fde0ba6270693.jpg"
+   },
    "traits": {
     "skin": "#E8C2A0",
     "hair": "#9A9794",
@@ -6930,17 +6926,13 @@
    "name": "Bobby Lennox",
    "code": "CEL–20",
    "status": "photo",
-   "portrait": null,
+   "portrait": "card",
    "frame": "club",
    "qid": "Q888610",
    "source": {
-    "file": "Bobby Lennox (1971).jpg",
-    "page": "https://commons.wikimedia.org/wiki/File:Bobby_Lennox_(1971).jpg",
-    "author": "Joost Evers / Anefo",
-    "license": "CC BY-SA 3.0 nl",
-    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/nl/deed.en",
-    "date": "1971-03-09",
-    "via": "commons"
+    "file": "Bobby Lennox Section: Glasgow Celtic No. 426 / UK Football 1977-1978 (Panini)",
+    "via": "card",
+    "image": "cards/25f79cd013a03a627d0ea79a.jpg"
    },
    "traits": null,
    "file": "/album/stickers/celtic/20.webp"
@@ -6970,17 +6962,13 @@
    "name": "Kenneth Mathieson Dalglish",
    "code": "CEL–22",
    "status": "photo",
-   "portrait": null,
-   "frame": "archive",
+   "portrait": "card",
+   "frame": "club",
    "qid": "Q187198",
    "source": {
-    "file": "Kenny dalglish figurita (cropped).jpg",
-    "page": "https://commons.wikimedia.org/wiki/File:Kenny_dalglish_figurita_(cropped).jpg",
-    "author": "Unknown authorUnknown author",
-    "license": "Public domain",
-    "licenseUrl": "",
-    "date": "1974",
-    "via": "commons"
+    "file": "Kenny Dalglish Section: Dream Team No. 172 / Celtic FC 2000-2001 (Panini)",
+    "via": "card",
+    "image": "cards/024a2da623a857021e80f8fa.jpg"
    },
    "traits": null,
    "file": "/album/stickers/celtic/22.webp"
@@ -7049,11 +7037,15 @@
    "person_id": "pl_fa40661f56",
    "name": "Paul McStay",
    "code": "CEL–26",
-   "status": "silhouette",
-   "portrait": "painted",
-   "frame": null,
+   "status": "photo",
+   "portrait": "card",
+   "frame": "club",
    "qid": "Q461541",
-   "source": null,
+   "source": {
+    "file": "Paul McStay Section: Dream Team No. 168 / Celtic FC 2000-2001 (Panini)",
+    "via": "card",
+    "image": "cards/d07e67810ab1d412b35ac0a0.jpg"
+   },
    "traits": {
     "skin": "#D7A57E",
     "hair": "#3B2A20",
@@ -7089,11 +7081,15 @@
    "person_id": "pl_b4d62816ed",
    "name": "Stewart Kerr",
    "code": "CEL–28",
-   "status": "silhouette",
-   "portrait": "painted",
-   "frame": null,
+   "status": "photo",
+   "portrait": "card",
+   "frame": "club",
    "qid": "Q10514234",
-   "source": null,
+   "source": {
+    "file": "Stewart Kerr Section: Celtic Squad 1999-2000 No. 17 / Celtic FC 1999-2000 (Panini)",
+    "via": "card",
+    "image": "cards/981094877b2d37a9e88496e3.jpg"
+   },
    "traits": {
     "skin": "#D7A57E",
     "hair": "#3B2A20",
@@ -7110,17 +7106,13 @@
    "name": "Henrik Larsson",
    "code": "CEL–29",
    "status": "photo",
-   "portrait": null,
-   "frame": "archive",
+   "portrait": "card",
+   "frame": "club",
    "qid": "Q179334",
    "source": {
-    "file": "Henrik Larsson 2 (cropped).jpg",
-    "page": "https://commons.wikimedia.org/wiki/File:Henrik_Larsson_2_(cropped).jpg",
-    "author": "Ricardo Alvarez",
-    "license": "CC BY 2.0",
-    "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
-    "date": "2006-06-10",
-    "via": "commons"
+    "file": "Henrik Larsson Section: FC Barcelona No. FAN72 / FIFA 365: 2025-2026. Adrenalyn XL (Panini) + variations",
+    "via": "card",
+    "image": "cards/1d20b0ac45a54bd5d024beb7.jpg"
    },
    "traits": null,
    "file": "/album/stickers/celtic/29.webp"
@@ -7130,17 +7122,13 @@
    "name": "David Marshall",
    "code": "CEL–30",
    "status": "photo",
-   "portrait": null,
-   "frame": "archive",
+   "portrait": "card",
+   "frame": "club",
    "qid": "Q947204",
    "source": {
-    "file": "David Marshall 2016.jpg",
-    "page": "https://commons.wikimedia.org/wiki/File:David_Marshall_2016.jpg",
-    "author": "Jon Candy from Cardiff, Wales",
-    "license": "CC BY-SA 2.0",
-    "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
-    "date": "2016-08-14 14:37",
-    "via": "commons"
+    "file": "David Marshall Section: Scotland No. 481 / Road to FIFA World Cup Qatar 2022 (Panini)",
+    "via": "card",
+    "image": "cards/3b8c554f3429b060169304ff.jpg"
    },
    "traits": null,
    "file": "/album/stickers/celtic/30.webp"
@@ -7150,17 +7138,13 @@
    "name": "Kris Commons",
    "code": "CEL–31",
    "status": "photo",
-   "portrait": null,
-   "frame": "archive",
+   "portrait": "card",
+   "frame": "club",
    "qid": "Q745056",
    "source": {
-    "file": "Kris Commons.jpg",
-    "page": "https://commons.wikimedia.org/wiki/File:Kris_Commons.jpg",
-    "author": "Chris Barnes from Derbyshire, England",
-    "license": "CC BY 2.0",
-    "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
-    "date": "2010-09-28 19:13",
-    "via": "commons"
+    "file": "Kris Commons Section: Celtic FC No. 112 / UEFA Champions League 2013-2014. Adrenalyn XL (Panini)",
+    "via": "card",
+    "image": "cards/51b3ca156e7ff29651f9188f.jpg"
    },
    "traits": null,
    "file": "/album/stickers/celtic/31.webp"
@@ -7169,11 +7153,15 @@
    "person_id": "pl_a0fbc69c50",
    "name": "Scott Brown",
    "code": "CEL–32",
-   "status": "silhouette",
-   "portrait": null,
-   "frame": null,
+   "status": "photo",
+   "portrait": "card",
+   "frame": "club",
    "qid": "Q314160",
-   "source": null,
+   "source": {
+    "file": "Scott Brown Section: Celtic FC No. 113 / UEFA Champions League 2013-2014. Adrenalyn XL (Panini)",
+    "via": "card",
+    "image": "cards/bb171a385cbee89930a48781.jpg"
+   },
    "traits": {
     "skin": "#D7A57E",
     "hair": "#3B2A20",
@@ -7190,17 +7178,13 @@
    "name": "Fraser Gerard Forster",
    "code": "CEL–33",
    "status": "photo",
-   "portrait": null,
-   "frame": "archive",
+   "portrait": "card",
+   "frame": "club",
    "qid": "Q348813",
    "source": {
-    "file": "Fraser Forster vs West Ham 2017 cropped (cropped).jpg",
-    "page": "https://commons.wikimedia.org/wiki/File:Fraser_Forster_vs_West_Ham_2017_cropped_(cropped).jpg",
-    "author": "Solent Creatives from Southampton, United KIngdom",
-    "license": "CC BY 2.5",
-    "licenseUrl": "https://creativecommons.org/licenses/by/2.5",
-    "date": "2017-08-19 14:16:55",
-    "via": "commons"
+    "file": "Fraser Forster Section: Tottenham Hotspur No. 552 / English Premier League 2024-2025 (Panini) + variations",
+    "via": "card",
+    "image": "cards/28fff17cf37a87693c0cdb43.jpg"
    },
    "traits": null,
    "file": "/album/stickers/celtic/33.webp"
@@ -7210,17 +7194,13 @@
    "name": "Leigh Griffiths",
    "code": "CEL–34",
    "status": "photo",
-   "portrait": null,
+   "portrait": "card",
    "frame": "club",
    "qid": "Q723750",
    "source": {
-    "file": "20170701 SK Rapid Wien vs Celtic FC 1570.jpg",
-    "page": "https://commons.wikimedia.org/wiki/File:20170701_SK_Rapid_Wien_vs_Celtic_FC_1570.jpg",
-    "author": "Ailura",
-    "license": "CC BY-SA 3.0 at",
-    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/at/deed.en",
-    "date": "2017-07-01 18:22:55",
-    "via": "commons"
+    "file": "Leigh Griffiths No. 163 / Scotland Official Campaign 2021 (Panini)",
+    "via": "card",
+    "image": "cards/4726416f86c85b85696a693d.jpg"
    },
    "traits": null,
    "file": "/album/stickers/celtic/34.webp"
@@ -7230,17 +7210,13 @@
    "name": "James Forrest",
    "code": "CEL–35",
    "status": "photo",
-   "portrait": null,
+   "portrait": "card",
    "frame": "club",
    "qid": "Q630350",
    "source": {
-    "file": "20170701 SK Rapid Wien vs Celtic FC 1560.jpg",
-    "page": "https://commons.wikimedia.org/wiki/File:20170701_SK_Rapid_Wien_vs_Celtic_FC_1560.jpg",
-    "author": "Ailura",
-    "license": "CC BY-SA 3.0 at",
-    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/at/deed.en",
-    "date": "2017-07-01 18:20:33",
-    "via": "commons"
+    "file": "James Forrest No. 20 / Scotland Official Campaign 2021 (Panini)",
+    "via": "card",
+    "image": "cards/8c43b44ab55c0582d5d12580.jpg"
    },
    "traits": null,
    "file": "/album/stickers/celtic/35.webp"
@@ -7410,17 +7386,13 @@
    "name": "Carmelo Micciche",
    "code": "HPT–08",
    "status": "photo",
-   "portrait": null,
-   "frame": "archive",
+   "portrait": "card",
+   "frame": "club",
    "qid": "Q2939570",
    "source": {
-    "file": "Carmelo Micciche - Metz - 16-05-2013.jpg",
-    "page": "https://commons.wikimedia.org/wiki/File:Carmelo_Micciche_-_Metz_-_16-05-2013.jpg",
-    "author": "Fredamas",
-    "license": "CC BY-SA 4.0",
-    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
-    "date": "2013-05-16 19:16:26",
-    "via": "commons"
+    "file": "Carmelo Micciche Section: Nancy No. 172 / FOOT 1991-1992 (Panini)",
+    "via": "card",
+    "image": "cards/45fc304b928dbe63cf0bfd52.jpg"
    },
    "traits": null,
    "file": "/album/stickers/hapoel-petah-tikva/8.webp"
@@ -8584,17 +8556,13 @@
    "name": "Moshe Sinai",
    "code": "HTA–17",
    "status": "photo",
-   "portrait": null,
-   "frame": "archive",
+   "portrait": "card",
+   "frame": "club",
    "qid": "Q6916168",
    "source": {
-    "file": "שחקן הכדורגל לשעבר משה סיני.jpeg",
-    "page": "https://commons.wikimedia.org/wiki/File:%D7%A9%D7%97%D7%A7%D7%9F_%D7%94%D7%9B%D7%93%D7%95%D7%A8%D7%92%D7%9C_%D7%9C%D7%A9%D7%A2%D7%91%D7%A8_%D7%9E%D7%A9%D7%94_%D7%A1%D7%99%D7%A0%D7%99.jpeg",
-    "author": "Reuven Frizi",
-    "license": "CC BY-SA 3.0",
-    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
-    "date": "2026-05-25",
-    "via": "commons"
+    "file": "Moshe Sinai Section: Beveren No. 64 / Football Belgium 1987-1988 (Panini)",
+    "via": "card",
+    "image": "cards/cf4b0330adc4b3fe7b21681d.jpg"
    },
    "traits": null,
    "file": "/album/stickers/hapoel-tel-aviv/17.webp"
@@ -8724,17 +8692,13 @@
    "name": "Salim Toama",
    "code": "HTA–24",
    "status": "photo",
-   "portrait": null,
-   "frame": "archive",
+   "portrait": "card",
+   "frame": "club",
    "qid": "Q2093591",
    "source": {
-    "file": "SalimTuama.png",
-    "page": "https://commons.wikimedia.org/wiki/File:SalimTuama.png",
-    "author": "NYC2TLV at English Wikipedia",
-    "license": "CC BY-SA 3.0",
-    "licenseUrl": "http://creativecommons.org/licenses/by-sa/3.0/",
-    "date": "1 July 2006 (original upload date)",
-    "via": "commons"
+    "file": "Toama Salim Section: A.E.L. Larissa No. 142 / Superleague Ελλάδα 2009-2010 (Panini)",
+    "via": "card",
+    "image": "cards/20a66b9238464d1dfac636f2.jpg"
    },
    "traits": null,
    "file": "/album/stickers/hapoel-tel-aviv/24.webp"
@@ -8763,11 +8727,15 @@
    "person_id": "pl_1bf0230404",
    "name": "Eran Zahavi",
    "code": "HTA–26",
-   "status": "silhouette",
-   "portrait": null,
-   "frame": null,
+   "status": "photo",
+   "portrait": "card",
+   "frame": "club",
    "qid": "Q736391",
-   "source": null,
+   "source": {
+    "file": "Eran Zahavi Section: Hapoel Tel-Aviv FC No. 136 / UEFA Champions League 2010-2011 (Panini)",
+    "via": "card",
+    "image": "cards/bed60350e421069b2bde8afd.jpg"
+   },
    "traits": {
     "skin": "#D7A57E",
     "hair": "#3B2A20",
@@ -8783,11 +8751,15 @@
    "person_id": "pl_04a3c23a2f",
    "name": "Vincent Enyeama",
    "code": "HTA–27",
-   "status": "silhouette",
-   "portrait": "painted",
-   "frame": null,
+   "status": "photo",
+   "portrait": "card",
+   "frame": "club",
    "qid": "Q147172",
-   "source": null,
+   "source": {
+    "file": "Vincent Enyeama Section: LOSC Lille No. 363 / FOOT 2016-2017. Adrenalyn XL (Panini)",
+    "via": "card",
+    "image": "cards/d104fe70cdd0861998ac4850.jpg"
+   },
    "traits": {
     "skin": "#7A4C32",
     "hair": "#1C1714",
@@ -9078,17 +9050,13 @@
    "name": "Boris Kleyman",
    "code": "HTA–28",
    "status": "photo",
-   "portrait": null,
+   "portrait": "card",
    "frame": "club",
    "qid": "Q4945287",
    "source": {
-    "file": "Borisklaiman.JPG",
-    "page": "https://commons.wikimedia.org/wiki/File:Borisklaiman.JPG",
-    "author": "Sebastian27",
-    "license": "CC BY-SA 3.0",
-    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
-    "date": "2013-05-13 20:33:18",
-    "via": "commons"
+    "file": "Boris Kleyman Section: EN Paralimniou No. 277 / Football Cyprus 2018-2019 (Panini)",
+    "via": "card",
+    "image": "cards/5b4c936678bf844598f6b8a4.jpg"
    },
    "traits": null,
    "file": "/album/stickers/hapoel-tel-aviv/28.webp"
@@ -9118,17 +9086,13 @@
    "name": "Ben Sahar",
    "code": "HTA–30",
    "status": "photo",
-   "portrait": null,
+   "portrait": "card",
    "frame": "club",
    "qid": "Q342364",
    "source": {
-    "file": "Players of Hapoel Tel Aviv.JPG",
-    "page": "https://commons.wikimedia.org/wiki/File:Players_of_Hapoel_Tel_Aviv.JPG",
-    "author": "Werner100359",
-    "license": "CC BY-SA 3.0",
-    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
-    "date": "2010-08-18",
-    "via": "commons"
+    "file": "Ben Sahar Section: Hapoel Tel-Aviv FC No. 138 / UEFA Champions League 2010-2011 (Panini)",
+    "via": "card",
+    "image": "cards/21febcd0487599de4a71c068.jpg"
    },
    "traits": null,
    "file": "/album/stickers/hapoel-tel-aviv/30.webp"
@@ -11413,11 +11377,15 @@
    "person_id": "pl_2b222112b2",
    "name": "Minas Hantzidis",
    "code": "OLY–18",
-   "status": "silhouette",
-   "portrait": "painted",
-   "frame": null,
+   "status": "photo",
+   "portrait": "card",
+   "frame": "club",
    "qid": "Q667730",
-   "source": null,
+   "source": {
+    "file": "Minas Hantzidis Section: Bayer 04 Leverkusen No. 204 / German Football Bundesliga 1986-1987 (Panini)",
+    "via": "card",
+    "image": "cards/66cde981c6a8f5a724ce1c3c.jpg"
+   },
    "traits": {
     "skin": "#D7A57E",
     "hair": "#3B2A20",
@@ -11473,11 +11441,15 @@
    "person_id": "pl_d9e4bd1595",
    "name": "Dimitrios Eleftheropoulos",
    "code": "OLY–21",
-   "status": "silhouette",
-   "portrait": "painted",
-   "frame": null,
+   "status": "photo",
+   "portrait": "card",
+   "frame": "club",
    "qid": "Q537688",
-   "source": null,
+   "source": {
+    "file": "Eleftheropoulos Dimitrios Section: P.A.S. Giannina No. 292 / Superleague Ελλάδα 2009-2010 (Panini)",
+    "via": "card",
+    "image": "cards/e785ce4030c7439b15c729ee.jpg"
+   },
    "traits": {
     "skin": "#D7A57E",
     "hair": "#3B2A20",
@@ -11493,11 +11465,15 @@
    "person_id": "pl_891baea909",
    "name": "Andreas Niniadis",
    "code": "OLY–22",
-   "status": "silhouette",
-   "portrait": "painted",
-   "frame": null,
+   "status": "photo",
+   "portrait": "card",
+   "frame": "club",
    "qid": "Q4755572",
-   "source": null,
+   "source": {
+    "file": "Andreas Niniadis Section: Olympiacos No. 221 / UEFA Champions League 2001-2002 (Panini)",
+    "via": "card",
+    "image": "cards/c6622090a026fa78783158a5.jpg"
+   },
    "traits": {
     "skin": "#D7A57E",
     "hair": "#3B2A20",
@@ -11533,11 +11509,15 @@
    "person_id": "pl_56af0bc260",
    "name": "Stelios Giannakopoulos",
    "code": "OLY–24",
-   "status": "silhouette",
-   "portrait": "painted",
-   "frame": null,
+   "status": "photo",
+   "portrait": "card",
+   "frame": "club",
    "qid": "Q49821",
-   "source": null,
+   "source": {
+    "file": "Stelios Giannakopoulos Section: Olympiacos No. 222 / UEFA Champions League 2001-2002 (Panini)",
+    "via": "card",
+    "image": "cards/e7957ea6ca2d77a1b43f03b4.jpg"
+   },
    "traits": {
     "skin": "#D7A57E",
     "hair": "#3B2A20",
@@ -11594,17 +11574,13 @@
    "name": "Kostas Mitroglou",
    "code": "OLY–27",
    "status": "photo",
-   "portrait": null,
-   "frame": "archive",
+   "portrait": "card",
+   "frame": "club",
    "qid": "Q312534",
    "source": {
-    "file": "20130814 AT-GR Kostas Mitroglou 2795 (cropped).jpg",
-    "page": "https://commons.wikimedia.org/wiki/File:20130814_AT-GR_Kostas_Mitroglou_2795_(cropped).jpg",
-    "author": "Ailura",
-    "license": "CC BY-SA 3.0 at",
-    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/at/deed.en",
-    "date": "2013-08-14 20:54:24",
-    "via": "commons"
+    "file": "Kostas Mitroglou Section: Olympiacos FC No. 196 / UEFA Champions League 2014-2015. Adrenalyn XL (Panini)",
+    "via": "card",
+    "image": "cards/c201f8422873cded32657acf.jpg"
    },
    "traits": null,
    "file": "/album/stickers/olympiacos/27.webp"
@@ -11613,11 +11589,15 @@
    "person_id": "pl_3cc7728e69",
    "name": "Predrag Djordjevic",
    "code": "OLY–28",
-   "status": "silhouette",
-   "portrait": null,
-   "frame": null,
+   "status": "photo",
+   "portrait": "card",
+   "frame": "club",
    "qid": "Q448099",
-   "source": null,
+   "source": {
+    "file": "Predrag Djordjevic Section: Olympiacos CFP No. 272 / UEFA Champions League 2007-2008 (Panini)",
+    "via": "card",
+    "image": "cards/660e79aa879f07d7616b62cc.jpg"
+   },
    "traits": {
     "skin": "#D7A57E",
     "hair": "#3B2A20",
@@ -11634,17 +11614,13 @@
    "name": "Vasilis Torosidis",
    "code": "OLY–29",
    "status": "photo",
-   "portrait": null,
-   "frame": "archive",
+   "portrait": "card",
+   "frame": "club",
    "qid": "Q201776",
    "source": {
-    "file": "20130814 AT-GR Vassilis Torosidis 2361 (cropped).jpg",
-    "page": "https://commons.wikimedia.org/wiki/File:20130814_AT-GR_Vassilis_Torosidis_2361_(cropped).jpg",
-    "author": "Ailura",
-    "license": "CC BY-SA 3.0 at",
-    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/at/deed.en",
-    "date": "2013-08-14 19:27:43",
-    "via": "commons"
+    "file": "Vasilis Torosidis Section: Bologna No. 70 / Calciatori 2017-2018 (Panini)",
+    "via": "card",
+    "image": "cards/47c996299b9f545a6ec026dc.jpg"
    },
    "traits": null,
    "file": "/album/stickers/olympiacos/29.webp"
@@ -11654,17 +11630,13 @@
    "name": "Kostas Fortounis",
    "code": "OLY–30",
    "status": "photo",
-   "portrait": null,
-   "frame": "archive",
+   "portrait": "card",
+   "frame": "club",
    "qid": "Q313822",
    "source": {
-    "file": "Konstantinos Fortounis1112.jpg",
-    "page": "https://commons.wikimedia.org/wiki/File:Konstantinos_Fortounis1112.jpg",
-    "author": "Thomas Hilmes / http://der-betze-brennt.de",
-    "license": "CC BY-SA 3.0",
-    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
-    "date": "2011-06-30",
-    "via": "commons"
+    "file": "Kostas Fortounis Section: Olympiacos FC No. LE-KF / FIFA 365: 2023-2024. Adrenalyn XL (Panini)",
+    "via": "card",
+    "image": "cards/87bd7a3e3bcf61b0ff8d76f7.jpg"
    },
    "traits": null,
    "file": "/album/stickers/olympiacos/30.webp"
@@ -11674,17 +11646,13 @@
    "name": "Mathieu Valbuena",
    "code": "OLY–31",
    "status": "photo",
-   "portrait": null,
+   "portrait": "card",
    "frame": "club",
    "qid": "Q1919",
    "source": {
-    "file": "Mathieu Valbuena 2019.jpg",
-    "page": "https://commons.wikimedia.org/wiki/File:Mathieu_Valbuena_2019.jpg",
-    "author": "Дмитрий Пукалик",
-    "license": "CC BY-SA 3.0",
-    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
-    "date": "2019-08-27",
-    "via": "commons"
+    "file": "Mathieu Valbuena Section: Olympiacos FC No. 273 / FIFA 365: 2022-2023. Adrenalyn XL (Panini)",
+    "via": "card",
+    "image": "cards/a28511c625df2e7ac8b7302d.jpg"
    },
    "traits": null,
    "file": "/album/stickers/olympiacos/31.webp"
@@ -11693,11 +11661,15 @@
    "person_id": "pl_424c9dd21e",
    "name": "Mady Camara",
    "code": "OLY–32",
-   "status": "silhouette",
-   "portrait": null,
-   "frame": null,
+   "status": "photo",
+   "portrait": "card",
+   "frame": "club",
    "qid": "Q30122316",
-   "source": null,
+   "source": {
+    "file": "Mady Camara Section: Olympiacos FC No. 130 / FIFA 365: 2021-2022. Adrenalyn XL (Panini)",
+    "via": "card",
+    "image": "cards/d00c3f15b84dcabda41e3f9c.jpg"
+   },
    "traits": {
     "skin": "#D7A57E",
     "hair": "#3B2A20",
@@ -11714,17 +11686,13 @@
    "name": "Youssef El Arabi",
    "code": "OLY–33",
    "status": "photo",
-   "portrait": null,
-   "frame": "archive",
+   "portrait": "card",
+   "frame": "club",
    "qid": "Q456482",
    "source": {
-    "file": "Youssef El-Arabi 2019.jpg",
-    "page": "https://commons.wikimedia.org/wiki/File:Youssef_El-Arabi_2019.jpg",
-    "author": "Fars News Agency",
-    "license": "CC BY 4.0",
-    "licenseUrl": "https://creativecommons.org/licenses/by/4.0",
-    "date": "2019-03-05",
-    "via": "commons"
+    "file": "Youssef El Arabi Section: Olympiacos FC No. LE-YEA / FIFA 365: 2023-2024. Adrenalyn XL (Panini)",
+    "via": "card",
+    "image": "cards/4a765103c82334b3aeb0f232.jpg"
    },
    "traits": null,
    "file": "/album/stickers/olympiacos/33.webp"
@@ -11733,11 +11701,15 @@
    "person_id": "pl_94388bf32f",
    "name": "Daniel Podence",
    "code": "OLY–34",
-   "status": "silhouette",
-   "portrait": null,
-   "frame": null,
+   "status": "photo",
+   "portrait": "card",
+   "frame": "club",
    "qid": "Q5218462",
-   "source": null,
+   "source": {
+    "file": "Daniel Podence Section: Wolverhampton Wanderers No. 366 / English Premier League 2023-2024. Adrenalyn XL (Panini)",
+    "via": "card",
+    "image": "cards/92a386a811b664f254bdb9d3.jpg"
+   },
    "traits": {
     "skin": "#D7A57E",
     "hair": "#3B2A20",
@@ -11754,17 +11726,13 @@
    "name": "Georgios Masouras",
    "code": "OLY–35",
    "status": "photo",
-   "portrait": null,
-   "frame": "archive",
+   "portrait": "card",
+   "frame": "club",
    "qid": "Q25350200",
    "source": {
-    "file": "Georgios Masouras (Testspiel, 2022-07-02) 47 (cropped).jpg",
-    "page": "https://commons.wikimedia.org/wiki/File:Georgios_Masouras_(Testspiel,_2022-07-02)_47_(cropped).jpg",
-    "author": "Werner100359",
-    "license": "CC BY-SA 4.0",
-    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
-    "date": "2022-07-02 15:13:27",
-    "via": "commons"
+    "file": "Georgios Masouras Section: Olympiacos FC No. 218 / FIFA 365 2025 (Panini)",
+    "via": "card",
+    "image": "cards/c8f3900d05d57715a7e5debd.jpg"
    },
    "traits": null,
    "file": "/album/stickers/olympiacos/35.webp"
@@ -12114,17 +12082,13 @@
    "name": "Antonis Nikopolidis",
    "code": "PAO–17",
    "status": "photo",
-   "portrait": null,
-   "frame": "archive",
+   "portrait": "card",
+   "frame": "club",
    "qid": "Q221138",
    "source": {
-    "file": "Antonios Nikopolidis 2018.jpg",
-    "page": "https://commons.wikimedia.org/wiki/File:Antonios_Nikopolidis_2018.jpg",
-    "author": "Екатерина Лаут",
-    "license": "CC BY-SA 3.0",
-    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
-    "date": "2018-07-12",
-    "via": "commons"
+    "file": "Nikopolidis Antonios Section: Olympiacos F.C. No. 192 / Superleague Ελλάδα 2009-2010 (Panini)",
+    "via": "card",
+    "image": "cards/bf9237cf4b0ec4dc8f5c7523.jpg"
    },
    "traits": null,
    "file": "/album/stickers/panathinaikos/17.webp"
@@ -12194,17 +12158,13 @@
    "name": "Emmanuel Olisadebe",
    "code": "PAO–21",
    "status": "photo",
-   "portrait": null,
-   "frame": "archive",
+   "portrait": "card",
+   "frame": "club",
    "qid": "Q354346",
    "source": {
-    "file": "Emanuel Olisadebe green.jpg",
-    "page": "https://commons.wikimedia.org/wiki/File:Emanuel_Olisadebe_green.jpg",
-    "author": "User:Don_Camillo",
-    "license": "CC BY-SA 3.0",
-    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
-    "date": "2009-05-10",
-    "via": "commons"
+    "file": "Emmanuel Olisadebe Section: Polska No. 273 / FIFA World Cup Korea/Japan 2002 (Panini)",
+    "via": "card",
+    "image": "cards/0118aa205a0dc00a170deedf.jpg"
    },
    "traits": null,
    "file": "/album/stickers/panathinaikos/21.webp"
@@ -12214,17 +12174,13 @@
    "name": "Giorgos Karagounis",
    "code": "PAO–22",
    "status": "photo",
-   "portrait": null,
-   "frame": "archive",
+   "portrait": "card",
+   "frame": "club",
    "qid": "Q188983",
    "source": {
-    "file": "Georgios Karagounis 2010.jpg",
-    "page": "https://commons.wikimedia.org/wiki/File:Georgios_Karagounis_2010.jpg",
-    "author": "Steindy (talk) 00:01, 18 November 2010 (UTC)",
-    "license": "CC BY-SA 3.0",
-    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
-    "date": "2010-11-17",
-    "via": "commons"
+    "file": "Giorgos Karagounis Section: Greece No. 101 / FIFA World Cup Brazil 2014. Prizm (Panini) + variations",
+    "via": "card",
+    "image": "cards/c477fdbcafe22e11b3328d5d.jpg"
    },
    "traits": null,
    "file": "/album/stickers/panathinaikos/22.webp"
@@ -12233,11 +12189,15 @@
    "person_id": "pl_607fbd170e",
    "name": "Mario Galinović",
    "code": "PAO–23",
-   "status": "silhouette",
-   "portrait": null,
-   "frame": null,
+   "status": "photo",
+   "portrait": "card",
+   "frame": "club",
    "qid": "Q464390",
-   "source": null,
+   "source": {
+    "file": "Mario Galinovic Section: Panathinaikos FC No. 384 / UEFA Champions League 2008-2009 (Panini)",
+    "via": "card",
+    "image": "cards/3b792eb1415b3c5c05b9dc42.jpg"
+   },
    "traits": {
     "skin": "#9C6745",
     "hair": "#3B2A20",
@@ -12528,17 +12488,13 @@
    "name": "Dimitris Salpingidis",
    "code": "PAO–24",
    "status": "photo",
-   "portrait": null,
-   "frame": "archive",
+   "portrait": "card",
+   "frame": "club",
    "qid": "Q201879",
    "source": {
-    "file": "Dimitris Salpingidis.jpg",
-    "page": "https://commons.wikimedia.org/wiki/File:Dimitris_Salpingidis.jpg",
-    "author": "Steindy (talk) 00:01, 18 November 2010 (UTC)",
-    "license": "CC BY-SA 3.0",
-    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
-    "date": "2010-11-17",
-    "via": "commons"
+    "file": "Salpingidis Dimitris Section: Panathinaikos F.C. No. 229 / Superleague Ελλάδα 2009-2010 (Panini)",
+    "via": "card",
+    "image": "cards/e691204a4fac1bdce0ecfbdc.jpg"
    },
    "traits": null,
    "file": "/album/stickers/panathinaikos/24.webp"
@@ -12548,17 +12504,13 @@
    "name": "Marcus Berg",
    "code": "PAO–25",
    "status": "photo",
-   "portrait": null,
-   "frame": "archive",
+   "portrait": "card",
+   "frame": "club",
    "qid": "Q311910",
    "source": {
-    "file": "Marcus Berg -HSV.jpg",
-    "page": "https://commons.wikimedia.org/wiki/File:Marcus_Berg_-HSV.jpg",
-    "author": "fremdeles",
-    "license": "CC BY-SA 3.0",
-    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
-    "date": "2012-07-28",
-    "via": "commons"
+    "file": "Marcus Berg Section: Svezia No. 54 / Unici 2021 (Panini)",
+    "via": "card",
+    "image": "cards/3f46bd6cc03ff08c2c1e5631.jpg"
    },
    "traits": null,
    "file": "/album/stickers/panathinaikos/25.webp"
@@ -12568,17 +12520,13 @@
    "name": "Victor Klonaridis",
    "code": "PAO–26",
    "status": "photo",
-   "portrait": null,
-   "frame": "archive",
+   "portrait": "card",
+   "frame": "club",
    "qid": "Q2778464",
    "source": {
-    "file": "Entraînement RC Lens - 6 janvier 2017 23.jpg",
-    "page": "https://commons.wikimedia.org/wiki/File:Entra%C3%AEnement_RC_Lens_-_6_janvier_2017_23.jpg",
-    "author": "Supporterhéninois",
-    "license": "CC0",
-    "licenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
-    "date": "2017-01-06 12:16:36",
-    "via": "commons"
+    "file": "Victor Klonaridis Section: Panathinaikos No. 245 / Superleague Ελλάδα 2015-2016 (Panini)",
+    "via": "card",
+    "image": "cards/cbb16141c36b74d149a89e61.jpg"
    },
    "traits": null,
    "file": "/album/stickers/panathinaikos/26.webp"
@@ -12627,11 +12575,15 @@
    "person_id": "pl_e1908f3c0f",
    "name": "Sokratis Dioudis",
    "code": "PAO–29",
-   "status": "silhouette",
-   "portrait": "painted",
-   "frame": null,
+   "status": "photo",
+   "portrait": "card",
+   "frame": "club",
    "qid": "Q2567448",
-   "source": null,
+   "source": {
+    "file": "Sokratis Dioudis Section: Aris No. 28 / Superleague Ελλάδα 2013-2014 (Panini)",
+    "via": "card",
+    "image": "cards/b6a4b57b77bba43e550fdcbb.jpg"
+   },
    "traits": {
     "skin": "#D7A57E",
     "hair": "#3B2A20",
@@ -12648,17 +12600,13 @@
    "name": "Federico Macheda",
    "code": "PAO–30",
    "status": "photo",
-   "portrait": null,
-   "frame": "archive",
+   "portrait": "card",
+   "frame": "club",
    "qid": "Q208673",
    "source": {
-    "file": "Federico Macheda.jpg",
-    "page": "https://commons.wikimedia.org/wiki/File:Federico_Macheda.jpg",
-    "author": "User:CrackersTeam",
-    "license": "Public domain",
-    "licenseUrl": "",
-    "date": "2009-04-05",
-    "via": "commons"
+    "file": "Federico Macheda Section: Henriquez/Macheda No. 149 / Manchester United 2012-2013 (Panini)",
+    "via": "card",
+    "image": "cards/fc86079a2585f9243cd88d20.jpg"
    },
    "traits": null,
    "file": "/album/stickers/panathinaikos/30.webp"
@@ -12687,11 +12635,15 @@
    "person_id": "pl_cf5d25d7fa",
    "name": "Fotis Ioannidis",
    "code": "PAO–32",
-   "status": "silhouette",
-   "portrait": "painted",
-   "frame": null,
+   "status": "photo",
+   "portrait": "card",
+   "frame": "club",
    "qid": "Q47492840",
-   "source": null,
+   "source": {
+    "file": "Fotis Ioannidis Section: Panathinaikos No. PAN6 / FIFA 365: 2023-2024. Adrenalyn XL (Panini)",
+    "via": "card",
+    "image": "cards/cd39a2f36ded2268a4c90be3.jpg"
+   },
    "traits": {
     "skin": "#D7A57E",
     "hair": "#3B2A20",
@@ -12707,11 +12659,15 @@
    "person_id": "pl_12e2690bce",
    "name": "Sebastián Palacios",
    "code": "PAO–33",
-   "status": "silhouette",
-   "portrait": "painted",
-   "frame": null,
+   "status": "photo",
+   "portrait": "card",
+   "frame": "club",
    "qid": "Q6122965",
-   "source": null,
+   "source": {
+    "file": "Sebastián Palacios Section: Panathinaikos No. LE-SP / FIFA 365: 2023-2024. Adrenalyn XL (Panini)",
+    "via": "card",
+    "image": "cards/a64e030f5d4857410aa9eca5.jpg"
+   },
    "traits": {
     "skin": "#D7A57E",
     "hair": "#3B2A20",
@@ -12728,17 +12684,13 @@
    "name": "Andraž Šporar",
    "code": "PAO–34",
    "status": "photo",
-   "portrait": null,
-   "frame": "archive",
+   "portrait": "card",
+   "frame": "club",
    "qid": "Q4754719",
    "source": {
-    "file": "Andraz Sporar.jpg",
-    "page": "https://commons.wikimedia.org/wiki/File:Andraz_Sporar.jpg",
-    "author": "Антон Зайцев",
-    "license": "CC BY-SA 3.0",
-    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
-    "date": "2021-03-27",
-    "via": "commons"
+    "file": "Andraz Sporar Section: Panathinaikos FC No. LE-AS / FIFA 365: 2022-2023. Adrenalyn XL (Panini) + variations",
+    "via": "card",
+    "image": "cards/f3ca332565c5984830aae7b9.jpg"
    },
    "traits": null,
    "file": "/album/stickers/panathinaikos/34.webp"
@@ -12747,11 +12699,15 @@
    "person_id": "pl_5f2bc5b6f8",
    "name": "Adam Gnezda Čerin",
    "code": "PAO–35",
-   "status": "silhouette",
-   "portrait": "painted",
-   "frame": null,
+   "status": "photo",
+   "portrait": "card",
+   "frame": "club",
    "qid": "Q47088738",
-   "source": null,
+   "source": {
+    "file": "Adam Gnezda Cerin Section: Panathinaikos No. 61 / Prizm FIFA 2025-2026 (Panini) + variations",
+    "via": "card",
+    "image": "cards/79c8e99a7b56ccad7a3a0925.jpg"
+   },
    "traits": {
     "skin": "#D7A57E",
     "hair": "#3B2A20",
@@ -12967,11 +12923,15 @@
    "person_id": "pl_a43e7fa427",
    "name": "Said Ghandi",
    "code": "RCA–10",
-   "status": "silhouette",
-   "portrait": "painted",
-   "frame": null,
+   "status": "photo",
+   "portrait": "card",
+   "frame": "club",
    "qid": "Q2056857",
-   "source": null,
+   "source": {
+    "file": "Ghandi Said Section: Maroc No. 267 / FIFA World Cup Mexico 1970 (Panini)",
+    "via": "card",
+    "image": "cards/433d3e2ee49892da8e231283.jpg"
+   },
    "traits": {
     "skin": "#D7A57E",
     "hair": "#9A4A2A",
@@ -13501,11 +13461,15 @@
    "person_id": "pl_39610f6b33",
    "name": "Mustapha Khalif",
    "code": "RCA–23",
-   "status": "silhouette",
-   "portrait": "painted",
-   "frame": null,
+   "status": "photo",
+   "portrait": "card",
+   "frame": "club",
    "qid": "Q10334023",
-   "source": null,
+   "source": {
+    "file": "Mustapha Khalif Section: Maroc No. 58 / FIFA World Cup France 1998 (Panini)",
+    "via": "card",
+    "image": "cards/3c8d195eadac9238ede18c94.jpg"
+   },
    "traits": {
     "skin": "#D7A57E",
     "hair": "#3B2A20",
@@ -13861,11 +13825,15 @@
    "person_id": "pl_37f5139a16",
    "name": "Jürgen Rynio",
    "code": "STP–05",
-   "status": "silhouette",
-   "portrait": "painted",
-   "frame": null,
+   "status": "photo",
+   "portrait": "card",
+   "frame": "club",
    "qid": "Q1717621",
-   "source": null,
+   "source": {
+    "file": "Jurgen Rynio Section: Hannover 96 No. 122 / German Football Bundesliga 1985-1986 (Panini)",
+    "via": "card",
+    "image": "cards/ab20e5a96e89ebb38275e80a.jpg"
+   },
    "traits": {
     "skin": "#D7A57E",
     "hair": "#3B2A20",
@@ -13881,11 +13849,15 @@
    "person_id": "pl_3fd0f78d49",
    "name": "Rüdiger Wenzel",
    "code": "STP–06",
-   "status": "silhouette",
-   "portrait": "painted",
-   "frame": null,
+   "status": "photo",
+   "portrait": "card",
+   "frame": "club",
    "qid": "Q2203789",
-   "source": null,
+   "source": {
+    "file": "Rudiger Wenzel Section: FC St Pauli No. 287 / German Football Bundesliga 1989-1990 (Panini)",
+    "via": "card",
+    "image": "cards/dae3500440505265f53da85b.jpg"
+   },
    "traits": {
     "skin": "#D7A57E",
     "hair": "#3B2A20",
@@ -13901,11 +13873,15 @@
    "person_id": "pl_52afa7b955",
    "name": "Volker Ippig",
    "code": "STP–07",
-   "status": "silhouette",
-   "portrait": "painted",
-   "frame": null,
+   "status": "photo",
+   "portrait": "card",
+   "frame": "club",
    "qid": "Q2531059",
-   "source": null,
+   "source": {
+    "file": "Volker Ippig Section: FC St. Pauli No. 241 / German Football Bundesliga 1990-1991 (Panini)",
+    "via": "card",
+    "image": "cards/dd6ff26f04a5e867d8bcbca5.jpg"
+   },
    "traits": {
     "skin": "#D7A57E",
     "hair": "#3B2A20",
@@ -13922,17 +13898,13 @@
    "name": "Jürgen Gronau",
    "code": "STP–08",
    "status": "photo",
-   "portrait": null,
+   "portrait": "card",
    "frame": "club",
    "qid": "Q1490449",
    "source": {
-    "file": "Jürgen Gronau 1992-93.jpg",
-    "page": "https://commons.wikimedia.org/wiki/File:J%C3%BCrgen_Gronau_1992-93.jpg",
-    "author": "Northside",
-    "license": "CC BY-SA 3.0",
-    "licenseUrl": "http://creativecommons.org/licenses/by-sa/3.0/",
-    "date": "Saison 1992/93",
-    "via": "commons"
+    "file": "Jürgen Gronau Section: FC St. Pauli No. 381 / German Football Bundesliga 1996-1997 (Panini)",
+    "via": "card",
+    "image": "cards/7ccf65744bb2f368e16c4430.jpg"
    },
    "traits": null,
    "file": "/album/stickers/st-pauli/8.webp"
@@ -13942,17 +13914,13 @@
    "name": "Dirk Zander",
    "code": "STP–09",
    "status": "photo",
-   "portrait": null,
-   "frame": "archive",
+   "portrait": "card",
+   "frame": "club",
    "qid": "Q254709",
    "source": {
-    "file": "Zander, Dirk StP 92-93.JPG",
-    "page": "https://commons.wikimedia.org/wiki/File:Zander,_Dirk_StP_92-93.JPG",
-    "author": "Northside",
-    "license": "CC BY-SA 3.0",
-    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
-    "date": "Saison 92/93",
-    "via": "commons"
+    "file": "Dirk Zander Section: FC St. Pauli No. 249 / German Football Bundesliga 1990-1991 (Panini)",
+    "via": "card",
+    "image": "cards/b491e29f1f58b073aef49fd7.jpg"
    },
    "traits": null,
    "file": "/album/stickers/st-pauli/9.webp"
@@ -13962,17 +13930,13 @@
    "name": "Klaus Thomforde",
    "code": "STP–10",
    "status": "photo",
-   "portrait": null,
-   "frame": "archive",
+   "portrait": "card",
+   "frame": "club",
    "qid": "Q534196",
    "source": {
-    "file": "Thomforde, Klaus 10-11 WP (cropped).JPG",
-    "page": "https://commons.wikimedia.org/wiki/File:Thomforde,_Klaus_10-11_WP_(cropped).JPG",
-    "author": "Northside",
-    "license": "CC BY-SA 3.0",
-    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
-    "date": "2010-12-30",
-    "via": "commons"
+    "file": "Klaus Thomforde Section: FC St. Pauli No. 373 / German Football Bundesliga 1996-1997 (Panini)",
+    "via": "card",
+    "image": "cards/f21469e75e9e8f041061f35f.jpg"
    },
    "traits": null,
    "file": "/album/stickers/st-pauli/10.webp"
@@ -13982,17 +13946,13 @@
    "name": "Leonardo Manzi",
    "code": "STP–11",
    "status": "photo",
-   "portrait": null,
-   "frame": "archive",
+   "portrait": "card",
+   "frame": "club",
    "qid": "Q201301",
    "source": {
-    "file": "Leonardo Manzi 1992-93.jpg",
-    "page": "https://commons.wikimedia.org/wiki/File:Leonardo_Manzi_1992-93.jpg",
-    "author": "Northside",
-    "license": "CC BY-SA 3.0",
-    "licenseUrl": "http://creativecommons.org/licenses/by-sa/3.0/",
-    "date": "Saison 1992/1993",
-    "via": "commons"
+    "file": "Leonardo Manzi Section: Juventude No. 321 / Campeonato Brasileiro 2002 (Panini)",
+    "via": "card",
+    "image": "cards/8a825458bfbe204f3cba308c.jpg"
    },
    "traits": null,
    "file": "/album/stickers/st-pauli/11.webp"
@@ -14001,11 +13961,15 @@
    "person_id": "pl_3ac666fafc",
    "name": "André Trulsen",
    "code": "STP–12",
-   "status": "silhouette",
-   "portrait": "painted",
-   "frame": null,
+   "status": "photo",
+   "portrait": "card",
+   "frame": "club",
    "qid": "Q523102",
-   "source": null,
+   "source": {
+    "file": "Andre Trulsen Section: FC St. Pauli No. 179 / German Football Bundesliga 2001-2002 (Panini)",
+    "via": "card",
+    "image": "cards/5d956407262eb71b73eaa5cf.jpg"
+   },
    "traits": {
     "skin": "#D7A57E",
     "hair": "#3B2A20",
@@ -14022,17 +13986,13 @@
    "name": "Carsten Pröpper",
    "code": "STP–13",
    "status": "photo",
-   "portrait": null,
-   "frame": "archive",
+   "portrait": "card",
+   "frame": "club",
    "qid": "Q1045640",
    "source": {
-    "file": "Carsten Pröpper 1992-93.jpg",
-    "page": "https://commons.wikimedia.org/wiki/File:Carsten_Pr%C3%B6pper_1992-93.jpg",
-    "author": "Northside",
-    "license": "CC BY-SA 3.0",
-    "licenseUrl": "http://creativecommons.org/licenses/by-sa/3.0/",
-    "date": "4 November 2008 (original upload date)",
-    "via": "commons"
+    "file": "Carsten Pröpper Section: FC St. Pauli No. 382 / German Football Bundesliga 1996-1997 (Panini)",
+    "via": "card",
+    "image": "cards/3dd386626bcb85b26725235d.jpg"
    },
    "traits": null,
    "file": "/album/stickers/st-pauli/13.webp"
@@ -14042,17 +14002,13 @@
    "name": "Matthias Scherz",
    "code": "STP–14",
    "status": "photo",
-   "portrait": null,
-   "frame": "archive",
+   "portrait": "card",
+   "frame": "club",
    "qid": "Q879835",
    "source": {
-    "file": "ScherzMa.jpg",
-    "page": "https://commons.wikimedia.org/wiki/File:ScherzMa.jpg",
-    "author": "F. Höhn",
-    "license": "CC BY-SA 3.0",
-    "licenseUrl": "http://creativecommons.org/licenses/by-sa/3.0/",
-    "date": "2006-10-20",
-    "via": "commons"
+    "file": "Matthias Scherz Section: FC St Pauli No. 193 / Fußball Bundesliga zur Endphase der Saison 1996/1997 (Panini)",
+    "via": "card",
+    "image": "cards/220705279a075a8ffdf490d6.jpg"
    },
    "traits": null,
    "file": "/album/stickers/st-pauli/14.webp"
@@ -14061,11 +14017,15 @@
    "person_id": "pl_b3899f78ce",
    "name": "Marcus Marin",
    "code": "STP–15",
-   "status": "silhouette",
-   "portrait": "painted",
-   "frame": null,
+   "status": "photo",
+   "portrait": "card",
+   "frame": "club",
    "qid": "Q1894247",
-   "source": null,
+   "source": {
+    "file": "Marcus Marin Section: MSV Duisburg No. 466 / German Football Bundesliga 1996-1997 (Panini)",
+    "via": "card",
+    "image": "cards/56dcbb1aa03c0b05b4646d35.jpg"
+   },
    "traits": {
     "skin": "#D7A57E",
     "hair": "#3B2A20",
@@ -14082,17 +14042,13 @@
    "name": "Holger Stanislawski",
    "code": "STP–16",
    "status": "photo",
-   "portrait": null,
-   "frame": "archive",
+   "portrait": "card",
+   "frame": "club",
    "qid": "Q65576",
    "source": {
-    "file": "2018-04-23 ZDF Holger Stanislawski-6789.jpg",
-    "page": "https://commons.wikimedia.org/wiki/File:2018-04-23_ZDF_Holger_Stanislawski-6789.jpg",
-    "author": "Olaf Kosinsky",
-    "license": "CC BY-SA 3.0 de",
-    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/de/deed.en",
-    "date": "2018-04-23 10:28:47",
-    "via": "commons"
+    "file": "Holger Stanislawski Section: St. Pauli No. 24 / St. Pauli 2010-2011 (Panini)",
+    "via": "card",
+    "image": "cards/04a301233acde90eba6a811a.jpg"
    },
    "traits": null,
    "file": "/album/stickers/st-pauli/16.webp"
@@ -14102,17 +14058,13 @@
    "name": "Jens Scharping",
    "code": "STP–17",
    "status": "photo",
-   "portrait": null,
+   "portrait": "card",
    "frame": "club",
    "qid": "Q1448347",
    "source": {
-    "file": "Scharping, Jens StP 95-96 WP.JPG",
-    "page": "https://commons.wikimedia.org/wiki/File:Scharping,_Jens_StP_95-96_WP.JPG",
-    "author": "Northside",
-    "license": "CC BY-SA 3.0",
-    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
-    "date": "1996",
-    "via": "commons"
+    "file": "Jens Scharping Section: FC St. Pauli No. 387 / German Football Bundesliga 1996-1997 (Panini)",
+    "via": "card",
+    "image": "cards/741b17a143690531ab94b525.jpg"
    },
    "traits": null,
    "file": "/album/stickers/st-pauli/17.webp"
@@ -14142,17 +14094,13 @@
    "name": "Thomas Meggle",
    "code": "STP–19",
    "status": "photo",
-   "portrait": null,
-   "frame": "archive",
+   "portrait": "card",
+   "frame": "club",
    "qid": "Q2426073",
    "source": {
-    "file": "10. Tag der Legenden 2014 36.jpg",
-    "page": "https://commons.wikimedia.org/wiki/File:10._Tag_der_Legenden_2014_36.jpg",
-    "author": "Die Bildermacherei Cuxhaven, Kerstin Tietje",
-    "license": "CC BY-SA 4.0",
-    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
-    "date": "2014-09-07 11:54:16",
-    "via": "commons"
+    "file": "Thomas Meggle Section: FC St. Pauli No. 185 / German Football Bundesliga 2001-2002 (Panini)",
+    "via": "card",
+    "image": "cards/fedb05c317f58f917963e91f.jpg"
    },
    "traits": null,
    "file": "/album/stickers/st-pauli/19.webp"
@@ -14182,17 +14130,13 @@
    "name": "Benedikt Pliquett",
    "code": "STP–21",
    "status": "photo",
-   "portrait": null,
+   "portrait": "card",
    "frame": "club",
    "qid": "Q176446",
    "source": {
-    "file": "Benedikt Pliquett-1.JPG",
-    "page": "https://commons.wikimedia.org/wiki/File:Benedikt_Pliquett-1.JPG",
-    "author": "Fremdeles",
-    "license": "CC BY-SA 3.0",
-    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
-    "date": "2013-08-20 17:33:48",
-    "via": "commons"
+    "file": "Benedikt Pliquett Section: St. Pauli No. 33 / St. Pauli 2010-2011 (Panini)",
+    "via": "card",
+    "image": "cards/f38429d5b829f2b394a9132e.jpg"
    },
    "traits": null,
    "file": "/album/stickers/st-pauli/21.webp"
@@ -14202,17 +14146,13 @@
    "name": "Timo Schultz",
    "code": "STP–22",
    "status": "photo",
-   "portrait": null,
+   "portrait": "card",
    "frame": "club",
    "qid": "Q487074",
    "source": {
-    "file": "Schultz.JPG",
-    "page": "https://commons.wikimedia.org/wiki/File:Schultz.JPG",
-    "author": "Northside",
-    "license": "CC BY-SA 3.0",
-    "licenseUrl": "http://creativecommons.org/licenses/by-sa/3.0/",
-    "date": "2008-05-02",
-    "via": "commons"
+    "file": "Timo Schultz Section: St. Pauli No. 48 / St. Pauli 2010-2011 (Panini)",
+    "via": "card",
+    "image": "cards/d8e85590570f955d54cdc117.jpg"
    },
    "traits": null,
    "file": "/album/stickers/st-pauli/22.webp"
@@ -14221,11 +14161,15 @@
    "person_id": "pl_30104e95ea",
    "name": "Florian Bruns",
    "code": "STP–23",
-   "status": "silhouette",
-   "portrait": "painted",
-   "frame": null,
+   "status": "photo",
+   "portrait": "card",
+   "frame": "club",
    "qid": "Q118719",
-   "source": null,
+   "source": {
+    "file": "Florian Bruns Section: St. Pauli No. 46 / St. Pauli 2010-2011 (Panini)",
+    "via": "card",
+    "image": "cards/0926d613401fabc2f754ea62.jpg"
+   },
    "traits": {
     "skin": "#9C6745",
     "hair": "#1C1714",
@@ -14536,17 +14480,13 @@
    "name": "Marius Ebbers",
    "code": "STP–25",
    "status": "photo",
-   "portrait": null,
+   "portrait": "card",
    "frame": "club",
    "qid": "Q463929",
    "source": {
-    "file": "Marius Ebbers 2013 1.jpg",
-    "page": "https://commons.wikimedia.org/wiki/File:Marius_Ebbers_2013_1.jpg",
-    "author": "Thomas Rodenbücher",
-    "license": "CC BY 2.0",
-    "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
-    "date": "2013-05-05 13:28:42",
-    "via": "commons"
+    "file": "Marius Ebbers Section: St. Pauli No. 54 / St. Pauli 2010-2011 (Panini)",
+    "via": "card",
+    "image": "cards/00bb461efb0034c3cc534d74.jpg"
    },
    "traits": null,
    "file": "/album/stickers/st-pauli/25.webp"
@@ -14556,17 +14496,13 @@
    "name": "Jan-Philipp Kalla",
    "code": "STP–26",
    "status": "photo",
-   "portrait": null,
-   "frame": "archive",
+   "portrait": "card",
+   "frame": "club",
    "qid": "Q831215",
    "source": {
-    "file": "Jan-Philip Kalla.jpg",
-    "page": "https://commons.wikimedia.org/wiki/File:Jan-Philip_Kalla.jpg",
-    "author": "Northside",
-    "license": "CC BY-SA 3.0",
-    "licenseUrl": "http://creativecommons.org/licenses/by-sa/3.0/",
-    "date": "2008-08-31",
-    "via": "commons"
+    "file": "Jan-Philipp Kalla Section: St. Pauli No. 43 / St. Pauli 2010-2011 (Panini)",
+    "via": "card",
+    "image": "cards/973347b89200aa9f33a40873.jpg"
    },
    "traits": null,
    "file": "/album/stickers/st-pauli/26.webp"
@@ -14616,17 +14552,13 @@
    "name": "Choi Kyoung-rok",
    "code": "STP–29",
    "status": "photo",
-   "portrait": null,
+   "portrait": "card",
    "frame": "club",
    "qid": "Q19657512",
    "source": {
-    "file": "Choi, Kyoung-Rok FCSP 15-16 WP.jpg",
-    "page": "https://commons.wikimedia.org/wiki/File:Choi,_Kyoung-Rok_FCSP_15-16_WP.jpg",
-    "author": "Northside",
-    "license": "CC BY-SA 3.0",
-    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
-    "date": "2015-11-13 14:38:05",
-    "via": "commons"
+    "file": "Kyoung-Rok Choi Section: Gwangju FC No. 41 / Prizm K-League 2024 (Panini) + variations",
+    "via": "card",
+    "image": "cards/2ef06e3360836bcd5efa0eed.jpg"
    },
    "traits": null,
    "file": "/album/stickers/st-pauli/29.webp"
@@ -14656,17 +14588,13 @@
    "name": "Waldemar Sobota",
    "code": "STP–31",
    "status": "photo",
-   "portrait": null,
-   "frame": "archive",
+   "portrait": "card",
+   "frame": "club",
    "qid": "Q962278",
    "source": {
-    "file": "Waldemar Sobota.JPG",
-    "page": "https://commons.wikimedia.org/wiki/File:Waldemar_Sobota.JPG",
-    "author": "Sławek",
-    "license": "CC BY-SA 2.0",
-    "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
-    "date": "2012-09-12 08:20",
-    "via": "commons"
+    "file": "Waldemar Sobota Section: Śląsk Wrocław No. 175 / T-Mobile Ekstraklasa 2013-2014. Adrenalyn XL (Panini)",
+    "via": "card",
+    "image": "cards/1d609401b63feaf9c49719f4.jpg"
    },
    "traits": null,
    "file": "/album/stickers/st-pauli/31.webp"
@@ -14716,17 +14644,13 @@
    "name": "Johannes Eggestein",
    "code": "STP–34",
    "status": "photo",
-   "portrait": null,
+   "portrait": "card",
    "frame": "club",
    "qid": "Q21175165",
    "source": {
-    "file": "2025-04-23 - FC St Pauli - Johannes Eggestein 3.jpg",
-    "page": "https://commons.wikimedia.org/wiki/File:2025-04-23_-_FC_St_Pauli_-_Johannes_Eggestein_3.jpg",
-    "author": "Lanthan2003",
-    "license": "CC BY-SA 4.0",
-    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
-    "date": "2025-04-23 12:20:13",
-    "via": "commons"
+    "file": "Johannes Eggestein Section: Royal Antwerp FC No. 91 / Belgian Pro League 2021-2022 (Panini)",
+    "via": "card",
+    "image": "cards/6efa01f669648678861d4564.jpg"
    },
    "traits": null,
    "file": "/album/stickers/st-pauli/34.webp"
@@ -15170,17 +15094,13 @@
    "name": "Aziz Bouderbala",
    "code": "WAC–07",
    "status": "photo",
-   "portrait": null,
-   "frame": "archive",
+   "portrait": "card",
+   "frame": "club",
    "qid": "Q2535190",
    "source": {
-    "file": "Aziz Bouderbala, Lalla plus - Feb 12, 2018.jpg",
-    "page": "https://commons.wikimedia.org/wiki/File:Aziz_Bouderbala,_Lalla_plus_-_Feb_12,_2018.jpg",
-    "author": "Lalla plus",
-    "license": "CC BY 3.0",
-    "licenseUrl": "https://creativecommons.org/licenses/by/3.0",
-    "date": "2018-02-12",
-    "via": "commons"
+    "file": "Aziz Bouderbala Section: Old Glories No. 7 / African Cup of Nations 1996 (Panini)",
+    "via": "card",
+    "image": "cards/9519f57402431b73ac9182ca.jpg"
    },
    "traits": null,
    "file": "/album/stickers/wydad-casablanca/7.webp"
@@ -15229,11 +15149,15 @@
    "person_id": "pl_b2b23916e0",
    "name": "Rachid Daoudi",
    "code": "WAC–10",
-   "status": "silhouette",
-   "portrait": null,
-   "frame": null,
+   "status": "photo",
+   "portrait": "card",
+   "frame": "club",
    "qid": "Q2747024",
-   "source": null,
+   "source": {
+    "file": "Rachid Daoudi Section: Morocco No. 297 / African Cup of Nations 1996 (Panini)",
+    "via": "card",
+    "image": "cards/4409ec50f8009d23a275fdbe.jpg"
+   },
    "traits": {
     "skin": "#D7A57E",
     "hair": "#3B2A20",
@@ -15249,11 +15173,15 @@
    "person_id": "pl_aa4776fb4b",
    "name": "Lahcen Abrami",
    "code": "WAC–11",
-   "status": "silhouette",
-   "portrait": "painted",
-   "frame": null,
+   "status": "photo",
+   "portrait": "card",
+   "frame": "club",
    "qid": "Q1747011",
-   "source": null,
+   "source": {
+    "file": "Lahcen Abrami Section: Maroc No. 57 / FIFA World Cup France 1998 (Panini)",
+    "via": "card",
+    "image": "cards/74e1437b8273530f86f479af.jpg"
+   },
    "traits": {
     "skin": "#D7A57E",
     "hair": "#3B2A20",
@@ -15289,11 +15217,15 @@
    "person_id": "pl_d10f3ca923",
    "name": "Nadir Lamyaghri",
    "code": "WAC–13",
-   "status": "silhouette",
-   "portrait": "painted",
-   "frame": null,
+   "status": "photo",
+   "portrait": "card",
+   "frame": "club",
    "qid": "Q1060127",
-   "source": null,
+   "source": {
+    "file": "Nadir Lamyaghri Section: Morocco No. 65 / Africa Cup 2008 (Panini)",
+    "via": "card",
+    "image": "cards/87161a4f6d7db6e44d5d49bd.jpg"
+   },
    "traits": {
     "skin": "#D7A57E",
     "hair": "#9A4A2A",
@@ -15604,17 +15536,13 @@
    "name": "Jean-Jacques Gosso",
    "code": "WAC–15",
    "status": "photo",
-   "portrait": null,
-   "frame": "archive",
+   "portrait": "card",
+   "frame": "club",
    "qid": "Q368396",
    "source": {
-    "file": "Gosso2013.jpg",
-    "page": "https://commons.wikimedia.org/wiki/File:Gosso2013.jpg",
-    "author": "Kirmizikara06",
-    "license": "CC BY-SA 3.0",
-    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
-    "date": "2013-07-30 15:48:48",
-    "via": "commons"
+    "file": "Jean-Jacques Gosso Section: Côte d'Ivoire No. 233 / FIFA World Cup Brazil 2014 (Panini)",
+    "via": "card",
+    "image": "cards/ea6096ecf06ce6b2e58017d4.jpg"
    },
    "traits": null,
    "file": "/album/stickers/wydad-casablanca/15.webp"
@@ -15977,11 +15905,15 @@
    "person_id": "pl_911cd31050",
    "name": "Karim Fegrouche",
    "code": "WAC–20",
-   "status": "silhouette",
-   "portrait": "painted",
-   "frame": null,
+   "status": "photo",
+   "portrait": "card",
+   "frame": "club",
    "qid": "Q2304819",
-   "source": null,
+   "source": {
+    "file": "Karim Fegrouche Section: PAS Giannina No. 316 / Superleague Ελλάδα 2012-2013 (Panini)",
+    "via": "card",
+    "image": "cards/1f17675340b3acd9b8e4745d.jpg"
+   },
    "traits": {
     "skin": "#D7A57E",
     "hair": "#3B2A20",
@@ -15998,17 +15930,13 @@
    "name": "Khalid Sekkat",
    "code": "WAC–21",
    "status": "photo",
-   "portrait": null,
-   "frame": "archive",
+   "portrait": "card",
+   "frame": "club",
    "qid": "Q3196019",
    "source": {
-    "file": "Khalid Sekkat Journée des abonnés (19).jpg",
-    "page": "https://commons.wikimedia.org/wiki/File:Khalid_Sekkat_Journ%C3%A9e_des_abonn%C3%A9s_(19).jpg",
-    "author": "Stadedereims93",
-    "license": "CC BY-SA 3.0",
-    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
-    "date": "2012-11-27 09:40:12",
-    "via": "commons"
+    "file": "Khalid Sekkat Section: Stade de Reims No. 322 / FOOT 2012-2013 (Panini)",
+    "via": "card",
+    "image": "cards/237178f5a72efac7a92deae3.jpg"
    },
    "traits": null,
    "file": "/album/stickers/wydad-casablanca/21.webp"
@@ -16117,11 +16045,15 @@
    "person_id": "pl_59a7e85590",
    "name": "Jamal Alioui",
    "code": "WAC–27",
-   "status": "silhouette",
-   "portrait": "painted",
-   "frame": null,
+   "status": "photo",
+   "portrait": "card",
+   "frame": "club",
    "qid": "Q925242",
-   "source": null,
+   "source": {
+    "file": "Jamal Alioui Section: Crotone No. 544 / Calciatori 2006-2007 (Panini)",
+    "via": "card",
+    "image": "cards/d9a388088b9527a245a0afaf.jpg"
+   },
    "traits": {
     "skin": "#BF8862",
     "hair": "#3B2A20",
@@ -16511,11 +16443,15 @@
    "person_id": "pl_d52e6f9faf",
    "name": "Juvhel Tsoumou",
    "code": "WAC–33",
-   "status": "silhouette",
-   "portrait": "painted",
-   "frame": null,
+   "status": "photo",
+   "portrait": "card",
+   "frame": "club",
    "qid": "Q542784",
-   "source": null,
+   "source": {
+    "file": "Juvhel Tsoumou Section: Ermis Aradippou No. 216 / Football Cyprus 2017-2018 (Panini)",
+    "via": "card",
+    "image": "cards/c7e9f7eb574523189f1381b1.jpg"
+   },
    "traits": {
     "skin": "#D7A57E",
     "hair": "#3B2A20",
@@ -17660,17 +17596,13 @@
    "name": "Ivan Bašić",
    "code": "ZRI–27",
    "status": "photo",
-   "portrait": null,
-   "frame": "archive",
+   "portrait": "card",
+   "frame": "club",
    "qid": "Q111536418",
    "source": {
-    "file": "Ivan Bašić 2022.jpg",
-    "page": "https://commons.wikimedia.org/wiki/File:Ivan_Ba%C5%A1i%C4%87_2022.jpg",
-    "author": "Артем Гусев",
-    "license": "CC BY-SA 3.0",
-    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
-    "date": "2022-08-07",
-    "via": "commons"
+    "file": "Ivan Basic Section: Bosnia and Herzegovina No. BIH12 / FIFA World Cup 2026. Standard Edition (Panini) + variations",
+    "via": "card",
+    "image": "cards/5ce899a0fb56f4d68c6cd331.jpg"
    },
    "traits": null,
    "file": "/album/stickers/zrinjski-mostar/27.webp"
@@ -17759,11 +17691,15 @@
    "person_id": "pl_857480b698",
    "name": "Silvio Ilinković",
    "code": "ZRI–32",
-   "status": "silhouette",
-   "portrait": "painted",
-   "frame": null,
+   "status": "photo",
+   "portrait": "card",
+   "frame": "club",
    "qid": "Q113564062",
-   "source": null,
+   "source": {
+    "file": "Silvio Ilinković Section: HNK Rijeka No. 215 / Hrvatska Nogometna Liga 2023-2024 (Panini)",
+    "via": "card",
+    "image": "cards/db57f2d7422b415acf3d4f1c.jpg"
+   },
    "traits": {
     "skin": "#D7A57E",
     "hair": "#3B2A20",
