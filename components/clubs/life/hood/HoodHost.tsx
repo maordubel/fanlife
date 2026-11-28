@@ -37,6 +37,7 @@ import {heartOf, recapOf} from '@/lib/life/hood/story/feel/voice'
 import {clockAfter, clockForMission, clockLabel, dayPart, FIRST_CLOCK, wrapDay} from '@/lib/life/hood/daylight'
 import {soundScene} from '@/lib/life/hood/soundScene'
 import {resumeLine} from '@/lib/life/hood/resume'
+import {streetLine, type StreetWho} from '@/lib/life/hood/streetTalk'
 import {echoFor, momentOf} from '@/lib/life/hood/story/moments'
 import {cardFound, cardsHeld, kitOfYear, yearOf, type CardThing} from '@/lib/life/hood/things'
 import {LifeSound} from '../sound'
@@ -135,7 +136,9 @@ export function HoodHost({club, mark = null, seed = 1, time = 'dusk', clockAt, q
     const own = (id: string) => level.hood!.people.find(p => p.id === id)?.name ?? hoodWord(`hood.who.${id}` as HoodKey).toLowerCase()
     return {mate: own('mate'), kiosk: own('kiosk'), neighbour: own('neighbour'), name: shell.name || hoodWord('hood.name.default')}
   }, [level, shell.name])
-  const w = useCallback((k: string, extra: Record<string, string> = {}) => k.startsWith('story.') || k.startsWith('feel.') || k.startsWith('era.') ? storyWord(k, {...storyVars, ...feelVars(feelRef.current, playRef.current), ...extra}) : k.startsWith('watch.') ? watchWord(k as WatchKey, extra) : hoodWord(k, {...vars, ...extra}), [vars, storyVars])
+  // a line made for this talk alone (the street's own words about the club's record): printed as prepared
+  const saidRef = useRef<Record<string, string>>({}), talksRef = useRef<Record<string, number>>({})
+  const w = useCallback((k: string, extra: Record<string, string> = {}) => k.startsWith('say:') ? saidRef.current[k] ?? '' : k.startsWith('story.') || k.startsWith('feel.') || k.startsWith('era.') ? storyWord(k, {...storyVars, ...feelVars(feelRef.current, playRef.current), ...extra}) : k.startsWith('watch.') ? watchWord(k as WatchKey, extra) : hoodWord(k, {...vars, ...extra}), [vars, storyVars])
 
   /* the flow */
   const go = useCallback((e: ShellEvent) => {
@@ -201,9 +204,17 @@ export function HoodHost({club, mark = null, seed = 1, time = 'dusk', clockAt, q
   }, [w, showBanner])
   const openTalk = useCallback((who: PersonId, key: string) => {
     // a step's own line is played as written; anything else a person says comes from the story (offers, ways, idle words)
-    const script = key.startsWith('story.s.') ? talkScript(who, key, {job: 'active', giver: who, offerKey: ''}) : storyTalk(playRef.current, who)
+    let script = key.startsWith('story.s.') ? talkScript(who, key, {job: 'active', giver: who, offerKey: ''}) : storyTalk(playRef.current, who)
+    // The street knows (streetTalk.ts): before anybody offers him anything he talks about the club, from its own record
+    // for the year this life is in. A mission is reached through a conversation, not picked off a list.
+    if (!key.startsWith('story.s.') && !playRef.current.plan && (who === 'dad' || who === 'mate' || who === 'kiosk' || who === 'neighbour')) {
+      const st = playRef.current.state, turn = (talksRef.current[who] = (talksRef.current[who] ?? 0) + 1) - 1
+      const lived = st.done.flatMap(id => { const n = nights[id], sl8 = n ? slateOf(n) : null; return n && sl8?.result ? [{date: n.on ? slateDate(n.on) : String(n.year), result: sl8.result}] : [] })
+      const line = streetLine({who: who as StreetWho, things: club.things, year: yearOf(club.born, st.age), have: cardsRef.current, lived, turn})
+      if (line) { saidRef.current = {'say:street': hoodWord(line.key, line.vars)}; script = {...script, start: 'street', nodes: {...script.nodes, street: {id: 'street', who, line: 'say:street', next: script.start}}} }
+    }
     setTalk({script, id: script.start}); go({t: 'talk'})
-  }, [go])
+  }, [go, nights, club.things, club.born])
   const openScript = useCallback((script: TalkScript) => { setTalk({script, id: script.start}); go({t: 'talk'}) }, [go])
 
   /** the night under a mission, when the Fitter dated it (an archive row, printed as recorded) */
