@@ -24,20 +24,28 @@ export type Layer = 'full' | 'lo' | 'up' | 'arms'
 const HEAD = /^(neck_01|head|eye_)/
 const LOWER = /^(Root|pelvis|spine_01|spine_02|thigh_|calf_|foot_|ball_)/
 export type CharAsset = {
-  id: CastId; scene: THREE.Object3D; height: number; hip: number; k: number; bytes: number
+  /** a body of the nine, or a dressed look's asset (`look-…`) */
+  id: CastId | LookAsset; /** a dressed look: what it wears by default, and whose it is */ look?: LookRow; scene: THREE.Object3D; height: number; hip: number; k: number; bytes: number
   clip(name: string, layer: Layer): THREE.AnimationClip | null
   /** one stride of the captured walk and run, in this body's metres */
   stride: {walk: number; run: number; walkT: number; runT: number}
 }
 type ClipSet = {clips: Map<string, THREE.AnimationClip>; hip: number; stride: {walk: number; run: number}; bytes: number}
-type Manifest = {assets: {id: string; bytes: number; height?: number; hipHeight?: number}[]}
+/**
+ * A LOOK (docs/life/ASSETS-PIPELINE.md, `scripts/life/assets/looks.json`): a face, hair and the clothes of a decade on the
+ * same skeleton, so every clip plays. `canon` looks are THE WORKER's own people and dress only that club; `universal`
+ * looks are the archetypes for every club. A look keeps its own colours: the club's colour is not painted over it.
+ */
+export type LookAsset = `look-${string}`
+export type LookRow = {id: string; asset: LookAsset; family: 'canon' | 'universal'; club: string | null; role: string; age: number; decade: string; bytes: number; wear: string[]; optional: string[]}
+type Manifest = {assets: {id: string; bytes: number; height?: number; hipHeight?: number}[]; looks?: {index?: LookRow[]}}
 
 let LOADER: GLTFLoader | null = null
 const loader = () => (LOADER ??= new GLTFLoader().setMeshoptDecoder(MeshoptDecoder))
 let MANIFEST: Promise<Manifest> | null = null
 let CLIPS: Promise<ClipSet> | null = null
-const CHARS = new Map<CastId, Promise<CharAsset>>()
-const READY = new Map<CastId, CharAsset>()
+const CHARS = new Map<string, Promise<CharAsset>>()
+const READY = new Map<string, CharAsset>()
 let FAILED = false
 
 const manifest = () => (MANIFEST ??= fetch(ASSET_BASE + 'manifest.json').then(r => { if (!r.ok) throw new Error('manifest'); return r.json() as Promise<Manifest> }))
@@ -90,16 +98,21 @@ function dress(scene: THREE.Object3D): void {
 }
 
 export function loadChar(id: CastId): Promise<CharAsset> { return loadBody(id, false) }
-const LODS = new Map<CastId, Promise<CharAsset>>()
+const LODS = new Map<string, Promise<CharAsset>>()
 /** the far body (`cast/<id>-lod1.glb`: the same skeleton and clips, one ~4k-triangle mesh, the tint regions in COLOR_0) */
 export function loadLod(id: CastId): Promise<CharAsset> { return loadBody(id, true) }
 
-function loadBody(id: CastId, lod: boolean): Promise<CharAsset> {
+/** the looks the pipeline built, as the manifest lists them (empty when it lists none) */
+export const lookIndex = (): Promise<LookRow[]> => manifest().then(m => (m.looks?.index ?? []).filter(r => typeof r.asset === 'string' && r.asset.startsWith('look-')), () => [])
+/** a dressed look, fetched when somebody is to wear it (about 1.4 MB each: never part of what the first frame waits for) */
+export function loadLook(row: LookRow): Promise<CharAsset> { return loadBody(row.asset, false, row) }
+
+function loadBody(id: CastId | LookAsset, lod: boolean, look?: LookRow): Promise<CharAsset> {
   const cache = lod ? LODS : CHARS
   let p = cache.get(id)
   if (!p) {
     p = Promise.all([loader().loadAsync(ASSET_BASE + `cast/${id}${lod ? '-lod1' : ''}.glb`), loadClips(), manifest()]).then(([g, cs, m]) => {
-      const row = m.assets.find(a => a.id === id)
+      const row = m.assets.find(a => a.id === id) ?? (look ? m.assets.find(a => a.id === (look.role === 'father' ? 'father' : look.age < 13 ? 'boy' : look.age < 19 ? 'teen' : look.role === 'mother' ? 'mother' : 'father')) : undefined)
       const hip = row?.hipHeight ?? 0.95, height = row?.height ?? 1.75, k = hip / cs.hip
       if (!lod) dress(g.scene)
       const made = new Map<string, THREE.AnimationClip | null>()
@@ -116,7 +129,7 @@ function loadBody(id: CastId, lod: boolean): Promise<CharAsset> {
         made.set(key, out)
         return out
       }
-      const a: CharAsset = {id, scene: g.scene, height, hip, k, bytes: row?.bytes ?? 0, clip,
+      const a: CharAsset = {id, ...(look ? {look} : {}), scene: g.scene, height, hip, k, bytes: look?.bytes ?? row?.bytes ?? 0, clip,
         stride: {walk: cs.stride.walk * k, run: cs.stride.run * k, walkT: cs.clips.get('walk')?.duration ?? 1.1, runT: cs.clips.get('run')?.duration ?? 0.74}}
       if (!lod) READY.set(id, a)
       return a

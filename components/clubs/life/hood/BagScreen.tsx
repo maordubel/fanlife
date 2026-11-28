@@ -2,6 +2,7 @@
 /** LIFE · the game — the kit bag: the supporter's figure, the wearing slot, the starter slots and what he carries, an item detail. */
 import {useState} from 'react'
 import type {BagId, BagItem} from '@/lib/life/hood/bag'
+import type {CardThing} from '@/lib/life/hood/things'
 import {Icon, type IconName} from './Icons'
 import css from './hood.module.css'
 
@@ -34,7 +35,7 @@ function Figure({scarf, accent, second}: {scarf: boolean; accent: string; second
   )
 }
 
-export function BagScreen({w, items, accent, second, onWear, onClose, onTab}: {w: W; items: BagItem[]; accent: string; second: string; onWear: (on: boolean) => void; onClose: () => void; onTab: () => void}) {
+export function BagScreen({w, items, cards = [], cardsAll = 0, accent, second, onWear, onClose, onTab}: {w: W; items: BagItem[]; /** THE ALBUM's stickers found in the street */ cards?: CardThing[]; cardsAll?: number; accent: string; second: string; onWear: (on: boolean) => void; onClose: () => void; onTab: () => void}) {
   const [sel, setSel] = useState<BagId>('scarf')
   const it = items.find(i => i.id === sel) ?? items[0]!
   const wearing = items.find(i => i.id === 'scarf')?.worn ?? false
@@ -64,9 +65,20 @@ export function BagScreen({w, items, accent, second, onWear, onClose, onTab}: {w
             {stateWord && <span className={css.lgInfoFlag}>{stateWord}</span>}
             {it.art && it.state !== 'locked' && <img className={css.lgDetailArt} src={it.art} alt="" decoding="async" />}
             <h2>{w(it.nameKey)}</h2>
+            {it.note && <p className={css.lgInfoNote}>{it.note}</p>}
             <p>{w(it.descKey)}</p>
             {it.wearable && <button type="button" className={css.lgBtn} data-primary={!it.worn} onClick={() => onWear(!it.worn)}>{it.worn ? w('hood.bag.takeoff') : w('hood.bag.wear')}<Icon n="scarf" /></button>}
           </div>
+          {cardsAll > 0 && (
+            <div className={css.lgCards} aria-label={w('hood.bag.cards', {n: String(cards.length), all: String(cardsAll)})}>
+              <div className={css.lgCardsHead}><b>{w('hood.bag.cards', {n: String(cards.length), all: String(cardsAll)})}</b><a className={css.lgCardsLink + ' min-h-tap'} href="/album">{w('hood.bag.album')}<Icon n="chevron" /></a></div>
+              {cards.length === 0 ? <p className={css.lgCardsNone}>{w('hood.bag.cards.none')}</p> : (
+                <ul className={css.lgCardsRow}>
+                  {cards.map(c => <li key={c.id} className={css.lgCard}>{c.src ? <img src={c.src} alt="" loading="lazy" decoding="async" /> : c.kit ? <img src={c.kit} alt="" data-kit="true" loading="lazy" decoding="async" /> : <span aria-hidden="true" />}<b>{c.name}</b><small>{c.code}</small></li>)}
+                </ul>
+              )}
+            </div>
+          )}
         </div>
       </div>
     </section>

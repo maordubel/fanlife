@@ -27,7 +27,7 @@ from PIL import Image, ImageFilter
 BUCKET = 'worker-stories'
 PREFIX = 'library/life'
 SIZES = {'facade': [1024, 512], 'stadium': [2048, 1024], 'skyline': [2048, 1024], 'story': [1600], 'aerial': [1536], 'cast': [768, 384]}
-CAST = ('boy', 'teen', 'man', 'father', 'mother', 'mate', 'kiosk', 'neighbour', 'grandfather')
+CAST = ('boy', 'teen', 'man', 'father', 'mother', 'mate', 'kiosk', 'neighbour', 'grandfather', 'ultra', 'swot', 'joker')
 PEOPLE = ('med', 'north', 'maghreb')
 MAP_SIZE = 512
 TOWNS = ['ath', 'tlv', 'mos', 'eur', 'gla', 'ham', 'bgo', 'cas', 'cai', 'hfa', 'ptk']

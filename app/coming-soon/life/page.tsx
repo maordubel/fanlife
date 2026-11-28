@@ -26,6 +26,7 @@ export default function LifeComingSoon() {
         <h1 id="soon-h" className={styles.title}>{copy.title}</h1>
         <p className={styles.stamp}>{copy.stamp}</p>
         <p className={styles.line}>{copy.line}</p>
+        <p className={styles.truth}>{copy.truth}</p>
         <p className={styles.lede}>{copy.lede}</p>
         <p className={styles.status}><span className={styles.dot} aria-hidden="true" />{copy.status}</p>
         <nav className={styles.actions}>

@@ -129,6 +129,11 @@ export class LifeSound {
       case 'bounce': return this.sample('ball-bounce', 0.5, jit)
       case 'bell': return this.sample('bell-shop', 0.5)
       case 'heart': return this.sample('heart', 0.5)
+      case 'click': return this.sample('ui-click', 0.35)
+      case 'car': return this.sample('car-pass', 0.3, jit)
+      case 'year': return this.sample('year-turn', 0.5)
+      case 'swell': return this.sample('crowd-swell', 0.45)
+      case 'schoolbell': return this.sample('bell-school', 0.4)
       default: {
         // Season One and RUSH cues synthesised with chirp (scripts/life/audio/life-cues.cx.js): one file each, named as the cue
         const g = CHIRP[cue]
@@ -158,6 +163,34 @@ export class LifeSound {
     src.connect(g).connect(c.destination); src.start()
     g.gain.setTargetAtTime(level, c.currentTime, 0.9)
     this.amb = {name, gain: g, src}
+  }
+
+  private loops = new Map<string, {name: string; gain: GainNode; src: AudioBufferSourceNode}>()
+  private loopWant = new Map<string, string | null>()
+  /**
+   * A named loop of its own, beside the place's air: the open street keeps two at once (the street by its hour, and the
+   * ground's crowd, heard long before it is seen). `null` fades it out. A recording that has not arrived is asked for
+   * again; nothing ever waits on it.
+   */
+  loop(id: string, name: string | null, level = 0.4) {
+    const c = this.ctx
+    this.loopWant.set(id, name)
+    if (!c || !this.on) return
+    const cur = this.loops.get(id)
+    if (cur && cur.name === name) { cur.gain.gain.setTargetAtTime(Math.max(0.0001, level), c.currentTime, 0.6); return }
+    if (cur) {
+      this.loops.delete(id)
+      cur.gain.gain.setTargetAtTime(0.0001, c.currentTime, 0.8)
+      window.setTimeout(() => { try { cur.src.stop() } catch { /* ended */ } }, 3600)
+    }
+    if (!name) return
+    const b = this.load(name)
+    if (!b) { window.setTimeout(() => { if (this.loopWant.get(id) === name && !this.loops.has(id)) this.loop(id, name, level) }, 900); return }
+    const src = c.createBufferSource(), g = c.createGain()
+    src.buffer = b; src.loop = true; g.gain.value = 0.0001
+    src.connect(g).connect(c.destination); src.start()
+    g.gain.setTargetAtTime(Math.max(0.0001, level), c.currentTime, 1.1)
+    this.loops.set(id, {name, gain: g, src})
   }
 
   play(cue: string) {
@@ -199,5 +232,5 @@ export class LifeSound {
     this.bedGain.gain.setTargetAtTime(Math.max(0.0001, Math.min(1, level) * 0.05), c.currentTime, 1.4)
   }
 
-  close() { try { void this.ctx?.close() } catch { /* already gone */ } this.ctx = null; this.bedGain = null; this.amb = null; this.bufs.clear() }
+  close() { try { void this.ctx?.close() } catch { /* already gone */ } this.ctx = null; this.bedGain = null; this.amb = null; this.loops.clear(); this.loopWant.clear(); this.bufs.clear() }
 }

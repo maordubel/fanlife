@@ -29,3 +29,5 @@
 @keyframes drift { from { transform: scale(1.04) translateY(0); } to { transform: scale(1.1) translateY(-2%); } }
 @keyframes pulse { 0% { box-shadow: 0 0 0 0 rgb(var(--red) / .7); } 100% { box-shadow: 0 0 0 12px rgb(var(--red) / 0); } }
 @media (prefers-reduced-motion: reduce) { .art img, .dot { animation: none; } }
+/* based on a true story: a paper tag in the weekly's ink, beside the stamp */
+.truth { justify-self: start; font-family: var(--font-latin), system-ui, sans-serif; font-weight: 900; font-size: 12px; letter-spacing: .22em; text-transform: uppercase; padding: 6px 10px; border: 3px solid rgb(var(--ink)); color: rgb(var(--ink)); background: rgb(var(--paper)); box-shadow: 3px 3px 0 rgb(var(--ink)); transform: rotate(1.5deg); }
