@@ -3,6 +3,10 @@ import {headers} from 'next/headers'
 import {notFound, redirect} from 'next/navigation'
 import {ClubSurface} from '@/components/clubs/ClubSurface'
 import {LifeGame} from '@/components/clubs/life/LifeGame'
+import {HoodDoor} from '@/components/clubs/life/hood/HoodDoor'
+import {rushView} from '@/lib/clubs/life/rush'
+import {LIFE_TIMELINE} from '@/lib/clubs/life/packs'
+import {storyNights} from '@/lib/life/hood/story/night'
 import {clubLife} from '@/lib/clubs/life/pack'
 import {rushDoor} from '@/lib/clubs/life/rush'
 import {door, isOwner} from '@/lib/features-server'
@@ -20,11 +24,15 @@ export const dynamic = 'force-dynamic'
 export const metadata: Metadata = {title: en.metaTitle, robots: {index: false, follow: false}}
 
 /**
- * LIFE for any club: one engine and one set of universal chapters, composed with what this
+ * LIFE for any club. Since 28.11.2026 this address IS the new game: the open neighbourhood (`components/clubs/life/hood`),
+ * one engine for every club, with the story's director, the day that turns and the club's own archive nights. The room
+ * engine it replaces stays reachable for the owner at `?engine=classic` until its chapters have all moved across.
+ *
+ * Classic: one engine and one set of universal chapters, composed with what this
  * club's pack holds. The life says PARTIAL until the club's own
  * culture is written and approved. Preview opens it for every club; the real site opens it for a published (live) club.
  */
-export default async function Page({params, searchParams}: {params: {slug: string}; searchParams: {lang?: string}}) {
+export default async function Page({params, searchParams}: {params: {slug: string}; searchParams: {lang?: string; engine?: string; clock?: string; quality?: string}}) {
   const preview = evaluationMode()
   // LIFE is closed to the public (owner, 24.11.2026): only the owner's session enters (the middleware already shows everyone else Coming soon)
   if (!(await lifeOpen())) redirect(LIFE_SOON_PATH)
@@ -38,6 +46,18 @@ export default async function Page({params, searchParams}: {params: {slug: strin
   const locale = uiLocale(searchParams.lang), base = `/clubs/${id}`, copy = locale === 'he' ? he : en
   const pack = clubLife(club.data, {locale})
   if (!pack.readiness.playable) notFound()
+  if (searchParams.engine !== 'classic') {
+    // the nights the Fitter dated for this club's life, over the years its birth year puts them in
+    const birth = (LIFE_TIMELINE as Record<string, {birthYear?: number} | undefined>)[id]?.birthYear
+    const born = typeof birth === 'number' ? birth : null
+    return (
+      <ClubSurface theme={club.data.theme} clubId={id} locale="en" tabbar={false}>
+        <main id="main">
+          <HoodDoor club={{id, skin: pack.skin, cast: pack.cast, nights: storyNights(rushView(club.data), born), town: club.data.identity.city, born, country: club.data.identity.country}} quality={searchParams.quality === 'high' ? 'high' : searchParams.quality === 'lite' ? 'lite' : undefined} />
+        </main>
+      </ClubSurface>
+    )
+  }
   // RUSH missions: the switch (or the owner's preview), and the missions this club's own archive can hold
   const rush = rushSwitch.open ? rushDoor(club.data, pack.skin) : null
   // the title card names the club the way its own people do, only from its researched (sourced) world

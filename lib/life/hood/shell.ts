@@ -88,7 +88,10 @@ const HEX = /^#[0-9a-fA-F]{6}$/
 const usable = (hex: string | undefined, skin: Pick<VoxelSkin, 'rivals' | 'policy'>): hex is string => !!hex && HEX.test(hex) && !isYellowHex(hex) && !bannedColour(hex, skin)
 
 /** the brand screens' accent: the green-lime, unless this club's colour policy forbids it (then cream) */
-export function brandAccent(skin: Pick<VoxelSkin, 'rivals' | 'policy'>): string { return usable(LIME, skin) ? LIME : CREAM }
+// lime is a green to the eye: a club whose pages may not carry green (a rival's colour) gets the cream, whatever the
+// hue test says of this exact tint
+const GREEN_PROBE = '#2f8a4c'
+export function brandAccent(skin: Pick<VoxelSkin, 'rivals' | 'policy'>): string { return usable(LIME, skin) && !bannedColour(GREEN_PROBE, skin) ? LIME : CREAM }
 /** the in-game accent: the club's primary (or secondary) if it is allowed and reads on the navy glass, else the brand accent */
 export function accentFor(skin: Pick<VoxelSkin, 'rivals' | 'policy' | 'p' | 's'>): {accent: string; on: string} {
   const pick = [skin.p, skin.s].find(h => usable(h, skin) && contrast(h, NAVY) >= 3.2) ?? brandAccent(skin)

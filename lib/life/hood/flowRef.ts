@@ -21,14 +21,18 @@ const isObj = (v: unknown): v is Record<string, unknown> => !!v && typeof v === 
 /** the manifest as published, read tolerantly: `pieces` (or `items` / `plates`) of objects with a stem (or id / name) and a kind */
 export function parseFlow(raw: unknown): FlowManifest | null {
   if (!isObj(raw)) return null
-  const list = [raw.pieces, raw.items, raw.plates].find(Array.isArray) as unknown[] | undefined
+  // the bake publishes `pieces` keyed by stem (public/life/flow/manifest.json); a plain list is read the same way
+  const list = ([raw.pieces, raw.items, raw.plates].find(Array.isArray) as unknown[] | undefined) ?? (isObj(raw.pieces) ? Object.values(raw.pieces) : undefined)
   if (!list) return null
   const pieces: FlowPiece[] = []
   for (const p of list) {
     if (!isObj(p)) continue
     const stem = str(p.stem) ?? str(p.id) ?? str(p.name), kind = str(p.kind)
-    if (!stem || !kind || !/^[\w./-]+$/.test(stem)) continue
-    const sizes = (Array.isArray(p.sizes) ? p.sizes : Array.isArray(p.widths) ? p.widths : []).filter((n): n is number => typeof n === 'number' && n > 0).sort((a, b) => a - b)
+    // a piece reviewed `use: false` is never shown (rule life-flow-art)
+    if (!stem || !kind || !/^[\w./-]+$/.test(stem) || p.use === false) continue
+    // the bake names each file by its width (`files: {"1600": {…}}`): those are the sizes when no list is given
+    const given = Array.isArray(p.sizes) ? p.sizes : Array.isArray(p.widths) ? p.widths : isObj(p.files) ? Object.keys(p.files).filter(k => /^\d+$/.test(k)).map(Number) : []
+    const sizes = given.filter((n): n is number => typeof n === 'number' && n > 0).sort((a, b) => a - b)
     const files: Record<string, string> = {}
     if (isObj(p.files)) for (const [k, v] of Object.entries(p.files)) { const f = str(v); if (f && /^\/?[\w./-]+$/.test(f)) files[k] = f }
     const w = isObj(p.world) ? p.world : isObj(p.bounds) ? p.bounds : null
@@ -52,7 +56,8 @@ export function loadFlow(fetcher: typeof fetch | undefined = typeof fetch === 'f
  */
 export function pick(m: FlowManifest | null, o: {kind: FlowKind; club?: string | null; town?: string | null; hint?: readonly string[]; salt?: number}): FlowPiece | null {
   if (!m) return null
-  const all = m.pieces.filter(p => p.kind === o.kind && (!p.club || p.club === o.club) && (!p.town || !o.town || p.town === o.town))
+  // a picture made for a town is that town's only: a club whose town is not known gets the universal ones, never a neighbour's street
+  const all = m.pieces.filter(p => p.kind === o.kind && (!p.club || p.club === o.club) && (!p.town || p.town === o.town))
   if (!all.length) return null
   for (const h of o.hint ?? []) { const hit = all.find(p => p.stem === h || p.stem.endsWith(`/${h}`) || p.stem.includes(h)); if (hit) return hit }
   const ranked = [...all].sort((a, b) => Number(!!b.club) - Number(!!a.club) || Number(!!b.town) - Number(!!a.town) || a.stem.localeCompare(b.stem))
@@ -71,6 +76,13 @@ export function urlOf(m: FlowManifest, p: FlowPiece, width: number): string {
 }
 
 /** the plate a chapter's card asks for first: named after its moment, then the chapter itself */
+/** the painted portrait of one of the key people, for this club's part of the world (life-cast-<people>-<who>, rule life-flow-art) */
+export function castFace(m: FlowManifest | null, people: string | null | undefined, who: string, width = 384): string | null {
+  if (!m || !people) return null
+  const p = m.pieces.find(x => x.kind === 'cast' && x.stem.startsWith(`life-cast-${people}-${who}-fl`))
+  return p ? urlOf(m, p, width) : null
+}
+
 export const PLATE_HINT: Readonly<Record<string, readonly string[]>> = {
   'first-noise': ['kitchen-radio'], 'the-way-in': ['first-walk'], 'six-short': ['kiosk'], 'missing-square': ['album', 'school'], 'her-seat': ['terrace'],
   'lead-the-way': ['first-walk'], 'the-banner': ['banner'], 'no-ticket': ['fence', 'night'], 'the-box': ['box', 'bedroom'], 'monday-colours': ['school'], 'the-window': ['window'],

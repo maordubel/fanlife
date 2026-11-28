@@ -26,7 +26,9 @@ from PIL import Image, ImageFilter
 
 BUCKET = 'worker-stories'
 PREFIX = 'library/life'
-SIZES = {'facade': [1024, 512], 'stadium': [2048, 1024], 'skyline': [2048, 1024], 'story': [1600], 'aerial': [1536]}
+SIZES = {'facade': [1024, 512], 'stadium': [2048, 1024], 'skyline': [2048, 1024], 'story': [1600], 'aerial': [1536], 'cast': [768, 384]}
+CAST = ('boy', 'teen', 'man', 'father', 'mother', 'mate', 'kiosk', 'neighbour', 'grandfather')
+PEOPLE = ('med', 'north', 'maghreb')
 MAP_SIZE = 512
 TOWNS = ['ath', 'tlv', 'mos', 'eur', 'gla', 'ham', 'bgo', 'cas', 'cai', 'hfa', 'ptk']
 CLUB_TOWN = {
@@ -54,6 +56,8 @@ def parse(stem):
             return {'kind': use, 'club': club, 'town': CLUB_TOWN[club], 'key': key}
     if use == 'story' and rest:
         return {'kind': use, 'key': '-'.join(rest)}
+    if use == 'cast' and len(rest) == 2 and rest[0] in PEOPLE and rest[1] in CAST:
+        return {'kind': use, 'people': rest[0], 'key': rest[1]}
     return None
 
 

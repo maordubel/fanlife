@@ -18,7 +18,7 @@ import {existsSync, readFileSync, writeFileSync} from 'node:fs'
 import {join} from 'node:path'
 import {pathToFileURL} from 'node:url'
 import {STATIC_CLUB_IDS} from '../../../lib/clubs/resolver-ids'
-import {CLUB_TOWN, type LifeLibrary, type LifePiece, type LifeTown} from '../../../lib/life/flowArtSpec'
+import {castStem, CLUB_TOWN, LIFE_CAST, LIFE_PEOPLE, type LifeCast, type LifeLibrary, type LifePeople, type LifePiece, type LifeTown} from '../../../lib/life/flowArtSpec'
 
 export const OUT = 'scripts/life/flow/life-library.json'
 export const VERSION = 1
@@ -33,6 +33,29 @@ const AERIAL = 'Straight-down aerial view, camera pointing vertically at the gro
 const STORY = 'A quiet story moment of an ordinary supporter\'s childhood, timeless (no phones, no screens). Any person is seen only from behind or far away, never a face. Clothes in plain muted colours; a scarf, where there is one, is plain cream-white wool.'
 
 const say = (subject: string, frame: string) => `${subject} ${frame} ${STYLE} ${NEGATIVES}`
+
+// ── the key people (owner, 28.11.2026) ─────────────────────────────────────────────────────────────────────────────
+// A person is not an environment: his portrait has its own light and its own frame. Every one is an invented face;
+// the street's lamp is the key light, so he sits in the game's dusk without a wet street behind him.
+export const CAST_STYLE = 'Photorealistic cinematic character portrait for a modern open-world game: 85 mm lens, a soft warm amber-orange key light from one side as from a street lamp at dusk and a cool blue fill from the other, natural colour, high detail.'
+const CAST = 'Waist-up portrait of ONE invented person who resembles no real individual and no known face, the body turned three-quarters and the eyes just past the lens, alone against a plain flat even mid-grey studio backdrop with nothing else in the frame. An unposed, caught expression, the way a documentary photographer finds people, never a model\'s smile. Real skin with pores and small asymmetries, real hair, real worn fabric with creases. The ordinary clothes of a working neighbourhood in the 1980s: plain and muted, no print, no stripes, no pattern, no badge.'
+const PEOPLE: Record<LifePeople, string> = {
+  med: 'A person of an eastern-Mediterranean port city: olive to light-brown skin, dark hair, dark eyes.',
+  north: 'A person of a northern European industrial city: fair skin that reddens in the cold, light-brown to dark hair, grey or blue eyes.',
+  maghreb: 'A person of a North African coastal city: light-brown to brown skin, dark hair, dark eyes.',
+}
+const CAST_WHO: Record<LifeCast, string> = {
+  boy: 'A boy of about eight: short untidy hair, a gap where a milk tooth has gone, wide curious eyes that miss nothing, a plain cream T-shirt a size too big, a scraped elbow.',
+  teen: 'A boy of about fifteen: hair grown long and pushed off the forehead, the first shadow on the upper lip, a guarded half-smile, a plain grey zip tracksuit top over a white T-shirt.',
+  man: 'A man of about twenty-eight: short hair, two days of stubble, tired kind eyes, broad shoulders a little rounded by work, a plain dark denim jacket over a grey T-shirt.',
+  father: 'A working man of about thirty-eight: a thick dark moustache, deep laugh lines, strong forearms, a short-sleeved off-white work shirt open at the collar over a white vest, a plain cream-white wool scarf laid over one shoulder.',
+  mother: 'A woman of about thirty-five: dark hair tied back loosely with strands come free, warm steady eyes, small silver earrings, a plain blue-grey house dress under an open knitted cardigan.',
+  mate: 'A small wiry boy of about eight: cropped hair, ears that stick out, a wide cheeky grin, a sticking plaster on the chin, a faded plain blue T-shirt.',
+  kiosk: 'A kiosk keeper of about sixty: a grey moustache, reading glasses pushed up on the forehead, a pencil behind one ear, a plain brown knitted waistcoat over a pale shirt with the sleeves rolled.',
+  neighbour: 'A woman of about seventy: white hair pinned up, a deeply lined face that has smiled a great deal, a dark plain housecoat with a grey cardigan over the shoulders.',
+  grandfather: 'A man of about seventy-five: a dark flat cap, white stubble, pale watering eyes, a heavy dark wool jacket over a buttoned shirt, a plain cream-white wool scarf.',
+}
+const sayCast = (people: LifePeople, who: LifeCast) => `${CAST_WHO[who]} ${PEOPLE[people]} ${CAST} ${CAST_STYLE} ${NEGATIVES}`
 
 // ── a · facades, per town: [key, the building] ─────────────────────────────────────────────────────────────────────
 const FACADES: Record<LifeTown, string[]> = {
@@ -233,6 +256,8 @@ export function buildLifeLibrary(root = process.cwd()): LifeLibrary {
     pieces.push({stem: `life-aerial-${t.town}-fl1`, aspect: '1:1', use: 'aerial', town: t.town, priority: main ? 2 : t.town === 'mos' ? 3 : 5, prompt: say(t.district, AERIAL)})
   }
   // d · story plates
+  // the key people: the first clubs' part of the world first, the family before the street
+  LIFE_PEOPLE.forEach((people, pi) => LIFE_CAST.forEach((who, wi) => pieces.push({stem: castStem(people, who), aspect: '1:1', use: 'cast', people, who, priority: pi === 0 ? (wi < 6 ? 1 : 2) : pi + 1, prompt: sayCast(people, who)})))
   for (const s of STORIES) pieces.push({stem: `life-story-${s.key}-fl1`, aspect: '16:9', use: 'story', chapter: s.chapter, priority: s.priority, prompt: say(s.scene, STORY)})
   // the operator draws the most valuable first; inside one priority the order above holds
   const ordered = pieces.map((p, i) => ({p, i})).sort((a, b) => a.p.priority - b.p.priority || a.i - b.i).map(x => x.p)

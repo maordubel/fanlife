@@ -29,8 +29,14 @@ export type DuskCtx = {
   blocks: Block[]; facadeMats: THREE.MeshStandardMaterial[]
   /** the club (the port's cranes are Piraeus' own) */
   clubId?: string
+  /** called round the mirror's own draw (look/detail.ts keeps the small things out of it) */
+  onMirror?: (on: boolean) => void
 }
 export type Dusk = {update(sim: {x: number; z: number}, t: number, dt: number, cam: THREE.Vector3): void; resize(w: number, h: number): void
+  /** the dome's material, the wet road's materials and the environment re-light: what the day turns (look/daylight.ts) */
+  sky: THREE.ShaderMaterial; wet: THREE.ShaderMaterial[]; bakeEnv(): void
+  /** how often the wet road's mirror is redrawn: 1 = every frame, 2 = every other (the governor asks when frames run long) */
+  mirrorEvery(n: number): void
   /** the procedural fronts of the main street (frames, shutters, balconies, cornices, roof kit, lit shops): what the Flow facades replace */
   front: THREE.Object3D[]
   /** the stand wings and floodlight towers at the end of the road (hidden when a picture of the ground takes their place) */
@@ -50,13 +56,15 @@ function canvasTex(w: number, h: number, draw: (g: CanvasRenderingContext2D) => 
 const SKY_STOPS: [number, string][] = [[0, '#f0a878'], [0.045, '#d9929a'], [0.15, '#8d86ad'], [0.34, '#456aa6'], [0.62, '#1f3a7c'], [1, '#0c1a4c']]
 export function skyMaterial() {
   return new THREE.ShaderMaterial({side: THREE.BackSide, depthWrite: false, fog: false,
-    uniforms: {uC: {value: SKY_STOPS.map(s => C(s[1]))}, uS: {value: SKY_STOPS.map(s => s[0])}, uBelow: {value: C(DUSK.fog)}, uSun: {value: new THREE.Vector3(0, 0.03, -1).normalize()}},
+    uniforms: {uC: {value: SKY_STOPS.map(s => C(s[1]))}, uS: {value: SKY_STOPS.map(s => s[0])}, uBelow: {value: C(DUSK.fog)}, uSun: {value: new THREE.Vector3(0, 0.03, -1).normalize()}, uGlow: {value: 1}, uStars: {value: 0}},
     vertexShader: 'varying vec3 vD; void main(){ vD = position; gl_Position = projectionMatrix*modelViewMatrix*vec4(position,1.); }',
-    fragmentShader: `uniform vec3 uC[6]; uniform float uS[6]; uniform vec3 uBelow,uSun; varying vec3 vD;
+    fragmentShader: `uniform vec3 uC[6]; uniform float uS[6]; uniform vec3 uBelow,uSun; uniform float uGlow,uStars; varying vec3 vD;
       void main(){ vec3 d=normalize(vD); float e=d.y; vec3 c=uC[0];
         for(int i=0;i<5;i++){ float t=clamp((e-uS[i])/(uS[i+1]-uS[i]),0.,1.); c=mix(c,uC[i+1],t*t*(3.-2.*t)); }
         c=mix(c,uBelow,smoothstep(0.,-0.12,e));
-        float s=max(dot(d,uSun),0.); c+=vec3(1.,.5,.32)*(pow(s,5.)*.12+pow(s,40.)*.15);
+        float s=max(dot(d,uSun),0.); c+=vec3(1.,.5,.32)*(pow(s,5.)*.12+pow(s,40.)*.15)*uGlow;
+        // the night's stars (look/daylight.ts): a few sharp points high up, none in the haze near the roofs
+        if(uStars>.01){ vec3 g=floor(d*190.); float n=fract(sin(dot(g,vec3(12.9898,78.233,37.719)))*43758.5453); c+=vec3(.78,.84,1.)*step(.9972,n)*(.35+.65*fract(n*91.7))*uStars*smoothstep(.06,.34,e); }
         gl_FragColor=vec4(c,1.); }`})
 }
 
@@ -112,10 +120,16 @@ export function dressDusk(x: DuskCtx): Dusk {
   /* ---- sky dome + the environment it lights ---- */
   const skyM = keep(skyMaterial()), skyG = keep(new THREE.SphereGeometry(1400, lite ? 24 : 40, lite ? 12 : 20))
   const dome = new THREE.Mesh(skyG, skyM); dome.frustumCulled = false; dome.renderOrder = -100; scene.add(dome)
-  try {
-    const pm = new THREE.PMREMGenerator(renderer), envScene = new THREE.Scene(); envScene.add(new THREE.Mesh(skyG, skyM))
-    const rt = pm.fromScene(envScene, 0.03); scene.environment = rt.texture; scene.environmentIntensity = 0.7; keep(rt); pm.dispose()
-  } catch { /* no environment: the lamps still light it */ }
+  const envScene = new THREE.Scene(); envScene.add(new THREE.Mesh(skyG, skyM))
+  let envRt: THREE.WebGLRenderTarget | null = null
+  keep({dispose: () => { envRt?.dispose(); envRt = null }})
+  const bakeEnv = () => {
+    try {
+      const pm = new THREE.PMREMGenerator(renderer), rt = pm.fromScene(envScene, 0.03), old = envRt
+      scene.environment = rt.texture; envRt = rt; pm.dispose(); old?.dispose()
+    } catch { /* no environment: the lamps still light it */ }
+  }
+  bakeEnv(); scene.environmentIntensity = 0.7
 
   /* ---- the wet street: one mirror at reduced resolution, blended by a puddle mask ---- */
   const span = zTop + 30 - (goalZ - 60), zMid = (zTop + 30 + goalZ - 60) / 2
@@ -135,7 +149,10 @@ export function dressDusk(x: DuskCtx): Dusk {
   for (const s of [-1, 1]) overlay(walk - half, span, s * (half + (walk - half) / 2), 0.172, zMid, 0.1, 0.22)
   for (const c of level.crossings) for (const s of [-1, 1]) overlay(level.side - half, 8.2, s * (half + (level.side - half) / 2), 0.024, c, 0.2, 0.42)
   const orig = refl.onBeforeRender
-  refl.onBeforeRender = function (this: THREE.Mesh, ...a: Parameters<THREE.Object3D['onBeforeRender']>) { overlays.forEach(o => { o.visible = false }); orig.apply(this, a); overlays.forEach(o => { o.visible = true }) }
+  // the mirror draws the whole street a second time: when frames run long it is redrawn every other frame (or every third),
+  // which the eye does not catch on a rippled wet road
+  let mirrorN = 1, mirrorTick = 0
+  refl.onBeforeRender = function (this: THREE.Mesh, ...a: Parameters<THREE.Object3D['onBeforeRender']>) { if (mirrorN > 1 && mirrorTick++ % mirrorN) return; overlays.forEach(o => { o.visible = false }); x.onMirror?.(true); try { orig.apply(this, a) } finally { x.onMirror?.(false); overlays.forEach(o => { o.visible = true }) } }
   const mirrorScale = lite ? 0.33 : 0.5
   // road details: edge lines, manholes, patches
   { const worn = keep(canvasTex(16, 128, g => { g.fillStyle = '#fff'; g.fillRect(0, 0, 16, 128); for (let i = 0; i < 90; i++) { g.fillStyle = `rgba(0,0,0,${0.4 + rnd() * 0.6})`; g.fillRect(rnd() * 16, rnd() * 128, 2 + rnd() * 6, 2 + rnd() * 10) } }, false))
@@ -400,7 +417,8 @@ export function dressDusk(x: DuskCtx): Dusk {
 
   const resize = (w: number, h: number) => refl.getRenderTarget().setSize(Math.max(64, Math.floor(w * mirrorScale)), Math.max(64, Math.floor(h * mirrorScale)))
   return {
-    resize, front, ground,
+    resize, front, ground, sky: skyM, wet: [mat, ...overlays.map(o => o.material as THREE.ShaderMaterial)], bakeEnv,
+    mirrorEvery(n) { mirrorN = Math.max(1, Math.min(4, Math.round(n))) },
     onFronts(list) { try { town?.fronts(list) } catch { /* the town keeps the balconies it had */ } },
     update(sim, t, dt, cam) {
       dome.position.copy(cam)

@@ -156,6 +156,60 @@
    "prompt": "Tel Aviv and Jaffa at dusk: low white flat roofs with solar boilers and water tanks, a cluster of glass towers far off, an old port town on a low headland with a stone bell tower, the sea horizon to one side, palm tops. Very wide panoramic backdrop for a sky dome: the horizon sits in the lower third, the bottom of the frame is one continuous band of distant roofs in silhouette and soft haze, the upper two thirds are a dusk sky from deep blue to a last warm band at the horizon with thin broken cloud. The glow of one football ground's floodlights rises somewhere among the roofs. No foreground objects and no people; the left and right edges are calm so the picture can wrap. Photorealistic cinematic environment for a modern open-world game: blue-hour dusk after rain, wet reflective ground wherever ground shows, warm amber-orange street lamps, natural colour, high detail. No text, no letters, no numbers, no signs with writing, no logos, no crests, no sponsor marks, no advertising, no flags, no real person's likeness, no yellow paint and no yellow clothing."
   },
   {
+   "stem": "life-cast-med-boy-fl1",
+   "aspect": "1:1",
+   "use": "cast",
+   "people": "med",
+   "who": "boy",
+   "priority": 1,
+   "prompt": "A boy of about eight: short untidy hair, a gap where a milk tooth has gone, wide curious eyes that miss nothing, a plain cream T-shirt a size too big, a scraped elbow. A person of an eastern-Mediterranean port city: olive to light-brown skin, dark hair, dark eyes. Waist-up portrait of ONE invented person who resembles no real individual and no known face, the body turned three-quarters and the eyes just past the lens, alone against a plain flat even mid-grey studio backdrop with nothing else in the frame. An unposed, caught expression, the way a documentary photographer finds people, never a model's smile. Real skin with pores and small asymmetries, real hair, real worn fabric with creases. The ordinary clothes of a working neighbourhood in the 1980s: plain and muted, no print, no stripes, no pattern, no badge. Photorealistic cinematic character portrait for a modern open-world game: 85 mm lens, a soft warm amber-orange key light from one side as from a street lamp at dusk and a cool blue fill from the other, natural colour, high detail. No text, no letters, no numbers, no signs with writing, no logos, no crests, no sponsor marks, no advertising, no flags, no real person's likeness, no yellow paint and no yellow clothing."
+  },
+  {
+   "stem": "life-cast-med-teen-fl1",
+   "aspect": "1:1",
+   "use": "cast",
+   "people": "med",
+   "who": "teen",
+   "priority": 1,
+   "prompt": "A boy of about fifteen: hair grown long and pushed off the forehead, the first shadow on the upper lip, a guarded half-smile, a plain grey zip tracksuit top over a white T-shirt. A person of an eastern-Mediterranean port city: olive to light-brown skin, dark hair, dark eyes. Waist-up portrait of ONE invented person who resembles no real individual and no known face, the body turned three-quarters and the eyes just past the lens, alone against a plain flat even mid-grey studio backdrop with nothing else in the frame. An unposed, caught expression, the way a documentary photographer finds people, never a model's smile. Real skin with pores and small asymmetries, real hair, real worn fabric with creases. The ordinary clothes of a working neighbourhood in the 1980s: plain and muted, no print, no stripes, no pattern, no badge. Photorealistic cinematic character portrait for a modern open-world game: 85 mm lens, a soft warm amber-orange key light from one side as from a street lamp at dusk and a cool blue fill from the other, natural colour, high detail. No text, no letters, no numbers, no signs with writing, no logos, no crests, no sponsor marks, no advertising, no flags, no real person's likeness, no yellow paint and no yellow clothing."
+  },
+  {
+   "stem": "life-cast-med-man-fl1",
+   "aspect": "1:1",
+   "use": "cast",
+   "people": "med",
+   "who": "man",
+   "priority": 1,
+   "prompt": "A man of about twenty-eight: short hair, two days of stubble, tired kind eyes, broad shoulders a little rounded by work, a plain dark denim jacket over a grey T-shirt. A person of an eastern-Mediterranean port city: olive to light-brown skin, dark hair, dark eyes. Waist-up portrait of ONE invented person who resembles no real individual and no known face, the body turned three-quarters and the eyes just past the lens, alone against a plain flat even mid-grey studio backdrop with nothing else in the frame. An unposed, caught expression, the way a documentary photographer finds people, never a model's smile. Real skin with pores and small asymmetries, real hair, real worn fabric with creases. The ordinary clothes of a working neighbourhood in the 1980s: plain and muted, no print, no stripes, no pattern, no badge. Photorealistic cinematic character portrait for a modern open-world game: 85 mm lens, a soft warm amber-orange key light from one side as from a street lamp at dusk and a cool blue fill from the other, natural colour, high detail. No text, no letters, no numbers, no signs with writing, no logos, no crests, no sponsor marks, no advertising, no flags, no real person's likeness, no yellow paint and no yellow clothing."
+  },
+  {
+   "stem": "life-cast-med-father-fl1",
+   "aspect": "1:1",
+   "use": "cast",
+   "people": "med",
+   "who": "father",
+   "priority": 1,
+   "prompt": "A working man of about thirty-eight: a thick dark moustache, deep laugh lines, strong forearms, a short-sleeved off-white work shirt open at the collar over a white vest, a plain cream-white wool scarf laid over one shoulder. A person of an eastern-Mediterranean port city: olive to light-brown skin, dark hair, dark eyes. Waist-up portrait of ONE invented person who resembles no real individual and no known face, the body turned three-quarters and the eyes just past the lens, alone against a plain flat even mid-grey studio backdrop with nothing else in the frame. An unposed, caught expression, the way a documentary photographer finds people, never a model's smile. Real skin with pores and small asymmetries, real hair, real worn fabric with creases. The ordinary clothes of a working neighbourhood in the 1980s: plain and muted, no print, no stripes, no pattern, no badge. Photorealistic cinematic character portrait for a modern open-world game: 85 mm lens, a soft warm amber-orange key light from one side as from a street lamp at dusk and a cool blue fill from the other, natural colour, high detail. No text, no letters, no numbers, no signs with writing, no logos, no crests, no sponsor marks, no advertising, no flags, no real person's likeness, no yellow paint and no yellow clothing."
+  },
+  {
+   "stem": "life-cast-med-mother-fl1",
+   "aspect": "1:1",
+   "use": "cast",
+   "people": "med",
+   "who": "mother",
+   "priority": 1,
+   "prompt": "A woman of about thirty-five: dark hair tied back loosely with strands come free, warm steady eyes, small silver earrings, a plain blue-grey house dress under an open knitted cardigan. A person of an eastern-Mediterranean port city: olive to light-brown skin, dark hair, dark eyes. Waist-up portrait of ONE invented person who resembles no real individual and no known face, the body turned three-quarters and the eyes just past the lens, alone against a plain flat even mid-grey studio backdrop with nothing else in the frame. An unposed, caught expression, the way a documentary photographer finds people, never a model's smile. Real skin with pores and small asymmetries, real hair, real worn fabric with creases. The ordinary clothes of a working neighbourhood in the 1980s: plain and muted, no print, no stripes, no pattern, no badge. Photorealistic cinematic character portrait for a modern open-world game: 85 mm lens, a soft warm amber-orange key light from one side as from a street lamp at dusk and a cool blue fill from the other, natural colour, high detail. No text, no letters, no numbers, no signs with writing, no logos, no crests, no sponsor marks, no advertising, no flags, no real person's likeness, no yellow paint and no yellow clothing."
+  },
+  {
+   "stem": "life-cast-med-mate-fl1",
+   "aspect": "1:1",
+   "use": "cast",
+   "people": "med",
+   "who": "mate",
+   "priority": 1,
+   "prompt": "A small wiry boy of about eight: cropped hair, ears that stick out, a wide cheeky grin, a sticking plaster on the chin, a faded plain blue T-shirt. A person of an eastern-Mediterranean port city: olive to light-brown skin, dark hair, dark eyes. Waist-up portrait of ONE invented person who resembles no real individual and no known face, the body turned three-quarters and the eyes just past the lens, alone against a plain flat even mid-grey studio backdrop with nothing else in the frame. An unposed, caught expression, the way a documentary photographer finds people, never a model's smile. Real skin with pores and small asymmetries, real hair, real worn fabric with creases. The ordinary clothes of a working neighbourhood in the 1980s: plain and muted, no print, no stripes, no pattern, no badge. Photorealistic cinematic character portrait for a modern open-world game: 85 mm lens, a soft warm amber-orange key light from one side as from a street lamp at dusk and a cool blue fill from the other, natural colour, high detail. No text, no letters, no numbers, no signs with writing, no logos, no crests, no sponsor marks, no advertising, no flags, no real person's likeness, no yellow paint and no yellow clothing."
+  },
+  {
    "stem": "life-story-first-walk-fl1",
    "aspect": "16:9",
    "use": "story",
@@ -396,6 +450,114 @@
    "prompt": "Mostar at dusk: stone houses with slab roofs on both banks of a river gorge, one high single-arched old stone bridge, slender tower silhouettes, a pale bare rocky hill and mountains behind. Very wide panoramic backdrop for a sky dome: the horizon sits in the lower third, the bottom of the frame is one continuous band of distant roofs in silhouette and soft haze, the upper two thirds are a dusk sky from deep blue to a last warm band at the horizon with thin broken cloud. The glow of one football ground's floodlights rises somewhere among the roofs. No foreground objects and no people; the left and right edges are calm so the picture can wrap. Photorealistic cinematic environment for a modern open-world game: blue-hour dusk after rain, wet reflective ground wherever ground shows, warm amber-orange street lamps, natural colour, high detail. No text, no letters, no numbers, no signs with writing, no logos, no crests, no sponsor marks, no advertising, no flags, no real person's likeness, no yellow paint and no yellow clothing."
   },
   {
+   "stem": "life-cast-med-kiosk-fl1",
+   "aspect": "1:1",
+   "use": "cast",
+   "people": "med",
+   "who": "kiosk",
+   "priority": 2,
+   "prompt": "A kiosk keeper of about sixty: a grey moustache, reading glasses pushed up on the forehead, a pencil behind one ear, a plain brown knitted waistcoat over a pale shirt with the sleeves rolled. A person of an eastern-Mediterranean port city: olive to light-brown skin, dark hair, dark eyes. Waist-up portrait of ONE invented person who resembles no real individual and no known face, the body turned three-quarters and the eyes just past the lens, alone against a plain flat even mid-grey studio backdrop with nothing else in the frame. An unposed, caught expression, the way a documentary photographer finds people, never a model's smile. Real skin with pores and small asymmetries, real hair, real worn fabric with creases. The ordinary clothes of a working neighbourhood in the 1980s: plain and muted, no print, no stripes, no pattern, no badge. Photorealistic cinematic character portrait for a modern open-world game: 85 mm lens, a soft warm amber-orange key light from one side as from a street lamp at dusk and a cool blue fill from the other, natural colour, high detail. No text, no letters, no numbers, no signs with writing, no logos, no crests, no sponsor marks, no advertising, no flags, no real person's likeness, no yellow paint and no yellow clothing."
+  },
+  {
+   "stem": "life-cast-med-neighbour-fl1",
+   "aspect": "1:1",
+   "use": "cast",
+   "people": "med",
+   "who": "neighbour",
+   "priority": 2,
+   "prompt": "A woman of about seventy: white hair pinned up, a deeply lined face that has smiled a great deal, a dark plain housecoat with a grey cardigan over the shoulders. A person of an eastern-Mediterranean port city: olive to light-brown skin, dark hair, dark eyes. Waist-up portrait of ONE invented person who resembles no real individual and no known face, the body turned three-quarters and the eyes just past the lens, alone against a plain flat even mid-grey studio backdrop with nothing else in the frame. An unposed, caught expression, the way a documentary photographer finds people, never a model's smile. Real skin with pores and small asymmetries, real hair, real worn fabric with creases. The ordinary clothes of a working neighbourhood in the 1980s: plain and muted, no print, no stripes, no pattern, no badge. Photorealistic cinematic character portrait for a modern open-world game: 85 mm lens, a soft warm amber-orange key light from one side as from a street lamp at dusk and a cool blue fill from the other, natural colour, high detail. No text, no letters, no numbers, no signs with writing, no logos, no crests, no sponsor marks, no advertising, no flags, no real person's likeness, no yellow paint and no yellow clothing."
+  },
+  {
+   "stem": "life-cast-med-grandfather-fl1",
+   "aspect": "1:1",
+   "use": "cast",
+   "people": "med",
+   "who": "grandfather",
+   "priority": 2,
+   "prompt": "A man of about seventy-five: a dark flat cap, white stubble, pale watering eyes, a heavy dark wool jacket over a buttoned shirt, a plain cream-white wool scarf. A person of an eastern-Mediterranean port city: olive to light-brown skin, dark hair, dark eyes. Waist-up portrait of ONE invented person who resembles no real individual and no known face, the body turned three-quarters and the eyes just past the lens, alone against a plain flat even mid-grey studio backdrop with nothing else in the frame. An unposed, caught expression, the way a documentary photographer finds people, never a model's smile. Real skin with pores and small asymmetries, real hair, real worn fabric with creases. The ordinary clothes of a working neighbourhood in the 1980s: plain and muted, no print, no stripes, no pattern, no badge. Photorealistic cinematic character portrait for a modern open-world game: 85 mm lens, a soft warm amber-orange key light from one side as from a street lamp at dusk and a cool blue fill from the other, natural colour, high detail. No text, no letters, no numbers, no signs with writing, no logos, no crests, no sponsor marks, no advertising, no flags, no real person's likeness, no yellow paint and no yellow clothing."
+  },
+  {
+   "stem": "life-cast-north-boy-fl1",
+   "aspect": "1:1",
+   "use": "cast",
+   "people": "north",
+   "who": "boy",
+   "priority": 2,
+   "prompt": "A boy of about eight: short untidy hair, a gap where a milk tooth has gone, wide curious eyes that miss nothing, a plain cream T-shirt a size too big, a scraped elbow. A person of a northern European industrial city: fair skin that reddens in the cold, light-brown to dark hair, grey or blue eyes. Waist-up portrait of ONE invented person who resembles no real individual and no known face, the body turned three-quarters and the eyes just past the lens, alone against a plain flat even mid-grey studio backdrop with nothing else in the frame. An unposed, caught expression, the way a documentary photographer finds people, never a model's smile. Real skin with pores and small asymmetries, real hair, real worn fabric with creases. The ordinary clothes of a working neighbourhood in the 1980s: plain and muted, no print, no stripes, no pattern, no badge. Photorealistic cinematic character portrait for a modern open-world game: 85 mm lens, a soft warm amber-orange key light from one side as from a street lamp at dusk and a cool blue fill from the other, natural colour, high detail. No text, no letters, no numbers, no signs with writing, no logos, no crests, no sponsor marks, no advertising, no flags, no real person's likeness, no yellow paint and no yellow clothing."
+  },
+  {
+   "stem": "life-cast-north-teen-fl1",
+   "aspect": "1:1",
+   "use": "cast",
+   "people": "north",
+   "who": "teen",
+   "priority": 2,
+   "prompt": "A boy of about fifteen: hair grown long and pushed off the forehead, the first shadow on the upper lip, a guarded half-smile, a plain grey zip tracksuit top over a white T-shirt. A person of a northern European industrial city: fair skin that reddens in the cold, light-brown to dark hair, grey or blue eyes. Waist-up portrait of ONE invented person who resembles no real individual and no known face, the body turned three-quarters and the eyes just past the lens, alone against a plain flat even mid-grey studio backdrop with nothing else in the frame. An unposed, caught expression, the way a documentary photographer finds people, never a model's smile. Real skin with pores and small asymmetries, real hair, real worn fabric with creases. The ordinary clothes of a working neighbourhood in the 1980s: plain and muted, no print, no stripes, no pattern, no badge. Photorealistic cinematic character portrait for a modern open-world game: 85 mm lens, a soft warm amber-orange key light from one side as from a street lamp at dusk and a cool blue fill from the other, natural colour, high detail. No text, no letters, no numbers, no signs with writing, no logos, no crests, no sponsor marks, no advertising, no flags, no real person's likeness, no yellow paint and no yellow clothing."
+  },
+  {
+   "stem": "life-cast-north-man-fl1",
+   "aspect": "1:1",
+   "use": "cast",
+   "people": "north",
+   "who": "man",
+   "priority": 2,
+   "prompt": "A man of about twenty-eight: short hair, two days of stubble, tired kind eyes, broad shoulders a little rounded by work, a plain dark denim jacket over a grey T-shirt. A person of a northern European industrial city: fair skin that reddens in the cold, light-brown to dark hair, grey or blue eyes. Waist-up portrait of ONE invented person who resembles no real individual and no known face, the body turned three-quarters and the eyes just past the lens, alone against a plain flat even mid-grey studio backdrop with nothing else in the frame. An unposed, caught expression, the way a documentary photographer finds people, never a model's smile. Real skin with pores and small asymmetries, real hair, real worn fabric with creases. The ordinary clothes of a working neighbourhood in the 1980s: plain and muted, no print, no stripes, no pattern, no badge. Photorealistic cinematic character portrait for a modern open-world game: 85 mm lens, a soft warm amber-orange key light from one side as from a street lamp at dusk and a cool blue fill from the other, natural colour, high detail. No text, no letters, no numbers, no signs with writing, no logos, no crests, no sponsor marks, no advertising, no flags, no real person's likeness, no yellow paint and no yellow clothing."
+  },
+  {
+   "stem": "life-cast-north-father-fl1",
+   "aspect": "1:1",
+   "use": "cast",
+   "people": "north",
+   "who": "father",
+   "priority": 2,
+   "prompt": "A working man of about thirty-eight: a thick dark moustache, deep laugh lines, strong forearms, a short-sleeved off-white work shirt open at the collar over a white vest, a plain cream-white wool scarf laid over one shoulder. A person of a northern European industrial city: fair skin that reddens in the cold, light-brown to dark hair, grey or blue eyes. Waist-up portrait of ONE invented person who resembles no real individual and no known face, the body turned three-quarters and the eyes just past the lens, alone against a plain flat even mid-grey studio backdrop with nothing else in the frame. An unposed, caught expression, the way a documentary photographer finds people, never a model's smile. Real skin with pores and small asymmetries, real hair, real worn fabric with creases. The ordinary clothes of a working neighbourhood in the 1980s: plain and muted, no print, no stripes, no pattern, no badge. Photorealistic cinematic character portrait for a modern open-world game: 85 mm lens, a soft warm amber-orange key light from one side as from a street lamp at dusk and a cool blue fill from the other, natural colour, high detail. No text, no letters, no numbers, no signs with writing, no logos, no crests, no sponsor marks, no advertising, no flags, no real person's likeness, no yellow paint and no yellow clothing."
+  },
+  {
+   "stem": "life-cast-north-mother-fl1",
+   "aspect": "1:1",
+   "use": "cast",
+   "people": "north",
+   "who": "mother",
+   "priority": 2,
+   "prompt": "A woman of about thirty-five: dark hair tied back loosely with strands come free, warm steady eyes, small silver earrings, a plain blue-grey house dress under an open knitted cardigan. A person of a northern European industrial city: fair skin that reddens in the cold, light-brown to dark hair, grey or blue eyes. Waist-up portrait of ONE invented person who resembles no real individual and no known face, the body turned three-quarters and the eyes just past the lens, alone against a plain flat even mid-grey studio backdrop with nothing else in the frame. An unposed, caught expression, the way a documentary photographer finds people, never a model's smile. Real skin with pores and small asymmetries, real hair, real worn fabric with creases. The ordinary clothes of a working neighbourhood in the 1980s: plain and muted, no print, no stripes, no pattern, no badge. Photorealistic cinematic character portrait for a modern open-world game: 85 mm lens, a soft warm amber-orange key light from one side as from a street lamp at dusk and a cool blue fill from the other, natural colour, high detail. No text, no letters, no numbers, no signs with writing, no logos, no crests, no sponsor marks, no advertising, no flags, no real person's likeness, no yellow paint and no yellow clothing."
+  },
+  {
+   "stem": "life-cast-north-mate-fl1",
+   "aspect": "1:1",
+   "use": "cast",
+   "people": "north",
+   "who": "mate",
+   "priority": 2,
+   "prompt": "A small wiry boy of about eight: cropped hair, ears that stick out, a wide cheeky grin, a sticking plaster on the chin, a faded plain blue T-shirt. A person of a northern European industrial city: fair skin that reddens in the cold, light-brown to dark hair, grey or blue eyes. Waist-up portrait of ONE invented person who resembles no real individual and no known face, the body turned three-quarters and the eyes just past the lens, alone against a plain flat even mid-grey studio backdrop with nothing else in the frame. An unposed, caught expression, the way a documentary photographer finds people, never a model's smile. Real skin with pores and small asymmetries, real hair, real worn fabric with creases. The ordinary clothes of a working neighbourhood in the 1980s: plain and muted, no print, no stripes, no pattern, no badge. Photorealistic cinematic character portrait for a modern open-world game: 85 mm lens, a soft warm amber-orange key light from one side as from a street lamp at dusk and a cool blue fill from the other, natural colour, high detail. No text, no letters, no numbers, no signs with writing, no logos, no crests, no sponsor marks, no advertising, no flags, no real person's likeness, no yellow paint and no yellow clothing."
+  },
+  {
+   "stem": "life-cast-north-kiosk-fl1",
+   "aspect": "1:1",
+   "use": "cast",
+   "people": "north",
+   "who": "kiosk",
+   "priority": 2,
+   "prompt": "A kiosk keeper of about sixty: a grey moustache, reading glasses pushed up on the forehead, a pencil behind one ear, a plain brown knitted waistcoat over a pale shirt with the sleeves rolled. A person of a northern European industrial city: fair skin that reddens in the cold, light-brown to dark hair, grey or blue eyes. Waist-up portrait of ONE invented person who resembles no real individual and no known face, the body turned three-quarters and the eyes just past the lens, alone against a plain flat even mid-grey studio backdrop with nothing else in the frame. An unposed, caught expression, the way a documentary photographer finds people, never a model's smile. Real skin with pores and small asymmetries, real hair, real worn fabric with creases. The ordinary clothes of a working neighbourhood in the 1980s: plain and muted, no print, no stripes, no pattern, no badge. Photorealistic cinematic character portrait for a modern open-world game: 85 mm lens, a soft warm amber-orange key light from one side as from a street lamp at dusk and a cool blue fill from the other, natural colour, high detail. No text, no letters, no numbers, no signs with writing, no logos, no crests, no sponsor marks, no advertising, no flags, no real person's likeness, no yellow paint and no yellow clothing."
+  },
+  {
+   "stem": "life-cast-north-neighbour-fl1",
+   "aspect": "1:1",
+   "use": "cast",
+   "people": "north",
+   "who": "neighbour",
+   "priority": 2,
+   "prompt": "A woman of about seventy: white hair pinned up, a deeply lined face that has smiled a great deal, a dark plain housecoat with a grey cardigan over the shoulders. A person of a northern European industrial city: fair skin that reddens in the cold, light-brown to dark hair, grey or blue eyes. Waist-up portrait of ONE invented person who resembles no real individual and no known face, the body turned three-quarters and the eyes just past the lens, alone against a plain flat even mid-grey studio backdrop with nothing else in the frame. An unposed, caught expression, the way a documentary photographer finds people, never a model's smile. Real skin with pores and small asymmetries, real hair, real worn fabric with creases. The ordinary clothes of a working neighbourhood in the 1980s: plain and muted, no print, no stripes, no pattern, no badge. Photorealistic cinematic character portrait for a modern open-world game: 85 mm lens, a soft warm amber-orange key light from one side as from a street lamp at dusk and a cool blue fill from the other, natural colour, high detail. No text, no letters, no numbers, no signs with writing, no logos, no crests, no sponsor marks, no advertising, no flags, no real person's likeness, no yellow paint and no yellow clothing."
+  },
+  {
+   "stem": "life-cast-north-grandfather-fl1",
+   "aspect": "1:1",
+   "use": "cast",
+   "people": "north",
+   "who": "grandfather",
+   "priority": 2,
+   "prompt": "A man of about seventy-five: a dark flat cap, white stubble, pale watering eyes, a heavy dark wool jacket over a buttoned shirt, a plain cream-white wool scarf. A person of a northern European industrial city: fair skin that reddens in the cold, light-brown to dark hair, grey or blue eyes. Waist-up portrait of ONE invented person who resembles no real individual and no known face, the body turned three-quarters and the eyes just past the lens, alone against a plain flat even mid-grey studio backdrop with nothing else in the frame. An unposed, caught expression, the way a documentary photographer finds people, never a model's smile. Real skin with pores and small asymmetries, real hair, real worn fabric with creases. The ordinary clothes of a working neighbourhood in the 1980s: plain and muted, no print, no stripes, no pattern, no badge. Photorealistic cinematic character portrait for a modern open-world game: 85 mm lens, a soft warm amber-orange key light from one side as from a street lamp at dusk and a cool blue fill from the other, natural colour, high detail. No text, no letters, no numbers, no signs with writing, no logos, no crests, no sponsor marks, no advertising, no flags, no real person's likeness, no yellow paint and no yellow clothing."
+  },
+  {
    "stem": "life-story-kiosk-night-fl1",
    "aspect": "16:9",
    "use": "story",
@@ -488,6 +650,87 @@
    "town": "mos",
    "priority": 3,
    "prompt": "A Mostar neighbourhood on the west bank: stone-roofed old houses and socialist-era blocks, a tree-lined avenue, the river gorge cutting one edge of the frame. Straight-down aerial view, camera pointing vertically at the ground, no horizon and no tilt, of a dense neighbourhood about 600 metres across at dusk: readable street grid, block roofs, one small square, lit streets with warm lamps and shining wet asphalt, and a football ground with its pitch and glowing floodlights in ONE corner of the square frame. Clean and legible like the base art of a game's district map, photoreal materials. Photorealistic cinematic environment for a modern open-world game: blue-hour dusk after rain, wet reflective ground wherever ground shows, warm amber-orange street lamps, natural colour, high detail. No text, no letters, no numbers, no signs with writing, no logos, no crests, no sponsor marks, no advertising, no flags, no real person's likeness, no yellow paint and no yellow clothing."
+  },
+  {
+   "stem": "life-cast-maghreb-boy-fl1",
+   "aspect": "1:1",
+   "use": "cast",
+   "people": "maghreb",
+   "who": "boy",
+   "priority": 3,
+   "prompt": "A boy of about eight: short untidy hair, a gap where a milk tooth has gone, wide curious eyes that miss nothing, a plain cream T-shirt a size too big, a scraped elbow. A person of a North African coastal city: light-brown to brown skin, dark hair, dark eyes. Waist-up portrait of ONE invented person who resembles no real individual and no known face, the body turned three-quarters and the eyes just past the lens, alone against a plain flat even mid-grey studio backdrop with nothing else in the frame. An unposed, caught expression, the way a documentary photographer finds people, never a model's smile. Real skin with pores and small asymmetries, real hair, real worn fabric with creases. The ordinary clothes of a working neighbourhood in the 1980s: plain and muted, no print, no stripes, no pattern, no badge. Photorealistic cinematic character portrait for a modern open-world game: 85 mm lens, a soft warm amber-orange key light from one side as from a street lamp at dusk and a cool blue fill from the other, natural colour, high detail. No text, no letters, no numbers, no signs with writing, no logos, no crests, no sponsor marks, no advertising, no flags, no real person's likeness, no yellow paint and no yellow clothing."
+  },
+  {
+   "stem": "life-cast-maghreb-teen-fl1",
+   "aspect": "1:1",
+   "use": "cast",
+   "people": "maghreb",
+   "who": "teen",
+   "priority": 3,
+   "prompt": "A boy of about fifteen: hair grown long and pushed off the forehead, the first shadow on the upper lip, a guarded half-smile, a plain grey zip tracksuit top over a white T-shirt. A person of a North African coastal city: light-brown to brown skin, dark hair, dark eyes. Waist-up portrait of ONE invented person who resembles no real individual and no known face, the body turned three-quarters and the eyes just past the lens, alone against a plain flat even mid-grey studio backdrop with nothing else in the frame. An unposed, caught expression, the way a documentary photographer finds people, never a model's smile. Real skin with pores and small asymmetries, real hair, real worn fabric with creases. The ordinary clothes of a working neighbourhood in the 1980s: plain and muted, no print, no stripes, no pattern, no badge. Photorealistic cinematic character portrait for a modern open-world game: 85 mm lens, a soft warm amber-orange key light from one side as from a street lamp at dusk and a cool blue fill from the other, natural colour, high detail. No text, no letters, no numbers, no signs with writing, no logos, no crests, no sponsor marks, no advertising, no flags, no real person's likeness, no yellow paint and no yellow clothing."
+  },
+  {
+   "stem": "life-cast-maghreb-man-fl1",
+   "aspect": "1:1",
+   "use": "cast",
+   "people": "maghreb",
+   "who": "man",
+   "priority": 3,
+   "prompt": "A man of about twenty-eight: short hair, two days of stubble, tired kind eyes, broad shoulders a little rounded by work, a plain dark denim jacket over a grey T-shirt. A person of a North African coastal city: light-brown to brown skin, dark hair, dark eyes. Waist-up portrait of ONE invented person who resembles no real individual and no known face, the body turned three-quarters and the eyes just past the lens, alone against a plain flat even mid-grey studio backdrop with nothing else in the frame. An unposed, caught expression, the way a documentary photographer finds people, never a model's smile. Real skin with pores and small asymmetries, real hair, real worn fabric with creases. The ordinary clothes of a working neighbourhood in the 1980s: plain and muted, no print, no stripes, no pattern, no badge. Photorealistic cinematic character portrait for a modern open-world game: 85 mm lens, a soft warm amber-orange key light from one side as from a street lamp at dusk and a cool blue fill from the other, natural colour, high detail. No text, no letters, no numbers, no signs with writing, no logos, no crests, no sponsor marks, no advertising, no flags, no real person's likeness, no yellow paint and no yellow clothing."
+  },
+  {
+   "stem": "life-cast-maghreb-father-fl1",
+   "aspect": "1:1",
+   "use": "cast",
+   "people": "maghreb",
+   "who": "father",
+   "priority": 3,
+   "prompt": "A working man of about thirty-eight: a thick dark moustache, deep laugh lines, strong forearms, a short-sleeved off-white work shirt open at the collar over a white vest, a plain cream-white wool scarf laid over one shoulder. A person of a North African coastal city: light-brown to brown skin, dark hair, dark eyes. Waist-up portrait of ONE invented person who resembles no real individual and no known face, the body turned three-quarters and the eyes just past the lens, alone against a plain flat even mid-grey studio backdrop with nothing else in the frame. An unposed, caught expression, the way a documentary photographer finds people, never a model's smile. Real skin with pores and small asymmetries, real hair, real worn fabric with creases. The ordinary clothes of a working neighbourhood in the 1980s: plain and muted, no print, no stripes, no pattern, no badge. Photorealistic cinematic character portrait for a modern open-world game: 85 mm lens, a soft warm amber-orange key light from one side as from a street lamp at dusk and a cool blue fill from the other, natural colour, high detail. No text, no letters, no numbers, no signs with writing, no logos, no crests, no sponsor marks, no advertising, no flags, no real person's likeness, no yellow paint and no yellow clothing."
+  },
+  {
+   "stem": "life-cast-maghreb-mother-fl1",
+   "aspect": "1:1",
+   "use": "cast",
+   "people": "maghreb",
+   "who": "mother",
+   "priority": 3,
+   "prompt": "A woman of about thirty-five: dark hair tied back loosely with strands come free, warm steady eyes, small silver earrings, a plain blue-grey house dress under an open knitted cardigan. A person of a North African coastal city: light-brown to brown skin, dark hair, dark eyes. Waist-up portrait of ONE invented person who resembles no real individual and no known face, the body turned three-quarters and the eyes just past the lens, alone against a plain flat even mid-grey studio backdrop with nothing else in the frame. An unposed, caught expression, the way a documentary photographer finds people, never a model's smile. Real skin with pores and small asymmetries, real hair, real worn fabric with creases. The ordinary clothes of a working neighbourhood in the 1980s: plain and muted, no print, no stripes, no pattern, no badge. Photorealistic cinematic character portrait for a modern open-world game: 85 mm lens, a soft warm amber-orange key light from one side as from a street lamp at dusk and a cool blue fill from the other, natural colour, high detail. No text, no letters, no numbers, no signs with writing, no logos, no crests, no sponsor marks, no advertising, no flags, no real person's likeness, no yellow paint and no yellow clothing."
+  },
+  {
+   "stem": "life-cast-maghreb-mate-fl1",
+   "aspect": "1:1",
+   "use": "cast",
+   "people": "maghreb",
+   "who": "mate",
+   "priority": 3,
+   "prompt": "A small wiry boy of about eight: cropped hair, ears that stick out, a wide cheeky grin, a sticking plaster on the chin, a faded plain blue T-shirt. A person of a North African coastal city: light-brown to brown skin, dark hair, dark eyes. Waist-up portrait of ONE invented person who resembles no real individual and no known face, the body turned three-quarters and the eyes just past the lens, alone against a plain flat even mid-grey studio backdrop with nothing else in the frame. An unposed, caught expression, the way a documentary photographer finds people, never a model's smile. Real skin with pores and small asymmetries, real hair, real worn fabric with creases. The ordinary clothes of a working neighbourhood in the 1980s: plain and muted, no print, no stripes, no pattern, no badge. Photorealistic cinematic character portrait for a modern open-world game: 85 mm lens, a soft warm amber-orange key light from one side as from a street lamp at dusk and a cool blue fill from the other, natural colour, high detail. No text, no letters, no numbers, no signs with writing, no logos, no crests, no sponsor marks, no advertising, no flags, no real person's likeness, no yellow paint and no yellow clothing."
+  },
+  {
+   "stem": "life-cast-maghreb-kiosk-fl1",
+   "aspect": "1:1",
+   "use": "cast",
+   "people": "maghreb",
+   "who": "kiosk",
+   "priority": 3,
+   "prompt": "A kiosk keeper of about sixty: a grey moustache, reading glasses pushed up on the forehead, a pencil behind one ear, a plain brown knitted waistcoat over a pale shirt with the sleeves rolled. A person of a North African coastal city: light-brown to brown skin, dark hair, dark eyes. Waist-up portrait of ONE invented person who resembles no real individual and no known face, the body turned three-quarters and the eyes just past the lens, alone against a plain flat even mid-grey studio backdrop with nothing else in the frame. An unposed, caught expression, the way a documentary photographer finds people, never a model's smile. Real skin with pores and small asymmetries, real hair, real worn fabric with creases. The ordinary clothes of a working neighbourhood in the 1980s: plain and muted, no print, no stripes, no pattern, no badge. Photorealistic cinematic character portrait for a modern open-world game: 85 mm lens, a soft warm amber-orange key light from one side as from a street lamp at dusk and a cool blue fill from the other, natural colour, high detail. No text, no letters, no numbers, no signs with writing, no logos, no crests, no sponsor marks, no advertising, no flags, no real person's likeness, no yellow paint and no yellow clothing."
+  },
+  {
+   "stem": "life-cast-maghreb-neighbour-fl1",
+   "aspect": "1:1",
+   "use": "cast",
+   "people": "maghreb",
+   "who": "neighbour",
+   "priority": 3,
+   "prompt": "A woman of about seventy: white hair pinned up, a deeply lined face that has smiled a great deal, a dark plain housecoat with a grey cardigan over the shoulders. A person of a North African coastal city: light-brown to brown skin, dark hair, dark eyes. Waist-up portrait of ONE invented person who resembles no real individual and no known face, the body turned three-quarters and the eyes just past the lens, alone against a plain flat even mid-grey studio backdrop with nothing else in the frame. An unposed, caught expression, the way a documentary photographer finds people, never a model's smile. Real skin with pores and small asymmetries, real hair, real worn fabric with creases. The ordinary clothes of a working neighbourhood in the 1980s: plain and muted, no print, no stripes, no pattern, no badge. Photorealistic cinematic character portrait for a modern open-world game: 85 mm lens, a soft warm amber-orange key light from one side as from a street lamp at dusk and a cool blue fill from the other, natural colour, high detail. No text, no letters, no numbers, no signs with writing, no logos, no crests, no sponsor marks, no advertising, no flags, no real person's likeness, no yellow paint and no yellow clothing."
+  },
+  {
+   "stem": "life-cast-maghreb-grandfather-fl1",
+   "aspect": "1:1",
+   "use": "cast",
+   "people": "maghreb",
+   "who": "grandfather",
+   "priority": 3,
+   "prompt": "A man of about seventy-five: a dark flat cap, white stubble, pale watering eyes, a heavy dark wool jacket over a buttoned shirt, a plain cream-white wool scarf. A person of a North African coastal city: light-brown to brown skin, dark hair, dark eyes. Waist-up portrait of ONE invented person who resembles no real individual and no known face, the body turned three-quarters and the eyes just past the lens, alone against a plain flat even mid-grey studio backdrop with nothing else in the frame. An unposed, caught expression, the way a documentary photographer finds people, never a model's smile. Real skin with pores and small asymmetries, real hair, real worn fabric with creases. The ordinary clothes of a working neighbourhood in the 1980s: plain and muted, no print, no stripes, no pattern, no badge. Photorealistic cinematic character portrait for a modern open-world game: 85 mm lens, a soft warm amber-orange key light from one side as from a street lamp at dusk and a cool blue fill from the other, natural colour, high detail. No text, no letters, no numbers, no signs with writing, no logos, no crests, no sponsor marks, no advertising, no flags, no real person's likeness, no yellow paint and no yellow clothing."
   },
   {
    "stem": "life-story-crossing-fl1",

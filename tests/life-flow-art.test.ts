@@ -12,7 +12,7 @@ vi.mock('@/lib/stories/media',()=>({
 vi.mock('@/lib/stories/store',()=>({listJobs:async()=>[],getJob:async()=>null,updateJob:async()=>{throw new Error('no job')}}))
 vi.mock('@/lib/master/durable',()=>({durable:()=>null}))
 const {flowQueue,flowUrls,LIB_STEM,LIB_DIR,libPath,LIFE_STEM,LIFE_DIR,lifePath,LIFE_ANSWER}=await import('@/lib/stories/flowOperator')
-const {buildLifeLibrary,serialise,STYLE,NEGATIVES,OUT}=await import('@/scripts/life/flow/life-library')
+const {buildLifeLibrary,serialise,STYLE,CAST_STYLE,NEGATIVES,OUT}=await import('@/scripts/life/flow/life-library')
 const {parseLifeStem,CLUB_TOWN,LIFE_TOWNS}=await import('@/lib/life/flowArtSpec')
 const {lifeArt,clubLifeArt}=await import('@/lib/life/flowArt')
 const {REGISTRY}=await import('@/lib/master/registry')
@@ -30,7 +30,7 @@ describe('LIFE\'s picture order for Flow (scripts/life/flow/life-library.json, r
  })
  it('is a lean first order, every piece named for LIFE and never for the films\' library',()=>{
   expect(pieces.length).toBeGreaterThanOrEqual(60)
-  expect(pieces.length).toBeLessThanOrEqual(100)
+  expect(pieces.length).toBeLessThanOrEqual(130)
   expect(new Set(pieces.map(p=>p.stem)).size).toBe(pieces.length)
   for(const p of pieces){
    expect(LIFE_STEM.test(p.stem),p.stem).toBe(true)
@@ -50,7 +50,8 @@ describe('LIFE\'s picture order for Flow (scripts/life/flow/life-library.json, r
   for(const w of ['blue-hour dusk after rain','wet reflective ground','warm amber-orange street lamps','natural colour','high detail'])expect(STYLE).toContain(w)
   for(const w of ['No text','no letters','no numbers','no signs with writing','no logos','no crests','no sponsor marks','no flags','no real person\'s likeness','no yellow paint','no yellow clothing'])expect(NEGATIVES).toContain(w)
   for(const p of pieces){
-   expect(p.prompt,p.stem).toContain(STYLE)
+   // a person's portrait has its own light (CAST_STYLE); everything else is the street's one look
+   expect(p.prompt,p.stem).toContain(p.use==='cast'?CAST_STYLE:STYLE)
    expect(p.prompt.endsWith(NEGATIVES),p.stem).toBe(true)
    expect(p.prompt.length,p.stem).toBeLessThanOrEqual(2400) // the door cuts a prompt there
   }
