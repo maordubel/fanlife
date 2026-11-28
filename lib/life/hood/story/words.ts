@@ -17,7 +17,7 @@ const EN = {
   'story.day.0': 'Six days to go', 'story.day.1': 'Five days to go', 'story.day.2': 'Four days to go', 'story.day.3': 'Three days to go', 'story.day.4': 'Two days to go', 'story.day.5': 'Tomorrow', 'story.day.6': 'Matchday',
   'story.offer.main': 'Chapter', 'story.offer.side': 'A small job', 'story.offer.standing': 'This week', 'story.offer.pick': 'How will you do it?', 'story.offer.wait': 'The next chapter is on matchday',
   // the story in the hood: the HUD, the talks, the cards
-  'story.next': 'Next: {title}', 'story.next.talk': 'Talk to {who}', 'story.next.kicker': '{stage} · Age {n} · {day}', 'story.active.kicker': '{title} · {n} of {m}',
+  'story.next': 'Next: {title}', 'story.next.talk': 'Talk to {who}', 'story.next.life': '{who} is looking for you', 'story.next.kicker': '{stage} · Age {n} · {day}', 'story.active.kicker': '{title} · {n} of {m}',
   'story.talk.menu': '“Got a minute? There’s something.”', 'story.talk.later': 'Not now.', 'story.talk.carry-on': 'On it.', 'story.talk.drop': 'Leave it for now.', 'story.talk.later.line': '“Whenever you’re ready. I’m not going anywhere.”',
   'story.end-day.line': '“Get some sleep. Every night brings matchday closer.”',
   'story.idle.dad': '“Go on, have a wander. I’m here.”', 'story.idle.mate': '“Same corner as always. Where else would I be?”', 'story.idle.kiosk': '“Papers, sweets, batteries. Take your time.”', 'story.idle.neighbour': '“Mind how you go. I’m always on the balcony if you want me.”',

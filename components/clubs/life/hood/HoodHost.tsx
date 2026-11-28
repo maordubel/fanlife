@@ -566,13 +566,14 @@ export function HoodHost({club, mark = null, seed = 1, time = 'dusk', clockAt, q
   const stepKey = objIx >= 0 ? level.steps[objIx]?.key : null
   const active = jobState === 'active' && !!stepKey && !!job
   const wayName = waypoint ? w(`hood.place.${waypoint}`) : ''
-  // the HUD always names what is in front of him: the step of the open mission, or "Next: <mission>" and who gives it
+  // the HUD names what is in front of him: the step of the open mission, or the PERSON who has something for him.
+  // Never the next mission's title: he reaches it by walking up and talking (streetTalk.ts), not off a list.
   const focus = play.plan ? null : focusOf(play)
   const openId = play.plan?.split('/')[0] ?? null, openNight = nightOf(openId)
   const stageWord = w(`story.stage.${stageOfAge(play.state.age)}`)
   const kicker = active ? (openNight ? nightLine(openNight) : w('story.active.kicker', {title: w(job!.titleKey), n: String(objIx - job!.from + 1), m: String(job!.steps)}))
     : focus ? w('story.next.kicker', {stage: stageWord, n: String(play.state.age), day: w(`story.day.${play.state.day}`)}) : waypoint ? w('hood.hud.waypoint') : w('hood.kicker')
-  const objective = active ? w(stepKey!) : focus ? w('story.next', {title: w(`story.m.${focus.id}.title`)}) : waypoint ? wayName : w('hood.free')
+  const objective = active ? w(stepKey!) : focus ? w('story.next.life', {who: names[focus.giver] ?? w(`hood.who.${focus.giver}`)}) : waypoint ? wayName : w('hood.free')
   const nearPerson = nearId ? w('hood.hud.talk.to', {name: names[nearId] ?? ''}) : null
   const placeName = place ? w(`hood.place.${place}`) : null
   const screen = shell.screen
