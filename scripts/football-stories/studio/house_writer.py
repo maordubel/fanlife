@@ -24,6 +24,7 @@ from __future__ import annotations
 import copy
 from datetime import date as Date
 import hashlib
+import os
 import random
 import re
 
@@ -267,7 +268,9 @@ class Pen:
         self.k = 0
 
     def pick(self, key: str, **kw) -> str:
-        opts = [o for o in self.v[key] if o not in self.used] or self.v[key]
+        from .story_judge import STOCK_RE   # a line the judge calls stock is never chosen while another is left (28.11.2026)
+        pool = [o for o in self.v[key] if not STOCK_RE.search(o)] or self.v[key]
+        opts = [o for o in pool if o not in self.used] or pool
         s = self.rng.choice(opts)
         self.used.add(s)
         return self.fill(s, **kw)
@@ -1341,7 +1344,8 @@ def write_script(brief: dict, ledger: dict, writer: str, log=print, avoid: list[
     chs = [opening, *body]
     trim(chs, hi - 45 if minutes > 4 else hi)
     teasers(pen, chs[1:])   # after the cut: a chapter never promises a match the cut took away
-    shape(pen, chs)
+    if os.environ.get('STORIES_HOUSE_SHAPE') == '1':   # off since 28.11.2026: it wrote the formula (studio/story_judge.py)
+        shape(pen, chs)
     house_rules(chs, pen.v['cams'])
     took = minutes_for(_count(chs), minutes)
     if took < FLOOR_MINUTES:
