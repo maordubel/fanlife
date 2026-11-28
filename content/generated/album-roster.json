@@ -11545,6 +11545,25 @@
    },
    "file": "/album/roster/hapoel-petah-tikva/pl_f84cff49db.webp"
   },
+  "hapoel-tel-aviv:pl_005edac39a": {
+   "club": "hapoel-tel-aviv",
+   "person_id": "pl_005edac39a",
+   "eid": "p_c324982118",
+   "name": "Yaakov Ekhoiz",
+   "from": 1974,
+   "to": 1992,
+   "pos": [
+    "DF"
+   ],
+   "code": "HTA–105",
+   "kit": "/club-kits/hapoel-tel-aviv/svg/hta-fka-24631.svg",
+   "source": {
+    "file": "Yaakov Ekhoiz Section: Hapoel Tel Aviv / owner's Supergol & album cards (סופרגול כללי/הפועל שנות 90 לחתוך כל קלף בנפרד.jpg)",
+    "via": "card",
+    "image": "cards/sg072.jpg"
+   },
+   "file": "/album/roster/hapoel-tel-aviv/pl_005edac39a.webp"
+  },
   "hapoel-tel-aviv:pl_01d1de4ff7": {
    "club": "hapoel-tel-aviv",
    "person_id": "pl_01d1de4ff7",
@@ -11563,6 +11582,25 @@
     "image": "cards/b9d3ed47bec4077a4e1b3c52.jpg"
    },
    "file": "/album/roster/hapoel-tel-aviv/pl_01d1de4ff7.webp"
+  },
+  "hapoel-tel-aviv:pl_0248ffd258": {
+   "club": "hapoel-tel-aviv",
+   "person_id": "pl_0248ffd258",
+   "eid": "p_7664d34669",
+   "name": "Shimon Gershon",
+   "from": 1996,
+   "to": 2006,
+   "pos": [
+    "DF"
+   ],
+   "code": "HTA–121",
+   "kit": "/club-kits/hapoel-tel-aviv/svg/hta-fka-231945.svg",
+   "source": {
+    "file": "Shimon Gershon Section: Hapoel Tel Aviv / owner's Supergol & album cards (סופרגול כללי/דאבל 2000 לחתוך.jpg)",
+    "via": "card",
+    "image": "cards/sg049.jpg"
+   },
+   "file": "/album/roster/hapoel-tel-aviv/pl_0248ffd258.webp"
   },
   "hapoel-tel-aviv:pl_046fb310e7": {
    "club": "hapoel-tel-aviv",
@@ -11583,6 +11621,25 @@
    },
    "file": "/album/roster/hapoel-tel-aviv/pl_046fb310e7.webp"
   },
+  "hapoel-tel-aviv:pl_063e16605d": {
+   "club": "hapoel-tel-aviv",
+   "person_id": "pl_063e16605d",
+   "eid": "p_6f1fd9dc54",
+   "name": "Sergei Kalashenko",
+   "from": 2001,
+   "to": 2003,
+   "pos": [
+    "FW"
+   ],
+   "code": "HTA–134",
+   "kit": "/club-kits/hapoel-tel-aviv/svg/cof-k-01.svg",
+   "source": {
+    "file": "Sergei Kalashenko Section: Hapoel Tel Aviv / owner's Supergol & album cards (סופרגול כללי/2002-3/653406951_10163839344519373_1609308193930330786_n.jpg)",
+    "via": "card",
+    "image": "cards/sg004.jpg"
+   },
+   "file": "/album/roster/hapoel-tel-aviv/pl_063e16605d.webp"
+  },
   "hapoel-tel-aviv:pl_06443b9d1e": {
    "club": "hapoel-tel-aviv",
    "person_id": "pl_06443b9d1e",
@@ -11601,6 +11658,63 @@
     "image": "cards/6c561c1865dc36bd04e265e7.jpg"
    },
    "file": "/album/roster/hapoel-tel-aviv/pl_06443b9d1e.webp"
+  },
+  "hapoel-tel-aviv:pl_08e19d686e": {
+   "club": "hapoel-tel-aviv",
+   "person_id": "pl_08e19d686e",
+   "eid": "p_6dbf159c8d",
+   "name": "Shabtai Yahbas",
+   "from": 1977,
+   "to": 1985,
+   "pos": [
+    "MF"
+   ],
+   "code": "HTA–106",
+   "kit": "/club-kits/hapoel-tel-aviv/svg/hta-fka-70783.svg",
+   "source": {
+    "file": "Shabtai Yahbas Section: Hapoel Tel Aviv / owner's Supergol & album cards (סופרגול כללי/הפועל שנות 80 לחתוך כל קלף בנפרד.jpg)",
+    "via": "card",
+    "image": "cards/sg065.jpg"
+   },
+   "file": "/album/roster/hapoel-tel-aviv/pl_08e19d686e.webp"
+  },
+  "hapoel-tel-aviv:pl_0942ce78c9": {
+   "club": "hapoel-tel-aviv",
+   "person_id": "pl_0942ce78c9",
+   "eid": "p_96d00d5348",
+   "name": "Felix Halfon",
+   "from": 1988,
+   "to": 1999,
+   "pos": [
+    "DF"
+   ],
+   "code": "HTA–110",
+   "kit": "/club-kits/hapoel-tel-aviv/svg/kit-kit-1993-94-home.svg",
+   "source": {
+    "file": "Felix Halfon Section: Hapoel Tel Aviv / owner's Supergol & album cards (סופרגול כללי/הפועל97-8 לחתוך כל קלף בנפרד.jpg)",
+    "via": "card",
+    "image": "cards/sg078.jpg"
+   },
+   "file": "/album/roster/hapoel-tel-aviv/pl_0942ce78c9.webp"
+  },
+  "hapoel-tel-aviv:pl_09973ad959": {
+   "club": "hapoel-tel-aviv",
+   "person_id": "pl_09973ad959",
+   "eid": "p_4923c8325d",
+   "name": "Hezi Shirazi",
+   "from": 1991,
+   "to": 1994,
+   "pos": [
+    "FW"
+   ],
+   "code": "HTA–112",
+   "kit": "/club-kits/hapoel-tel-aviv/svg/kit-kit-1992-93-home.svg",
+   "source": {
+    "file": "Hezi Shirazi Section: Hapoel Tel Aviv / owner's Supergol & album cards (סופרגול כללי/הפועל שנות 90 לחתוך כל קלף בנפרד.jpg)",
+    "via": "card",
+    "image": "cards/sg075.jpg"
+   },
+   "file": "/album/roster/hapoel-tel-aviv/pl_09973ad959.webp"
   },
   "hapoel-tel-aviv:pl_0af42cfc53": {
    "club": "hapoel-tel-aviv",
@@ -11640,6 +11754,63 @@
    },
    "file": "/album/roster/hapoel-tel-aviv/pl_10165454e5.webp"
   },
+  "hapoel-tel-aviv:pl_101b01ac2b": {
+   "club": "hapoel-tel-aviv",
+   "person_id": "pl_101b01ac2b",
+   "eid": "p_aafc47b09f",
+   "name": "Sebastian Simurotić",
+   "from": 1997,
+   "to": 2000,
+   "pos": [
+    "FW"
+   ],
+   "code": "HTA–126",
+   "kit": "/club-kits/hapoel-tel-aviv/svg/hta-fka-24619.svg",
+   "source": {
+    "file": "Sebastian Simurotić Section: Hapoel Tel Aviv / owner's Supergol & album cards (סופרגול כללי/דאבל 2000 לחתוך.jpg)",
+    "via": "card",
+    "image": "cards/sg057.jpg"
+   },
+   "file": "/album/roster/hapoel-tel-aviv/pl_101b01ac2b.webp"
+  },
+  "hapoel-tel-aviv:pl_1163419b2c": {
+   "club": "hapoel-tel-aviv",
+   "person_id": "pl_1163419b2c",
+   "eid": "p_46676d770e",
+   "name": "Denis Onishenko",
+   "from": 1999,
+   "to": 2003,
+   "pos": [
+    "MF"
+   ],
+   "code": "HTA–128",
+   "kit": "/club-kits/hapoel-tel-aviv/svg/hta-fka-231945.svg",
+   "source": {
+    "file": "Denis Onishenko Section: Hapoel Tel Aviv / owner's Supergol & album cards (סופרגול כללי/2002-3/654788325_10163839343409373_6561140603101694989_n.jpg)",
+    "via": "card",
+    "image": "cards/sg010.jpg"
+   },
+   "file": "/album/roster/hapoel-tel-aviv/pl_1163419b2c.webp"
+  },
+  "hapoel-tel-aviv:pl_11fab2be23": {
+   "club": "hapoel-tel-aviv",
+   "person_id": "pl_11fab2be23",
+   "eid": "p_b5d64bece3",
+   "name": "Shalom Tikva",
+   "from": 1995,
+   "to": 2000,
+   "pos": [
+    "MF"
+   ],
+   "code": "HTA–119",
+   "kit": "/club-kits/hapoel-tel-aviv/svg/kit-kit-1997-98-home.svg",
+   "source": {
+    "file": "Shalom Tikva Section: Hapoel Tel Aviv / owner's Supergol & album cards (סופרגול כללי/דאבל 2000 לחתוך.jpg)",
+    "via": "card",
+    "image": "cards/sg053.jpg"
+   },
+   "file": "/album/roster/hapoel-tel-aviv/pl_11fab2be23.webp"
+  },
   "hapoel-tel-aviv:pl_1434bfbd22": {
    "club": "hapoel-tel-aviv",
    "person_id": "pl_1434bfbd22",
@@ -11677,6 +11848,25 @@
     "image": "cards/7a47a7a8933d7360cf234004.jpg"
    },
    "file": "/album/roster/hapoel-tel-aviv/pl_14c4010e81.webp"
+  },
+  "hapoel-tel-aviv:pl_155694d455": {
+   "club": "hapoel-tel-aviv",
+   "person_id": "pl_155694d455",
+   "eid": "p_59c77d01b5",
+   "name": "Kazimierz Moskal",
+   "from": 1994,
+   "to": 1998,
+   "pos": [
+    "MF"
+   ],
+   "code": "HTA–116",
+   "kit": "/club-kits/hapoel-tel-aviv/svg/hta-fka-231946.svg",
+   "source": {
+    "file": "Kazimierz Moskal Section: Hapoel Tel Aviv / owner's Supergol & album cards (סופרגול כללי/מוסקאל 98.jpg)",
+    "via": "card",
+    "image": "cards/sg120.jpg"
+   },
+   "file": "/album/roster/hapoel-tel-aviv/pl_155694d455.webp"
   },
   "hapoel-tel-aviv:pl_18791709a6": {
    "club": "hapoel-tel-aviv",
@@ -11730,9 +11920,9 @@
    "code": "HTA–45",
    "kit": "/club-kits/hapoel-tel-aviv/svg/cof-k-04.svg",
    "source": {
-    "file": "Elyaniv Barda Section: KRC Genk No. 343 / UEFA Champions League 2011-2012 (Panini)",
+    "file": "Elyaniv Barda Section: Hapoel Tel Aviv / owner's Supergol & album cards (סופרגול כללי/קלפים נוספים אסים לחתוך מה שניתן..jpg)",
     "via": "card",
-    "image": "cards/c9b7137d024b2a218e22babb.jpg"
+    "image": "cards/sg132.jpg"
    },
    "file": "/album/roster/hapoel-tel-aviv/pl_1dacbd1710.webp"
   },
@@ -11832,6 +12022,44 @@
    },
    "file": "/album/roster/hapoel-tel-aviv/pl_25a21854c9.webp"
   },
+  "hapoel-tel-aviv:pl_2b46fc9a5d": {
+   "club": "hapoel-tel-aviv",
+   "person_id": "pl_2b46fc9a5d",
+   "eid": "p_f4d9404511",
+   "name": "Bibars Natcho",
+   "from": 2006,
+   "to": 2010,
+   "pos": [
+    "MF"
+   ],
+   "code": "HTA–136",
+   "kit": "/club-kits/hapoel-tel-aviv/svg/cof-k-06.svg",
+   "source": {
+    "file": "Bibars Natcho Section: Hapoel Tel Aviv / owner's Supergol & album cards (סופרגול כללי/לחתוך 3.jpg)",
+    "via": "card",
+    "image": "cards/sg095.jpg"
+   },
+   "file": "/album/roster/hapoel-tel-aviv/pl_2b46fc9a5d.webp"
+  },
+  "hapoel-tel-aviv:pl_2c1f942cea": {
+   "club": "hapoel-tel-aviv",
+   "person_id": "pl_2c1f942cea",
+   "eid": "p_34eb87490c",
+   "name": "Ilan Bakhar",
+   "from": 1999,
+   "to": 2002,
+   "pos": [
+    "DF"
+   ],
+   "code": "HTA–129",
+   "kit": "/club-kits/hapoel-tel-aviv/svg/hta-fka-24616.svg",
+   "source": {
+    "file": "Ilan Bakhar Section: Hapoel Tel Aviv / owner's Supergol & album cards (סופרגול כללי/דאבל 2000 לחתוך.jpg)",
+    "via": "card",
+    "image": "cards/sg050.jpg"
+   },
+   "file": "/album/roster/hapoel-tel-aviv/pl_2c1f942cea.webp"
+  },
   "hapoel-tel-aviv:pl_2cd7966ba5": {
    "club": "hapoel-tel-aviv",
    "person_id": "pl_2cd7966ba5",
@@ -11850,6 +12078,25 @@
     "image": "cards/f502efb73a4f7126c91db95e.jpg"
    },
    "file": "/album/roster/hapoel-tel-aviv/pl_2cd7966ba5.webp"
+  },
+  "hapoel-tel-aviv:pl_2d4eebd249": {
+   "club": "hapoel-tel-aviv",
+   "person_id": "pl_2d4eebd249",
+   "eid": "p_d911596da4",
+   "name": "Moshe Melamed",
+   "from": 1939,
+   "to": 1950,
+   "pos": [
+    "DF"
+   ],
+   "code": "HTA–101",
+   "kit": "/club-kits/hapoel-tel-aviv/svg/hta-fka-90673.svg",
+   "source": {
+    "file": "Moshe Melamed Section: Hapoel Tel Aviv / owner's Supergol & album cards (סופרגול כללי/לחתוך 4.jpg)",
+    "via": "card",
+    "image": "cards/sg100.jpg"
+   },
+   "file": "/album/roster/hapoel-tel-aviv/pl_2d4eebd249.webp"
   },
   "hapoel-tel-aviv:pl_2fe8c4f817": {
    "club": "hapoel-tel-aviv",
@@ -11889,6 +12136,44 @@
    },
    "file": "/album/roster/hapoel-tel-aviv/pl_31aa115526.webp"
   },
+  "hapoel-tel-aviv:pl_32a9e099cc": {
+   "club": "hapoel-tel-aviv",
+   "person_id": "pl_32a9e099cc",
+   "eid": "p_4d1f536de0",
+   "name": "Sharon Mimer",
+   "from": 1994,
+   "to": 1997,
+   "pos": [
+    "DF"
+   ],
+   "code": "HTA–118",
+   "kit": "/club-kits/hapoel-tel-aviv/svg/hta-fka-24624.svg",
+   "source": {
+    "file": "Sharon Mimer Section: Hapoel Tel Aviv / owner's Supergol & album cards (סופרגול כללי/לחתוך.jpg)",
+    "via": "card",
+    "image": "cards/sg111.jpg"
+   },
+   "file": "/album/roster/hapoel-tel-aviv/pl_32a9e099cc.webp"
+  },
+  "hapoel-tel-aviv:pl_35b4912c11": {
+   "club": "hapoel-tel-aviv",
+   "person_id": "pl_35b4912c11",
+   "eid": "p_75ef40e9c5",
+   "name": "Maurice Jano",
+   "from": 1981,
+   "to": 1991,
+   "pos": [
+    "FW"
+   ],
+   "code": "HTA–108",
+   "kit": "/club-kits/hapoel-tel-aviv/svg/hta-fka-24628.svg",
+   "source": {
+    "file": "Maurice Jano Section: Hapoel Tel Aviv / owner's Supergol & album cards (סופרגול כללי/הפועל שנות 80 לחתוך כל קלף בנפרד.jpg)",
+    "via": "card",
+    "image": "cards/sg066.jpg"
+   },
+   "file": "/album/roster/hapoel-tel-aviv/pl_35b4912c11.webp"
+  },
   "hapoel-tel-aviv:pl_377ca301f9": {
    "club": "hapoel-tel-aviv",
    "person_id": "pl_377ca301f9",
@@ -11907,6 +12192,25 @@
     "image": "cards/f8a4b765d63fac392df10afe.jpg"
    },
    "file": "/album/roster/hapoel-tel-aviv/pl_377ca301f9.webp"
+  },
+  "hapoel-tel-aviv:pl_3b92af940e": {
+   "club": "hapoel-tel-aviv",
+   "person_id": "pl_3b92af940e",
+   "eid": "p_f519e72f4b",
+   "name": "Davor Rupnik",
+   "from": 1998,
+   "to": 2000,
+   "pos": [
+    "MF"
+   ],
+   "code": "HTA–127",
+   "kit": "/club-kits/hapoel-tel-aviv/svg/kit-kit-1999-00-home.svg",
+   "source": {
+    "file": "Davor Rupnik Section: Hapoel Tel Aviv / owner's Supergol & album cards (סופרגול כללי/דאבל 2000 לחתוך.jpg)",
+    "via": "card",
+    "image": "cards/sg052.jpg"
+   },
+   "file": "/album/roster/hapoel-tel-aviv/pl_3b92af940e.webp"
   },
   "hapoel-tel-aviv:pl_3caf275da2": {
    "club": "hapoel-tel-aviv",
@@ -11927,6 +12231,26 @@
     "image": "cards/71def1e8edef7144f0edd678.jpg"
    },
    "file": "/album/roster/hapoel-tel-aviv/pl_3caf275da2.webp"
+  },
+  "hapoel-tel-aviv:pl_3df2acd0aa": {
+   "club": "hapoel-tel-aviv",
+   "person_id": "pl_3df2acd0aa",
+   "eid": "p_3fc7f6fcf1",
+   "name": "Avi Azoulay",
+   "from": 1992,
+   "to": 1999,
+   "pos": [
+    "DF",
+    "MF"
+   ],
+   "code": "HTA–113",
+   "kit": "/club-kits/hapoel-tel-aviv/svg/hta-fka-24624.svg",
+   "source": {
+    "file": "Avi Azoulay Section: Hapoel Tel Aviv / owner's Supergol & album cards (סופרגול כללי/הפועל97-8 לחתוך כל קלף בנפרד.jpg)",
+    "via": "card",
+    "image": "cards/sg088.jpg"
+   },
+   "file": "/album/roster/hapoel-tel-aviv/pl_3df2acd0aa.webp"
   },
   "hapoel-tel-aviv:pl_42893e5811": {
    "club": "hapoel-tel-aviv",
@@ -11984,6 +12308,25 @@
     "image": "cards/dc575b54785c4ba429752d50.jpg"
    },
    "file": "/album/roster/hapoel-tel-aviv/pl_4806ab594a.webp"
+  },
+  "hapoel-tel-aviv:pl_481a21ae7b": {
+   "club": "hapoel-tel-aviv",
+   "person_id": "pl_481a21ae7b",
+   "eid": "p_3c34db1727",
+   "name": "Ygal Antebi",
+   "from": 1999,
+   "to": 2014,
+   "pos": [
+    "DF"
+   ],
+   "code": "HTA–132",
+   "kit": "/club-kits/hapoel-tel-aviv/svg/cof-k-04.svg",
+   "source": {
+    "file": "Ygal Antebi Section: Hapoel Tel Aviv / owner's Supergol & album cards (סופרגול כללי/2002-3/651238713_10163839343739373_7033694082576789318_n.jpg)",
+    "via": "card",
+    "image": "cards/sg000.jpg"
+   },
+   "file": "/album/roster/hapoel-tel-aviv/pl_481a21ae7b.webp"
   },
   "hapoel-tel-aviv:pl_49d51a1530": {
    "club": "hapoel-tel-aviv",
@@ -12175,6 +12518,101 @@
    },
    "file": "/album/roster/hapoel-tel-aviv/pl_6200cab363.webp"
   },
+  "hapoel-tel-aviv:pl_62fcf4c2d2": {
+   "club": "hapoel-tel-aviv",
+   "person_id": "pl_62fcf4c2d2",
+   "eid": "p_375eedf27f",
+   "name": "Israel Cohen",
+   "from": 1997,
+   "to": 2000,
+   "pos": [
+    "DF"
+   ],
+   "code": "HTA–123",
+   "kit": "/club-kits/hapoel-tel-aviv/svg/hta-fka-24619.svg",
+   "source": {
+    "file": "Israel Cohen Section: Hapoel Tel Aviv / owner's Supergol & album cards (סופרגול כללי/דאבל 2000 לחתוך.jpg)",
+    "via": "card",
+    "image": "cards/sg048.jpg"
+   },
+   "file": "/album/roster/hapoel-tel-aviv/pl_62fcf4c2d2.webp"
+  },
+  "hapoel-tel-aviv:pl_63919f4d1e": {
+   "club": "hapoel-tel-aviv",
+   "person_id": "pl_63919f4d1e",
+   "eid": "p_f76834937e",
+   "name": "Pini Balili",
+   "from": 1997,
+   "to": 2003,
+   "pos": [
+    "FW"
+   ],
+   "code": "HTA–125",
+   "kit": "/club-kits/hapoel-tel-aviv/svg/hta-fka-24616.svg",
+   "source": {
+    "file": "Pini Balili Section: Hapoel Tel Aviv / owner's Supergol & album cards (סופרגול כללי/2002-3/653454576_10163839342734373_8840224092222008624_n.jpg)",
+    "via": "card",
+    "image": "cards/sg005.jpg"
+   },
+   "file": "/album/roster/hapoel-tel-aviv/pl_63919f4d1e.webp"
+  },
+  "hapoel-tel-aviv:pl_63d4978cdc": {
+   "club": "hapoel-tel-aviv",
+   "person_id": "pl_63d4978cdc",
+   "eid": "p_9a2e350257",
+   "name": "David Primo",
+   "from": 1963,
+   "to": 1974,
+   "pos": [
+    "DF"
+   ],
+   "code": "HTA–102",
+   "kit": "/club-kits/hapoel-tel-aviv/svg/hta-fka-90666.svg",
+   "source": {
+    "file": "David Primo Section: Hapoel Tel Aviv / owner's Supergol & album cards (סופרגול כללי/פרימו - אס.jpg)",
+    "via": "card",
+    "image": "cards/sg129.jpg"
+   },
+   "file": "/album/roster/hapoel-tel-aviv/pl_63d4978cdc.webp"
+  },
+  "hapoel-tel-aviv:pl_657b29a2e9": {
+   "club": "hapoel-tel-aviv",
+   "person_id": "pl_657b29a2e9",
+   "eid": "p_ed1610b21e",
+   "name": "Assi Domb",
+   "from": 1997,
+   "to": 2006,
+   "pos": [
+    "DF"
+   ],
+   "code": "HTA–122",
+   "kit": "/club-kits/hapoel-tel-aviv/svg/hta-fka-231945.svg",
+   "source": {
+    "file": "Assi Domb Section: Hapoel Tel Aviv / owner's Supergol & album cards (סופרגול כללי/2002-3/655979782_10163839343729373_6010544129032549753_n.jpg)",
+    "via": "card",
+    "image": "cards/sg011.jpg"
+   },
+   "file": "/album/roster/hapoel-tel-aviv/pl_657b29a2e9.webp"
+  },
+  "hapoel-tel-aviv:pl_6b40f751b8": {
+   "club": "hapoel-tel-aviv",
+   "person_id": "pl_6b40f751b8",
+   "eid": "p_b1fbfd5d16",
+   "name": "Avi Tikva",
+   "from": 2000,
+   "to": 2001,
+   "pos": [
+    "MF"
+   ],
+   "code": "HTA–133",
+   "kit": "/club-kits/hapoel-tel-aviv/svg/hta-fka-24616.svg",
+   "source": {
+    "file": "Avi Tikva Section: Hapoel Tel Aviv / owner's Supergol & album cards (סופרגול כללי/דאבל 2000 לחתוך.jpg)",
+    "via": "card",
+    "image": "cards/sg051.jpg"
+   },
+   "file": "/album/roster/hapoel-tel-aviv/pl_6b40f751b8.webp"
+  },
   "hapoel-tel-aviv:pl_6c8bc55c15": {
    "club": "hapoel-tel-aviv",
    "person_id": "pl_6c8bc55c15",
@@ -12193,6 +12631,25 @@
     "image": "cards/1f195ad67343cdce4887d251.jpg"
    },
    "file": "/album/roster/hapoel-tel-aviv/pl_6c8bc55c15.webp"
+  },
+  "hapoel-tel-aviv:pl_72352fe376": {
+   "club": "hapoel-tel-aviv",
+   "person_id": "pl_72352fe376",
+   "eid": "p_3508fedb99",
+   "name": "Ronen Harazi",
+   "from": 1999,
+   "to": 2000,
+   "pos": [
+    "FW"
+   ],
+   "code": "HTA–131",
+   "kit": "/club-kits/hapoel-tel-aviv/svg/kit-kit-1999-00-home.svg",
+   "source": {
+    "file": "Ronen Harazi Section: Hapoel Tel Aviv / owner's Supergol & album cards (סופרגול כללי/דאבל 2000 לחתוך.jpg)",
+    "via": "card",
+    "image": "cards/sg056.jpg"
+   },
+   "file": "/album/roster/hapoel-tel-aviv/pl_72352fe376.webp"
   },
   "hapoel-tel-aviv:pl_751dcfe5e4": {
    "club": "hapoel-tel-aviv",
@@ -12251,6 +12708,25 @@
    },
    "file": "/album/roster/hapoel-tel-aviv/pl_7672393813.webp"
   },
+  "hapoel-tel-aviv:pl_80935c0312": {
+   "club": "hapoel-tel-aviv",
+   "person_id": "pl_80935c0312",
+   "eid": "p_a8459249bd",
+   "name": "David Hershlikovich",
+   "from": 1983,
+   "to": 1990,
+   "pos": [
+    "DF"
+   ],
+   "code": "HTA–109",
+   "kit": "/club-kits/hapoel-tel-aviv/svg/hta-fka-24628.svg",
+   "source": {
+    "file": "David Hershlikovich Section: Hapoel Tel Aviv / owner's Supergol & album cards (סופרגול כללי/דוד צילה שנות ה80.jpg)",
+    "via": "card",
+    "image": "cards/sg060.jpg"
+   },
+   "file": "/album/roster/hapoel-tel-aviv/pl_80935c0312.webp"
+  },
   "hapoel-tel-aviv:pl_85c927df58": {
    "club": "hapoel-tel-aviv",
    "person_id": "pl_85c927df58",
@@ -12308,6 +12784,25 @@
    },
    "file": "/album/roster/hapoel-tel-aviv/pl_8960058708.webp"
   },
+  "hapoel-tel-aviv:pl_8d41305216": {
+   "club": "hapoel-tel-aviv",
+   "person_id": "pl_8d41305216",
+   "eid": "p_a82f4f89e9",
+   "name": "Yom Tov Talias",
+   "from": null,
+   "to": null,
+   "pos": [
+    "GK"
+   ],
+   "code": "HTA–137",
+   "kit": "/club-kits/hapoel-tel-aviv/svg/hta-fka-90673.svg",
+   "source": {
+    "file": "Yom Tov Talias Section: Hapoel Tel Aviv / owner's Supergol & album cards (סופרגול כללי/לחתוך.jpg)",
+    "via": "card",
+    "image": "cards/sg107.jpg"
+   },
+   "file": "/album/roster/hapoel-tel-aviv/pl_8d41305216.webp"
+  },
   "hapoel-tel-aviv:pl_8d516274d5": {
    "club": "hapoel-tel-aviv",
    "person_id": "pl_8d516274d5",
@@ -12346,6 +12841,25 @@
     "image": "cards/4e8fc3ee9f84566ac68e2155.jpg"
    },
    "file": "/album/roster/hapoel-tel-aviv/pl_99f6a1c34a.webp"
+  },
+  "hapoel-tel-aviv:pl_9d066b27d0": {
+   "club": "hapoel-tel-aviv",
+   "person_id": "pl_9d066b27d0",
+   "eid": "p_7c9ce04140",
+   "name": "Eyal Ben Ami",
+   "from": 1993,
+   "to": 2004,
+   "pos": [
+    "MF"
+   ],
+   "code": "HTA–115",
+   "kit": "/club-kits/hapoel-tel-aviv/svg/hta-fka-24619.svg",
+   "source": {
+    "file": "Eyal Ben Ami Section: Hapoel Tel Aviv / owner's Supergol & album cards (סופרגול כללי/הפועל97-8 לחתוך כל קלף בנפרד.jpg)",
+    "via": "card",
+    "image": "cards/sg086.jpg"
+   },
+   "file": "/album/roster/hapoel-tel-aviv/pl_9d066b27d0.webp"
   },
   "hapoel-tel-aviv:pl_9f8c6ffea4": {
    "club": "hapoel-tel-aviv",
@@ -12442,6 +12956,45 @@
    },
    "file": "/album/roster/hapoel-tel-aviv/pl_a7ef51de7b.webp"
   },
+  "hapoel-tel-aviv:pl_a8c7365551": {
+   "club": "hapoel-tel-aviv",
+   "person_id": "pl_a8c7365551",
+   "eid": "p_cd9d148325",
+   "name": "Yuval Pilus",
+   "from": 1989,
+   "to": 1992,
+   "pos": [
+    "MF"
+   ],
+   "code": "HTA–111",
+   "kit": "/club-kits/hapoel-tel-aviv/svg/hta-fka-70780.svg",
+   "source": {
+    "file": "Yuval Pilus Section: Hapoel Tel Aviv / owner's Supergol & album cards (סופרגול כללי/לחתוך 3.jpg)",
+    "via": "card",
+    "image": "cards/sg094.jpg"
+   },
+   "file": "/album/roster/hapoel-tel-aviv/pl_a8c7365551.webp"
+  },
+  "hapoel-tel-aviv:pl_a906cb1654": {
+   "club": "hapoel-tel-aviv",
+   "person_id": "pl_a906cb1654",
+   "eid": "p_8b7e2d4cee",
+   "name": "Shiye Feigenbaum",
+   "from": 1964,
+   "to": 1979,
+   "pos": [
+    "FW",
+    "DF"
+   ],
+   "code": "HTA–103",
+   "kit": "/club-kits/hapoel-tel-aviv/svg/hta-fka-90665.svg",
+   "source": {
+    "file": "Shiye Feigenbaum Section: Hapoel Tel Aviv / owner's Supergol & album cards (סופרגול כללי/קלפים נוספים אסים לחתוך מה שניתן..jpg)",
+    "via": "card",
+    "image": "cards/sg133.jpg"
+   },
+   "file": "/album/roster/hapoel-tel-aviv/pl_a906cb1654.webp"
+  },
   "hapoel-tel-aviv:pl_aab96517d0": {
    "club": "hapoel-tel-aviv",
    "person_id": "pl_aab96517d0",
@@ -12455,11 +13008,30 @@
    "code": "HTA–40",
    "kit": "/club-kits/hapoel-tel-aviv/svg/hta-fka-231945.svg",
    "source": {
-    "file": "Gabor Halmai Section: Germinal Ekeren No. 171 / Football Belgium 1995-1996 (Panini)",
+    "file": "Gábor Halmai Section: Hapoel Tel Aviv / owner's Supergol & album cards (סופרגול כללי/2002-3/653394089_10163839344799373_510023056689506792_n.jpg)",
     "via": "card",
-    "image": "cards/541216d00e4c7eadb89c5994.jpg"
+    "image": "cards/sg002.jpg"
    },
    "file": "/album/roster/hapoel-tel-aviv/pl_aab96517d0.webp"
+  },
+  "hapoel-tel-aviv:pl_b43985bad2": {
+   "club": "hapoel-tel-aviv",
+   "person_id": "pl_b43985bad2",
+   "eid": "p_29ba0c2a95",
+   "name": "Eli Cohen",
+   "from": 1979,
+   "to": 1993,
+   "pos": [
+    "MF"
+   ],
+   "code": "HTA–107",
+   "kit": "/club-kits/hapoel-tel-aviv/svg/hta-fka-24628.svg",
+   "source": {
+    "file": "Eli Cohen Section: Hapoel Tel Aviv / owner's Supergol & album cards (סופרגול כללי/אלי כהן 86.jpg)",
+    "via": "card",
+    "image": "cards/sg045.jpg"
+   },
+   "file": "/album/roster/hapoel-tel-aviv/pl_b43985bad2.webp"
   },
   "hapoel-tel-aviv:pl_b4b29fe188": {
    "club": "hapoel-tel-aviv",
@@ -12480,6 +13052,25 @@
    },
    "file": "/album/roster/hapoel-tel-aviv/pl_b4b29fe188.webp"
   },
+  "hapoel-tel-aviv:pl_b8f3580a13": {
+   "club": "hapoel-tel-aviv",
+   "person_id": "pl_b8f3580a13",
+   "eid": "p_efd0fed260",
+   "name": "Mario Meštrović",
+   "from": 1997,
+   "to": 1998,
+   "pos": [
+    "MF"
+   ],
+   "code": "HTA–124",
+   "kit": "/club-kits/hapoel-tel-aviv/svg/kit-kit-1997-98-home.svg",
+   "source": {
+    "file": "Mario Meštrović Section: Hapoel Tel Aviv / owner's Supergol & album cards (סופרגול כללי/הפועל97-8 לחתוך כל קלף בנפרד.jpg)",
+    "via": "card",
+    "image": "cards/sg085.jpg"
+   },
+   "file": "/album/roster/hapoel-tel-aviv/pl_b8f3580a13.webp"
+  },
   "hapoel-tel-aviv:pl_c00e2b98b2": {
    "club": "hapoel-tel-aviv",
    "person_id": "pl_c00e2b98b2",
@@ -12498,6 +13089,25 @@
     "image": "cards/0151219e9ab2b0bb15d94834.jpg"
    },
    "file": "/album/roster/hapoel-tel-aviv/pl_c00e2b98b2.webp"
+  },
+  "hapoel-tel-aviv:pl_c65b74c900": {
+   "club": "hapoel-tel-aviv",
+   "person_id": "pl_c65b74c900",
+   "eid": "p_65bbab8fb7",
+   "name": "Sagiv Eliaho",
+   "from": 1992,
+   "to": 1997,
+   "pos": [
+    "FW"
+   ],
+   "code": "HTA–114",
+   "kit": "/club-kits/hapoel-tel-aviv/svg/hta-fka-24625.svg",
+   "source": {
+    "file": "Sagiv Eliaho Section: Hapoel Tel Aviv / owner's Supergol & album cards (סופרגול כללי/לחתןך 2.jpg)",
+    "via": "card",
+    "image": "cards/sg116.jpg"
+   },
+   "file": "/album/roster/hapoel-tel-aviv/pl_c65b74c900.webp"
   },
   "hapoel-tel-aviv:pl_c8520d33fc": {
    "club": "hapoel-tel-aviv",
@@ -12518,6 +13128,25 @@
    },
    "file": "/album/roster/hapoel-tel-aviv/pl_c8520d33fc.webp"
   },
+  "hapoel-tel-aviv:pl_cdfd364f4d": {
+   "club": "hapoel-tel-aviv",
+   "person_id": "pl_cdfd364f4d",
+   "eid": "p_6c61f19a2c",
+   "name": "István Pisont",
+   "from": 1999,
+   "to": 2002,
+   "pos": [
+    "MF"
+   ],
+   "code": "HTA–130",
+   "kit": "/club-kits/hapoel-tel-aviv/svg/hta-fka-24616.svg",
+   "source": {
+    "file": "István Pisont Section: Hapoel Tel Aviv / owner's Supergol & album cards (סופרגול כללי/דאבל 2000 לחתוך.jpg)",
+    "via": "card",
+    "image": "cards/sg054.jpg"
+   },
+   "file": "/album/roster/hapoel-tel-aviv/pl_cdfd364f4d.webp"
+  },
   "hapoel-tel-aviv:pl_ceb01c8750": {
    "club": "hapoel-tel-aviv",
    "person_id": "pl_ceb01c8750",
@@ -12531,9 +13160,9 @@
    "code": "HTA–42",
    "kit": "/club-kits/hapoel-tel-aviv/svg/cof-k-06.svg",
    "source": {
-    "file": "Shay Abutbul Section: Hapoel Tel-Aviv FC No. 131 / UEFA Champions League 2010-2011 (Panini)",
+    "file": "Shay Abutbul Section: Hapoel Tel Aviv / owner's Supergol & album cards (סופרגול כללי/2002-3/653403990_10163839343844373_7968447333274485523_n.jpg)",
     "via": "card",
-    "image": "cards/211dca19070da6602d53ea93.jpg"
+    "image": "cards/sg003.jpg"
    },
    "file": "/album/roster/hapoel-tel-aviv/pl_ceb01c8750.webp"
   },
@@ -12555,6 +13184,25 @@
     "image": "cards/1a1dac6760bae453c3b91f6b.jpg"
    },
    "file": "/album/roster/hapoel-tel-aviv/pl_d08f2a8c77.webp"
+  },
+  "hapoel-tel-aviv:pl_d22ef7bf59": {
+   "club": "hapoel-tel-aviv",
+   "person_id": "pl_d22ef7bf59",
+   "eid": "p_60526f4be6",
+   "name": "Tal Hen",
+   "from": 2003,
+   "to": 2008,
+   "pos": [
+    "DF"
+   ],
+   "code": "HTA–135",
+   "kit": "/club-kits/hapoel-tel-aviv/svg/cof-k-03.svg",
+   "source": {
+    "file": "Tal Hen Section: Hapoel Tel Aviv / owner's Supergol & album cards (סופרגול כללי/טל חן 2004.jpg)",
+    "via": "card",
+    "image": "cards/sg091.jpg"
+   },
+   "file": "/album/roster/hapoel-tel-aviv/pl_d22ef7bf59.webp"
   },
   "hapoel-tel-aviv:pl_d6db91a614": {
    "club": "hapoel-tel-aviv",
@@ -12594,6 +13242,26 @@
    },
    "file": "/album/roster/hapoel-tel-aviv/pl_d79320c1f5.webp"
   },
+  "hapoel-tel-aviv:pl_d854768bb4": {
+   "club": "hapoel-tel-aviv",
+   "person_id": "pl_d854768bb4",
+   "eid": "p_491c4a7088",
+   "name": "Moshe Mordechovich",
+   "from": 1967,
+   "to": 1976,
+   "pos": [
+    "MF",
+    "FW"
+   ],
+   "code": "HTA–104",
+   "kit": "/club-kits/hapoel-tel-aviv/svg/hta-fka-90665.svg",
+   "source": {
+    "file": "Moshe Mordechovich Section: Hapoel Tel Aviv / owner's Supergol & album cards (סופרגול כללי/לחתוך.jpg)",
+    "via": "card",
+    "image": "cards/sg114.jpg"
+   },
+   "file": "/album/roster/hapoel-tel-aviv/pl_d854768bb4.webp"
+  },
   "hapoel-tel-aviv:pl_db298e9c22": {
    "club": "hapoel-tel-aviv",
    "person_id": "pl_db298e9c22",
@@ -12631,6 +13299,25 @@
     "image": "cards/bfe3de7a57aff8cf73bd9307.jpg"
    },
    "file": "/album/roster/hapoel-tel-aviv/pl_de02f2a93e.webp"
+  },
+  "hapoel-tel-aviv:pl_e24bbd66fb": {
+   "club": "hapoel-tel-aviv",
+   "person_id": "pl_e24bbd66fb",
+   "eid": "p_1d311413e7",
+   "name": "Shahar Cohen",
+   "from": 1994,
+   "to": 1999,
+   "pos": [
+    "MF"
+   ],
+   "code": "HTA–117",
+   "kit": "/club-kits/hapoel-tel-aviv/svg/hta-fka-231946.svg",
+   "source": {
+    "file": "Shahar Cohen Section: Hapoel Tel Aviv / owner's Supergol & album cards (סופרגול כללי/הפועל97-8 לחתוך כל קלף בנפרד.jpg)",
+    "via": "card",
+    "image": "cards/sg083.jpg"
+   },
+   "file": "/album/roster/hapoel-tel-aviv/pl_e24bbd66fb.webp"
   },
   "hapoel-tel-aviv:pl_e2d7db4e50": {
    "club": "hapoel-tel-aviv",
@@ -12688,6 +13375,25 @@
     "image": "cards/40e52a0d317dbf8316b9dbc9.jpg"
    },
    "file": "/album/roster/hapoel-tel-aviv/pl_edd9607f84.webp"
+  },
+  "hapoel-tel-aviv:pl_f08269f022": {
+   "club": "hapoel-tel-aviv",
+   "person_id": "pl_f08269f022",
+   "eid": "p_7decd8d1ed",
+   "name": "Yaniv Yaron",
+   "from": 1995,
+   "to": 1999,
+   "pos": [
+    "MF"
+   ],
+   "code": "HTA–120",
+   "kit": "/club-kits/hapoel-tel-aviv/svg/kit-kit-1997-98-home.svg",
+   "source": {
+    "file": "Yaniv Yaron Section: Hapoel Tel Aviv / owner's Supergol & album cards (סופרגול כללי/הפועל97-8 לחתוך כל קלף בנפרד.jpg)",
+    "via": "card",
+    "image": "cards/sg079.jpg"
+   },
+   "file": "/album/roster/hapoel-tel-aviv/pl_f08269f022.webp"
   },
   "hapoel-tel-aviv:pl_f13fb57fb1": {
    "club": "hapoel-tel-aviv",
@@ -28271,6 +28977,11 @@
   {
    "id": "wydad-casablanca:pl_233554fdd5",
    "name": "Ibrahima Touré",
+   "reason": "no clear face on any card"
+  },
+  {
+   "id": "hapoel-tel-aviv:pl_86ae633191",
+   "name": "Neal Abarbanel",
    "reason": "no clear face on any card"
   }
  ]

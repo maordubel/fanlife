@@ -8375,11 +8375,15 @@
    "person_id": "pl_24eed6093f",
    "name": "Gidon Tish",
    "code": "HTA–08",
-   "status": "silhouette",
-   "portrait": "painted",
-   "frame": null,
+   "status": "photo",
+   "portrait": "card",
+   "frame": "club",
    "qid": null,
-   "source": null,
+   "source": {
+    "file": "Gidon Tish Section: Hapoel Tel Aviv / owner's Supergol & album cards (סופרגול כללי/טיש - אס.jpg)",
+    "via": "card",
+    "image": "cards/sg090.jpg"
+   },
    "traits": {
     "skin": "#D7A57E",
     "hair": "#3B2A20",
@@ -8435,11 +8439,15 @@
    "person_id": "pl_d5f9b793fb",
    "name": "Arie Bejarano",
    "code": "HTA–11",
-   "status": "silhouette",
-   "portrait": "painted",
-   "frame": null,
+   "status": "photo",
+   "portrait": "card",
+   "frame": "club",
    "qid": null,
-   "source": null,
+   "source": {
+    "file": "Arie Bejarano Section: Hapoel Tel Aviv / owner's Supergol & album cards (סופרגול כללי/בזרנו 80.jpg)",
+    "via": "card",
+    "image": "cards/sg046.jpg"
+   },
    "traits": {
     "skin": "#D7A57E",
     "hair": "#3B2A20",
@@ -8495,11 +8503,15 @@
    "person_id": "pl_c445c3af47",
    "name": "Gili Landau",
    "code": "HTA–14",
-   "status": "silhouette",
-   "portrait": null,
-   "frame": null,
+   "status": "photo",
+   "portrait": "card",
+   "frame": "club",
    "qid": "Q5561816",
-   "source": null,
+   "source": {
+    "file": "Gili Landau Section: Hapoel Tel Aviv / owner's Supergol & album cards (סופרגול כללי/הפועל שנות 80 לחתוך כל קלף בנפרד.jpg)",
+    "via": "card",
+    "image": "cards/sg069.jpg"
+   },
    "traits": {
     "skin": "#D7A57E",
     "hair": "#3B2A20",
@@ -8536,17 +8548,13 @@
    "name": "Shabtai Levi",
    "code": "HTA–16",
    "status": "photo",
-   "portrait": null,
-   "frame": "archive",
+   "portrait": "card",
+   "frame": "club",
    "qid": null,
    "source": {
-    "file": "Shabtay Levi Soccer.jpg",
-    "page": "https://commons.wikimedia.org/wiki/File:Shabtay_Levi_Soccer.jpg",
-    "author": "Eran.ishay",
-    "license": "CC BY-SA 4.0",
-    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
-    "date": "2016-12-20",
-    "via": "commons"
+    "file": "Shabtai Levi Section: Hapoel Tel Aviv / owner's Supergol & album cards (סופרגול כללי/קלפים נוספים אסים לחתוך מה שניתן..jpg)",
+    "via": "card",
+    "image": "cards/sg134.jpg"
    },
    "traits": null,
    "file": "/album/stickers/hapoel-tel-aviv/16.webp"
@@ -8560,9 +8568,9 @@
    "frame": "club",
    "qid": "Q6916168",
    "source": {
-    "file": "Moshe Sinai Section: Beveren No. 64 / Football Belgium 1987-1988 (Panini)",
+    "file": "Moshe Sinai Section: Hapoel Tel Aviv / owner's Supergol & album cards (סופרגול כללי/הפועל שנות 80 2 לחתוך כל קלף בנפרד.jpg)",
     "via": "card",
-    "image": "cards/cf4b0330adc4b3fe7b21681d.jpg"
+    "image": "cards/sg063.jpg"
    },
    "traits": null,
    "file": "/album/stickers/hapoel-tel-aviv/17.webp"
@@ -8631,11 +8639,15 @@
    "person_id": "pl_8005350048",
    "name": "Shavit Elimelech",
    "code": "HTA–21",
-   "status": "silhouette",
-   "portrait": "painted",
-   "frame": null,
+   "status": "photo",
+   "portrait": "card",
+   "frame": "club",
    "qid": "Q2777611",
-   "source": null,
+   "source": {
+    "file": "Shavit Elimelech Section: Hapoel Tel Aviv / owner's Supergol & album cards (סופרגול כללי/לחתוך 4.jpg)",
+    "via": "card",
+    "image": "cards/sg099.jpg"
+   },
    "traits": {
     "skin": "#D7A57E",
     "hair": "#3B2A20",
@@ -8651,11 +8663,15 @@
    "person_id": "pl_6ac5c2b159",
    "name": "Kfir Udi",
    "code": "HTA–22",
-   "status": "silhouette",
-   "portrait": null,
-   "frame": null,
+   "status": "photo",
+   "portrait": "card",
+   "frame": "club",
    "qid": "Q7052560",
-   "source": null,
+   "source": {
+    "file": "Kfir Udi Section: Hapoel Tel Aviv / owner's Supergol & album cards (סופרגול כללי/2002-3/654416547_10163839344124373_5217278976293913295_n.jpg)",
+    "via": "card",
+    "image": "cards/sg009.jpg"
+   },
    "traits": {
     "skin": "#D7A57E",
     "hair": "#3B2A20",
