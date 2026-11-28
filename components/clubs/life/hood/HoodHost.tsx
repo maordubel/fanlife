@@ -36,6 +36,7 @@ import {COLD_OPEN, feelAfterCards, feelEffect, feelFinish, feelHud, feelStart, f
 import {heartOf, recapOf} from '@/lib/life/hood/story/feel/voice'
 import {clockAfter, clockForMission, clockLabel, dayPart, FIRST_CLOCK, wrapDay} from '@/lib/life/hood/daylight'
 import {soundScene} from '@/lib/life/hood/soundScene'
+import {resumeLine} from '@/lib/life/hood/resume'
 import {cardFound, cardsHeld, kitOfYear, yearOf, type CardThing} from '@/lib/life/hood/things'
 import {LifeSound} from '../sound'
 import css from './hood.module.css'
@@ -322,7 +323,13 @@ export function HoodHost({club, mark = null, seed = 1, time = 'dusk', clockAt, q
     const s = readSave(storeRef.current, club.id)
     if (!s) return
     loadSave(s); go({t: 'continue', name: s.name})
-  }, [club.id, loadSave, go])
+    // he comes back to a thing or a person, in one line, before any list (resume.ts)
+    const r = resumeLine({keeps: playRef.current.state.keeps, giver: focusOf(playRef.current)?.giver ?? null})
+    if (r) {
+      const thing = r.key === 'hood.resume.keep' ? w(r.thing) : '', text = r.key === 'hood.resume.keep' ? w(r.key, {thing: thing.charAt(0).toLowerCase() + thing.slice(1)}) : w(r.key, {who: namesRef.current[r.who] ?? ''})
+      window.clearTimeout(timers.current.voice); setVoice({id: ++bannerId.current, text}); timers.current.voice = window.setTimeout(() => setVoice(null), 5200)
+    }
+  }, [club.id, loadSave, go, w])
   const changeSettings = useCallback((s: HoodSettings) => { setSettings(s); writeSettings(storeRef.current, s) }, [])
 
   /* start: storage, preferences, the first screen */

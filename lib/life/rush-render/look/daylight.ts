@@ -50,7 +50,7 @@ const dir = (az: number, el: number, out: THREE.Vector3) => out.set(Math.sin(rad
 
 export function createDaylight(x: DaylightCtx): Daylight {
   const seen = new WeakMap<THREE.Material, Tracked>(), list: {m: LitMaterial; t: Tracked}[] = []
-  const plates: {m: THREE.ShaderMaterial; grade: THREE.Vector3 | null}[] = [], plateSeen = new WeakSet<THREE.Material>()
+  const plates: {m: THREE.ShaderMaterial; grade: THREE.Vector3 | null; mix: number | null}[] = [], plateSeen = new WeakSet<THREE.Material>()
   const lampBase = x.lamps.map(l => l.intensity), gateBase = x.gate?.intensity ?? 0
   const wetBase = x.wet.map(m => ({base: Number(m.uniforms.uBase?.value ?? 0), pud: Number(m.uniforms.uPud?.value ?? 0)}))
   const sun = new THREE.Vector3(), tmp = new THREE.Color(), fogC = new THREE.Color()
@@ -88,16 +88,21 @@ export function createDaylight(x: DaylightCtx): Daylight {
         const sh = m as THREE.ShaderMaterial
         if (sh.isShaderMaterial) {
           // the painted backdrops carry the haze's colour and a grade of their own
-          if (!plateSeen.has(sh) && sh.uniforms?.uFog?.value instanceof THREE.Color) { plateSeen.add(sh); const g = sh.uniforms.uGrade?.value; plates.push({m: sh, grade: g instanceof THREE.Vector3 ? g.clone() : null}); paintPlate(plates[plates.length - 1]!) }
+          if (!plateSeen.has(sh) && sh.uniforms?.uFog?.value instanceof THREE.Color) { plateSeen.add(sh); const g = sh.uniforms.uGrade?.value; plates.push({m: sh, grade: g instanceof THREE.Vector3 ? g.clone() : null, mix: typeof sh.uniforms.uMix?.value === 'number' ? sh.uniforms.uMix.value : null}); paintPlate(plates[plates.length - 1]!) }
           continue
         }
         track(m as LitMaterial)
       }
     })
   }
-  const paintPlate = (p: {m: THREE.ShaderMaterial; grade: THREE.Vector3 | null}) => {
+  // A backdrop painted at dusk (its floodlights on, its windows lit) is not a daytime picture: by day it is graded up only
+  // a little and sinks further into the haze, so the ground at the end of the street is a pale shape in the sun and not a
+  // night match at noon. A day painting of its own replaces this when Flow has one.
+  const paintPlate = (p: {m: THREE.ShaderMaterial; grade: THREE.Vector3 | null; mix: number | null}) => {
     (p.m.uniforms.uFog!.value as THREE.Color).copy(fogC)
-    if (p.grade) (p.m.uniforms.uGrade!.value as THREE.Vector3).copy(p.grade).multiplyScalar(light.plate)
+    const day = Math.max(0, 1 - Math.min(1, light.lit))
+    if (p.grade) (p.m.uniforms.uGrade!.value as THREE.Vector3).copy(p.grade).multiplyScalar(Math.min(light.plate, 1.2))
+    if (p.mix !== null) p.m.uniforms.uMix!.value = p.mix + (0.9 - p.mix) * 0.62 * day
   }
 
   function set(minutes: number) {
