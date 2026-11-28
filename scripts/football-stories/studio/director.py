@@ -379,8 +379,36 @@ def _shape(form: list[int], turn) -> tuple[str, int | None, int | None]:
 
 
 # ── moments ───────────────────────────────────────────────────────────────────────────────────────────────────────────
-PRIORITY = ['final', 'title-decided', 'comeback', 'late-winner', 'decider', 'derby', 'turning-point', 'biggest-win',
+PRIORITY = ['final', 'title-decided', 'giant', 'comeback', 'late-winner', 'decider', 'derby', 'turning-point', 'biggest-win',
             'run-ended', 'drought-ended', 'worst-defeat', 'europe', 'last', 'first']
+
+
+# The clubs whose visit makes a European night a story on its own (UEFA's ten-year club coefficients: the top tier of the
+# 2010s–2020s). An editorial weight for ranking a season's moments, never a printed fact (owner, 28.11.2026: the film of
+# Celtic's treble opened on a 3–0 over Lincoln Red Imps, part-timers from Gibraltar, because a two-leg comeback outranked
+# a 3–3 with Manchester City and a final).
+POWERS = {fold(x) for x in (
+    'Real Madrid', 'Barcelona', 'Bayern Munich', 'Bayern München', 'Manchester City', 'Liverpool', 'Chelsea', 'Paris Saint-Germain',
+    'Juventus', 'Manchester United', 'Atlético Madrid', 'Atletico Madrid', 'Borussia Dortmund', 'Internazionale', 'Inter Milan', 'Inter',
+    'AC Milan', 'Milan', 'Arsenal', 'Tottenham Hotspur', 'Napoli', 'Roma', 'Porto', 'Benfica', 'Ajax', 'Sevilla', 'RB Leipzig',
+    'Bayer Leverkusen', 'Villarreal', 'Lazio', 'Atalanta', 'Valencia', 'Sporting CP', 'Shakhtar Donetsk', 'Zenit Saint Petersburg',
+    'Olympique Lyonnais', 'Lyon', 'Marseille', 'Olympique de Marseille', 'Borussia Mönchengladbach', 'Schalke 04', 'Eintracht Frankfurt',
+    'PSV Eindhoven', 'Feyenoord', 'Celtic', 'Rangers', 'Galatasaray', 'Fenerbahçe', 'Club Brugge', 'Red Bull Salzburg', 'Olympiacos',
+    'Dynamo Kyiv', 'Basel', 'Fiorentina', 'West Ham United', 'Aston Villa', 'Newcastle United', 'Lille', 'Monaco', 'Real Sociedad', 'Athletic Bilbao',
+)}
+QUAL_MONTHS = ('06', '07', '08')   # a European match before the group stage begins is a qualifier when the stage is not recorded
+
+
+def _qualifier(f: dict) -> bool:
+    stage = str(f.get('stage') or '')
+    if re.search(r'qualif|preliminary|play-?off', stage, re.I):
+        return True
+    return (not stage and bool(EUROPE.search(str(f.get('competition') or '')))
+            and f['date'][5:7] in QUAL_MONTHS and not (f['date'][5:7] == '08' and int(f['date'][8:10]) > 25))
+
+
+def _power(f: dict) -> bool:
+    return fold(f.get('opponent')) in POWERS
 
 
 def _weights(f: dict, tags: set[str], extra: dict) -> dict[str, float]:
@@ -420,6 +448,14 @@ def _weights(f: dict, tags: set[str], extra: dict) -> dict[str, float]:
         w['last'] = 2.5
     if 'first' in tags:
         w['first'] = 1.5
+    # what the opponent was (28.11.2026): a qualifier against a small club is a footnote; a European power is the night
+    if 'europe' in tags or EUROPE.search(str(f.get('competition') or '')):
+        if _qualifier(f) and not _power(f):
+            w = {k: v * 0.45 for k, v in w.items()}
+        elif _power(f):
+            feat = 4.5 if r > 0 else 3 if r == 0 else (1.5 if margin <= 1 else 0)
+            if feat:
+                w['giant'] = 6 + feat
     return w
 
 

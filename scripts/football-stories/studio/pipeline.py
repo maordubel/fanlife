@@ -194,7 +194,8 @@ def run(job_dir: Path, brief: dict, palette: Palette, progress=None, script_file
             ledger['pack_notes'] = '\n\n'.join(f"{n['pack']} · {n['name']}\n{n['text']}" for n in pack_notes if not n.get('required'))[:4000]
         ledger['art_sets'] = art_sets  # owner art made for this film, beyond <club>-<season> and common
         # grounded deep research (owner, 8.11.2026): context for the writer + facts Google's grounding ties to a page
-        from . import deep_research
+        from . import deep_research, season_book
+        season_book.attach(ledger, brief, cache, log)   # what the season won, its manager and top scorers (Wikipedia, cited)
         deep_research.enrich(ledger, brief, cache, log)
         director.attach(ledger)  # the story the record proves (docs/fanlife/66-directors-cut.md §1), after any focus or pick
         drama_facts.attach(ledger)  # what each match meant before kick-off: the record, the drought, the road, the clock
