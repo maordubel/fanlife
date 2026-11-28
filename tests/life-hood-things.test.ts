@@ -10,21 +10,21 @@ import {clubLife} from '@/lib/clubs/life/pack'
 
 const T: HoodThings = {
   crest: '/crests/x.png',
-  kits: [{year: 1979, season: '1979-80', src: '/k/79.svg'}, {year: 1984, season: '1984-85', src: '/k/84.svg'}, {year: 1991, season: '1991-92', src: '/k/91.svg'}],
+  kits: [{year: 1978, season: '1978-79', src: '/k/78.svg'}, {year: 1983, season: '1983-84', src: '/k/83.svg'}, {year: 1991, season: '1991-92', src: '/k/91.svg'}],
   cards: [
     {id: 'x:1', code: 'X–01', name: 'Old Hand', from: 1960, to: 1971, src: '/s/1.webp', kit: null},
     {id: 'x:2', code: 'X–02', name: 'The Number Nine', from: 1982, to: 1989, src: '/s/2.webp', kit: null},
-    {id: 'x:3', code: 'X–03', name: 'The Keeper', from: 1984, to: 1996, src: null, kit: '/k/84.svg'},
+    {id: 'x:3', code: 'X–03', name: 'The Keeper', from: 1984, to: 1996, src: null, kit: '/k/83.svg'},
     {id: 'x:4', code: 'X–04', name: 'The New Boy', from: 2004, to: 2010, src: '/s/4.webp', kit: null},
   ],
 }
 
 describe('LIFE · the club\'s own things (lib/life/hood/things.ts)', () => {
   it('gives the shirt the club wore that season, never one from the future', () => {
-    expect(kitOfYear(T, 1986)?.season).toBe('1984-85')
-    expect(kitOfYear(T, 1984)?.season).toBe('1984-85')
+    expect(kitOfYear(T, 1986)?.season).toBe('1983-84')
+    expect(kitOfYear(T, 1983)?.season).toBe('1983-84')
     expect(kitOfYear(T, 1999)?.season).toBe('1991-92')
-    expect(kitOfYear(T, 1970)?.season).toBe('1979-80')   // before the first on file: the earliest, said as its own season
+    expect(kitOfYear(T, 1970)?.season).toBe('1978-79')   // before the first on file: the earliest, said as its own season
     expect(kitOfYear(T, null)?.season).toBe('1991-92')
     expect(kitOfYear(NO_THINGS, 1986)).toBeNull()
     expect(kitOfYear(undefined, 1986)).toBeNull()
