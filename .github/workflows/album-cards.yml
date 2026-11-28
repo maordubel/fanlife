@@ -1,0 +1,114 @@
+name: Album · card faces
+# THE ALBUM (owner, 28.11.2026): every player of the owner's card pack (his Drive folder: index.csv + cards/) gets a sticker
+# in the retro frame — his face cut from his card, his neck modelled (scripts/album/necks.py) into his club's measured
+# shirt of his years (scripts/album/cards.py). The pack never enters the repository: it is fetched on the runner only.
+# One job per club in parallel; the last job merges the ledgers and commits stickers, ledgers and per-club review
+# sheets (.review/, removed before merging) to the run branch.
+# Runs on a push to claude/album-cards-run, or by hand.
+on:
+  workflow_dispatch:
+  push:
+    branches: [claude/album-cards-run]
+permissions:
+  contents: write
+concurrency: {group: album-cards, cancel-in-progress: true}
+env:
+  PACK_INDEX: 1o8Q6eEcwNsHgzvoIZoXGnRJ_Zd6DiOdn
+  PACK_CARDS: 1izk6Z6S8KpLvVGOD44s0DFNthO5-CyLs
+jobs:
+  pack:
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: {python-version: '3.12'}
+      - name: Fetch the card pack from Drive
+        run: |
+          python3 - <<'PY'
+          import csv, json, os, sys
+          from pathlib import Path
+          sys.path.insert(0, 'scripts/football-stories/matchday')
+          import drive_fetch as d
+          dest = Path(os.environ['RUNNER_TEMP']) / 'pack'
+          d.download(os.environ['PACK_INDEX'], dest / 'index.csv')
+          rep = {'files': [], 'failed': []}
+          d.fetch(os.environ['PACK_CARDS'], dest / 'cards', rep)
+          want = {r['image_file'] for r in csv.DictReader(open(dest / 'index.csv', encoding='utf-8-sig')) if r['image_file']}
+          have = {'cards/' + p.name for p in (dest / 'cards').glob('*.jpg')}
+          print(f"pack: {len(have)} card files of {len(want)} listed; {len(rep['failed'])} failed")
+          if len(have) < .9 * len(want):
+              sys.exit('the Drive listing returned too few files — the folder view did not list them all')
+          PY
+      - uses: actions/upload-artifact@v4
+        with: {name: pack, path: '${{ runner.temp }}/pack', retention-days: 1}
+  press:
+    needs: pack
+    runs-on: ubuntu-latest
+    timeout-minutes: 300
+    strategy:
+      fail-fast: false
+      matrix:
+        club: [aek-athens, al-ahly, celtic, hapoel-petah-tikva, hapoel-tel-aviv, olympiacos, panathinaikos, raja-casablanca, st-pauli, wydad-casablanca, zrinjski-mostar]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: {node-version: 20, cache: npm}
+      - uses: actions/setup-python@v5
+        with: {python-version: '3.12'}
+      - uses: actions/download-artifact@v4
+        with: {name: pack, path: '${{ runner.temp }}/pack'}
+      - run: npm ci --ignore-scripts --no-audit --no-fund && npm run -s album:card-kits
+      - run: |
+          pip install rembg onnxruntime pillow playwright "opencv-contrib-python-headless<5" numpy
+          curl -sSL -o "$RUNNER_TEMP/lbf.yaml" https://raw.githubusercontent.com/kurnianggoro/GSOC2017/master/data/lbfmodel.yaml
+          python -m playwright install --with-deps chromium
+      - name: Press
+        env: {ALBUM_LBF: '${{ runner.temp }}/lbf.yaml'}
+        run: |
+          mkdir -p .review
+          python scripts/album/cards.py --pack "$RUNNER_TEMP/pack" --club ${{ matrix.club }} --fragment "fragment-${{ matrix.club }}.json" --sheet ".review/${{ matrix.club }}.jpg"
+      - uses: actions/upload-artifact@v4
+        with:
+          name: out-${{ matrix.club }}
+          path: |
+            public/album/stickers/${{ matrix.club }}
+            public/album/roster/${{ matrix.club }}
+            fragment-${{ matrix.club }}.json
+            .review/${{ matrix.club }}.jpg
+          retention-days: 3
+  merge:
+    needs: press
+    if: always()
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/download-artifact@v4
+        with: {pattern: 'out-*', path: '${{ runner.temp }}/out'}
+      - name: Merge the ledgers
+        run: |
+          for d in "$RUNNER_TEMP"/out/out-*; do cp -r "$d"/. . ; done
+          python3 - <<'PY'
+          import glob, json
+          from pathlib import Path
+          led = json.loads(Path('content/generated/album-stickers.json').read_text())
+          roster = {'note': 'THE ALBUM roster set: every player of the owner’s card pack outside edition one, his card face on his club’s measured shirt. Written by scripts/album/cards.py.', 'stickers': {}, 'failed': []}
+          for f in sorted(glob.glob('fragment-*.json')):
+              fr = json.loads(Path(f).read_text())
+              for k, v in fr['edition'].items():
+                  led['stickers'][k] = {**led['stickers'].get(k, {}), **v}
+              roster['stickers'].update(fr['roster'])
+              roster['failed'] += fr['failed']
+              Path(f).unlink()
+          roster['stickers'] = dict(sorted(roster['stickers'].items()))
+          Path('content/generated/album-stickers.json').write_text(json.dumps(led, ensure_ascii=False, indent=1) + '\n')
+          Path('content/generated/album-roster.json').write_text(json.dumps(roster, ensure_ascii=False, indent=1) + '\n')
+          n = sum(1 for v in led['stickers'].values() if v.get('portrait') == 'card')
+          print(f"album:cards — edition {n} card faces · roster {len(roster['stickers'])} · failed {len(roster['failed'])}")
+          PY
+      - name: Commit to the run branch
+        run: |
+          git config user.name "fanlife-album" && git config user.email "actions@users.noreply.github.com"
+          git add public/album/stickers public/album/roster content/generated/album-stickers.json content/generated/album-roster.json .review
+          git commit -qm "album: card faces pressed (${GITHUB_SHA::7})" || exit 0
+          git push -q "https://x-access-token:${{ github.token }}@github.com/${{ github.repository }}.git" "HEAD:refs/heads/claude/album-cards-out"

@@ -105,6 +105,7 @@
     "people:build": "node --require ./scripts/master/server-only.cjs --import tsx scripts/people/build.ts",
     "people:links": "tsx scripts/people/wikidata-links.ts",
     "album:curate": "node --require ./scripts/master/server-only.cjs --import tsx scripts/album/curate.ts",
+    "album:card-kits": "node --require ./scripts/master/server-only.cjs --import tsx scripts/album/card-kits.ts",
     "album:sync": "tsx scripts/album/sync.ts"
   },
   "dependencies": {
