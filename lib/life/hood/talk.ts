@@ -7,6 +7,7 @@
  */
 import type {PersonId} from './types'
 import type {JobState} from './run'
+import {momentAt, momentEffect} from './story/moments'
 
 /** `accept`: the M1 job opens. A story choice: `story:accept:<mission>:<approach>`, `story:answer:<choice>`, `story:end-day`. */
 export type Effect = 'accept' | `story:${string}`
@@ -45,6 +46,16 @@ export function talkScript(who: PersonId, key: string, ctx: TalkCtx): TalkScript
       a: {id: 'a', who, line: key, choices: [{key: 'hood.say.kiosk.q1', to: 'r1'}, {key: 'hood.say.kiosk.q2', to: null}]},
       r1: {id: 'r1', who, line: 'hood.say.kiosk.a1', next: null},
     },
+  }
+  // a chapter's last line ends on a gesture of his own: one of two, neither of them the right one (story/moments.ts)
+  const mo = momentAt(key)
+  if (mo) {
+    const k = `story.moment.${mo.mission}`
+    return {who, start: 'a', nodes: {
+      a: {id: 'a', who, line: key, next: 'm'},
+      m: {id: 'm', who, line: `${k}.ask`, shot: 'close', choices: mo.ids.map(id => ({key: `${k}.${id}`, to: id, effect: momentEffect(mo.mission, id)}))},
+      ...Object.fromEntries(mo.ids.map(id => [id, {id, who, line: `${k}.${id}.say`, shot: 'close' as const, mood: 'proud' as const, next: null}])),
+    }}
   }
   return single(who, key)
 }

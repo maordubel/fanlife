@@ -17,7 +17,7 @@ const EN = {
   'story.day.0': 'Six days to go', 'story.day.1': 'Five days to go', 'story.day.2': 'Four days to go', 'story.day.3': 'Three days to go', 'story.day.4': 'Two days to go', 'story.day.5': 'Tomorrow', 'story.day.6': 'Matchday',
   'story.offer.main': 'Chapter', 'story.offer.side': 'A small job', 'story.offer.standing': 'This week', 'story.offer.pick': 'How will you do it?', 'story.offer.wait': 'The next chapter is on matchday',
   // the story in the hood: the HUD, the talks, the cards
-  'story.next': 'Next: {title}', 'story.next.talk': 'Talk to {who}', 'story.next.kicker': '{stage} · Age {n} · {day}', 'story.active.kicker': '{title} · {n} of {m}',
+  'story.next': 'Next: {title}', 'story.next.talk': 'Talk to {who}', 'story.next.life': '{who} is looking for you', 'story.next.kicker': '{stage} · Age {n} · {day}', 'story.active.kicker': '{title} · {n} of {m}',
   'story.talk.menu': '“Got a minute? There’s something.”', 'story.talk.later': 'Not now.', 'story.talk.carry-on': 'On it.', 'story.talk.drop': 'Leave it for now.', 'story.talk.later.line': '“Whenever you’re ready. I’m not going anywhere.”',
   'story.end-day.line': '“Get some sleep. Every night brings matchday closer.”',
   'story.idle.dad': '“Go on, have a wander. I’m here.”', 'story.idle.mate': '“Same corner as always. Where else would I be?”', 'story.idle.kiosk': '“Papers, sweets, batteries. Take your time.”', 'story.idle.neighbour': '“Mind how you go. I’m always on the balcony if you want me.”',
@@ -41,6 +41,17 @@ const EN = {
   // what is kept
   'story.keep.scarf': 'The first scarf', 'story.keep.shirt': 'The first shirt', 'story.keep.ticket': 'Half a ticket', 'story.keep.album': 'The album', 'story.keep.banner-corner': 'A corner of the banner', 'story.keep.fence-thread': 'A thread from the fence', 'story.keep.box': 'The Box itself',
 
+  /* the moments (moments.ts): a gesture at a chapter's last line, remembered a chapter later */
+  'story.moment.first-noise.ask': 'Through the wall the neighbours are already shouting. The radio has not caught up.',
+  'story.moment.first-noise.radio': 'Hold the radio to his ear', 'story.moment.first-noise.window': 'Run to the window and shout',
+  'story.moment.first-noise.radio.say': '“There. THERE. You heard it before I did.”', 'story.moment.first-noise.window.say': '“Go on! Tell them it was us!”',
+  'story.moment.first-noise.radio.after': 'You held the radio to his ear. He heard it from you.', 'story.moment.first-noise.window.after': 'You were at the window before the radio said it. The whole street heard you.',
+  'story.moment.first-noise.radio.later': '“The boy with the ears,” the kiosk keeper calls you. Dad has told him about the radio.', 'story.moment.first-noise.window.later': '“The boy who shouted,” the kiosk keeper calls you. The street has not forgotten.',
+  'story.moment.six-short.ask': 'It is in your hands. It still smells of the shop.',
+  'story.moment.six-short.wear': 'Put it on now, over everything', 'story.moment.six-short.carry': 'Fold it and carry it home',
+  'story.moment.six-short.wear.say': '“Sleeves to your knees. You’ll grow. Don’t take it off on my account.”', 'story.moment.six-short.carry.say': '“Careful with it. Go on, show them at home.”',
+  'story.moment.six-short.wear.after': 'You wore it home over your jumper, sleeves rolled four times.', 'story.moment.six-short.carry.after': 'You carried it home folded, flat on both hands.',
+  'story.moment.six-short.wear.later': 'The sleeves are rolled three times now, not four.', 'story.moment.six-short.carry.later': 'It comes out of the drawer still folded the way you folded it.',
   /* 1 · first-noise */
   'story.m.first-noise.title': 'The First Noise',
   'story.m.first-noise.offer': '“Kick-off soon and the radio is dead. Two batteries. And {mate} still has my scarf. Go on, you’re quick.”',
