@@ -44,8 +44,8 @@ export function Talk({portrait, face, node, name, w, reduced, onGo, onChoose, on
     return () => window.removeEventListener('keydown', key, true)
   }, [])
   return (
-    <div className={css.lgTalk + ' z-[60]'} role="dialog" aria-label={name} data-life="hood-talk">
-      <div className={css.lgTalkBox} onClick={tap}>
+    <div className={css.lgTalk + ' z-[60]'} role="dialog" aria-label={name} data-life="hood-talk" data-face={!!face}>
+      <div className={css.lgTalkBox} onClick={tap} data-face={!!face}>
         <span className={css.lgPortrait2} data-who={portrait} data-face={!!face} aria-hidden="true"><i />{face ? <img src={face} alt="" decoding="async" /> : <b>{name.charAt(0)}</b>}</span>
         <span className={css.lgPlate}>{name}</span>
         <button type="button" className={css.lgIconBtn + ' min-h-tap ' + css.lgLeave} aria-label={w('hood.talk.leave')} onClick={e => { e.stopPropagation(); onLeave() }}><Icon n="close" /></button>

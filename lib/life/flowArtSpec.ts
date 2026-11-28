@@ -8,7 +8,7 @@ export const LIFE_STEM=/^life-[a-z0-9-]{2,70}-fl\d$/
 export const LIFE_DIR='library/life'
 export const lifePath=(stem:string)=>`${LIFE_DIR}/${stem}.png`
 
-export const LIFE_USES=['facade','stadium','skyline','aerial','story'] as const
+export const LIFE_USES=['facade','stadium','skyline','aerial','story','cast'] as const
 export type LifeUse=typeof LIFE_USES[number]
 /** The towns the order is drawn for. `eur` is the generic European set any club may fall back on. */
 export const LIFE_TOWNS=['ath','tlv','mos','eur','gla','ham','bgo','cas','cai','hfa','ptk','ist','beg'] as const
@@ -21,13 +21,23 @@ export const CLUB_TOWN:Readonly<Record<string,LifeTown>>={
  // 24.11.2026: Istanbul's Asian shore and Belgrade, authored when the two clubs' opening was completed
  'fenerbahce':'ist','partizan-belgrade':'beg',
 }
-export type LifePiece={stem:string;aspect:'1:1'|'16:9';prompt:string;use:LifeUse;priority:number;town?:LifeTown;club?:string;chapter?:string;confidence?:'specific'|'generic'}
+/** The key people of a life (owner, 28.11.2026: "compose the key characters perfectly with Flow: clothing, style, face, body").
+ *  One invented face each, per part of the world, so the people of an Athens street and of a Glasgow street look like
+ *  people of those streets. Nobody here is a real person, and nobody wears a club's colour. */
+export const LIFE_CAST=['boy','teen','man','father','mother','mate','kiosk','neighbour','grandfather'] as const
+export type LifeCast=typeof LIFE_CAST[number]
+export const LIFE_PEOPLE=['med','north','maghreb'] as const
+export type LifePeople=typeof LIFE_PEOPLE[number]
+export const TOWN_PEOPLE:Readonly<Record<LifeTown,LifePeople>>={ath:'med',tlv:'med',mos:'med',hfa:'med',ptk:'med',bgo:'med',ist:'med',beg:'med',eur:'north',gla:'north',ham:'north',cas:'maghreb',cai:'maghreb'}
+/** the stem of a person's portrait: life-cast-<people>-<who>-fl1 */
+export const castStem=(people:LifePeople,who:LifeCast,v=1)=>`life-cast-${people}-${who}-fl${v}`
+export type LifePiece={stem:string;aspect:'1:1'|'16:9';prompt:string;use:LifeUse;priority:number;town?:LifeTown;club?:string;chapter?:string;confidence?:'specific'|'generic';people?:LifePeople;who?:LifeCast}
 export type LifeLibrary={version:number;style:string;negatives:string;pieces:LifePiece[]}
 
-export type LifeStem={stem:string;use:LifeUse;town?:LifeTown;club?:string;key?:string}
+export type LifeStem={stem:string;use:LifeUse;town?:LifeTown;club?:string;key?:string;people?:LifePeople}
 const isTown=(s:string):s is LifeTown=>(LIFE_TOWNS as readonly string[]).includes(s)
 /** What a stored stem is, read from its name alone (lib/ never reads scripts/):
- *  life-facade-<town>-<nn>-fl1 · life-stadium-<club-id>-<a|b>-fl1 · life-skyline-<town>-fl1 · life-aerial-<town>-fl1 · life-story-<chapter>-fl1 */
+ *  life-facade-<town>-<nn>-fl1 · life-stadium-<club-id>-<a|b>-fl1 · life-skyline-<town>-fl1 · life-aerial-<town>-fl1 · life-story-<chapter>-fl1 · life-cast-<people>-<who>-fl1 */
 export function parseLifeStem(stem:string):LifeStem|null{
  if(!LIFE_STEM.test(stem))return null
  const body=stem.replace(/^life-/,'').replace(/-fl\d$/,''),[use='',...rest]=body.split('-')
@@ -38,5 +48,6 @@ export function parseLifeStem(stem:string):LifeStem|null{
   return key&&town?{stem,use,club,town,key}:null
  }
  if(use==='story')return rest.length?{stem,use,key:rest.join('-')}:null
+ if(use==='cast'){const [people='',who='']=rest;return rest.length===2&&(LIFE_PEOPLE as readonly string[]).includes(people)&&(LIFE_CAST as readonly string[]).includes(who)?{stem,use,key:who,people:people as LifePeople}:null}
  return null
 }

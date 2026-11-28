@@ -18,10 +18,19 @@ export default async function Page(){
  const clubs=REGISTRY.filter(c=>CORE_CLUB_IDS.includes(c.id))
  return <Shell><main id="main" className="section">
   <p className="eyebrow">CONTROL ROOM · LIFE · OWNER ONLY</p>
-  <h1>LIFE is closed to the public.</h1>
+  <h1>LIFE is closed to the public. You play here.</h1>
   <p className="spaced">Every LIFE address shows fans <Link href={LIFE_SOON_PATH}>Coming soon</Link>. With your control-room session these links open the game. The lock is in code, not a switch: opening LIFE to fans is a code change.</p>
+  <p className="eyebrow">THE NEW LIFE · THE OPEN NEIGHBOURHOOD</p>
   <div className="gates">
    {clubs.map(c=><Link className="gate" key={c.id} href={`/clubs/${c.id}/life`}><div><h3>{c.name} · LIFE</h3><p>{c.city} · club status: {status(c.id)}</p></div><b>↗</b></Link>)}
+  </div>
+  <p className="eyebrow spaced">THE LIGHT · ONE STREET, SIX HOURS (OLYMPIACOS)</p>
+  <div className="gates">
+   {[['08:00','Morning'],['12:30','Noon'],['16:30','Gold hour'],['17:50','Sunset'],['18:40','Dusk'],['21:30','Night']].map(([t,n])=><Link className="gate" key={t} href={`/qa/life-world?club=olympiacos&start=play&clock=${t}`}><div><h3>{n}</h3><p>{t} · the clock held still</p></div><b>↗</b></Link>)}
+  </div>
+  <p className="eyebrow spaced">BEFORE · THE ROOMS AND THE LABS</p>
+  <div className="gates">
+   {clubs.map(c=><Link className="gate" key={c.id} href={`/clubs/${c.id}/life?engine=classic`}><div><h3>{c.name} · rooms</h3><p>The engine the new game replaces</p></div><b>↗</b></Link>)}
    <Link className="gate" href="/life"><div><h3>THE WORKER LIFE (Hapoel, original)</h3><p>/life</p></div><b>↗</b></Link>
    <a className="gate" href="/life/voxel/lab.html"><div><h3>Voxel lab</h3><p>Every room, every skin</p></div><b>↗</b></a>
    <Link className="gate" href="/qa/life-rush"><div><h3>RUSH missions (QA)</h3><p>/qa/life-rush</p></div><b>↗</b></Link>

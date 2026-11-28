@@ -28,6 +28,8 @@ import {dressFlat} from './flat'
 import {dressSurface, loadSurface, type SurfaceName} from './surfaces'
 import {loadProps, propCopy} from './props'
 import {dressDusk, DUSK, type Block, type Dusk} from './look/dusk'
+import {createDaylight, type Daylight} from './look/daylight'
+import {createDetail, type Detail} from './look/detail'
 import {dressCrowd} from './look/crowd'
 import {dressFlow, type FlowDress} from './look/flowStreet'
 import {castFor, createTroupe, humanPoint, isSkinned, type Troupe} from './human/human'
@@ -51,8 +53,15 @@ export type Stage = {
   captionAt(spot: string): {x: number; y: number; visible: boolean} | null
   /** the story's age now: the player's body follows it (a boy to twelve, a teenager to eighteen, then a man) */
   setAge(age: number): void
+  /** the hood's clock, in minutes of the day: the light, the lamps and the windows follow it (look/daylight.ts) */
+  setClock(minutes: number): void
+  /** what the last second of frames cost, and what the governor made of it (the QA stand and the settings screen read it) */
+  stats(): StageStats
+  /** the QA stand only: what is in the street, heaviest first (triangles after instancing) */
+  profile(byCalls?: boolean): {name: string; tris: number; n: number; skinned: boolean}[]
   dispose(): void
 }
+export type StageStats = {calls: number; triangles: number; ms: number; fps: number; scale: number; mirror: number; textures: number; geometries: number}
 
 const C = (hex: THREE.ColorRepresentation) => new THREE.Color(hex)
 const std = (color: THREE.ColorRepresentation, o: THREE.MeshStandardMaterialParameters = {}) => new THREE.MeshStandardMaterial({color, roughness: 0.78, metalness: 0, ...o})
@@ -81,7 +90,10 @@ export function createStage(o: {canvas: HTMLCanvasElement; level: Level; spec: M
   const {canvas, level, spec, skin, quality, reduced} = o
   const lite = quality === 'lite'
   const renderer = new THREE.WebGLRenderer({canvas, antialias: !lite, powerPreference: 'high-performance'})
-  renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, lite ? 1.25 : 2))
+  // the sharpest the picture is ever drawn; the governor below draws it softer when frames run long (and back again)
+  const dprMax = Math.min(window.devicePixelRatio || 1, lite ? 1.25 : 1.75)
+  renderer.setPixelRatio(dprMax)
+  renderer.info.autoReset = false
   renderer.toneMapping = THREE.ACESFilmicToneMapping
   // a home mission keeps its own hour (a grounded boy goes out at night whatever the day's clock says)
   // the hood at dusk: lit like night (lamps, windows) under a graded sky and haze (look/dusk.ts)
@@ -136,9 +148,10 @@ export function createStage(o: {canvas: HTMLCanvasElement; level: Level; spec: M
     scene.add(new THREE.Points(g, keep(new THREE.PointsMaterial({color: '#cfd8ff', size: 1.6, sizeAttenuation: false, fog: false, transparent: true, opacity: 0.8}))))
   }
   // less fill, more key: shadows that go somewhere, a sun with a colour, a sky that is blue from above and warm from the ground
-  scene.add(dusk ? new THREE.HemisphereLight('#86a2d8', '#4a3a3e', 0.62) : new THREE.HemisphereLight(night ? '#5a6ea8' : '#cfe0f5', night ? '#14100f' : '#5a4a3a', night ? 0.34 : 0.62))
+  const hemi = dusk ? new THREE.HemisphereLight('#86a2d8', '#4a3a3e', 0.62) : new THREE.HemisphereLight(night ? '#5a6ea8' : '#cfe0f5', night ? '#14100f' : '#5a4a3a', night ? 0.34 : 0.62)
+  scene.add(hemi)
   const key = new THREE.DirectionalLight(dusk ? '#ffbe94' : night ? '#dce8ff' : '#ffdcb0', dusk ? 1.6 : night ? 0.8 : 2.9)
-  key.castShadow = !lite; key.shadow.mapSize.set(2048, 2048)
+  key.castShadow = !lite; key.shadow.mapSize.set(1536, 1536)
   Object.assign(key.shadow.camera, {left: -18, right: 18, top: 18, bottom: -18, near: 1, far: 140})
   key.shadow.bias = -0.0004; key.shadow.normalBias = 0.025; key.shadow.radius = 3
   scene.add(key, key.target)
@@ -157,7 +170,8 @@ export function createStage(o: {canvas: HTMLCanvasElement; level: Level; spec: M
   const wet = spec.weather === 'rain' || dusk
   // the ground's materials, by surface: the loom tiles replace the canvas ones when they arrive (surfaces.ts)
   const grounds: Record<SurfaceName, THREE.MeshStandardMaterial[]> = {asphalt: [], slabs: [], concrete: [], boards: [], tiles: [], carpet: []}
-  const ground = (name: SurfaceName, m: THREE.MeshStandardMaterial) => { grounds[name].push(m); return m }
+  // by day the road dries: look/daylight.ts takes the shine off it and lifts its colour
+  const ground = (name: SurfaceName, m: THREE.MeshStandardMaterial) => { grounds[name].push(m); if (dusk && level.hood) m.userData.dayGround = true; return m }
   const asphalt = noiseTex('#202227', 26, [3, 80], true)
   const tile = keep(canvasTex(256, 256, (g, w) => { g.fillStyle = '#6b6a6e'; g.fillRect(0, 0, w, w); for (let y = 0; y < 4; y++) for (let x = 0; x < 4; x++) { const v = 95 + rnd() * 25; g.fillStyle = `rgb(${v},${v - 2},${v - 4})`; g.fillRect(x * 64 + 2, y * 64 + 2, 60, 60) } }, [2, 40]))
   const plaster = ['#e9e3d6', '#ddd5c5', '#efe7d7', '#cfc8bb', '#e4d8c3', '#d8cfbf']
@@ -281,6 +295,7 @@ export function createStage(o: {canvas: HTMLCanvasElement; level: Level; spec: M
 
   /** the ground at the end of the road: a lit bowl, floodlights, the gate in the club's word for it */
   const towers: THREE.Sprite[] = []
+  let gateLight: THREE.PointLight | null = null
   let bowl: THREE.Object3D | null = null
   const addGround = (z: number, wallZ: number) => {
     const stad = new THREE.Group(); stad.position.set(0, 0, z)
@@ -305,7 +320,7 @@ export function createStage(o: {canvas: HTMLCanvasElement; level: Level; spec: M
     if (!theirs) { const sign = new THREE.Mesh(keep(new THREE.PlaneGeometry(8, 2)), keep(new THREE.MeshBasicMaterial({map: signTex(o.gateLabel, skin.p, '#ffffff'), toneMapped: false}))); sign.position.set(0, 8.2, wallZ + 1.3); scene.add(sign) }
     const ground = theirs ? null : skin.stadium ?? skin.strings.ground
     if (ground) { const gs = new THREE.Mesh(keep(new THREE.PlaneGeometry(26, 3.2)), keep(new THREE.MeshBasicMaterial({map: signTex(ground, '#0d1018', '#f3efe6', 1024, 128), toneMapped: false}))); gs.position.set(0, 12.2, wallZ - 1.2); scene.add(gs) }
-    const gl = new THREE.PointLight('#e8f0ff', night ? 140 : 30, 30, 1.6); gl.position.set(0, 5, wallZ + 8); scene.add(gl)
+    const gl = new THREE.PointLight('#e8f0ff', night ? 140 : 30, 30, 1.6); gl.position.set(0, 5, wallZ + 8); scene.add(gl); gateLight = gl
   }
 
 
@@ -459,8 +474,10 @@ export function createStage(o: {canvas: HTMLCanvasElement; level: Level; spec: M
     if (!school) addGround(level.bounds.z0 - 100, level.bounds.z0 - 12)
   }
 
+  const eyeDir = new THREE.Vector3()
+  let detail: Detail | null = null
   let duskDress: Dusk | null = null
-  if (dusk && level.place === 'street') { try { duskDress = dressDusk({scene, renderer, level, skin, lite, skyline, keep, rnd, glowTex, allowed: l => allowed(l, skin), banned: h => bannedColour(h, skin), sign: (a, b, c, w, h) => signTex(a, b, c, w, h), blocks: duskBlocks, facadeMats: duskFacades, clubId: spec.skin}) } catch { duskDress = null } }
+  if (dusk && level.place === 'street') { try { duskDress = dressDusk({scene, renderer, level, skin, lite, skyline, keep, rnd, glowTex, allowed: l => allowed(l, skin), banned: h => bannedColour(h, skin), sign: (a, b, c, w, h) => signTex(a, b, c, w, h), blocks: duskBlocks, facadeMats: duskFacades, clubId: spec.skin, onMirror: on => detail?.mirror(on)}) } catch { duskDress = null } }
   // the town's own pictures (rule life-flow-art): facades, the ground's plate, the skyline band; lazy and failing soft
   let flowDress: FlowDress | null = null
   if (duskDress && level.hood) { const dd = duskDress; try { flowDress = dressFlow({scene, renderer, level, clubId: spec.skin, skinTown: skin.town, lite, keep, rnd: seeded(spec.seed ^ 0xf10a), banned: h => bannedColour(h, skin), replaces: () => [...mainFronts, ...dd.front], wallMat: duskFacades[0] ?? null, bowl, ground: dd.ground, blocks: duskBlocks, onFronts: l => dd.onFronts(l)}) } catch { flowDress = null } }
@@ -542,6 +559,11 @@ export function createStage(o: {canvas: HTMLCanvasElement; level: Level; spec: M
     if (col) crowd[k]!.setColorAt(i, C(col))
   }))
   crowd.forEach(im => { if (im.instanceColor) im.instanceColor.needsUpdate = true })
+  // Only who is near is drawn, and the instances are packed: a person scaled to nothing still costs every triangle of
+  // every part of him, and ninety of those were two million triangles a frame for people nobody could see. A slot
+  // remembers whose colours it wears and takes new ones only when somebody else moves into it.
+  const pCols = people.map((p, i) => tParts.map((_, k) => { const c = new THREE.Color(); crowd[k]!.instanceColor ? crowd[k]!.getColorAt(i, c) : c.set('#ffffff'); return c }))
+  const slotOwner = new Int16Array(N).fill(-1)
   const zero = new THREE.Matrix4().makeScale(0, 0, 0)
   const duskCrowd = dusk ? dressCrowd({scene, level, skin, lite, rnd, keep, allowed: l => allowed(l, skin), figOf, humans: !!troupe}) : null
 
@@ -620,13 +642,16 @@ export function createStage(o: {canvas: HTMLCanvasElement; level: Level; spec: M
     if (p.step !== null && p.inside === undefined) { const b2 = new THREE.Mesh(keep(new THREE.CylinderGeometry(0.12, 0.12, 9, 8, 1, true)), keep(new THREE.MeshBasicMaterial({map: beamTex, color: tint.clone(), transparent: true, opacity: 0.55, depthWrite: false, blending: THREE.AdditiveBlending, toneMapped: false}))); b2.position.y = 4.5; g.add(b2) }
     return {g, item}
   })
+  // what the player steers by reads the same at noon as at night: the day never dims a marker (look/daylight.ts)
+  const dayFix = (o: THREE.Object3D) => o.traverse(c => { const m = (c as THREE.Mesh).material as THREE.Material | THREE.Material[] | undefined; for (const k of Array.isArray(m) ? m : m ? [m] : []) k.userData.dayFixed = true })
+  ;[beacon, halo, tag, ...pickups.map(p => p.g)].forEach(dayFix)
   // the burst when something is picked up (three in the air at once is plenty)
   const gotSeen = level.pickups.map(() => false)
   const revealT: number[] = level.pickups.map(() => -1)
   const bursts = [0, 1, 2].map(() => {
     const ring = new THREE.Mesh(keep(new THREE.RingGeometry(0.42, 0.5, 40).rotateX(-Math.PI / 2)), keep(new THREE.MeshBasicMaterial({color: tint.clone().multiplyScalar(2), transparent: true, depthWrite: false, blending: THREE.AdditiveBlending, toneMapped: false})))
     const flash = new THREE.Sprite(keep(new THREE.SpriteMaterial({map: glowTex, color: tint.clone().multiplyScalar(1.6), transparent: true, depthWrite: false, blending: THREE.AdditiveBlending})))
-    ring.visible = flash.visible = false; scene.add(ring, flash)
+    ring.visible = flash.visible = false; scene.add(ring, flash); dayFix(ring); dayFix(flash)
     return {ring, flash, t: 9}
   })
   // a knot of people singing: a ring on the ground that fills while you stand in it
@@ -634,7 +659,7 @@ export function createStage(o: {canvas: HTMLCanvasElement; level: Level; spec: M
     const m = new THREE.Mesh(keep(new THREE.RingGeometry(r.r - 0.12, r.r, 40).rotateX(-Math.PI / 2)), keep(new THREE.MeshBasicMaterial({color: C(skin.s).multiplyScalar(1.4), transparent: true, opacity: 0.7, depthWrite: false, toneMapped: false})))
     m.position.set(r.x, 0.03, r.z); scene.add(m)
     const fillM = new THREE.Mesh(keep(new THREE.CircleGeometry(r.r - 0.14, 40).rotateX(-Math.PI / 2)), keep(new THREE.MeshBasicMaterial({color: C(skin.p).multiplyScalar(1.2), transparent: true, opacity: 0.4, depthWrite: false, toneMapped: false})))
-    fillM.position.set(r.x, 0.025, r.z); fillM.scale.setScalar(0.001); scene.add(fillM)
+    fillM.position.set(r.x, 0.025, r.z); fillM.scale.setScalar(0.001); scene.add(fillM); dayFix(m); dayFix(fillM)
     return {m, fillM}
   })
   // bins and shutters to bang
@@ -833,6 +858,28 @@ export function createStage(o: {canvas: HTMLCanvasElement; level: Level; spec: M
   composer.addPass(grade)
   composer.addPass(new OutputPass())
 
+  /* ───────────── the day, and what a frame may cost ───────────── */
+  // the hood's street turns with the clock (look/daylight.ts); a mission's own stage keeps the hour it was built for
+  const day: Daylight | null = duskDress ? createDaylight({scene, renderer, sky: duskDress.sky, hemi, key, lamps: lampLights, gate: gateLight, wet: duskDress.wet, grade: {uNight: grade.uniforms.uNight as {value: number}}, bloom, bakeEnv: duskDress.bakeEnv}) : null
+  if (level.hood) detail = createDetail(scene, lite)
+  let clock = 18 * 60 + 40, scanIn = 0
+  // The governor. A phone that cannot hold the frame gets a softer picture before it gets a slower game: the drawing
+  // scale steps down (and the wet road's mirror is redrawn less often), and steps back up when there is room again.
+  // Measured on real frames (a moving average of the time between them), never guessed from the device's name.
+  const SCALES = lite ? [1, 0.85, 0.72, 0.6, 0.5] : [1, 0.88, 0.76, 0.66, 0.56]
+  let gov = 0, govMs = 16.7, govHold = 0, mirrorN = lite ? 2 : 1, viewW = 1, viewH = 1, frames = 0, lastCalls = 0, lastTris = 0
+  duskDress?.mirrorEvery(mirrorN)
+  const applyScale = () => { renderer.setPixelRatio(dprMax * SCALES[gov]!); renderer.setSize(viewW, viewH, false); composer.setPixelRatio(dprMax * SCALES[gov]!); composer.setSize(viewW, viewH) }
+  const govern = (ms: number) => {
+    // a stall (a tab coming back, a shader compiling) is not the device's speed
+    if (ms > 250 || ms <= 0) return
+    govMs += (ms - govMs) * 0.06; frames++
+    if (frames < 45 || --govHold > 0) return
+    if (govMs > 24 && gov < SCALES.length - 1) { gov++; applyScale(); govHold = 50; if (gov >= 2 && mirrorN < 3) duskDress?.mirrorEvery(++mirrorN) }
+    else if (govMs > 21 && mirrorN < 2) { duskDress?.mirrorEvery(++mirrorN); govHold = 50 }
+    else if (govMs < 13.5 && gov > 0) { gov--; applyScale(); govHold = 160 }
+  }
+
   /* ───────────── the frame ───────────── */
   const camPos = new THREE.Vector3(level.start.x, 2, level.start.z + 4), camLook = new THREE.Vector3(level.start.x, 1.4, level.start.z - 6)
   let t = 0, shake = 0, speedFx = 0, flash = 0, heart = 0, lastHits = 0, lastCaught = 0
@@ -851,17 +898,22 @@ export function createStage(o: {canvas: HTMLCanvasElement; level: Level; spec: M
     const beat = vt?.beat === 'scarf'
     const slow = beat && !reduced && talkT > 0.9 && talkT < 3.1 ? 0.5 : 1
     const dt = dtReal * slow
+    renderer.info.reset()
+    if (dtReal > 0 && !view.brief) govern(dtReal * 1000)
+    if (day) { day.set(clock); if (--scanIn <= 0) { scanIn = 120; day.scan(); detail?.scan() } }
+    detail?.update(cam.position)
     if (vt) talkT += dt
     const talkDir: TalkDir | null = vt ? {who: vt.who, mood: vt.mood, gesture: vt.gesture, you: vt.you, shot: vt.shot, beat: vt.beat, speak: vt.speak, tt: talkT} : null
     t += dt
     const heading = sim.heading
     // people
     const J = (tmpl.userData as FigureData)
+    let slot = 0, slotDirty = false
     for (let i = 0; i < people.length; i++) {
       const p = people[i]!
       if (p.mode === 'walk') { const w = walkerAt(level.walkers[p.idx]!, sim.t); p.x = w.x; p.z = w.z }
       const dx = p.x - sim.x, dz = p.z - sim.z, d2 = dx * dx + dz * dz
-      if (d2 > 900 && p.mode !== 'target') { crowd.forEach(im => im.setMatrixAt(i, zero)); continue }
+      if (d2 > 900 && p.mode !== 'target') continue
       if (d2 < 9 && !p.react && Math.random() < 0.5 && !sim.ended) p.react = 1.6
       p.react = Math.max(0, p.react - dt)
       const hoodMode = !!level.hood
@@ -884,7 +936,7 @@ export function createStage(o: {canvas: HTMLCanvasElement; level: Level; spec: M
             xf.position.set(p.x, 0, p.z); xf.rotation.y = p.turn
             const chat2 = p.mode === 'stand' && Math.sin(t * 0.55 + i * 1.3) > 0.45
             pose(xf, {speed: v, mood: p.mode === 'rival' ? 'neutral' : Math.abs(p.hy) > 0.15 ? 'smile' : chat2 ? 'laugh' : 'warm', lookY: p.hy, gaze: Math.abs(p.hy) > 0.1, speak: chat2 ? 1 : 0, gesture: chat2 ? (i % 3 === 0 ? 'open' : i % 3 === 1 ? 'laugh' : null) : p.react > 0.8 && i % 3 === 0 ? 'lift' : null}, t, dt)
-            if (isSkinned(xf)) { crowd.forEach(im => im.setMatrixAt(i, zero)); continue }
+            if (isSkinned(xf)) continue
           }
         }
       }
@@ -898,10 +950,12 @@ export function createStage(o: {canvas: HTMLCanvasElement; level: Level; spec: M
       tParts.forEach((m, k) => {
         const r = m.userData.role as string, L = p.look
         const hide = (r === 'kit' && (!L.kit || p.mode === 'rival')) || (r === 'top' && L.kit && p.mode !== 'rival') || (r === 'collar' && !L.kit) || (r === 'cap' && !L.cap) || (r === 'beard' && !L.beard) || ((r === 'scarf' || r === 'scarfB') && (!L.scarf || p.mode === 'rival')) || ((r === 'mouthOpen' || r === 'mouth') && !m.visible)
-        crowd[k]!.setMatrixAt(i, hide ? zero : m.matrixWorld)
+        crowd[k]!.setMatrixAt(slot, hide ? zero : m.matrixWorld)
+        if (slotOwner[slot] !== i && crowd[k]!.instanceColor) { crowd[k]!.setColorAt(slot, pCols[i]![k]!); slotDirty = true }
       })
+      slotOwner[slot] = i; slot++
     }
-    crowd.forEach(im => { im.instanceMatrix.needsUpdate = true })
+    crowd.forEach(im => { im.count = slot; im.instanceMatrix.needsUpdate = true; if (slotDirty && im.instanceColor) im.instanceColor.needsUpdate = true })
 
     // cars
     if (cars) {
@@ -1025,7 +1079,7 @@ export function createStage(o: {canvas: HTMLCanvasElement; level: Level; spec: M
       f.visible = true; f.position.set(px, 0, pz); f.rotation.y = yaw
       pose(f, {speed: v, mood: i % 3 ? 'warm' : 'smile', joy: 0.6, speak: v === 0 && Math.sin(t * 0.5 + i) > 0.6 ? 1 : 0, gesture: v === 0 && Math.sin(t * 0.5 + i) > 0.6 ? 'open' : null, lookY: Math.sin(t * 0.3 + i) * 0.3}, t, dt)
       return isSkinned(f)
-    } : undefined)
+    } : undefined, (cam.getWorldDirection(eyeDir), {x: cam.position.x, z: cam.position.z, fx: eyeDir.x, fz: eyeDir.z, far: Math.min(280, 1.4 / Math.max(0.003, (scene.fog as THREE.FogExp2).density))}))
     flat?.update(sim, t, dt, view.ending, view.outcome, {x: camPos.x, z: camPos.z, close: closeK})
     // stewards and the ground they can see
     if (level.place !== 'flat') level.patrols.forEach((p, i) => {
@@ -1105,6 +1159,8 @@ export function createStage(o: {canvas: HTMLCanvasElement; level: Level; spec: M
     key.position.set(sim.x - 12, 30, sim.z - 40); key.target.position.set(sim.x, 0, sim.z)
     if (!night) key.position.set(sim.x + 20, 40, sim.z + 10)
     if (dusk) key.position.set(sim.x - 10, 16, sim.z + 24)
+    if (day) key.position.set(sim.x + day.sun.x, day.sun.y, sim.z + day.sun.z)
+    if (day) { const k = Math.min(1, day.light.lit); rim.intensity = 2 + 4 * k; fill.intensity = 1 + 2 * k }
     rim.position.set(sim.x + 1.4, 2.2, sim.z - 1.2); fill.position.set(sim.x - 1.2, 1.8, sim.z + 1.6)
     if (lampLights.length) { const near = lampZ.filter(z => z < sim.z + 30).slice(0, lampLights.length / 2 + 1); lampLights.forEach((l, k) => { const z = near[Math.floor(k / 2)] ?? -9999; l.position.set((k % 2 ? 1 : -1) * (level.half - 0.2), 6, z) }) }
     towers.forEach((h, i) => h.scale.setScalar(70 + Math.sin(t * 0.7 + i) * 3))
@@ -1255,10 +1311,11 @@ export function createStage(o: {canvas: HTMLCanvasElement; level: Level; spec: M
         const e = talkK * talkK * (3 - 2 * talkK)
         cam.position.lerpVectors(camPos, talkPos, e); cam.lookAt(tmp.copy(camLook).lerp(talkLook, e)); cam.fov += (talkFov - cam.fov) * e
       }
-      talkLight.intensity = talkK * (night ? (troupe ? 11 : 7) : 2)
+      const darkNow = day ? day.dark : night
+      talkLight.intensity = talkK * (darkNow ? (troupe ? 11 : 7) : 2)
       // faces in a conversation: a soft warm key from the lens's side and a cool rim from behind, so skin is never flat or grey
       if (troupe && talkFace) { const bx = talkFace.x - cam.position.x, bz = talkFace.z - cam.position.z, bl = Math.hypot(bx, bz) || 1; rimLight.position.set(talkFace.x + bx / bl * 1.1, talkFace.y + 0.55, talkFace.z + bz / bl * 1.1) }
-      rimLight.intensity = troupe ? talkK * (night ? 9 : 3) : 0
+      rimLight.intensity = troupe ? talkK * (darkNow ? 9 : 3) : 0
       // standing still, the picture breathes with whoever is holding the camera
       if (!reduced && !view.brief) { const still = 1 - Math.min(1, sp / 1.5); cam.position.x += (Math.sin(t * 0.71) * 0.016 + Math.sin(t * 1.93) * 0.006) * still; cam.position.y += Math.sin(t * 0.87 + 1) * 0.012 * still; cam.rotateZ(Math.sin(t * 0.53) * 0.0028 * still) }
       // warmth: home is the warmest place on the street, a conversation warms the picture, and the scarf going on warms it most
@@ -1266,7 +1323,7 @@ export function createStage(o: {canvas: HTMLCanvasElement; level: Level; spec: M
       beatK += ((beat && talkT > 0.8 && talkT < 5 ? 1 : 0) - beatK) * Math.min(1, dtReal * 1.6)
       warm += (Math.max(homeK * 0.32, talkK * 0.4, beatK) - warm) * Math.min(1, dtReal * 3)
       grade.uniforms.uWarm!.value = warm; grade.uniforms.uFocus!.value = Math.max(talkK * 0.75, beatK)
-      if (bloom) bloom.strength = bloomBase + beatK * 0.4 + talkK * 0.08
+      if (bloom) bloom.strength = (day?.bloomBase ?? bloomBase) + beatK * 0.4 + talkK * 0.08
     }
     cam.updateProjectionMatrix()
     troupe?.update(cam.position, talkDir ? talkFace?.fig ?? null : null)
@@ -1275,9 +1332,11 @@ export function createStage(o: {canvas: HTMLCanvasElement; level: Level; spec: M
     flash = Math.max(0, flash - dt * 2.4)
     grade.uniforms.uSpeed!.value = view.ending ? 0 : speedFx; grade.uniforms.uHeart!.value = reduced ? 0 : heart; grade.uniforms.uFlash!.value = flash * 0.5; grade.uniforms.uTime!.value = t; grade.uniforms.uClose!.value = Math.max(closeK, view.ending ? 1 : 0)
     composer.render()
+    lastCalls = renderer.info.render.calls; lastTris = renderer.info.render.triangles
   }
 
   function resize(w: number, h: number) {
+    viewW = w; viewH = h
     renderer.setSize(w, h, false)
     composer.setSize(w, h)
     duskDress?.resize(w, h)
@@ -1333,5 +1392,20 @@ export function createStage(o: {canvas: HTMLCanvasElement; level: Level; spec: M
     troupe.recast(hero, b.cast, {height: b.height, child: b.child, pack: b.pack})
     child = b.child
   }
-  return {render, resize, project, captionAt, setAge, dispose}
+  const setClock = (minutes: number) => { clock = minutes }
+  const stats = (): StageStats => ({calls: lastCalls, triangles: lastTris, ms: Math.round(govMs * 10) / 10, fps: Math.round(1000 / Math.max(1, govMs)), scale: SCALES[gov]!, mirror: mirrorN, textures: renderer.info.memory.textures, geometries: renderer.info.memory.geometries})
+  const profile = (byCalls = false) => {
+    const rows = new Map<string, {name: string; tris: number; n: number; skinned: boolean}>()
+    scene.traverseVisible(o2 => {
+      const m = o2 as THREE.Mesh & {count?: number; isInstancedMesh?: boolean; isSkinnedMesh?: boolean}
+      if (!(m.isMesh || (o2 as THREE.Points).isPoints) || !m.geometry) return
+      const g = m.geometry, per = (g.index ? g.index.count : g.attributes.position?.count ?? 0) / 3, inst = m.isInstancedMesh ? m.count ?? 1 : 1
+      let par: THREE.Object3D | null = o2, path = ''
+      for (let d = 0; par && d < 4; d++, par = par.parent) path = (par.name || par.type) + (path ? '/' + path : '')
+      const key = `${path}|${g.type}|${Math.round(per)}`, r = rows.get(key) ?? {name: `${path} ${g.type} ${Math.round(per)}t${m.isInstancedMesh ? ' x' + inst : ''}`, tris: 0, n: 0, skinned: !!m.isSkinnedMesh}
+      r.tris += per * inst; r.n++; rows.set(key, r)
+    })
+    return [...rows.values()].sort((a, b) => byCalls ? b.n - a.n : b.tris - a.tris).slice(0, 40).map(r => ({...r, tris: Math.round(r.tris)}))
+  }
+  return {render, resize, project, captionAt, setAge, setClock, stats, profile, dispose}
 }

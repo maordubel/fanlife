@@ -11,7 +11,7 @@ import {openStep, personNear, startHood, stepHood, type HoodEvent, type HoodRun}
 import {hoodWord, type HoodKey} from '@/lib/life/hood/words'
 import {IDLE, STEP, type Input} from '@/lib/life/rush/sim'
 import type {PersonId, PlaceId} from '@/lib/life/hood/types'
-import {accentFor, brandAccent, cleanName, clockText, initialShell, isCrane, isFull, NAVY, reduce, type Shell, type ShellEvent} from '@/lib/life/hood/shell'
+import {accentFor, brandAccent, cleanName, initialShell, isCrane, isFull, NAVY, reduce, type Shell, type ShellEvent} from '@/lib/life/hood/shell'
 import {advance, choose, feelOf, nodeOf, talkScript, type TalkScript} from '@/lib/life/hood/talk'
 import {ballYours, hoodAmbient, stepAmbient, type AmbState} from '@/lib/life/hood/ambient'
 import {bagOf} from '@/lib/life/hood/bag'
@@ -27,16 +27,18 @@ import {WatchCard} from '../watch/WatchCard'
 import {slateDate, slateOf, watchForNight, watchWord, type WatchKey} from '@/lib/life/watch'
 import {chapter as chapterOf, missionById, stageOf as stageOfAge, storyWord} from '@/lib/life/hood/story'
 import {applyEffect, beatsAfter, carried, complicationTalk, fastForward, finishStory, focusOf, giversOf, keepOff, newPlay, openingBeat, planKey, stepDone, storyLevel, storyTalk, syncOffers, wantsComplication, type Beat, type StoryPlay} from '@/lib/life/hood/story/play'
-import {loadFlow, pick, PLATE_HINT, urlOf, type FlowManifest} from '@/lib/life/hood/flowRef'
+import {castFace, loadFlow, pick, PLATE_HINT, urlOf, type FlowManifest} from '@/lib/life/hood/flowRef'
+import {CLUB_TOWN, TOWN_PEOPLE} from '@/lib/life/flowArtSpec'
 import type {ArchiveRef} from '@/lib/life/universal/types'
 import {WORKER_PAPER, workerBridge, workerDoc, workerFace, workerPlate, workerProp} from '@/lib/life/hood/workerArt'
 import {BagScreen} from './BagScreen'
 import {COLD_OPEN, feelAfterCards, feelEffect, feelFinish, feelHud, feelStart, feelStep, feelVars, newFeel, type FeelHud, type FeelNote, type FeelState} from '@/lib/life/hood/story/feel/session'
 import {heartOf, recapOf} from '@/lib/life/hood/story/feel/voice'
+import {clockAfter, clockForMission, clockLabel, dayPart, FIRST_CLOCK, wrapDay} from '@/lib/life/hood/daylight'
 import {LifeSound} from '../sound'
 import css from './hood.module.css'
 
-export type HoodHostProps = {club: HoodClub; seed?: number; time?: 'day' | 'night' | 'dusk'; quality?: Quality; reduced?: boolean; /** `classic` keeps the code-built figures (the skinned people are the default) */ people?: 'human' | 'classic'; /** the QA stand only: exposes the run as `window.__hood` and the shell as `window.__hoodShell` */ probe?: boolean; /** the QA stand only: start the story at this chapter (the director is walked on without the street) */ chapterAt?: string; /** `play`: skip the title and start roaming (the QA stand) */ start?: 'title' | 'play'}
+export type HoodHostProps = {club: HoodClub; seed?: number; time?: 'day' | 'night' | 'dusk'; /** the QA stand only: hold the street's clock at this minute of the day (the light does not move) */ clockAt?: number; quality?: Quality; reduced?: boolean; /** `classic` keeps the code-built figures (the skinned people are the default) */ people?: 'human' | 'classic'; /** the QA stand only: exposes the run as `window.__hood` and the shell as `window.__hoodShell` */ probe?: boolean; /** the QA stand only: start the story at this chapter (the director is walked on without the street) */ chapterAt?: string; /** `play`: skip the title and start roaming (the QA stand) */ start?: 'title' | 'play'}
 
 /** where the intro's camera subject stands on each beat: along the main street, mid-block, never on a crossing */
 const INTRO_Z = [8, -48, -108, -270]
@@ -54,11 +56,14 @@ function drawGivers(ctx: CanvasRenderingContext2D, size: number, at: {x: number;
   }
 }
 
-export function HoodHost({club, seed = 1, time = 'dusk', quality, reduced = false, probe, start = 'title', people = 'human', chapterAt}: HoodHostProps) {
+export function HoodHost({club, seed = 1, time = 'dusk', clockAt, quality, reduced = false, probe, start = 'title', people = 'human', chapterAt}: HoodHostProps) {
   // the street with every story plan laid in once (story/play.ts): the picture is built once, the story moves through it
   const sl = useMemo(() => storyLevel(hoodLevel(club, seed)), [club, seed])
   const level = sl.level
-  const spec = useMemo(() => hoodSpec(club.id, seed, time), [club.id, seed, time])
+  // the street is always built as the dusk street: the day turns on it (look/daylight.ts), so `time` only names the hour it opens at
+  const spec = useMemo(() => hoodSpec(club.id, seed, 'dusk'), [club.id, seed])
+  const clock0 = clockAt ?? (time === 'day' ? 12 * 60 + 30 : time === 'night' ? 21 * 60 + 30 : FIRST_CLOCK)
+  const clockRef = useRef<number>(clock0)
   const runRef = useRef<HoodRun | null>(null)
   if (!runRef.current || runRef.current.level !== level) runRef.current = startHood(level)
   const canvasRef = useRef<HTMLCanvasElement | null>(null), stageRef = useRef<Stage | null>(null)
@@ -135,19 +140,21 @@ export function HoodHost({club, seed = 1, time = 'dusk', quality, reduced = fals
   const persist = useCallback(() => {
     const run = runRef.current!
     const p = playRef.current
-    writeSave(storeRef.current, club.id, snapshot(run, shellRef.current.name, waypointRef.current, wearRef.current, {state: p.state, plan: p.plan, choice: p.choice}))
+    writeSave(storeRef.current, club.id, snapshot(run, shellRef.current.name, waypointRef.current, wearRef.current, {state: p.state, plan: p.plan, choice: p.choice}, clockRef.current))
   }, [club.id])
   const freshRun = useCallback((p: StoryPlay = newPlay()) => {
     runRef.current = startHood(level)
+    clockRef.current = clock0
     feelRef.current = newFeel({born: club.born, country: club.country, name: shellRef.current.name})
     if (probe) (window as unknown as {__hood?: unknown}).__hood = runRef.current
     setPlay(p); syncOffers(runRef.current, sl, p)
     setJobState(runRef.current.job); setObjIx(-1); setWaypoint(null); waypointRef.current = null; setWear(true); wearRef.current = true; pendingDone.current = false; setPlace(null); setTalk(null); setBeats([])
-  }, [level, probe, sl, setPlay, club.born, club.country])
+  }, [level, probe, sl, setPlay, club.born, club.country, clock0])
   const loadSave = useCallback((s: HoodSave) => {
     freshRun()
     const run = runRef.current!
     restore(run, s)
+    if (clockAt === undefined && typeof s.clock === 'number') clockRef.current = wrapDay(s.clock)
     // the story: a save from before it starts the story at its beginning; an open mission comes back where it stood
     const st = s.story, plan = st?.plan && sl.plans[st.plan] && st.state.open && planKey(st.state.open.id, st.state.open.approach) === st.plan ? sl.plans[st.plan]! : null
     const p: StoryPlay = st ? {state: plan ? st.state : {...st.state, open: null}, plan: plan ? st!.plan : null, choice: plan ? st!.choice : null, asked: false} : newPlay()
@@ -160,7 +167,7 @@ export function HoodHost({club, seed = 1, time = 'dusk', quality, reduced = fals
       keepOff(run, sl, p)
     } else { run.job = 'idle'; syncOffers(run, sl, p) }
     setJobState(run.job); setObjIx(openStep(run)); setWaypoint(s.waypoint); waypointRef.current = s.waypoint; setWear(s.wear); wearRef.current = s.wear
-  }, [freshRun, sl, setPlay])
+  }, [freshRun, sl, setPlay, clockAt])
 
   const showBanner = useCallback((kind: Banner['kind'], title: string, sub?: string) => {
     window.clearTimeout(timers.current.banner)
@@ -343,10 +350,22 @@ export function HoodHost({club, seed = 1, time = 'dusk', quality, reduced = fals
   // the player's body follows the story's age: a boy, a teenager, a man (time passing is seen, not only told)
   const age = play.state.age
   useEffect(() => { if (ready) stageRef.current?.setAge(age) }, [ready, age])
+  // the story sets the hour: taking a mission moves the clock to the time of day it happens at (school in the morning,
+  // the walk to the ground in the gold hour before kick-off); after that the street only keeps it running
+  const hourOf = play.plan ? play.state.open?.id ?? null : null
+  useEffect(() => {
+    if (!hourOf || clockAt !== undefined) return
+    const m = missionById(hourOf)
+    if (m) clockRef.current = clockForMission(clockRef.current, {day: m.day, place: m.place, kind: m.kind})
+  }, [hourOf, clockAt])
+  // the QA stand reads what a frame costs
+  useEffect(() => { if (probe && ready) (window as unknown as {__hoodGl?: unknown}).__hoodGl = () => ({...stageRef.current?.stats(), clock: clockLabel(clockRef.current)}); if (probe && ready) (window as unknown as {__hoodProfile?: unknown}).__hoodProfile = () => stageRef.current?.profile() }, [probe, ready])
 
   /* the loop: fixed steps for the simulation, one picture per frame */
   useEffect(() => {
-    let raf = 0, last = performance.now(), acc = 0, tick = 0, ph = '', kickNow = false, capSig = ''
+    let raf = 0, last = performance.now(), acc = 0, tick = 0, ph = '', kickNow = false, capSig = '', drawn = '', fno = 0
+    const redraw = () => { drawn = '' }
+    window.addEventListener('resize', redraw)
     const pad = (): Input => {
       const k = keys.current
       const x = (k.KeyD || k.ArrowRight ? 1 : 0) - (k.KeyA || k.ArrowLeft ? 1 : 0) + stick.current.x
@@ -360,6 +379,9 @@ export function HoodHost({club, seed = 1, time = 'dusk', quality, reduced = fals
       if (!stage) return
       const {sim} = run, scr = shellRef.current.screen
       const playing = scr === 'playing'
+      // the day turns only while he is in the street: a menu, a card or a conversation never costs him the light
+      if (playing && clockAt === undefined) clockRef.current = clockAfter(clockRef.current, real)
+      stage.setClock(clockRef.current)
       if (playing || isCrane(scr)) {
         acc += real
         let n = 0
@@ -394,7 +416,7 @@ export function HoodHost({club, seed = 1, time = 'dusk', quality, reduced = fals
         if (by !== kickNow) { kickNow = by; setKick(by) }
         if ((np ?? '') !== ph) { ph = np ?? ''; setNearId(np) }
         tick++
-        if (hud.map.current && tick % 2 === 0) {
+        if (hud.map.current && tick % 3 === 0) {
           const c = hud.map.current.getContext('2d'), size = hud.map.current.clientWidth || 80
           if (c) {
             drawMap(c, level, sim, club.skin, size)
@@ -408,23 +430,27 @@ export function HoodHost({club, seed = 1, time = 'dusk', quality, reduced = fals
         }
         if (tick % 6 === 0) {
           if (hud.ring.current) hud.ring.current.style.strokeDashoffset = String(RING_LEN * (1 - ringProgress(run)))
-          if (hud.clock.current) hud.clock.current.textContent = clockText(sim.t)
+          if (hud.clock.current) { hud.clock.current.textContent = clockLabel(clockRef.current); hud.clock.current.dataset.part = dayPart(clockRef.current) }
         }
       }
       const live = playing || isCrane(scr) || scr === 'dialogue'
+      // What is not seen is not drawn. Behind a full panel (pause, map, bag, a story card) the street is a still: it is
+      // drawn once and kept, so a menu never runs the phone hot. The title's slow crane is drawn every other frame.
+      fno++
+      if (isFull(scr) || document.hidden) { if (drawn === scr) return; drawn = scr } else { drawn = ''; if (isCrane(scr) && scr !== 'cutscene' && fno % 2) return }
       // the conversation as the picture plays it: who speaks, the line's feeling, the lips while the words are typed
       const tk = scr === 'dialogue' ? talkRef.current : null, tn = tk ? nodeOf(tk.script, tk.id) : null, feel = tn ? feelOf(tn) : null
       const a = ambRef.current
       stage.render(sim, {cam: playing || scr === 'dialogue' ? camRef.current : 'chase', ending: false, endT: 0, outcome: null, intro: 0, brief: isCrane(scr), hood: {job: run.job, scarf: playRef.current.state.keeps.includes('scarf') && wearRef.current, amb: playing || scr === 'dialogue' ? a : null,
-        talk: tn && feel && !tk!.script.narration ? {who: tn.who, key: `${tk!.script.who}:${tn.id}:${tn.line}`, mood: feel.mood, gesture: feel.gesture ?? null, you: feel.you, shot: feel.shot, beat: feel.beat ?? null, speak: typingRef.current ? 1 : 0} : null}}, live ? real : 0)
+        talk: tn && feel && !tk!.script.narration ? {who: tn.who, key: `${tk!.script.who}:${tn.id}:${tn.line}`, mood: feel.mood, gesture: feel.gesture ?? null, you: feel.you, shot: feel.shot, beat: feel.beat ?? null, speak: typingRef.current ? 1 : 0} : null}}, live ? (isCrane(scr) && scr !== 'cutscene' ? Math.min(0.25, real * 2) : real) : 0)
       // street voices: soft captions beside whoever spoke (DOM, placed from the picture)
       const list = playing && a ? a.captions : [], sig = list.map(c => c.id).join(',')
       if (sig !== capSig) { capSig = sig; capsRef.current = list.map(c => ({id: c.id, spot: c.spot, key: c.key})); setCaps(capsRef.current) }
       for (const c of capsRef.current) { const el = capEls.current[c.id], at = el ? stage.captionAt(c.spot) : null; if (el) { el.style.opacity = at?.visible && at.y > 90 ? '1' : '0'; if (at) el.style.transform = `translate(${Math.round(Math.max(84, Math.min((canvasRef.current?.clientWidth ?? 390) - 84, at.x)))}px, ${Math.round(Math.max(120, at.y))}px) translate(-50%, -100%)` } }
     }
     raf = requestAnimationFrame(frame)
-    return () => cancelAnimationFrame(raf)
-  }, [level, club.skin, handle, sl, setPlay, showNotes, openScript])
+    return () => { cancelAnimationFrame(raf); window.removeEventListener('resize', redraw) }
+  }, [level, club.skin, handle, sl, setPlay, showNotes, openScript, clockAt])
 
   /* progress is saved while he plays, and when the page goes away */
   useEffect(() => {
@@ -498,8 +524,15 @@ export function HoodHost({club, seed = 1, time = 'dusk', quality, reduced = fals
   /* the story's cards */
   const beat = screen === 'story' ? beats[0] ?? null : null
   // a painted Flow plate first, else THE WORKER's universal room or street (Tel Aviv's own streets only for Tel Aviv)
-  const plateFor = (id: string | null, salt: number) => { const p = pick(flow, {kind: 'story', club: club.id, hint: id ? PLATE_HINT[id] ?? [id] : [], salt}); return p && flow ? urlOf(flow, p, 1080) : workerPlate(id, club.town) }
-  const aerialP = pick(flow, {kind: 'aerial', club: club.id})
+  // the town this club's pictures were painted for, and the people of that part of the world (rule life-flow-art)
+  const flowTown = CLUB_TOWN[club.id] ?? null, folk = flowTown ? TOWN_PEOPLE[flowTown] : null
+  /** the face of whoever is speaking: his Flow portrait when it has been painted (the mate grows up with the boy), else THE WORKER's */
+  const faceOf = (who: string): string | null => {
+    const a = play.state.age, as = who === 'dad' ? 'father' : who === 'mate' ? (a >= 19 ? 'man' : a >= 13 ? 'teen' : 'mate') : who === 'kiosk' ? 'kiosk' : who === 'neighbour' ? 'neighbour' : who === 'mum' ? 'mother' : who
+    return castFace(flow, folk, as) ?? workerFace(who)
+  }
+  const plateFor = (id: string | null, salt: number) => { const p = pick(flow, {kind: 'story', club: club.id, town: flowTown, hint: id ? PLATE_HINT[id] ?? [id] : [], salt}); return p && flow ? urlOf(flow, p, 1080) : workerPlate(id, club.town) }
+  const aerialP = pick(flow, {kind: 'aerial', club: club.id, town: flowTown})
   const aerial = aerialP && flow ? {href: urlOf(flow, aerialP, 1600), world: aerialP.world} : null
   const cardOf = (b: Beat): StoryCardView | null => {
     if (b.k === 'chapter') {
@@ -556,7 +589,7 @@ export function HoodHost({club, seed = 1, time = 'dusk', quality, reduced = fals
       {screen === 'name' && <NameEntry w={w} clean={cleanName} onGo={startNew} onBack={() => go({t: 'esc'})} />}
       {screen === 'intro' && <Cinematic lines={introLines} w={w} reduced={reducedEff} ms={COLD_OPEN.ms} onBeat={onIntroBeat} onDone={finishIntro} />}
       {screen === 'cutscene' && <Cinematic lines={outroLines} w={w} reduced={reducedEff} ms={3000} onDone={() => go({t: 'cutDone'})} />}
-      {screen === 'dialogue' && talkNode && <Talk portrait={talkNode.who} face={talk!.script.narration ? null : workerFace(talkNode.who)} key={`${talk!.script.who}-${talkNode.id}`} node={talkNode} name={talk!.script.narration ? w('story.complication') : names[talkNode.who] ?? ''} w={w} reduced={reducedEff} onGo={onGo} onChoose={onChoose} onLeave={endTalk} onTyping={v => { typingRef.current = v }} />}
+      {screen === 'dialogue' && talkNode && <Talk portrait={talkNode.who} face={talk!.script.narration ? null : faceOf(talkNode.who)} key={`${talk!.script.who}-${talkNode.id}`} node={talkNode} name={talk!.script.narration ? w('story.complication') : names[talkNode.who] ?? ''} w={w} reduced={reducedEff} onGo={onGo} onChoose={onChoose} onLeave={endTalk} onTyping={v => { typingRef.current = v }} />}
       {screen === 'playing' && caps.length > 0 && <div className={css.lgCaps} role="log" aria-label={w('hood.amb.label')}>{caps.map(c => <p key={c.id} ref={el => { capEls.current[c.id] = el }} className={css.lgCap}>{w(c.key)}</p>)}</div>}
       {screen === 'pause' && <Pause w={w} club={club.skin.name} name={shell.name} onResume={() => go({t: 'resume'})} onMap={() => { setMapKey(k => k + 1); go({t: 'open', to: 'map'}) }} onBag={() => go({t: 'open', to: 'bag'})} onSettings={() => go({t: 'open', to: 'settings'})} onHelp={() => go({t: 'open', to: 'help'})} onQuit={() => { persist(); setSavedName(shell.name); go({t: 'quit'}) }} />}
       {screen === 'settings' && <Settings w={w} s={settings} quality={qualityEff} onChange={changeSettings} onBack={() => go({t: 'back'})} />}

@@ -104,6 +104,8 @@ export function dressFlow(x: FlowCtx): FlowDress {
         totalEmissiveRadiance += diffuseColor.rgb * vec3(0.34, 0.25, 0.18) * mix(1.0, 0.62, smoothstep(3.0, 18.0, vFy));`)
     }
     m.customProgramCacheKey = () => 'flow-facade'
+    // painted at dusk: by day the wall is lifted to what the sun would make of it (look/daylight.ts)
+    m.userData.dayWall = true
     return m
   }
   const flowSources = async (all: FlowPiece[]): Promise<Source[]> => {

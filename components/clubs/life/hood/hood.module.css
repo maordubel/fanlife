@@ -505,3 +505,25 @@
 .lgStoryPaperArt { float: inline-end; inline-size: 54px; block-size: auto; margin-inline-start: 10px; opacity: .9; }
 .lgPortrait2[data-face='true'] i { display: none; }
 .lgStoryPlate video { inline-size: 100%; block-size: 100%; object-fit: cover; }
+
+/* ───── a face you know (28.11.2026): a painted portrait is a card beside the words, not a badge. On a phone it stands on
+   the corner of the box; on a desk it is a tall card beside it, the way a film holds a close-up while somebody speaks. ───── */
+.lgTalkBox[data-face='true'] .lgPortrait2 { inset-inline: 10px auto; inset-block-end: calc(100% - 12px); inline-size: 92px; block-size: 116px; border-radius: 18px; border-width: 2px; animation: lgFace .42s var(--lg-ease) both; }
+.lgTalkBox[data-face='true'] .lgPortrait2 img { object-position: 50% 16%; }
+.lgTalkBox[data-face='true'] .lgPortrait2::after { content: ''; position: absolute; inset: 0; border-radius: inherit; background: linear-gradient(to top, color-mix(in srgb, var(--lg-navy) 62%, transparent), transparent 46%); pointer-events: none; }
+.lgTalkBox[data-face='true'] .lgPlate { inset-inline-start: 112px; }
+.lgTalkBox[data-face='true'] .lgTalkText { min-block-size: 3.6em; }
+@keyframes lgFace { from { opacity: 0; transform: translateY(10px) scale(.96); } to { opacity: 1; transform: none; } }
+@media (max-width: 359px) { .lgTalkBox[data-face='true'] .lgPortrait2 { inline-size: 76px; block-size: 96px; } .lgTalkBox[data-face='true'] .lgPlate { inset-inline-start: 94px; } }
+@media (min-width: 900px) {
+  .lgTalk[data-face='true'] { max-inline-size: 58rem; }
+  .lgTalkBox[data-face='true'] { margin-inline-start: 208px; }
+  .lgTalk[data-face='true'] .lgChoices { margin-inline-start: 208px; }
+  .lgTalkBox[data-face='true'] .lgPortrait2 { inset-inline: -208px auto; inset-block-end: 0; inline-size: 188px; block-size: 236px; border-radius: 22px; }
+  .lgTalkBox[data-face='true'] .lgPlate { inset-inline-start: 14px; }
+}
+/* the door: what a club's LIFE address shows while the game's own code arrives (HoodDoor.tsx) */
+.lgDoor { position: fixed; inset: 0; z-index: 60; display: grid; place-items: center; align-content: center; gap: 22px; background: var(--life-scene-black); }
+.lgDoor img { inline-size: min(56vw, 240px); block-size: auto; animation: lgFade .6s both; }
+.lgDoor span { inline-size: 120px; block-size: 3px; border-radius: 3px; background: linear-gradient(90deg, transparent, color-mix(in srgb, var(--life-scene-skin) 80%, transparent), transparent); background-size: 200% 100%; animation: lgDoorRun 1.1s linear infinite; }
+@keyframes lgDoorRun { from { background-position: 200% 0; } to { background-position: -200% 0; } }

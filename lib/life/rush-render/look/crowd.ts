@@ -57,7 +57,7 @@ function bakeLod(a: CharAsset, clip: string, at: number): {geo: THREE.BufferGeom
   mixer.stopAllAction(); mixer.uncacheRoot(model); m.skeleton.dispose()
   return {geo, map}
 }
-type P = {x: number; z: number; yaw: number; v: number; k: number; ph: number; sc: number; walk: boolean; d: number; col: THREE.Color; i: number; hum: boolean}
+type P = {x: number; z: number; yaw: number; v: number; k: number; ph: number; sc: number; walk: boolean; d: number; col: THREE.Color; i: number; hum: boolean; tier: 0 | 1 | 2}
 /** somebody near enough to be a person: the stage draws him as a skinned human and says whether it did */
 export type CrowdNear = (i: number, x: number, z: number, yaw: number, v: number, sc: number, col: THREE.Color) => boolean
 
@@ -116,7 +116,7 @@ export function dressCrowd(x: CrowdCtx) {
   for (let i = 0; i < total; i++) {
     const near = i < total * 0.55, z = near ? -14 - rnd() * 90 : -90 - Math.pow(rnd(), 0.7) * (-G - 100), walk = rnd() < 0.3
     const lane = rnd(), px = lane < 0.5 ? (rnd() < 0.5 ? -1 : 1) * (7.4 + rnd() * 2.8) : (rnd() - 0.5) * 12
-    people.push({x: px, z: Math.max(G + 14, z), yaw: walk ? Math.PI : rnd() * 6.28, v: walk ? 0.9 + rnd() * 0.8 : 0, k: 0, ph: rnd() * 6, sc: 0.94 + rnd() * 0.14, walk, d: rnd() * 3, col: new THREE.Color(shirts[Math.floor(rnd() * shirts.length)]!), i, hum: false})
+    people.push({x: px, z: Math.max(G + 14, z), yaw: walk ? Math.PI : rnd() * 6.28, v: walk ? 0.9 + rnd() * 0.8 : 0, k: 0, ph: rnd() * 6, sc: 0.94 + rnd() * 0.14, walk, d: rnd() * 3, col: new THREE.Color(shirts[Math.floor(rnd() * shirts.length)]!), i, hum: false, tier: 0})
   }
   // walkers use the walking builds, the rest the standing ones
   const wk = [...new Set(variants.filter(v => v.walk).map(v => v.grp))], st = [...new Set(variants.filter(v => !v.walk).map(v => v.grp))]
@@ -153,23 +153,57 @@ export function dressCrowd(x: CrowdCtx) {
       }
     })
   }
-  const none = new THREE.Matrix4().makeScale(0, 0, 0)
+  /* ---- far away a supporter is a shape in the club's colour: one low body (about a hundred triangles) for everybody past
+     the middle distance, so the far end of the street costs a few thousand triangles and not a few hundred thousand ---- */
+  const farGeo = (() => {
+    const part = (g: THREE.BufferGeometry, col: string, tint: number) => { const n2 = g.toNonIndexed(); g.dispose(); const n = n2.attributes.position!.count, c = new THREE.Color(col), cs = new Float32Array(n * 3), ts = new Float32Array(n); for (let i = 0; i < n; i++) { cs.set([c.r, c.g, c.b], i * 3); ts[i] = tint } n2.setAttribute('color', new THREE.BufferAttribute(cs, 3)); n2.setAttribute('aTint', new THREE.BufferAttribute(ts, 1)); n2.deleteAttribute('uv'); return n2 }
+    const parts = [
+      part(new THREE.BoxGeometry(0.15, 0.82, 0.17).translate(-0.1, 0.41, 0), PANTS[1]!, 0), part(new THREE.BoxGeometry(0.15, 0.82, 0.17).translate(0.1, 0.41, 0), PANTS[1]!, 0),
+      part(new THREE.CylinderGeometry(0.2, 0.17, 0.6, 6).translate(0, 1.1, 0), '#ffffff', 1),
+      part(new THREE.BoxGeometry(0.09, 0.56, 0.1).translate(-0.26, 1.08, 0), '#ffffff', 1), part(new THREE.BoxGeometry(0.09, 0.56, 0.1).translate(0.26, 1.08, 0), '#ffffff', 1),
+      part(new THREE.IcosahedronGeometry(0.115, 0).translate(0, 1.58, 0), SKIN_TONES[2]!, 0), part(new THREE.BoxGeometry(0.2, 0.09, 0.2).translate(0, 1.68, -0.01), HAIR[1]!, 0),
+    ]
+    const g = mergeGeometries(parts, false)!; parts.forEach(q2 => q2.dispose()); g.computeVertexNormals(); return keep(g)
+  })()
+  const far = new THREE.InstancedMesh(farGeo, mat, total); far.count = 0; far.frustumCulled = false; scene.add(far)
+  for (let i = 0; i < total; i++) far.setColorAt(i, people[i]!.col)
+  const farOwner = new Int16Array(total).fill(-1), owners = ims.map(it => new Int16Array(Math.max(1, it.mine.length)).fill(-1))
+  const MID2 = (lite ? 24 : 46) ** 2
   const m4 = new THREE.Matrix4(), q = new THREE.Quaternion(), e = new THREE.Euler(), p3 = new THREE.Vector3(), s3 = new THREE.Vector3()
   return {
-    update(sim: {x: number; z: number}, t: number, dt: number, near?: CrowdNear) {
+    /**
+     * `eye`: where the lens stands, which way it looks and how far the air lets it see. Only who can be seen is drawn, and
+     * the instances are packed (an instance scaled to nothing still costs every one of its triangles): near the lens a
+     * person has his full body, past the middle distance the low one.
+     */
+    update(sim: {x: number; z: number}, t: number, dt: number, near?: CrowdNear, eye?: {x: number; z: number; fx: number; fz: number; far: number}) {
+      const ex = eye?.x ?? sim.x, ez = eye?.z ?? sim.z, far2 = (eye?.far ?? 400) ** 2
+      let fn = 0, farDirty = false
       for (const p of people) { if (p.walk) { p.z -= p.v * dt; p.d += p.v * dt; if (p.z < G + 12) p.z = L - 6 - rnd() * 20 }
-        const dx = p.x - sim.x, dz = p.z - sim.z; p.hum = !!near && dx * dx + dz * dz < 121 && near(p.i, Math.abs(dz) < 1.8 && Math.abs(dx) < 1.3 ? sim.x + (dx >= 0 ? 1.3 : -1.3) : p.x, p.z, p.yaw, p.v, p.sc, p.col) }
-      for (const {im, mine, v} of ims) {
-        mine.forEach((p, i) => {
-          if (p.hum) { im.setMatrixAt(i, none); return }
-          if (v.walk) { const h = p.sc * 0.94, stride = h * Math.max(0.9, Math.min(3.3, 0.85 + 0.42 * p.v / h)), u = (p.d / stride) % 1; if (Math.floor(u * NPH) % NPH !== v.ph) { im.setMatrixAt(i, none); return } }
+        const dx = p.x - sim.x, dz = p.z - sim.z; p.hum = !!near && dx * dx + dz * dz < 121 && near(p.i, Math.abs(dz) < 1.8 && Math.abs(dx) < 1.3 ? sim.x + (dx >= 0 ? 1.3 : -1.3) : p.x, p.z, p.yaw, p.v, p.sc, p.col)
+        // 0 = not drawn, 1 = his own body, 2 = the far body
+        const cx = p.x - ex, cz = p.z - ez, d2 = cx * cx + cz * cz
+        p.tier = p.hum || d2 > far2 || (eye && cx * eye.fx + cz * eye.fz < -4) ? 0 : d2 < MID2 ? 1 : 2
+        if (p.tier === 2) {
+          q.setFromEuler(e.set(0, p.yaw, 0)); far.setMatrixAt(fn, m4.compose(p3.set(p.x, p.walk ? Math.abs(Math.sin(p.d * 2.2)) * 0.03 : 0, p.z), q, s3.set(p.sc, p.sc, p.sc)))
+          if (farOwner[fn] !== p.i) { farOwner[fn] = p.i; far.setColorAt(fn, p.col); farDirty = true }
+          fn++
+        } }
+      far.count = fn; far.instanceMatrix.needsUpdate = true; if (farDirty && far.instanceColor) far.instanceColor.needsUpdate = true
+      ims.forEach(({im, mine, v}, k) => {
+        const own = owners[k]!; let n = 0, dirty = false
+        for (const p of mine) {
+          if (p.tier !== 1) continue
+          if (v.walk) { const h = p.sc * 0.94, stride = h * Math.max(0.9, Math.min(3.3, 0.85 + 0.42 * p.v / h)), u = (p.d / stride) % 1; if (Math.floor(u * NPH) % NPH !== v.ph) continue }
           let px = p.x; const dx = px - sim.x, dz = p.z - sim.z
           if (Math.abs(dz) < 1.8 && Math.abs(dx) < 1.3) px = sim.x + (dx >= 0 ? 1.3 : -1.3)
           const bob = p.walk ? 0 : Math.sin(t * 2 + p.ph) * 0.006
-          q.setFromEuler(e.set(0, p.yaw, p.walk ? 0 : Math.sin(t * 0.5 + p.ph) * 0.012)); im.setMatrixAt(i, m4.compose(p3.set(px, bob, p.z), q, s3.set(p.sc, p.sc, p.sc)))
-        })
-        im.instanceMatrix.needsUpdate = true
-      }
+          q.setFromEuler(e.set(0, p.yaw, p.walk ? 0 : Math.sin(t * 0.5 + p.ph) * 0.012)); im.setMatrixAt(n, m4.compose(p3.set(px, bob, p.z), q, s3.set(p.sc, p.sc, p.sc)))
+          if (own[n] !== p.i) { own[n] = p.i; im.setColorAt(n, p.col); dirty = true }
+          n++
+        }
+        im.count = n; im.instanceMatrix.needsUpdate = true; if (dirty && im.instanceColor) im.instanceColor.needsUpdate = true
+      })
     },
   }
 }
