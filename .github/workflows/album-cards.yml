@@ -18,7 +18,7 @@ env:
 jobs:
   pack:
     runs-on: ubuntu-latest
-    timeout-minutes: 90
+    timeout-minutes: 120
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
@@ -33,7 +33,20 @@ jobs:
           dest = Path(os.environ['RUNNER_TEMP']) / 'pack'
           d.download(os.environ['PACK_INDEX'], dest / 'index.csv')
           rep = {'files': [], 'failed': []}
-          d.fetch(os.environ['PACK_CARDS'], dest / 'cards', rep)
+          want = {r['image_file'].split('/')[-1] for r in csv.DictReader(open(dest / 'index.csv', encoding='utf-8-sig')) if r['image_file']}
+          files = [(eid, t) for eid, t, folder in d.listing(os.environ['PACK_CARDS']) if not folder and t in want]
+          print('listed', len(files), 'of', len(want), flush=True)
+          from concurrent.futures import ThreadPoolExecutor
+          def one(x):
+              eid, t = x
+              for _ in range(3):
+                  try:
+                      return d.download(eid, dest / 'cards' / t)
+                  except Exception as e:
+                      err = e
+              rep['failed'].append({'path': t, 'reason': str(err)[:120]})
+          with ThreadPoolExecutor(16) as ex:
+              list(ex.map(one, files))
           want = {r['image_file'] for r in csv.DictReader(open(dest / 'index.csv', encoding='utf-8-sig')) if r['image_file']}
           have = {'cards/' + p.name for p in (dest / 'cards').glob('*.jpg')}
           print(f"pack: {len(have)} card files of {len(want)} listed; {len(rep['failed'])} failed")
