@@ -29,6 +29,8 @@ jobs:
           npm run clubs:precompile
       - uses: actions/setup-python@v5
         with: {python-version: '3.12'}
+      - name: Python tools (what the research and script stages import)
+        run: pip install -q numpy pillow opencv-python-headless fonttools brotli
       - name: Write the scripts
         working-directory: scripts/football-stories
         env:
