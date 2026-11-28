@@ -50,7 +50,31 @@ def run(club: str, season: str, minutes: float, out: Path, topic: str = '', kind
         (out / f'script-{i}.txt').write_text(f'# {sc.selected_title(s)}\n# {s.get("_writer")}\n\n' + '\n\n'.join(lines) + '\n', encoding='utf-8')
         report['scripts'].append({'n': i, 'title': sc.selected_title(s), 'writer': s.get('_writer'), 'judge': story_judge.judge(s, ledger)})
     (out / 'report.json').write_text(json.dumps(report, ensure_ascii=False, indent=1), encoding='utf-8')
+    dump(out, ledger, report)
     return report
+
+
+def dump(out: Path, ledger: dict, report: dict) -> None:
+    """Everything a reviewer needs, in the job log (the artifact store is not reachable from every machine)."""
+    import glob
+    print('\n===== LAB: SEASON BOOK =====')
+    sb = ledger.get('season_book') or {}
+    print(json.dumps({k: v for k, v in sb.items() if k != 'lead'}, ensure_ascii=False, indent=1)[:3000])
+    raw = sorted(glob.glob(str(out / 'cache' / 'season-book' / '*.json')))
+    if raw:
+        book = json.loads(Path(raw[-1]).read_text())
+        print('facts:', json.dumps(book.get('facts'), ensure_ascii=False)[:3000])
+    print('\n===== LAB: FACT SHEET =====')
+    from ..story_room import fact_sheet
+    print(fact_sheet(ledger)[:6000])
+    for f in sorted(glob.glob(str(out / 'cache' / 'story-room-*.json'))):
+        print('\n===== LAB: TREATMENTS =====')
+        print(Path(f).read_text()[:9000])
+    for f in sorted(out.glob('script-*.txt')):
+        print(f'\n===== LAB: {f.name} =====')
+        print(f.read_text()[:12000])
+    print('\n===== LAB: VERDICTS =====')
+    print(json.dumps(report, ensure_ascii=False, indent=1)[:8000])
 
 
 def main() -> None:

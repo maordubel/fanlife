@@ -254,7 +254,11 @@ def attach(ledger: dict, brief: dict, cache: Path, log=print) -> dict:
             ledger['season_book'] = {'status': f'unreachable ({type(e).__name__})'}
             log(f'Season book: Wikipedia unreachable ({type(e).__name__}) — the film goes on from the archive')
             return ledger
-        fs, skipped = facts(infobox(raw['wikitext']))
+        box = infobox(raw['wikitext'])
+        fs, skipped = facts(box)
+        if os.environ.get('STORIES_SEASON_BOOK_DEBUG') == '1':
+            print('SEASON BOOK infobox fields:', json.dumps(box, ensure_ascii=False)[:4000])
+            print('SEASON BOOK wikitext head:', raw['wikitext'][:5000])
         book = {'title': raw['title'], 'revid': raw['revid'], 'lead': raw['lead'][:2400], 'facts': fs, 'skipped': skipped}
         ck.parent.mkdir(parents=True, exist_ok=True)
         write_json(ck, book)
