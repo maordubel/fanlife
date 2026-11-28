@@ -33,6 +33,9 @@ STOCK = [
     r'and for once,? nobody', r'football (?:keeps|has|always)', r'that is football', r'only football',
     r'(?:one|a) night that', r'every supporter', r'supporters? like us', r'faster than the trains',
     r'hope is a dangerous thing', r'read the same script', r'out of nowhere', r'the stuff of legend',
+    r'with their hands', r'kept that shirt', r'not a disaster', r'scoreboard earns', r'stopped talking about it',
+    r'the famous ones', r'small thing becomes', r'some years are greedy', r'nobody was complaining', r'in theory\.',
+    r'nobody left early', r'quietly, the way they do', r'came without a bill', r'football is not built',
 ]
 STOCK_RE = re.compile('|'.join(STOCK), re.I)
 # a club name cut to an initial: "L Red Imps", "H. Beer-Sheva", "Man City", "B. Dortmund"
@@ -50,7 +53,10 @@ def sentences(text: str) -> list[str]:
 
 def _beats(script: dict) -> list[str]:
     from .script import all_beats
-    return [str(b.get('narration') or '') for *_, b in all_beats(script)]
+    try:
+        return [str(b.get('narration') or '') for *_, b in all_beats(script)]
+    except (KeyError, TypeError, AttributeError):
+        return []
 
 
 def _names(ledger: dict) -> set[str]:

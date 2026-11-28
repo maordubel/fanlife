@@ -54,8 +54,10 @@ THE STORY IS ALREADY FOUND FOR YOU. The ledger carries a STORY block computed fr
 - "turning_point" and "turning_direction": where the form swung. "shape": how the season moved (rise, fall, rise-and-fall,
   fall-and-recovery, turn-up, turn-down, steady). "runs": the streaks. "rivals": the rivals met. "honours": what was won.
 - "acts": Cold open → Act I → Act II → Act III → Epilogue, each with its matches and a note. Build the chapters on these acts.
-Never compute or state a league position, a points total, "the table" or "the standings": the archive holds only
-this club's matches. A final table exists only as a "table" claim, and only a beat that cites it may talk about places.
+Never compute a league position, a points total, "the table" or "the standings" from the matches: the archive holds only
+this club's matches. The SEASON BOOK is the exception (claims of kind "honour" and "season_book", read from the club's
+own season article): they state the final league position, every cup's result, the manager, the top scorers and the
+crowds — cite them. A season that WON something builds to it: the trophy is the payoff of the film's question.
 
 DEEP RESEARCH: "deep_research" in the ledger is grounded editorial orientation (the competition's rules that season,
 both sides before kick-off, the timeline, the tactics, the stands, the aftermath, myths against the record, hidden and
@@ -131,19 +133,19 @@ HOOK LAWS (the first 5 seconds decide everything; every opening, title, thumbnai
   rewind ("But to understand that night, go back to August.").
 - STAKES BEFORE RESULTS. Before a big match say what it could change: a run on the line, a tie to save, a rival waiting,
   a first final. Then make the viewer wait one beat before the score.
-- EVERY CHAPTER IS A MINI-DRAMA with five parts, in this order, each in the narration's own words:
-  a WANT (what the club or its people need here — say it in the chapter's first two beats), an OBSTACLE (who or what
-  stands in the way), a CLOCK (how much time is left: minutes, matches, days — so the viewer feels it running out),
-  a TURN in the chapter's second half (one beat where the story changes direction: "Then…", "Until…", "But this
-  time…") and a PAYOFF (what happened — a result, a score, a table) just before the chapter's last line. That last line,
-  in every chapter but the final one, is a CLIFF EDGE: a question, a cliffhanger or a turn the next chapter answers.
+- EVERY CHAPTER CHANGES SOMETHING. It starts where the story stands (the stake, told through the record's facts), something
+  stands in the way (a named opponent, a deficit, a run, the clock), something happens, and it ends somewhere else than
+  it began. Its last line pulls the viewer forward — usually a fact that raises the next problem ("Six days later they
+  had to go to Ibrox."), sometimes a turn ("It would not last."). Never formula lines: no "what X wanted was simple",
+  "the calendar was not on their side", "nobody had told the opposition", "but this is our club and nothing is simple".
 - THE FILM'S ARC. Plant ONE question inside the first fifteen seconds (the moment whose outcome the viewer does not
   know: "…and it all comes down to penalties.") and DO NOT answer it: withhold the outcome, rewind, and pay it off
   after the midpoint of the film, citing the same claim. Give the film at least one moment of real TENSION (one match
   or decision told against its clock) and one of pure JOY (the goal, the win, the celebration on its own beat).
   Set "drama": 1.
-- ASK THE QUESTION OUT LOUD. Inside the first fifteen seconds, one short sentence of at most nine words that ends in
-  "?" ("So what was a defender doing up there?"). It is set on screen in type; the film answers it after the midpoint.
+- THE QUESTION. The treatment's question is planted inside the first fifteen seconds — once, plainly, as a question of
+  at most nine words or as a statement that opens one — and answered after the midpoint. Anywhere else a question is
+  rare: at most one a chapter, and never a filler question ("And then?", "So where did it begin?", "Who would blink?").
 - TELL, NEVER PRESENT. The narrator never talks about the film or the viewer: no "we track", "we revisit", "you will
   see", "this is the story of", "join us", "let's look". Every line is the moment itself: who, where, which minute,
   what happened, what it cost. Vague lines ("a rivalry of fine margins", "one match changed a decade") are cut.
@@ -158,8 +160,8 @@ HOOK LAWS (the first 5 seconds decide everything; every opening, title, thumbnai
   Treat cinematic reconstructions and descriptions of atmosphere as such unless the evidence supports them.
 - FORESHADOW AND PAY OFF. Plant a line early ("Remember Málaga.") and pay it off in the climax. Show a team that looks
   unstoppable just before the run ends; show the empty stand just before the turn.
-- END EVERY CHAPTER ON A HOOK: a question ("How do you come back from that?"), a cliffhanger ("And then came Maccabi."),
-  or a turn ("It would not last."). Open the next chapter by answering it.
+- END A CHAPTER ON WHAT COMES NEXT: the next match, the next obstacle, a turn ("And then came Maccabi.", "It would not
+  last."). A question only when the next chapter answers it at once. Open the next chapter by answering it.
 - THE TURNING POINT GETS ITS OWN BEAT, told slowly, with the form before and after it. A run gets a "run" card. The shape
   of the season gets a "race" (the form line drawing itself, the turning point marked) or a "form" card (W/D/L tiles).
 - CONTRAST AND RHYTHM. Long sentence for the build-up; three-word sentences at the moment. A run of quick results on
@@ -224,6 +226,23 @@ PICTURE (choose a visual for every beat, matching its emotion):
   fits the beat. A visual may add "figure": "cut:common/<key>" for a person or crowd that moves over it.
 - Pictures marked "illustrated" in BEAT ART are drawn to look like photographs or documents of the real night: use them
   for the moment they show, and never present them as photographs in the narration.
+
+THE VOICE (what this channel sounds like — owner, 28.11.2026: "realistic, sticks to the facts, builds tension,
+understands football"):
+- A great match report read aloud by someone who was there: the fact, then what it meant. Dry, exact, never breathless.
+- Specific beats general, every time: a minute, a scorer, a crowd, a ground, an aggregate, a run. If a sentence could be
+  said about any match ever played, it is cut ("supporters still describe it with their hands", "football keeps its
+  best timing for the end", "nobody saw what was coming", "strangers hugging in the stand", "week after week").
+- Never read a fixture list or a tally: tell the match that mattered as a scene, and let the others go.
+- Every club's full name (Lincoln Red Imps, Hapoel Beer-Sheva, Manchester City) — never an initial or a betting-sheet
+  short form. A two-legged tie is told with its aggregate; "lost 2–0 and went through" is said with the 5–4 that explains it.
+- Long sentences for the build-up, very short ones at the moment. One dry remark a scene at most, about a fact just said.
+- EXAMPLE OF THE VOICE (an invented club, for the sound of it only — never reuse a word of its facts):
+  "Hampden Park, ninety-one minutes gone, one each. Northgate Albion had not won this cup since 1998, and their manager
+  had spent the last ten minutes standing on the line with his arms folded, as if that would help. To understand why
+  forty thousand people in green had gone quiet, go back to July: a qualifier in the Faroe Islands, a 2–0 defeat to a
+  side Northgate were expected to beat by five. The club spent the next ten months answering for that night. Dan Hale
+  had been on the pitch for nine minutes when the corner came in. Near post. Two–one."
 
 HARD RULES (a script that breaks one is sent back):
 - Every number you write (in narration, labels, trailer lines) must appear in a claim you cite in that beat, in a season
@@ -703,11 +722,13 @@ def _house(brief: dict, ledger: dict, director: dict | None, avoid: list[dict] |
                 + (["Every Short needs its own hook-led narration"] if any(not isinstance(x, dict) or not isinstance(x.get('narration'), str)
                                                                          for x in sc_.get('shorts') or []) else []))
     s = house.write(brief, ledger, (director or {}).get('id'), log=log, avoid=avoid, check_at=check_at, reason=reason)
+    _LEDGER[0] = ledger
     return drama_pass(s, lambda sc_: check_at(sc_, s['_minutes']), '', '', Path('.'), log, rewrite=False)
 
 
 def write_script(brief: dict, ledger: dict, cache_dir: Path, log, angle: tuple[str, str] | None = None,
-                 director: dict | None = None, avoid: list[dict] | None = None, drama: bool = False) -> dict:
+                 director: dict | None = None, avoid: list[dict] | None = None, drama: bool = False,
+                 treatment: dict | None = None) -> dict:
     """One script. `director` (from studio/directors.py) makes it that director's film; `avoid` lists the options already
     written ({director, title, hook}) so this one cannot repeat their hook or title. `drama` allows the ONE rewrite for
     the mini-drama shape (drama_pass) — the film's own script only: an option among three is checked and reported, never
@@ -722,6 +743,13 @@ def write_script(brief: dict, ledger: dict, cache_dir: Path, log, angle: tuple[s
     lo, hi = target_words(minutes)
     kind = brief.get('kind') or 'season'
     extra = [f'Film: {KIND_TEXT.get(kind, KIND_TEXT["season"])}']
+    # the story room (studio/story_room.py): the film is designed before a line is written
+    from . import story_room
+    if treatment is None and director and not _IN_OPTIONS[0]:
+        treatment = story_room.treatments(brief, ledger, [director], cache_dir, log).get(director['id'])
+    if treatment:
+        extra.append(story_room.for_prompt(treatment))
+    extra.append('FACT SHEET (the season on one page; the ledger below holds every claim in full):\n' + story_room.fact_sheet(ledger))
     if brief.get('tone') and brief['tone'] in TONE_TEXT:
         extra.append(TONE_TEXT[brief['tone']])
     extra.append(STYLE_TEXT.get(brief.get('visual_style') or 'collage', STYLE_TEXT['collage']))
@@ -759,6 +787,7 @@ def write_script(brief: dict, ledger: dict, cache_dir: Path, log, angle: tuple[s
                  'they were made or found for this very story. A description alone does not prove a photograph depicts '
                  'the event or date: check the source ledger and label reconstructions honestly. The pack notes:\n```text\n' + ledger['pack_notes'][:3000] + '\n```')
     _LOG[0] = log
+    _LEDGER[0] = ledger
     attempts = []
     from . import salvage as salvaging
     who = (director['name'] + "'s") if director else 'the'
@@ -820,7 +849,10 @@ def write_script(brief: dict, ledger: dict, cache_dir: Path, log, angle: tuple[s
         attempts.append({'attempt': attempt, 'errors': errs[:40], 'meta': reply.get('meta')})
         if not errs:
             script['_writer'], script['_minutes'] = attempts, took
-            return drama_pass(script, (lambda sc: check_at(sc, took)), user, reply['text'], cache_dir, log, rewrite=drama)
+            # the story judge's one rewrite: the film's own script, and each director's option too unless the desk turns it
+            # off (STORIES_JUDGE_OPTIONS=0) — the owner, 28.11.2026, asked for the best script, not the cheapest
+            judged = drama or (_IN_OPTIONS[0] and os.environ.get('STORIES_JUDGE_OPTIONS', '1') != '0')
+            return drama_pass(script, (lambda sc: check_at(sc, took)), user, reply['text'], cache_dir, log, rewrite=judged)
         user += ('\n\nYOUR PREVIOUS ANSWER FAILED THESE CHECKS. Return the whole corrected JSON object:\n- '
                  + '\n- '.join(errs[:40]) + fix_hints(errs, ledger, lo, hi) + '\n\nPrevious answer:\n' + reply['text'][:60000])
     if best is not None:   # the model rounds are spent: the film is made from what the record proves, at the length it carries
@@ -836,22 +868,28 @@ def write_script(brief: dict, ledger: dict, cache_dir: Path, log, angle: tuple[s
 
 
 def drama_pass(script: dict, check, user: str, answer: str, cache_dir: Path, log, rewrite: bool = True) -> dict:
-    """The mini-drama shape (script.mini_drama), held by ONE automatic rewrite: a valid script whose chapters miss a
-    want, an obstacle, a clock, a turn, a payoff or a cliff edge is sent back once with those sentences. The rewrite
-    is taken only if it passes every check the first one passed and is closer to the shape; otherwise the first stays.
-    A busy tier, a spent quota or a broken answer leaves the first script too — a film never fails for this. What
-    happened is on the script (`drama_check`) for the desk."""
+    """ONE rewrite against the story judge (studio/story_judge.py — owner, 28.11.2026: "we are not improving results").
+    Until 28.11 this pass asked for the mini-drama's keywords (a want, an obstacle, a clock, a closing question) and got
+    them: formula lines in every chapter. Now a valid script the judge sends back ("rewrite") is returned once with the
+    judge's findings — the stock lines, the filler questions, the cut names, the tallies, the untold trophy, the weak
+    opening. The rewrite is taken only if it passes every check the first one passed and the judge scores it higher.
+    A busy tier, a spent quota or a broken answer leaves the first script — a film never fails for this. The verdicts
+    are on the script (`story_check`, `drama_check`) for the desk."""
     from .script import mini_drama
-    miss = mini_drama(script)
-    script['drama_check'] = {'errors': miss, 'rewritten': False}
-    if not miss or not rewrite or os.environ.get('STORIES_DRAMA_REWRITE', '1') == '0':
+    from . import story_judge
+    ledger = _LEDGER[0] or {}
+    v = story_judge.judge(script, ledger)
+    script['drama_check'] = {'errors': mini_drama(script), 'rewritten': False}
+    script['story_check'] = {**v, 'rewritten': False}
+    if v['verdict'] == 'pass' or not rewrite or not answer or os.environ.get('STORIES_DRAMA_REWRITE', '1') == '0':
         return script
-    log(f'Writer: the mini-drama shape misses {len(miss)} thing(s) — one rewrite: ' + '; '.join(miss)[:300])
-    ask = (user + '\n\nYOUR SCRIPT IS VALID BUT ITS DRAMA IS FLAT. Rewrite ONLY what these lines name, keep every fact, claim id, visual and the '
-           'length, and return the whole corrected JSON object:\n- ' + '\n- '.join(miss[:20]) + '\n\nYour script:\n' + answer[:60000])
+    log(f'Writer: the story judge gives {v["score"]}/100 — one rewrite: ' + '; '.join(sorted({f["rule"] for f in v["failures"]}))[:300])
+    ask = (user + '\n\nYOUR SCRIPT IS VALID BUT THE STORY JUDGE SENT IT BACK. Rewrite the narration to fix every point below, keep every '
+           'fact, claim id and visual type, keep the length, and return the whole corrected JSON object:\n'
+           + story_judge.brief_for_rewrite(v) + '\n\nYour script:\n' + answer[:60000])
     try:
-        key = sha256_json({'system': SYSTEM, 'user': ask, 'drama': 1})
-        cached = cache_dir / f'writer-drama-{key[:20]}.json'
+        key = sha256_json({'system': SYSTEM, 'user': ask, 'judge': story_judge.PASS})
+        cached = cache_dir / f'writer-judge-{key[:20]}.json'
         if cached.exists():
             reply = read_json(cached)
         else:
@@ -861,16 +899,20 @@ def drama_pass(script: dict, check, user: str, answer: str, cache_dir: Path, log
         from .owner_story import normalize
         again = repair(normalize(parse_json(reply['text']), {}))
         errs = check(again)
-        left = mini_drama(again) if not errs else miss
-        if not errs and len(left) < len(miss):
+        v2 = story_judge.judge(again, ledger) if not errs else None
+        if v2 and v2['score'] > v['score']:
             again['_writer'] = script.get('_writer')
-            again['drama_check'] = {'errors': left, 'rewritten': True, 'fixed': len(miss) - len(left)}
-            log(f'Writer: the rewrite fixed {len(miss) - len(left)} of {len(miss)}')
+            again['drama_check'] = {'errors': mini_drama(again), 'rewritten': True}
+            again['story_check'] = {**v2, 'rewritten': True, 'before': v['score']}
+            log(f'Writer: the rewrite scores {v2["score"]}/100 (was {v["score"]})')
             return again
-        log('Writer: the rewrite was not better — the first script stays' + (f' ({errs[0]})' if errs else ''))
+        log('Writer: the rewrite was not better — the first script stays' + (f' ({errs[0]})' if errs else f' ({v2["score"] if v2 else "?"}/100)'))
     except Exception as e:  # noqa: BLE001 — no key, a busy tier, a broken answer: the valid script is the script
-        log(f'Writer: no drama rewrite ({type(e).__name__}) — the first script stays')
+        log(f'Writer: no story rewrite ({type(e).__name__}) — the first script stays')
     return script
+
+
+_LEDGER: list = [None]   # the ledger of the script being written (the judge reads it in drama_pass)
 
 
 WAIT_CODES = ('WRITER_BUSY', 'WRITER_QUOTA_DAY', 'WRITER_UNREACHABLE')
@@ -900,10 +942,12 @@ def write_options(brief: dict, ledger: dict, cache_dir: Path, log, least: int = 
 
 
 def _options(brief, ledger, cache_dir, log, least, order, out, errs, busy) -> list[dict]:
+    from . import story_room
+    room = {} if house.wanted() else story_room.treatments(brief, ledger, order, cache_dir, log)   # one meeting, three films
     for d in order:
         try:
             avoid = [{'director': o['_angle'], 'title': _title_of(o), 'hook': o.get('hook')} for o in out]
-            sc_ = write_script(brief, ledger, cache_dir, log, director=d, avoid=avoid)
+            sc_ = write_script(brief, ledger, cache_dir, log, director=d, avoid=avoid, **({'treatment': room[d['id']]} if room.get(d['id']) else {}))
             sc_['_angle'], sc_['_director'] = d['name'], d['id']
             out.append(sc_)
             log(f'Writer: {d["name"]}\'s script ready')

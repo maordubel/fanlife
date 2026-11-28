@@ -136,5 +136,67 @@ class TheJudge(unittest.TestCase):
         self.assertEqual(v['verdict'], 'pass', v)
 
 
+class TheStoryRoom(unittest.TestCase):
+    def season(self):
+        fs, _ = season_book.facts(season_book.infobox(WIKITEXT))
+        cl = season_book.claims({'title': '2001–02 Testford United F.C. season', 'revid': 1, 'facts': fs}, '2001/02', 'Testford')
+        L = {'club_name': 'Testford', 'season': '2001/02', 'claims': [
+            m('q', '2001-07-20', 'Tiny Rovers', 3, 0, 'UEFA Champions League'),
+            m('d', '2001-09-10', 'Rival City', 5, 1),
+            *[m(f'l{k}', f'2001-10-{k + 1:02d}', f'Side {k}', 1, 0) for k in range(1, 7)],
+            m('f', '2002-05-25', 'Other FC', 2, 1, 'Test Cup', 'Final'), *cl]}
+        L['claims'][-len(cl) - 1]['fact']['scorers'] = [{'name': 'Bo Striker', 'minute': 92}]
+        director.attach(L)
+        return L
+
+    def test_the_fact_sheet_leads_with_what_the_season_won_and_its_strongest_nights(self):
+        from studio import story_room
+        sheet = story_room.fact_sheet(self.season())
+        self.assertLess(sheet.index('Test Cup: WON'), sheet.index('THE NIGHTS'))
+        nights = sheet[sheet.index('THE NIGHTS'):]
+        self.assertTrue(nights.splitlines()[1].startswith('[f] 2002-05-25 · Test Cup Final'))
+        self.assertIn("Bo Striker 92'", nights)
+        self.assertIn('top scorer (all competitions): Cy Forward, 32 goals', sheet)
+
+    def treatment(self, **over):
+        t = {'director': 'broadcaster', 'question': 'How did Testford win the cup?', 'logline': 'x', 'hero': 'Testford', 'against': 'Rival City',
+             'stakes': 'the cup', 'stakes_ids': ['f'], 'scenes': [{'id': f's{i}', 'claim_ids': [c], 'purpose': 'p', 'tension': 't', 'turn': i == 3}
+                                                                   for i, c in enumerate(['f', 'q', 'd', 'l1', 'f'], 1)],
+             'ending': 'won it', 'ending_ids': ['season-book:test-cup-1'], 'drop': 'the league'}
+        t.update(over)
+        return t
+
+    def test_a_treatment_is_checked_in_code(self):
+        from studio import story_room
+        L = self.season()
+        self.assertEqual(story_room.check(self.treatment(), L), [])
+        bad = self.treatment(scenes=[{'id': 's1', 'claim_ids': ['nope'], 'turn': False}] * 5, ending_ids=[], question='The cup.')
+        errs = ' | '.join(story_room.check(bad, L))
+        for x in ('unknown claim id nope', 'does not build to it', 'strongest nights', 'not a question', 'exactly one scene as the turn'):
+            self.assertIn(x, errs)
+
+    def test_one_meeting_writes_every_directors_treatment_and_a_busy_tier_costs_nothing(self):
+        import json
+        import tempfile
+        from unittest import mock
+        from studio import story_room, writer
+        from studio.common import StageError
+        from studio.directors import DIRECTORS
+        L = self.season()
+        answer = json.dumps({'treatments': [self.treatment(director=d['id']) for d in DIRECTORS]})
+        calls = []
+        with mock.patch.dict('os.environ', {'STORIES_STORY_ROOM': '1', 'STORIES_WRITER': ''}), tempfile.TemporaryDirectory() as d:
+            with mock.patch.object(writer, 'call_model', side_effect=lambda s, u, **k: (calls.append(u), (answer, {'model': 'm'}))[1]):
+                got = story_room.treatments({'duration': 8, 'kind': 'season'}, L, DIRECTORS, d, lambda *_: None)
+                again = story_room.treatments({'duration': 8, 'kind': 'season'}, L, DIRECTORS, d, lambda *_: None)
+            self.assertEqual(set(got), {x['id'] for x in DIRECTORS})
+            self.assertEqual((len(calls), again), (1, got))                       # cached: the room meets once a film
+            self.assertIn('Test Cup: WON', calls[0])
+            self.assertIn('THE TREATMENT THE ROOM AGREED', story_room.for_prompt(got['broadcaster']))
+            with mock.patch.object(writer, 'call_model', side_effect=StageError('WRITER_BUSY', 'busy', retryable=True)):
+                self.assertEqual(story_room.treatments({'duration': 9, 'kind': 'season'}, L, DIRECTORS, d, lambda *_: None), {})
+            writer._MODEL_DOWN[:] = [None, 0.0]
+
+
 if __name__ == '__main__':
     unittest.main()

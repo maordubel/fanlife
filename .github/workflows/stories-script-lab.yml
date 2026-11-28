@@ -13,7 +13,7 @@ on:
 permissions:
   contents: read
 concurrency:
-  group: stories-script-lab-${{ inputs.club }}-${{ inputs.season }}
+  group: stories-script-lab-${{ github.ref_name }}-${{ inputs.club }}-${{ inputs.season }}
   cancel-in-progress: true
 jobs:
   write:
@@ -29,6 +29,8 @@ jobs:
           npm run clubs:precompile
       - uses: actions/setup-python@v5
         with: {python-version: '3.12'}
+      - name: Python tools (what the research and script stages import)
+        run: pip install -q numpy pillow opencv-python-headless fonttools brotli
       - name: Write the scripts
         working-directory: scripts/football-stories
         env:
@@ -40,6 +42,7 @@ jobs:
           SEASON: ${{ inputs.season }}
           MINUTES: ${{ inputs.minutes }}
           TOPIC: ${{ inputs.topic }}
+          STORIES_SEASON_BOOK_DEBUG: '1'
         run: python -m studio.lab.script_lab --club "$CLUB" --season "$SEASON" --minutes "$MINUTES" --topic "$TOPIC" --out "$RUNNER_TEMP/lab"
       - if: always()
         uses: actions/upload-artifact@v4

@@ -45,13 +45,12 @@ VOICE = {
               'The weeks were running out, quietly, the way they do.'],
     'turn': ['Then it changed.', 'Then came the part nobody would have written.', 'Until one night rearranged everything.',
              'And then, of all things, this.'],
-    'cliff': ['So what happened next?', 'And what was waiting round the corner?', 'How long could that last?', 'Who would blink first?'],
-    'end': ['That is how a small thing becomes the thing everybody remembers.', 'And that, in the end, is what the record keeps.'],
-    'win': ['{who} beat {opp} {score}.', '{who} won {score} against {opp}.', 'It finished {score} to {who} against {opp}.'],
-    'draw': ['{who} drew {score} with {opp}.', 'It finished {score} between {who} and {opp}.'],
+    'cliff': [''],   # 28.11.2026: a filler question at a scene's end is a tic (studio/story_judge.py); the next scene pulls on its own
+    'end': ['That was the season.', 'And that was the season.'],
+    'win': ['{who} beat {opp} {score}.', '{who} won {score} against {opp}.', '{who} won it, {score} against {opp}.'],
+    'draw': ['{who} drew {score} with {opp}.', '{who} and {opp} drew {score}.'],
     'loss': ['{who} lost {score} to {opp}.', '{opp} beat {who} {score}.', '{who} were beaten {score} by {opp}.'],
-    'joy': ['And for once, nobody was in a hurry to go home.', 'It was the kind of night people describe for years, usually with their hands.',
-            'Nobody who was there has stopped talking about it since.'],
+    'joy': ['That was the night.', 'It was done.', 'And that was that.'],
     'grief': ['It was not a night for the scrapbook.', 'The journey home was a quiet one.', 'Some results need no adjectives.'],
     'level': ['Nobody got what they came for.', 'A result that settled nothing and annoyed everyone.'],
     'streak': ['Week after week, the same answer.', 'A habit, by then.'],
@@ -73,7 +72,7 @@ ASIDE = {
     'other_ground': ['Football rarely misses a joke like that.', 'Somebody, somewhere, enjoyed arranging that.'],
     'managers': ['That is usually how a club describes a bad year.', 'Normally that is the first line of a different kind of story.'],
     'trip': ['A long way to go for ninety minutes.', 'Supporters have travelled further for less.'],
-    'lost_but_through': ['They lost the match and won the tie, which is football being difficult on purpose.'],
+    'lost_but_through': ['A defeat on the night, and still the better side over the two legs.'],
     'first': ['Strangers, in other words.', 'Neither side had any old scores to settle. Yet.'],
     'comeback': ['Nobody writes it like that. It would be sent back as unrealistic.'],
     'neutral': ['Home, in this case, was a loose description.'],
@@ -98,11 +97,14 @@ class Teller(Pen):
         self.asides: set[str] = set()
 
     def aside(self, key: str) -> str:
-        """One aside of a kind per film, at most; '' when it has been said."""
+        """One aside of a kind per film, at most; '' when it has been said, or when every line of its kind is stock."""
+        from .story_judge import STOCK_RE
         if key in self.asides:
             return ''
         self.asides.add(key)
-        opts = ASIDE[key]
+        opts = [o for o in ASIDE[key] if not STOCK_RE.search(o)]
+        if not opts:
+            return ''
         return opts[self.rng.randrange(len(opts))]
 
 
@@ -413,14 +415,21 @@ def the_night(pen: Teller, top: str) -> list[dict]:
         if 'joy' in lines:
             j.append(lines['joy'][0])
             jids.append(lines['joy'][1])
-        j.append('And then?')
+        j.append(bridge(b))   # a fact that leads on, never a filler question (28.11.2026)
         beats.append(beat(' '.join(j), jids, {'type': 'illustration', 'art': 'supporter', 'caption': ''}, 1.0, True, camera='orbit', sfx='roar', pace='fast'))
     else:
-        beats.append(beat(f'{pen.pick("grief" if ended is False else "level")} And then?', [top], {'type': 'illustration', 'art': 'terrace-empty', 'caption': ''}, 1.0, True, camera='slow', pace='slow'))
+        beats.append(beat(f'{pen.pick("grief" if ended is False else "level")} {bridge(b)}', [top], {'type': 'illustration', 'art': 'terrace-empty', 'caption': ''}, 1.0, True, camera='slow', pace='slow'))
     return beats
 
 
 # ── the people and the shirt ─────────────────────────────────────────────────────────────────────────────────────────
+def bridge(b: Book) -> str:
+    """The line after the big night that leads into what the season added up to (director rule 5 wants a turn word)."""
+    if b.kind == 'season' and b.main and b.main != b.f(b.top).get('competition'):
+        return f'What was left was the {spoken(b.main)}.'
+    return 'What it added up to came next.'
+
+
 def cast_beats(pen: Teller) -> list[dict]:
     b = pen.b
     out = []
@@ -490,7 +499,9 @@ def doors(pen: Teller) -> list[dict]:
     sc = b.scorers(top)
     if sc and max(s['minute'] for s in sc) >= LATE and f['outcome'] != 'loss' and f['club_goals'] - f['opponent_goals'] <= 1:
         out.append({'text': f'{opp}, {when}, and a clock that had almost run out on {b.club}.', 'more': 'Almost.', 'ids': [top]})
-    out.append({'text': f'{opp}, {when}: one night that {b.club} supporters still describe with their hands.', 'more': '', 'ids': [top]})
+    # the plain door: the night, the stage and what stood on it — a fact, never a stock line (28.11.2026)
+    stage = b.comp(top, stage=True)
+    out.append({'text': f'{when}, {stage}: {b.club} against {opp}.', 'more': '', 'ids': [top]})
     return out
 
 
@@ -503,7 +514,7 @@ def hooks(pen: Teller) -> list[dict]:
              'derby': 'By the end of that road there was a derby, the match nobody in the city forgets.',
              'comeback': 'By the end of that road, it looked lost. It was not.',
              'late-winner': 'By the end of that road, it came down to the last minutes.'}.get(why, 'By the end of that road there was one night with everything on it.')
-    q = f'So how does a small thing like that lead to {b.opp(top)}?' if b.kind == 'season' else 'So how did one night decide it?'
+    q = f'So how did {b.club} get to {b.opp(top)}?' if b.kind == 'season' else 'So how did one night decide it?'
     opts = []
     for d in doors(pen)[:3]:
         text = ' '.join(x for x in (d['text'], d['more'], stake, q) if x)
@@ -533,7 +544,7 @@ def cold_open(pen: Teller, hook: dict) -> dict:
     small = 'people were in the ground' in first   # a guest list is not shown as a full terrace
     beats = [beat(first, ids, {'type': 'open', 'backdrop': 'terrace-empty' if small else 'tunnel', 'headline': b.opp(top)[:60], 'kicker': b.comp(top, stage=False)[:60]}, 1.0, True, camera='slow'),
              beat(rest, ids, {'type': 'matchday', 'claim': top, 'backdrop': 'terrace-crowd'}, 1.0, True, camera='push')]
-    back = 'It starts somewhere much smaller. It usually does. So where did it begin?'
+    back = 'To understand that night, go back to the start of the season.'
     if b.kind in ('match', 'tie'):
         back = 'But a night like that is built long before kick-off. So what was on the line?'
     beats.append(beat(back, [], {'type': 'turning', 'title': 'Before', 'subtitle': 'Where it began', 'backdrop': 'terrace-empty'}, 1.0, True, camera='pull', pace='slow'))
@@ -591,23 +602,25 @@ def season_film(pen: Teller, words_lo: int, hi: int) -> list[dict]:
     road = thread(b)
     early = [m['id'] for m in b.matches if m['id'] not in road and m['id'] != top]
     # chapter 2: where it started — the people, the shirt, the first weeks
-    ch2 = [beat(f'{pen.pick("want")} It began in {month(b.f(b.matches[0]["id"])["date"])}, against {b.opp(b.matches[0]["id"])}.',
+    ch2 = [beat(f'It began in {month(b.f(b.matches[0]["id"])["date"])}, against {b.opp(b.matches[0]["id"])}.',
                 [b.matches[0]['id']], {'type': 'chapter', 'number': 2, 'title': 'Where It Started', 'backdrop': 'paper'}, 1.0, True, camera=pen.cam())]
     ch2 += cast_beats(pen)
     fb = hw.form_beat(pen, hw.pick_matches(b, [m['id'] for m in b.matches[:14]], {top}, 8), 'The first weeks')
     if fb:
         t = b.tally(fb['visual']['claims'])
-        said = [f'{n} {one if n == 1 else many}' for n, one, many in ((t['w'], 'win', 'wins'), (t['d'], 'draw', 'draws'), (t['l'], 'defeat', 'defeats')) if n]
-        verdict = ('Not a disaster. Not a promise either.' if t['l'] and t['w'] else 'Nobody was complaining. Yet.' if t['w'] else 'It could only get better. In theory.')
-        fb['narration'] = f'The first weeks, in short: {", ".join(said)}. {verdict}'
+        # one number that means something, never the tally (28.11.2026, studio/story_judge.py)
+        n_ = t['w'] + t['d'] + t['l']
+        fb['narration'] = (f'{b.club} lost {COUNT.get(t["l"], str(t["l"])).lower() if t["l"] > 1 else "one"} of their first {n_} matches.' if t['l']
+                           else f'{b.club} did not lose any of their first {n_} matches.')
         fb['_req'] = True
         ch2.append(fb)
     for mid in hw.pick_matches(b, early, {top}, 1 if words_lo < 600 else 2):
         ch2.append(scene(pen, mid, weight=0.35))
-    ch2.append(beat(f'{pen.pick("clock")} {pen.pick("cliff")}', [], {'type': 'illustration', 'art': pen.art(), 'caption': ''}, 0.4, False, camera=pen.cam(), pace='slow'))
     # chapter 3: the road
     sc = scenes_of(pen, road, max(120, hi - 45 - 330))
-    ch3 = [beat(f'{pen.pick("want")} {pen.pick("obstacle")}', [i for s in sc for x in s for i in x['claim_ids'] if i in b.mstory][:1],
+    first_road = next((i for s in sc for x in s for i in x['claim_ids'] if i in b.mstory), None)
+    ch3 = [beat((f'The road to {b.opp(top)} began on {day(b.f(first_road)["date"])}, in the {b.comp(first_road, stage=True)}.' if first_road
+                 else f'The road to {b.opp(top)} was a long one.'), [first_road] if first_road else [],
                 {'type': 'chapter', 'number': 3, 'title': 'The Road', 'backdrop': 'paper'}, 1.0, True, camera=pen.cam())]
     rb = hw.road_beat(pen, road)
     if rb:
@@ -615,11 +628,8 @@ def season_film(pen: Teller, words_lo: int, hi: int) -> list[dict]:
         ch3.append(rb)
     for s in sc:
         ch3 += s
-    last = ch3[-1]
-    if not last['narration'].rstrip().endswith('?'):
-        last['narration'] += f' {pen.pick("cliff")}'
     # chapter 4: the night
-    ch4 = [beat('The road was behind them. One match was left, and it would not be a quiet one.', [top], {'type': 'chapter', 'number': 4, 'title': 'The Night', 'backdrop': 'paper'}, 1.0, True, camera=pen.cam())]
+    ch4 = [beat(f'One match was left: {b.comp(top, stage=True)}, {b.club} against {b.opp(top)}.', [top], {'type': 'chapter', 'number': 4, 'title': 'The Night', 'backdrop': 'paper'}, 1.0, True, camera=pen.cam())]
     ch4 += the_night(pen, top)
     # chapter 5: what was left
     record = f'summary:{b.main}' if b.main else None
@@ -629,8 +639,12 @@ def season_film(pen: Teller, words_lo: int, hi: int) -> list[dict]:
     if record and ep['beats'] and ep['beats'][0]['visual'].get('type') == 'record':
         r = b.comps[record[8:]]
         champions = next((h for h in b.honours if h.get('result') == 'won' and h.get('competition') == record[8:]), None)
-        ep['beats'][0]['narration'] = (f'And the {spoken(record[8:])}, while all of that was going on? {r["played"]} matches, {r["won"]} of them won, {r["lost"]} lost. '
-                                       + ('They won that as well. Some years are greedy.' if champions else 'The ordinary weeks never stop for the famous ones.'))
+        complete = bool((b.summary or {}).get('complete')) if hasattr(b, 'summary') else False
+        if r['lost'] == 0 and r['played'] >= 10:
+            line = f'And in the {spoken(record[8:])}, {b.club} did not lose a match: {r["played"]} played, {r["won"]} won.'
+        else:
+            line = f'In the {spoken(record[8:])}: {r["won"]} wins in {r["played"]} matches.'
+        ep['beats'][0]['narration'] = line + (' They were champions as well.' if champions else '')
         if champions:
             ep['beats'][0]['claim_ids'] = list(dict.fromkeys(ep['beats'][0]['claim_ids'] + [champions['id']]))
     lines = hw.dossier_lines(pen)
